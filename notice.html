@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <style>
+        .legalNotice {
+            margin: 0;
+            color: #888;
+            font: 13px/1.25 sans-serif;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .title {
+            font-size: 1.25em;
+            padding: 1.25em 1em 1em;
+            margin: 0;
+            background: #000;
+            color: #fff;
+            position: relative;
+        }
+
+        .notice, .oss, .compliance, .licenses div {
+            padding: 10px;
+        }
+
+        .oss dl dt {
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+            margin-top: 1em;
+        }
+
+        .oss dl dd {
+            margin-left: 20px;
+        }
+
+        .oss a, .compliance a {
+            color: -webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .oss i {
+            color: #333;
+        }
+
+        .oss, .compliance, .licenses div {
+            border-top: 1px solid #ccc;
+            padding-top: 1em;
+        }
+
+        .compliance h3, .licenses h1, h3 {
+            color: #000;
+        }
+
+        .licenses div {
+            display: block;
+            word-wrap: break-word;
+        }
+
+        .licenses pre {
+            display: block;
+            word-wrap: break-word;
+            font-family: monospace;
+            margin: 1em 0px;
+        }
+
+        .license pre {
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 200px;
+            border: 1px solid #ccc;
+        }
+
+        .license {
+            color: black;
+        }
+
+        .license a {
+            text-decoration: none;
+        }
+
+        details > summary::-webkit-details-marker {
+            display: none
+        }
+    </style>
+    <script>
+        function selectLicense(id, licenseId) {
+            var details = document.getElementById(id);
+            if (details.open && details.children.length == 1) {
+                var pre = document.createElement("pre");
+                pre.innerHTML = document.getElementById(licenseId).textContent;
+                details.appendChild(pre);
+            }
+        }
+    </script>
+</head>
+<body revisionId="1jfetEkbbT">
+<div class="legalNotice">
+    <h1 class="title">OSS Notice | KakaoSDK2-iOS</h1>
+    <div class="notice"><p>This application is Copyright © Kakao Corp. All rights reserved.</p>
+        <p>The following sets forth attribution notices for third party software that may be contained in this application.</p>
+    </div>
+
+        <div class="oss">
+            <dl>
+                    <dt><strong> Alamofire</strong></dt>
+                    <dd><a href="https://github.com/Alamofire/Alamofire">https://github.com/Alamofire/Alamofire</a></dd>
+                        <dd>Copyright 2014-2018 Alamofire Software Foundation (http://alamofire.org/)</dd>
+                    <dd class="license">
+                                <details id="Alamofire" ontoggle="selectLicense('Alamofire', 'MIT')">
+                                    <summary>MIT License</summary>
+                                </details>
+                                                </dd>
+                    <dt><strong> AnyCodable or DynamicCodable</strong></dt>
+                    <dd><a href="https://github.com/levantAJ/AnyCodable">https://github.com/levantAJ/AnyCodable</a></dd>
+                        <dd>Copyright 2019 levantAJ</dd>
+                    <dd class="license">
+                                <details id="AnyCodable or DynamicCodable" ontoggle="selectLicense('AnyCodable or DynamicCodable', 'MIT')">
+                                    <summary>MIT License</summary>
+                                </details>
+                                                </dd>
+                    <dt><strong> Apple Frameworks</strong></dt>
+                    <dd><a href="https://developer.apple.com/documentation">https://developer.apple.com/documentation</a></dd>
+                        <dd>Copyright 2018 Apple Inc.</dd>
+                    <dd class="license">
+                                <details id="Apple Frameworks" ontoggle="selectLicense('Apple Frameworks', 'AML')">
+                                    <summary>Apple MIT License</summary>
+                                </details>
+                                                </dd>
+                    <dt><strong> Jazzy</strong></dt>
+                    <dd><a href="https://github.com/realm/jazzy">https://github.com/realm/jazzy</a></dd>
+                        <dd>Copyright 2014 Realm Inc.</dd>
+                    <dd class="license">
+                                <details id="Jazzy" ontoggle="selectLicense('Jazzy', 'MIT')">
+                                    <summary>MIT License</summary>
+                                </details>
+                                                </dd>
+            </dl>
+        </div>
+
+
+        <div class="licenses">
+                    <div id="AML"><h1>Apple MIT License</h1>
+                        <pre style="white-space: pre-wrap;">
+Copyright: Copyright (c) 2006 by Apple Computer, Inc., All Rights Reserved.
+
+IMPORTANT: This Apple software is supplied to you by Apple Computer, Inc. ("Apple") in consideration of your agreement to the following terms, and your use, installation, modification or redistribution of this Apple software constitutes acceptance of these terms. If you do not agree with these terms, please do not use, install, modify or redistribute this Apple software.
+
+In consideration of your agreement to abide by the following terms, and subject to these terms, Apple grants you a personal, non-exclusive license, under Apple's copyrights in this original Apple software (the "Apple Software"), to use, reproduce, modify and redistribute the Apple Software, with or without modifications, in source and/or binary forms; provided that if you redistribute the Apple Software in its entirety and without modifications, you must retain this notice and the following text and disclaimers in all such redistributions of the Apple Software. Neither the name, trademarks, service marks or logos of Apple Computer, Inc. may be used to endorse or promote products derived from the Apple Software without specific prior written permission from Apple. Except as expressly stated in this notice, no other rights or licenses, express or implied, are granted by Apple herein, including but not limited to any patent rights that may be infringed by your derivative works or by other works in which the Apple Software may be incorporated.
+
+The Apple Software is provided by Apple on an "AS IS" basis. APPLE MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+
+IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        </pre>
+                    </div>
+                    <div id="MIT"><h1>MIT License</h1>
+                        <pre style="white-space: pre-wrap;">
+MIT License
+
+Copyright (c) <year> <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        </pre>
+                    </div>
+        </div>
+</div>
+</body>
+</html>
+<!-- successful Generated -->
