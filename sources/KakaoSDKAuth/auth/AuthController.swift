@@ -156,6 +156,7 @@ public class AuthController {
     /// :nodoc: iOS 11 이상에서 제공되는 (SF/ASWeb)AuthenticationSession 을 이용하여 로그인 페이지를 띄우고 쿠키 기반 로그인을 수행합니다. 이미 사파리에에서 로그인하여 카카오계정의 쿠키가 있다면 이를 활용하여 ID/PW 입력 없이 간편하게 로그인할 수 있습니다.
     public func authorizeWithAuthenticationSession(prompts : [Prompt]? = nil,
                                                    state: String? = nil,
+                                                   loginHint: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         return self.authorizeWithAuthenticationSession(prompts: prompts,
                                                        state:state,
@@ -163,6 +164,7 @@ public class AuthController {
                                                        scopes: nil,
                                                        channelPublicIds: nil,
                                                        serviceTerms:nil,
+                                                       loginHint: loginHint,
                                                        completion: completion )
     }
     
@@ -171,6 +173,7 @@ public class AuthController {
                                                    state: String? = nil,
                                                    channelPublicIds: [String]? = nil,
                                                    serviceTerms: [String]? = nil,
+                                                   loginHint: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         return self.authorizeWithAuthenticationSession(prompts: prompts,
                                                        state:state,
@@ -178,6 +181,7 @@ public class AuthController {
                                                        scopes: nil,
                                                        channelPublicIds: channelPublicIds,
                                                        serviceTerms:serviceTerms,
+                                                       loginHint:loginHint,
                                                        completion: completion)
     }
     
@@ -227,6 +231,7 @@ public class AuthController {
                                             scopes:[String]? = nil,
                                             channelPublicIds: [String]? = nil,
                                             serviceTerms: [String]? = nil,
+                                            loginHint: String? = nil,
                                             accountParameters: [String:String]? = nil,
                                             completion: @escaping (OAuthToken?, Error?) -> Void) {
         
@@ -287,7 +292,8 @@ public class AuthController {
                                              agtToken: agtToken,
                                              scopes: scopes,
                                              channelPublicIds: channelPublicIds,
-                                             serviceTerms: serviceTerms)
+                                             serviceTerms: serviceTerms,
+                                             loginHint: loginHint)
         
         var url: URL? = nil
         if let accountParameters = accountParameters, !accountParameters.isEmpty {
@@ -391,7 +397,8 @@ extension AuthController {
                                agtToken: String? = nil,
                                scopes:[String]? = nil,
                                channelPublicIds: [String]? = nil,
-                               serviceTerms: [String]? = nil) -> [String:Any]
+                               serviceTerms: [String]? = nil,
+                               loginHint: String? = nil) -> [String:Any]
     {
         self.resetCodeVerifier()
         
@@ -430,6 +437,10 @@ extension AuthController {
         
         if let serviceTerms = serviceTerms?.joined(separator: ",")  {
             parameters["service_terms"] = serviceTerms
+        }
+        
+        if let loginHint = loginHint {
+            parameters["login_hint"] = loginHint
         }
         
         self.codeVerifier = SdkCrypto.shared.generateCodeVerifier()
@@ -550,6 +561,7 @@ extension AuthController {
                                                        scopes:[String]? = nil,
                                                        channelPublicIds: [String]? = nil,
                                                        serviceTerms: [String]? = nil,
+                                                       loginHint: String? = nil,
                                                        completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {
@@ -612,7 +624,8 @@ extension AuthController {
                                              agtToken: agtToken,
                                              scopes: scopes,
                                              channelPublicIds: channelPublicIds,
-                                             serviceTerms: serviceTerms)
+                                             serviceTerms: serviceTerms,
+                                             loginHint: loginHint)
         
         if let url = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters) {
             SdkLog.d("\n===================================================================================================")

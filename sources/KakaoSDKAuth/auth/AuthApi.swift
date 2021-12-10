@@ -100,13 +100,13 @@ final public class AuthApi {
     }
     
     /// 기존 토큰을 갱신합니다.
-    public func refreshAccessToken(refreshToken: String? = nil,
-                                   completion:@escaping (OAuthToken?, Error?) -> Void) {
+    public func refreshToken(token oldToken: OAuthToken? = nil,
+                             completion:@escaping (OAuthToken?, Error?) -> Void) {
         API.responseData(.post,
                                 Urls.compose(.Kauth, path:Paths.authToken),
                                 parameters: ["grant_type":"refresh_token",
                                              "client_id":try! KakaoSDK.shared.appKey(),
-                                             "refresh_token":refreshToken ?? AUTH.tokenManager.getToken()?.refreshToken,
+                                             "refresh_token":oldToken?.refreshToken ?? AUTH.tokenManager.getToken()?.refreshToken,
                                              "ios_bundle_id":Bundle.main.bundleIdentifier,
                                              "approval_type":KakaoSDK.shared.approvalType().type].filterNil(),
                                 sessionType:.Auth,
@@ -118,9 +118,9 @@ final public class AuthApi {
                                     
                                     if let data = data {
                                         if let newToken = try? SdkJSONDecoder.custom.decode(Token.self, from: data) {
-                                        
+
                                             //oauthtoken 객체가 없으면 에러가 나야함.
-                                            guard let oldOAuthToken = AUTH.tokenManager.getToken()
+                                            guard let oldOAuthToken = oldToken ?? AUTH.tokenManager.getToken()
                                             else {
                                                 completion(nil, SdkError(reason: .TokenNotFound))
                                                 return
@@ -160,5 +160,13 @@ final public class AuthApi {
                                     
                                     completion(nil, SdkError())
                                 }
+        
+    }
+    
+    
+    /// 기존 토큰을 갱신합니다.
+    @available(*, deprecated, message: "use refreshToken(token:completion:) instead")
+    public func refreshAccessToken(refreshToken: String? = nil,
+                                   completion:@escaping (OAuthToken?, Error?) -> Void) {
     }
 }

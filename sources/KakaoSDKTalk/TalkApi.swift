@@ -128,11 +128,12 @@ extension TalkApi {
      public func friends(offset: Int? = nil,
                          limit: Int? = nil,
                          order: Order? = nil,
+                         friendOrder: FriendOrder? = nil,
                          completion:@escaping (Friends<Friend>?, Error?) -> Void) {
          
          AUTH.responseData(.get,
                            Urls.compose(path:Paths.friends),
-                           parameters: ["offset": offset, "limit": limit, "order": order?.rawValue].filterNil(),
+                           parameters: ["offset": offset, "limit": limit, "order": order?.rawValue, "friend_order":friendOrder?.rawValue].filterNil(),
                            apiType: .KApi) { (response, data, error) in
                          
                              if let error = error {
@@ -157,6 +158,7 @@ extension TalkApi {
             friends(offset: context?.offset,
                     limit: context?.limit,
                     order: context?.order,
+                    friendOrder: context?.friendOrder,
                     completion: completion)
     }
     

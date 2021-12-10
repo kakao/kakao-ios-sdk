@@ -42,11 +42,26 @@ public class NaviApi {
     
     // MARK: Using KakaoNavi
     
+    public static var webNaviInstallUrl : URL {
+        get {
+            return URL(string:Urls.compose(.NaviInstall, path:Paths.webNaviInstall))!
+        }
+    }
+    
     /// 카카오내비 장소 공유 URL을 얻습니다. 획득한 URL을 열면 카카오내비 앱이 실행됩니다.
     public func shareUrl(destination:NaviLocation,
                          option:NaviOption? = nil,
                          viaList:[NaviLocation]? = nil) -> URL? {
-        return makeNaviUrl(url: Urls.compose(.Navi, path:Paths.shareDestination), destination: destination, option: option, viaList: viaList)
+        let shareNaviOption = NaviOption(coordType: option?.coordType,
+                                         vehicleType: option?.vehicleType,
+                                         rpOption: option?.rpOption,
+                                         routeInfo: true,
+                                         startX: option?.startX,
+                                         startY: option?.startY,
+                                         startAngle: option?.startAngle,
+                                         returnUri: option?.returnUri)
+        
+        return makeNaviUrl(url: Urls.compose(.Navi, path:Paths.navigateDestination), destination: destination, option: shareNaviOption, viaList: viaList)
     }
     
     /// 카카오내비 길안내 URL을 얻습니다. 획득된 URL을 열면 카카오내비 앱이 실행됩니다.
@@ -54,21 +69,7 @@ public class NaviApi {
                             option:NaviOption? = nil,
                             viaList:[NaviLocation]? = nil) -> URL? {
         return makeNaviUrl(url: Urls.compose(.Navi, path:Paths.navigateDestination), destination: destination, option: option, viaList: viaList)
-    }
-    
-    
-    // MARK: Using Web Navigation
-    
-    /// 웹 길안내 URL을 얻습니다. 획득한 URL을 브라우저에 요청하면 카카오내비 앱이 설치되지 않은 환경에서도 길안내를 받을 수 있습니다.
-    ///
-    /// - important:
-    /// 외부 브라우저로 열지 않고 **웹뷰**를 사용할 경우 추가 설정이 필요합니다. 사용자의 위치정보에 접근할 수 있도록 info.plist 파일에 **"Privacy - Location When In Use Usage Description"** 항목을 추가해야 합니다.
-    public func webNavigateUrl(destination:NaviLocation,
-                               option:NaviOption? = nil,
-                               viaList:[NaviLocation]? = nil) -> URL? {
-        return makeNaviUrl(url:Urls.compose(.WebNavi, path:Paths.webNavigateDestination), destination: destination, option: option, viaList: viaList)
-    }
-    
+    }    
     
     // MARK: Internal
     

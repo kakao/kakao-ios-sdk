@@ -23,7 +23,6 @@ public class Hosts {
     public let kauth : String
     public let talkAuth : String
     public let channel : String
-    public let webnavi : String
     public let talkLink : String
     public let talkLinkVersion : String
     public let sharerLink : String
@@ -34,7 +33,6 @@ public class Hosts {
                 kauth: String = "kauth.kakao.com",
                 talkAuth: String = "kakaokompassauth",
                 channel: String = "pf.kakao.com",
-                webnavi: String = "kakaonavi-wguide.kakao.com",
                 talkLink: String = "kakaolink",
                 talkLinkVersion: String = "kakaotalk-5.9.7",
                 sharerLink: String  = "sharer.kakao.com")
@@ -45,7 +43,6 @@ public class Hosts {
         self.kauth = kauth
         self.talkAuth = talkAuth
         self.channel = channel
-        self.webnavi = webnavi
         self.talkLink = talkLink
         self.talkLinkVersion = talkLinkVersion
         self.sharerLink = sharerLink
@@ -60,7 +57,7 @@ public enum HostType {
     case TalkAuth
     case Channel
     case Navi
-    case WebNavi
+    case NaviInstall
     case TalkLink
     case TalkLinkVersion
     case SharerLink
@@ -81,8 +78,8 @@ public enum HostType {
             return "https://\(KakaoSDK.shared.hosts().channel)"
         case .Navi:
             return "kakaonavi-sdk://"
-        case .WebNavi:
-            return "https://\(KakaoSDK.shared.hosts().webnavi)"
+        case .NaviInstall:
+            return "https://kakaonavi.kakao.com"
         case .TalkLink:
             return "\(KakaoSDK.shared.hosts().talkLink)://"
         case .TalkLinkVersion:
@@ -148,10 +145,8 @@ public class Paths {
     public static let channel = ""
     
     //kakaonavi
-    public static let shareDestination = "sharePoi"
     public static let navigateDestination = "navigate"
-    public static let webShareDestination = "/navigate.html"
-    public static let webNavigateDestination = "/navigate.html"
+    public static let webNaviInstall = "/launch/index.do"
     
     //kakaolink
     public static let talkLink = "send"
