@@ -22,8 +22,17 @@ extension UIApplication {
         var baseVC: UIViewController?
         if base != nil {
             baseVC = base
-        } else {
-            baseVC = UIApplication.shared.keyWindow?.rootViewController
+        }
+        else {
+            if #available(iOS 13, *) {
+                baseVC = (UIApplication.shared.connectedScenes
+                            .compactMap { $0 as? UIWindowScene }
+                            .flatMap { $0.windows }
+                            .first { $0.isKeyWindow })?.rootViewController
+            }
+            else {
+                baseVC = UIApplication.shared.keyWindow?.rootViewController
+            }
         }
         
         if let naviController = baseVC as? UINavigationController {
