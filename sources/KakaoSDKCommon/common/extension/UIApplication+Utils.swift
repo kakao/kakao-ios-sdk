@@ -17,17 +17,33 @@ import UIKit
 
 extension UIApplication {
 
-    public class func getMostTopViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    public class func getMostTopViewController(base: UIViewController? = nil) -> UIViewController? {
 
-        if let naviController = base as? UINavigationController {
+        var baseVC: UIViewController?
+        if base != nil {
+            baseVC = base
+        }
+        else {
+            if #available(iOS 13, *) {
+                baseVC = (UIApplication.shared.connectedScenes
+                            .compactMap { $0 as? UIWindowScene }
+                            .flatMap { $0.windows }
+                            .first { $0.isKeyWindow })?.rootViewController
+            }
+            else {
+                baseVC = UIApplication.shared.keyWindow?.rootViewController
+            }
+        }
+        
+        if let naviController = baseVC as? UINavigationController {
             return getMostTopViewController(base: naviController.visibleViewController)
 
-        } else if let tabbarController = base as? UITabBarController, let selected = tabbarController.selectedViewController {
+        } else if let tabbarController = baseVC as? UITabBarController, let selected = tabbarController.selectedViewController {
             return getMostTopViewController(base: selected)
 
-        } else if let presented = base?.presentedViewController {
+        } else if let presented = baseVC?.presentedViewController {
             return getMostTopViewController(base: presented)
         }
-        return base
+        return baseVC
     }
 }
