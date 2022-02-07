@@ -127,6 +127,16 @@ public struct Link : Codable {
         self.androidExecutionParams = androidExecutionParams?.queryParameters
         self.iosExecutionParams = iosExecutionParams?.queryParameters
     }
+
+    public init(webUrl: URL? = nil,
+                mobileWebUrl: URL? = nil,
+                androidExecutionParams: String? = nil,
+                iosExecutionParams: String? = nil) {
+        self.webUrl = webUrl
+        self.mobileWebUrl = mobileWebUrl
+        self.androidExecutionParams = androidExecutionParams
+        self.iosExecutionParams = iosExecutionParams
+    }
 }
 
 /// 컨텐츠의 내용을 담고 있는 오브젝트 입니다. **1개의 이미지, 제목, 설명, 링크** 정보를 가질 수 있습니다.
