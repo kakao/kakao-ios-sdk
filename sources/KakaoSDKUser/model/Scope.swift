@@ -25,6 +25,7 @@ public enum ScopeType: String, Codable {
     case Service = "SERVICE"
 }
 
+/// 동의 항목별 정보
 public struct Scope : Codable {
     // MARK: Fields
     
@@ -55,6 +56,8 @@ public struct Scope : Codable {
 
 }
 
+
+/// 사용자 동의 내역
 public struct ScopeInfo : Codable {
     
     // MARK: Fields

@@ -69,6 +69,7 @@ public class AuthController {
                                   state: String? = nil,
                                   channelPublicIds: [String]? = nil,
                                   serviceTerms: [String]? = nil,
+                                  nonce: String? = nil,
                                   completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         AUTH_CONTROLLER.authorizeWithTalkCompletionHandler = { (callbackUrl) in
@@ -98,7 +99,8 @@ public class AuthController {
         let parameters = self.makeParametersForTalk(prompts:prompts,
                                                     state:state,
                                                     channelPublicIds: channelPublicIds,
-                                                    serviceTerms: serviceTerms)
+                                                    serviceTerms: serviceTerms,
+                                                    nonce:nonce)
 
         guard let url = SdkUtils.makeUrlWithParameters(Urls.compose(.TalkAuth, path:Paths.authTalk), parameters: parameters) else {
             SdkLog.e("Bad Parameter.")
@@ -157,6 +159,7 @@ public class AuthController {
     public func authorizeWithAuthenticationSession(prompts : [Prompt]? = nil,
                                                    state: String? = nil,
                                                    loginHint: String? = nil,
+                                                   nonce: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         return self.authorizeWithAuthenticationSession(prompts: prompts,
                                                        state:state,
@@ -165,6 +168,7 @@ public class AuthController {
                                                        channelPublicIds: nil,
                                                        serviceTerms:nil,
                                                        loginHint: loginHint,
+                                                       nonce:nonce,
                                                        completion: completion )
     }
     
@@ -174,6 +178,7 @@ public class AuthController {
                                                    channelPublicIds: [String]? = nil,
                                                    serviceTerms: [String]? = nil,
                                                    loginHint: String? = nil,
+                                                   nonce: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         return self.authorizeWithAuthenticationSession(prompts: prompts,
                                                        state:state,
@@ -182,11 +187,13 @@ public class AuthController {
                                                        channelPublicIds: channelPublicIds,
                                                        serviceTerms:serviceTerms,
                                                        loginHint:loginHint,
+                                                       nonce: nonce,
                                                        completion: completion)
     }
     
     /// :nodoc:
     public func authorizeWithAuthenticationSession(scopes:[String],
+                                                   nonce: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         AuthApi.shared.agt { [weak self] (agtToken, error) in
@@ -200,7 +207,7 @@ public class AuthController {
                 return
             }
             else {
-                strongSelf.authorizeWithAuthenticationSession(agtToken: agtToken, scopes: scopes) { (oauthToken, error) in
+                strongSelf.authorizeWithAuthenticationSession(agtToken: agtToken, scopes: scopes, nonce:nonce) { (oauthToken, error) in
                     if let topVC = UIApplication.getMostTopViewController() {
                         let topVCName = "\(type(of: topVC))"
                         SdkLog.d("top vc: \(topVCName)")
@@ -233,6 +240,7 @@ public class AuthController {
                                             serviceTerms: [String]? = nil,
                                             loginHint: String? = nil,
                                             accountParameters: [String:String]? = nil,
+                                            nonce: String? = nil,
                                             completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {
@@ -293,7 +301,8 @@ public class AuthController {
                                              scopes: scopes,
                                              channelPublicIds: channelPublicIds,
                                              serviceTerms: serviceTerms,
-                                             loginHint: loginHint)
+                                             loginHint: loginHint,
+                                             nonce: nonce)
         
         var url: URL? = nil
         if let accountParameters = accountParameters, !accountParameters.isEmpty {
@@ -343,7 +352,8 @@ extension AuthController {
     public func makeParametersForTalk(prompts: [Prompt]? = nil,
                                       state: String? = nil,
                                       channelPublicIds: [String]? = nil,
-                                      serviceTerms: [String]? = nil)  -> [String:Any] {
+                                      serviceTerms: [String]? = nil,
+                                      nonce: String? = nil)  -> [String:Any] {
         self.resetCodeVerifier()
         
         var parameters = [String:Any]()
@@ -369,6 +379,10 @@ extension AuthController {
         if let serviceTerms = serviceTerms?.joined(separator: ",")  {
             extraParameters["service_terms"] = serviceTerms
         }
+        if let nonce = nonce {
+            extraParameters["nonce"] = nonce
+        }
+        
         if let approvalType = KakaoSDK.shared.approvalType().type {
             extraParameters["approval_type"] = approvalType
         }
@@ -398,7 +412,8 @@ extension AuthController {
                                scopes:[String]? = nil,
                                channelPublicIds: [String]? = nil,
                                serviceTerms: [String]? = nil,
-                               loginHint: String? = nil) -> [String:Any]
+                               loginHint: String? = nil,
+                               nonce: String? = nil) -> [String:Any]
     {
         self.resetCodeVerifier()
         
@@ -441,6 +456,10 @@ extension AuthController {
         
         if let loginHint = loginHint {
             parameters["login_hint"] = loginHint
+        }
+        
+        if let nonce = nonce {
+            parameters["nonce"] = nonce
         }
         
         self.codeVerifier = SdkCrypto.shared.generateCodeVerifier()
@@ -502,6 +521,7 @@ extension AuthController {
                                       state: String? = nil,
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
+                                      nonce: String? = nil,
                                       completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         AUTH_CONTROLLER.authorizeWithTalkCompletionHandler = { (callbackUrl) in
@@ -534,7 +554,8 @@ extension AuthController {
         let parameters = self.makeParametersForTalk(prompts:certPrompts,
                                                     state:state,
                                                     channelPublicIds: channelPublicIds,
-                                                    serviceTerms: serviceTerms)
+                                                    serviceTerms: serviceTerms,
+                                                    nonce: nonce)
 
         guard let url = SdkUtils.makeUrlWithParameters(Urls.compose(.TalkAuth, path:Paths.authTalk), parameters: parameters) else {
             SdkLog.e("Bad Parameter.")
@@ -562,6 +583,7 @@ extension AuthController {
                                                        channelPublicIds: [String]? = nil,
                                                        serviceTerms: [String]? = nil,
                                                        loginHint: String? = nil,
+                                                       nonce: String? = nil,
                                                        completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {
@@ -625,7 +647,8 @@ extension AuthController {
                                              scopes: scopes,
                                              channelPublicIds: channelPublicIds,
                                              serviceTerms: serviceTerms,
-                                             loginHint: loginHint)
+                                             loginHint: loginHint,
+                                             nonce: nonce)
         
         if let url = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters) {
             SdkLog.d("\n===================================================================================================")
@@ -687,7 +710,8 @@ extension AuthApi {
                                                                         refreshTokenExpiresIn: certOauthToken.refreshTokenExpiresIn,
                                                                         refreshTokenExpiredAt: certOauthToken.refreshTokenExpiredAt,
                                                                         scope: certOauthToken.scope,
-                                                                        scopes: certOauthToken.scopes)
+                                                                        scopes: certOauthToken.scopes,
+                                                                        idToken: certOauthToken.idToken)
                                             
                                             if let txId = certOauthToken.txId {
                                                 AUTH.tokenManager.setToken(oauthToken)

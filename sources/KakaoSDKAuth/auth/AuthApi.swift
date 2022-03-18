@@ -150,7 +150,8 @@ final public class AuthApi {
                                                                         refreshToken: newRefreshToken,
                                                                         refreshTokenExpiresIn: newRefreshTokenExpiresIn,
                                                                         scope: newToken.scope,
-                                                                        scopes: newToken.scopes)
+                                                                        scopes: newToken.scopes,
+                                                                        idToken: newToken.idToken)
                                             
                                             AUTH.tokenManager.setToken(oauthToken)
                                             completion(oauthToken, nil)

@@ -73,8 +73,11 @@ final public class UserApi {
     
     /// 카카오톡 간편로그인을 실행합니다.
     /// - note: UserApi.isKakaoTalkLoginAvailable() 메소드로 실행 가능한 상태인지 확인이 필요합니다. 카카오톡을 실행할 수 없을 경우 loginWithKakaoAccount() 메소드로 웹 로그인을 시도할 수 있습니다.
+    /// - parameters:
+    ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용
     public func loginWithKakaoTalk(channelPublicIds: [String]? = nil,
                                    serviceTerms: [String]? = nil,
+                                   nonce: String? = nil,
                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         AuthController.shared.authorizeWithTalk(channelPublicIds:channelPublicIds,
@@ -88,10 +91,12 @@ final public class UserApi {
     /// - parameters:
     ///   - prompts 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달, 사용할 수 있는 옵션의 종류는 [Prompt] 참고
     ///   - state 전자서명 원문
+    ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용
     public func certLoginWithKakaoTalk(prompts: [Prompt]? = nil,
                                        state: String? = nil,
                                        channelPublicIds: [String]? = nil,
                                        serviceTerms: [String]? = nil,
+                                       nonce: String? = nil,
                                        completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         AuthController.shared.certAuthorizeWithTalk(prompts:prompts,
@@ -109,12 +114,15 @@ final public class UserApi {
     /// - parameters:
     ///   - prompts 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달. [Prompt]
     ///   - loginHint 카카오계정 로그인 페이지의 ID에 자동 입력할 이메일 또는 전화번호
+    ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용
     
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       loginHint: String? = nil,
+                                      nonce: String? = nil,
                                       completion: @escaping (OAuthToken?, Error?) -> Void) {
         AuthController.shared.authorizeWithAuthenticationSession(prompts: prompts,
                                                                  loginHint: loginHint,
+                                                                 nonce: nonce,
                                                                  completion:completion)
     }
 
@@ -126,14 +134,17 @@ final public class UserApi {
     ///   - prompts 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달, 사용할 수 있는 옵션의 종류는 [Prompt] 참고
     ///   - state   전자서명 원문
     ///   - loginHint 카카오계정 로그인 페이지의 ID에 자동 입력할 이메일 또는 전화번호
+    ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용
     
     public func certLoginWithKakaoAccount(prompts : [Prompt]? = nil,
                                           state: String? = nil,
                                           loginHint: String? = nil,
+                                          nonce: String? = nil,
                                           completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         AuthController.shared.certAuthorizeWithAuthenticationSession(prompts: prompts,
                                                                      state: state,
                                                                      loginHint: loginHint,
+                                                                     nonce: nonce,
                                                                      completion:completion)
     }
     
@@ -157,6 +168,7 @@ final public class UserApi {
     /// **선택 동의** 으로 설정된 동의항목에 대한 **추가 항목 동의 받기**는, 반드시 **사용자가 동의를 거부하더라도 서비스 이용이 지장이 없는** 시나리오에서 요청해야 합니다.
     
     public func loginWithKakaoAccount(scopes:[String],
+                                      nonce: String? = nil,
                                       completion: @escaping (OAuthToken?, Error?) -> Void) {
         AuthController.shared.authorizeWithAuthenticationSession(scopes:scopes, completion:completion)
     }
@@ -165,18 +177,22 @@ final public class UserApi {
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
+                                      nonce: String? = nil,
                                       completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         AuthController.shared.authorizeWithAuthenticationSession(prompts: prompts,
                                                                  channelPublicIds: channelPublicIds,
                                                                  serviceTerms: serviceTerms,
+                                                                 nonce: nonce,
                                                                  completion: completion)
     }
     
-    /// 앱 연결 상태가 **PREREGISTER** 상태의 사용자에 대하여 앱 연결 요청을 합니다. **자동연결** 설정을 비활성화한 앱에서 사용합니다. 요청에 성공하면 사용자 아이디가 반환됩니다.
-    public func signup(completion:@escaping (Int64?, Error?) -> Void) {
+    /// 앱 연결 상태가 **PREREGISTER** 상태의 사용자에 대하여 앱 연결 요청을 합니다. **자동연결** 설정을 비활성화한 앱에서 사용합니다. 요청에 성공하면 회원번호가 반환됩니다.
+    public func signup(properties: [String:String]? = nil,
+                       completion:@escaping (Int64?, Error?) -> Void) {
         AUTH.responseData(.post,
                           Urls.compose(path:Paths.signup),
+                          parameters: ["properties": properties?.toJsonString()].filterNil(),
                           apiType: .KApi) { (response, data, error) in
                             if let error = error {
                                 completion(nil, error)
