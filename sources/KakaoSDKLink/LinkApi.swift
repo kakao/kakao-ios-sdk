@@ -136,9 +136,7 @@ extension LinkApi {
 extension LinkApi {
     // MARK: Fields
     
-    public func transformResponseToLinkResult(response: HTTPURLResponse?, data:Data?, targetAppKey: String? = nil, serverCallbackArgs:[String:String]? = nil,
-                                              completion:@escaping (LinkResult?, Error?) -> Void) {
-        
+    public func transformResponseToLinkResult(response: HTTPURLResponse?, data:Data?, targetAppKey: String? = nil, serverCallbackArgs:[String:String]? = nil, completion:@escaping (LinkResult?, Error?) -> Void) {
         
         if let data = data, let validationResult = try? SdkJSONDecoder.default.decode(ValidationResult.self, from: data) {
             let extraParameters = ["KA":Constants.kaHeader,
@@ -146,8 +144,7 @@ extension LinkApi {
                                    "lcba":serverCallbackArgs?.toJsonString()
                 ].filterNil()
             
-            let linkParameters = ["appkey" : try! KakaoSDK.shared.appKey(),
-                                  "target_app_key" : targetAppKey,
+            let linkParameters = ["appkey" : (targetAppKey != nil) ? targetAppKey! : try! KakaoSDK.shared.appKey(),
                                   "appver" : Constants.appVersion(),
                                   "linkver" : "4.0",
                                   "template_json" : validationResult.templateMsg.toJsonString(),
@@ -169,6 +166,9 @@ extension LinkApi {
                 completion(nil, SdkError(reason:.BadParameter, message: "Invalid Url."))
             }
         }
+        else {
+            completion(nil, SdkError(reason:.Unknown, message: "Invalid Validation Result."))
+        }
     }
     
     // MARK: Using KakaoTalk
@@ -182,10 +182,13 @@ extension LinkApi {
                                              "template_object":templateObjectJsonString].filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
-                                apiType: .KApi) { [weak self] (response, data, error) in
-                                    let strongSelf = self
-                                    
-                                    strongSelf?.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
+                                apiType: .KApi) { [unowned self] (response, data, error) in
+                                                                        
+                                if let error = error {
+                                    completion(nil, error)
+                                }
+                                else {
+                                    self.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
                                         if let error = error {
                                             completion(nil, error)
                                         }
@@ -198,6 +201,7 @@ extension LinkApi {
                                             }
                                         }
                                     }
+                                }
         }
     }
     
@@ -228,10 +232,12 @@ extension LinkApi {
                                     .filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
-                                apiType: .KApi) { [weak self] (response, data, error) in
-                                    let strongSelf = self
-                                    
-                                    strongSelf?.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
+                                apiType: .KApi) { [unowned self] (response, data, error) in
+                                if let error = error {
+                                    completion(nil, error)
+                                }
+                                else {
+                                    self.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
                                         if let error = error {
                                             completion(nil, error)
                                         }
@@ -244,7 +250,7 @@ extension LinkApi {
                                             }
                                         }
                                     }
-                                    
+                                }
         }
     }
     
@@ -260,10 +266,12 @@ extension LinkApi {
                                     .filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
-                                apiType: .KApi ) { [weak self] (response, data, error) in
-                                    let strongSelf = self
-                                    
-                                    strongSelf?.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
+                                apiType: .KApi ) { [unowned self] (response, data, error) in
+                                if let error = error {
+                                    completion(nil, error)
+                                }
+                                else {
+                                    self.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
                                         if let error = error {
                                             completion(nil, error)
                                         }
@@ -276,6 +284,7 @@ extension LinkApi {
                                             }
                                         }
                                     }
+                                }
         }
     }
         
