@@ -69,7 +69,7 @@ extension LinkApi {
             // 측정 불가 bypass
             return false
         }
-        return count >= 1024 * 24
+        return count >= 1024 * 10
     }
 
     // MARK: Using Web Sharer

@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.9.1
+// sdk-version:2.10.0
 import PackageDescription
 
 let package = Package(
@@ -52,7 +52,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
             ],
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist", "README.md"]
         ),
         .target(
             name: "KakaoSDKCommonCore",
@@ -63,14 +63,14 @@ let package = Package(
             dependencies: [
                 .target(name: "KakaoSDKCommon")
             ],
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist", "README.md"]
         ),
         .target(
             name: "KakaoSDKUser",
             dependencies: [
                 .target(name: "KakaoSDKAuth")
             ],
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist", "README.md"]
         ),
         .target(
             name: "KakaoSDKTalk",
@@ -78,14 +78,14 @@ let package = Package(
                 .target(name: "KakaoSDKUser"),
                 .target(name: "KakaoSDKTemplate")
             ],
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist", "README.md"]
         ),
         .target(
             name: "KakaoSDKStory",
             dependencies: [
                 .target(name: "KakaoSDKUser")
             ],
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist", "README.md"]
         ),
         .target(
             name: "KakaoSDKLink",
@@ -93,7 +93,7 @@ let package = Package(
                 .target(name: "KakaoSDKCommon"),
                 .target(name: "KakaoSDKTemplate")
             ],
-            exclude: ["Info.plist"]
+            exclude: ["Info.plist", "README.md"]
         ),
         .target(
             name: "KakaoSDKNavi",

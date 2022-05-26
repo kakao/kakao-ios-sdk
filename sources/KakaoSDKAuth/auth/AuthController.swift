@@ -27,6 +27,9 @@ public enum Prompt : String {
     
     /// 보안 로그인을 요청합니다. 보안 로그인은 카카오 인증서 기반의 사용자 전자서명 과정을 포함합니다.
     case Cert = "cert"
+    
+    ///:nodoc:
+    case Signup = "signup"
 }
 
 public class AuthController {
@@ -295,7 +298,7 @@ public class AuthController {
             }
         }
         
-        var parameters = self.makeParameters(prompts: prompts,
+        let parameters = self.makeParameters(prompts: prompts,
                                              state: state,
                                              agtToken: agtToken,
                                              scopes: scopes,
@@ -304,20 +307,20 @@ public class AuthController {
                                              loginHint: loginHint,
                                              nonce: nonce)
         
-        var url: URL? = nil
+        var url: URL? = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters)
+        
         if let accountParameters = accountParameters, !accountParameters.isEmpty {
+            var _parameters = [String:Any]()
             for (key, value) in accountParameters {
-                parameters[key] = value
+                _parameters[key] = value
             }
-            url = SdkUtils.makeUrlWithParameters(Urls.compose(.Auth, path:Paths.kakaoAccountsLogin), parameters:parameters)
-        }
-        else {
-            url = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters)
+            _parameters["continue"] = url?.absoluteString
+            url = SdkUtils.makeUrlWithParameters(Urls.compose(.Auth, path:Paths.kakaoAccountsLogin), parameters:_parameters)
         }
         
         if let url = url {
             SdkLog.d("\n===================================================================================================")
-            SdkLog.d("request: \n url:\(url)\n parameters: \(parameters) \n")
+            SdkLog.d("request: \n url:\(url)\n")
             
             if #available(iOS 12.0, *) {
                 let authenticationSession = ASWebAuthenticationSession(url: url,
