@@ -230,8 +230,12 @@ extension Api {
                     completion(nil, nil, afError)
                 }
                 else if let data = response.data, let response = response.response {
+                    if let sdkError = SdkError(response: response, data: data, type: apiType) {
+                        completion(nil, nil, sdkError)
+                        return
+                    }
+                    
                     completion(response, data, nil)
-                    return
                 }
                 else {
                     //data or response 가 문제

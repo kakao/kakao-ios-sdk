@@ -1,6 +1,6 @@
 # KakaoSDKTemplate
 
-카카오링크 및 카카오톡 메시지에 사용하는 기본 템플릿 모듈입니다. [카카오디벨로퍼스 메시지 템플릿 도구](https://developers.kakao.com/tool/template-builder/app)를 사용하지 않고 소스코드 상에서 메시지 템플릿을 작성하고 싶을 때 사용할 수 있습니다.
+카카오톡 공유 및 카카오톡 메시지에 사용하는 기본 템플릿 모듈입니다. [카카오디벨로퍼스 메시지 템플릿 도구](https://developers.kakao.com/tool/template-builder/app)를 사용하지 않고 소스코드 상에서 메시지 템플릿을 작성하고 싶을 때 사용할 수 있습니다.
 
 ## Requirements
 - Xcode 11.0

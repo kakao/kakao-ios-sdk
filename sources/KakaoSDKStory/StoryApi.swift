@@ -98,7 +98,7 @@ extension StoryApi {
                             }
                             
                             if let data = data {
-                                completion(try? SdkJSONDecoder.custom.decode(Story.self, from: data), nil)
+                                completion(try? SdkJSONDecoder.customIso8601Date.decode(Story.self, from: data), nil)
                                 return
                             }
 

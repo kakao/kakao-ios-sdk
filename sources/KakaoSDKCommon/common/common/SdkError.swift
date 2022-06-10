@@ -186,7 +186,7 @@ public enum ClientFailureReason {
     /// SDK 초기화를 하지 않음
     case MustInitAppKey
     
-    /// 카카오링크 템플릿 용량 초과
+    /// 카카오톡 공유 템플릿 용량 초과
     case ExceedKakaoLinkSizeLimit
     
     /// type casting 실패

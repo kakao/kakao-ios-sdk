@@ -1,6 +1,6 @@
 # KakaoSDKLink
 
-카카오링크 모듈입니다.
+카카오톡 공유 모듈입니다.
 
 ## Requirements
 - Xcode 11.0

@@ -65,7 +65,7 @@ public struct Channel : Codable {
         case uuid = "channelUuid"
         case encodedId = "channelPublicId"
         case relation = "relation"
-        case updatedAt = "updatedTime"
+        case updatedAt = "updatedAt"
     }
 }
 

@@ -19,7 +19,7 @@ import Alamofire
 import KakaoSDKCommon
 import KakaoSDKTemplate
 
-/// 카카오링크 호출을 담당하는 클래스입니다.
+/// 카카오톡 공유 호출을 담당하는 클래스입니다.
 public class LinkApi {
     
     // MARK: Fields
@@ -27,7 +27,7 @@ public class LinkApi {
     /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다. 
     public static let shared = LinkApi()
         
-    /// 카카오링크 API로부터 리다이렉트 된 URL 인지 체크합니다.
+    /// 카카오톡 공유 API로부터 리다이렉트 된 URL 인지 체크합니다.
     public static func isKakaoLinkUrl(_ url:URL) -> Bool {
         if url.absoluteString.hasPrefix("\(try! KakaoSDK.shared.scheme())://kakaolink") {
             return true
@@ -290,7 +290,7 @@ extension LinkApi {
         
     // MARK: Image Upload
     
-    /// 카카오링크 컨텐츠 이미지로 활용하기 위해 로컬 이미지를 카카오 이미지 서버로 업로드 합니다.
+    /// 카카오톡 공유 컨텐츠 이미지로 활용하기 위해 로컬 이미지를 카카오 이미지 서버로 업로드 합니다.
     public func imageUpload(image: UIImage, secureResource: Bool = true,
                             completion:@escaping (ImageUploadResult?, Error?) -> Void ) {
         return API.upload(.post, Urls.compose(path:Paths.imageUploadLink),
@@ -313,7 +313,7 @@ extension LinkApi {
         }
     }
     
-    /// 카카오링크 컨텐츠 이미지로 활용하기 위해 원격 이미지를 카카오 이미지 서버로 스크랩 합니다.
+    /// 카카오톡 공유 컨텐츠 이미지로 활용하기 위해 원격 이미지를 카카오 이미지 서버로 스크랩 합니다.
     public func imageScrap(imageUrl: URL, secureResource: Bool = true,
                            completion:@escaping (ImageUploadResult?, Error?) -> Void) {
         API.responseData(.post, Urls.compose(path:Paths.imageScrapLink),
