@@ -1,4 +1,4 @@
-# KakaoSDKLink
+# KakaoSDKShare
 
 카카오톡 공유 모듈입니다.
 
@@ -14,12 +14,12 @@
 
 ## Installation
 ```
-pod 'KakaoSDKLink'
+pod 'KakaoSDKShare'
 ```
 
 ## Import
 ```
-import KakaoSDKLink
+import KakaoSDKShare
 ```
 
 ## Usage

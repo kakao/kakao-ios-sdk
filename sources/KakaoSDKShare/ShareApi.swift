@@ -20,27 +20,27 @@ import KakaoSDKCommon
 import KakaoSDKTemplate
 
 /// 카카오톡 공유 호출을 담당하는 클래스입니다.
-public class LinkApi {
+public class ShareApi {
     
     // MARK: Fields
     
     /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다. 
-    public static let shared = LinkApi()
+    public static let shared = ShareApi()
         
     /// 카카오톡 공유 API로부터 리다이렉트 된 URL 인지 체크합니다.
-    public static func isKakaoLinkUrl(_ url:URL) -> Bool {
+    public static func isKakaoTalkSharingUrl(_ url:URL) -> Bool {
         if url.absoluteString.hasPrefix("\(try! KakaoSDK.shared.scheme())://kakaolink") {
             return true
         }
         return false
     }
     
-    public static func isKakaoLinkAvailable() -> Bool {
+    public static func isKakaoTalkSharingAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
     }
 }
     
-extension LinkApi {
+extension ShareApi {
     // MARK: Fields
     
     public static func isExceededLimit(linkParameters: [String: Any]?, validationResult: ValidationResult, extras: [String: Any]?) -> Bool {
@@ -79,7 +79,7 @@ extension LinkApi {
     /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
     ///
     /// - seealso: [Template](../../KakaoSDKTemplate/Protocols/Templatable.html)
-    public func makeSharerUrlforDefaultLink(templatable:Templatable, serverCallbackArgs:[String:String]? = nil) -> URL? {
+    public func makeDefaultUrl(templatable:Templatable, serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"default",
                                   parameters:["link_ver":"4.0",
@@ -89,7 +89,7 @@ extension LinkApi {
     
     /// 기본 템플릿을 공유하는 웹 공유 URL을 얻습니다.
     /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
-    public func makeSharerUrlforDefaultLink(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil) -> URL? {
+    public func makeDefaultUrl(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"default",
                                   parameters:["link_ver":"4.0",
@@ -100,7 +100,7 @@ extension LinkApi {
     /// 지정된 URL을 스크랩하여 만들어진 템플릿을 공유하는 웹 공유 URL을 얻습니다.
     ///
     /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
-    public func makeSharerUrlforScrapLink(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
+    public func makeScrapUrl(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"scrap",
                                   parameters:["link_ver":"4.0",
@@ -113,7 +113,7 @@ extension LinkApi {
     /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 공유하는 웹 공유 URL을 얻습니다.
     ///
     /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
-    public func makeSharerUrlforCustomLink(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
+    public func makeCustomUrl(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"custom",
                                   parameters:["link_ver":"4.0",
@@ -133,10 +133,10 @@ extension LinkApi {
 }
 
 
-extension LinkApi {
+extension ShareApi {
     // MARK: Fields
     
-    public func transformResponseToLinkResult(response: HTTPURLResponse?, data:Data?, targetAppKey: String? = nil, serverCallbackArgs:[String:String]? = nil, completion:@escaping (LinkResult?, Error?) -> Void) {
+    public func transformResponseToSharingResult(response: HTTPURLResponse?, data:Data?, targetAppKey: String? = nil, serverCallbackArgs:[String:String]? = nil, completion:@escaping (SharingResult?, Error?) -> Void) {
         
         if let data = data, let validationResult = try? SdkJSONDecoder.default.decode(ValidationResult.self, from: data) {
             let extraParameters = ["KA":Constants.kaHeader,
@@ -156,10 +156,10 @@ extension LinkApi {
             if let url = SdkUtils.makeUrlWithParameters(Urls.compose(.TalkLink, path:Paths.talkLink), parameters: linkParameters) {
                 SdkLog.d("--------------------------------url \(url)")
                 
-                if LinkApi.isExceededLimit(linkParameters: linkParameters, validationResult: validationResult, extras: extraParameters) {
+                if ShareApi.isExceededLimit(linkParameters: linkParameters, validationResult: validationResult, extras: extraParameters) {
                     completion(nil, SdkError(reason: .ExceedKakaoLinkSizeLimit))
                 } else {
-                    completion(LinkResult(url:url, warningMsg: validationResult.warningMsg, argumentMsg: validationResult.argumentMsg), nil)
+                    completion(SharingResult(url:url, warningMsg: validationResult.warningMsg, argumentMsg: validationResult.argumentMsg), nil)
                 }
             }
             else {
@@ -173,11 +173,11 @@ extension LinkApi {
     
     // MARK: Using KakaoTalk
     
-    func defaultLink(templateObjectJsonString:String?,
+    func shareDefault(templateObjectJsonString:String?,
                      serverCallbackArgs:[String:String]? = nil,
-                     completion:@escaping (LinkResult?, Error?) -> Void ) {
+                     completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
-                                Urls.compose(path:Paths.defalutLink),
+                                Urls.compose(path:Paths.shareDefalutValidate),
                                 parameters: ["link_ver":"4.0",
                                              "template_object":templateObjectJsonString].filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
@@ -188,16 +188,16 @@ extension LinkApi {
                                     completion(nil, error)
                                 }
                                 else {
-                                    self.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
+                                    self.transformResponseToSharingResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (sharingResult, error) in
                                         if let error = error {
                                             completion(nil, error)
                                         }
                                         else {
-                                            if let linkResult = linkResult {
-                                                completion(linkResult, nil)
+                                            if let sharingResult = sharingResult {
+                                                completion(sharingResult, nil)
                                             }
                                             else {
-                                                completion(nil, SdkError(reason:.Unknown, message: "linkResult is nil"))
+                                                completion(nil, SdkError(reason:.Unknown, message: "sharingResult is nil"))
                                             }
                                         }
                                     }
@@ -206,25 +206,25 @@ extension LinkApi {
     }
     
     /// 기본 템플릿을 카카오톡으로 공유합니다.
-    /// - seealso: [Template](../../KakaoSDKTemplate/Protocols/Templatable.html) <br> `LinkResult`
-    public func defaultLink(templatable: Templatable, serverCallbackArgs:[String:String]? = nil,
-                            completion:@escaping (LinkResult?, Error?) -> Void) {
-        self.defaultLink(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
+    /// - seealso: [Template](../../KakaoSDKTemplate/Protocols/Templatable.html) <br> `SharingResult`
+    public func shareDefault(templatable: Templatable, serverCallbackArgs:[String:String]? = nil,
+                            completion:@escaping (SharingResult?, Error?) -> Void) {
+        self.shareDefault(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
     /// 기본 템플릿을 카카오톡으로 공유합니다.
-    /// - seealso: `LinkResult`
-    public func defaultLink(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil,
-                            completion:@escaping (LinkResult?, Error?) -> Void ) {
-        self.defaultLink(templateObjectJsonString: templateObject.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
+    /// - seealso: `SharingResult`
+    public func shareDefault(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil,
+                            completion:@escaping (SharingResult?, Error?) -> Void ) {
+        self.shareDefault(templateObjectJsonString: templateObject.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
     /// 지정된 URL을 스크랩하여 만들어진 템플릿을 카카오톡으로 공유합니다.
-    /// - seealso: `LinkResult`
-    public func scrapLink(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
-                          completion:@escaping (LinkResult?, Error?) -> Void ) {
+    /// - seealso: `SharingResult`
+    public func shareScrap(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
+                          completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
-                                Urls.compose(path:Paths.scrapLink),
+                                Urls.compose(path:Paths.shareScrapValidate),
                                 parameters: ["link_ver":"4.0",
                                              "request_url":requestUrl,
                                              "template_id":templateId,
@@ -237,16 +237,16 @@ extension LinkApi {
                                     completion(nil, error)
                                 }
                                 else {
-                                    self.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
+                                    self.transformResponseToSharingResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (sharingResult, error) in
                                         if let error = error {
                                             completion(nil, error)
                                         }
                                         else {
-                                            if let linkResult = linkResult {
-                                                completion(linkResult, nil)
+                                            if let sharingResult = sharingResult {
+                                                completion(sharingResult, nil)
                                             }
                                             else {
-                                                completion(nil, SdkError(reason:.Unknown, message: "linkResult is nil"))
+                                                completion(nil, SdkError(reason:.Unknown, message: "sharingResult is nil"))
                                             }
                                         }
                                     }
@@ -255,11 +255,11 @@ extension LinkApi {
     }
     
     /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 카카오톡으로 공유합니다. 템플릿을 생성하는 방법은 https://developers.kakao.com/docs/latest/ko/message/ios#create-message 을 참고하시기 바랍니다.
-    /// - seealso: `LinkResult`
-    public func customLink(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
-                           completion:@escaping (LinkResult?, Error?) -> Void ) {
+    /// - seealso: `SharingResult`
+    public func shareCustom(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
+                           completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
-                                Urls.compose(path:Paths.validateLink),
+                                Urls.compose(path:Paths.shareCustomValidate),
                                 parameters: ["link_ver":"4.0",
                                              "template_id":templateId,
                                              "template_args":templateArgs?.toJsonString()]
@@ -271,16 +271,16 @@ extension LinkApi {
                                     completion(nil, error)
                                 }
                                 else {
-                                    self.transformResponseToLinkResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (linkResult, error) in
+                                    self.transformResponseToSharingResult(response: response, data: data, serverCallbackArgs: serverCallbackArgs) { (sharingResult, error) in
                                         if let error = error {
                                             completion(nil, error)
                                         }
                                         else {
-                                            if let linkResult = linkResult {
-                                                completion(linkResult, nil)
+                                            if let sharingResult = sharingResult {
+                                                completion(sharingResult, nil)
                                             }
                                             else {
-                                                completion(nil, SdkError(reason:.Unknown, message: "linkResult is nil"))
+                                                completion(nil, SdkError(reason:.Unknown, message: "sharingResult is nil"))
                                             }
                                         }
                                     }
@@ -293,7 +293,7 @@ extension LinkApi {
     /// 카카오톡 공유 컨텐츠 이미지로 활용하기 위해 로컬 이미지를 카카오 이미지 서버로 업로드 합니다.
     public func imageUpload(image: UIImage, secureResource: Bool = true,
                             completion:@escaping (ImageUploadResult?, Error?) -> Void ) {
-        return API.upload(.post, Urls.compose(path:Paths.imageUploadLink),
+        return API.upload(.post, Urls.compose(path:Paths.shareImageUpload),
                           images: [image],
                           parameters: ["secure_resource": secureResource],
                           headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
@@ -316,7 +316,7 @@ extension LinkApi {
     /// 카카오톡 공유 컨텐츠 이미지로 활용하기 위해 원격 이미지를 카카오 이미지 서버로 스크랩 합니다.
     public func imageScrap(imageUrl: URL, secureResource: Bool = true,
                            completion:@escaping (ImageUploadResult?, Error?) -> Void) {
-        API.responseData(.post, Urls.compose(path:Paths.imageScrapLink),
+        API.responseData(.post, Urls.compose(path:Paths.shareImageScrap),
                                 parameters: ["image_url": imageUrl.absoluteString, "secure_resource": secureResource],
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,

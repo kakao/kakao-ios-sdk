@@ -14,12 +14,12 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for KakaoSDKLink.
-FOUNDATION_EXPORT double KakaoSDKLinkVersionNumber;
+//! Project version number for KakaoSDKShare.
+FOUNDATION_EXPORT double KakaoSDKShareVersionNumber;
 
-//! Project version string for KakaoSDKLink.
-FOUNDATION_EXPORT const unsigned char KakaoSDKLinkVersionString[];
+//! Project version string for KakaoSDKShare.
+FOUNDATION_EXPORT const unsigned char KakaoSDKShareVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <KakaoSDKLink/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <KakaoSDKShare/PublicHeader.h>
 
 
