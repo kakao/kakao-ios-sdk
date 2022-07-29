@@ -38,10 +38,8 @@ public class AuthController {
     
     /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다.
     public static let shared = AuthController()
-    
-    //TODO: parameter 방식으로 바꾸기.
-    @available(iOS 13.0, *)
-    public lazy var presentationContextProvider: Any? = DefaultPresentationContextProvider()
+   
+    public var presentationContextProvider: Any?
     
     public var authenticationSession : Any?
     
@@ -60,6 +58,13 @@ public class AuthController {
     
     public init() {
         resetCodeVerifier()
+        
+        if #available(iOS 13.0, *) {
+            self.presentationContextProvider = DefaultPresentationContextProvider()
+        }
+        else {
+            self.presentationContextProvider = nil
+        }
     }
     
     public func resetCodeVerifier() {
