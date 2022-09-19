@@ -313,10 +313,10 @@ final public class UserApi {
     
     /// 앱에 가입한 사용자의 배송지 정보를 얻을 수 있습니다.
     /// - seealso: `UserShippingAddresses`
-    public func shippingAddresses(fromUpdatedAt: Int? = nil, pageSize: Int? = nil, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
-       AUTH.responseData(.get,
+    public func shippingAddresses(fromUpdatedAt: Date? = nil, pageSize: Int? = nil, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
+        AUTH.responseData(.get,
                          Urls.compose(path:Paths.userShippingAddress),
-                         parameters: ["from_updated_at": fromUpdatedAt, "page_size": pageSize].filterNil(),
+                         parameters: ["from_updated_at": fromUpdatedAt?.toSeconds(), "page_size": pageSize].filterNil(),
                          apiType: .KApi) { (response, data, error) in
                             if let error = error {
                                 completion(nil, error)
