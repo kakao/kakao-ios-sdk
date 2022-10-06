@@ -11,17 +11,21 @@ import SafariServices
 import Swift
 import UIKit
 import _Concurrency
-public struct SelectedUser {
+public struct SelectedUser : Swift.Codable {
   public let id: Swift.Int64?
   public let uuid: Swift.String
   public let profileNickname: Swift.String?
   public let profileThumbnailImage: Foundation.URL?
   public let favorite: Swift.Bool?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
-public struct SelectedUsers {
+public struct SelectedUsers : Swift.Codable {
   public var totalCount: Swift.Int
   public var users: [KakaoSDKFriend.SelectedUser]?
   public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum PickerChatType : Swift.String, Swift.Codable {
   case regular
@@ -32,12 +36,14 @@ public enum PickerChatType : Swift.String, Swift.Codable {
     get
   }
 }
-public struct SelectedChat {
+public struct SelectedChat : Swift.Codable {
   public let id: Swift.Int64
   public let memberCount: Swift.Int?
   public let titleSource: Swift.String?
   public let imageUrl: Foundation.URL?
   public let type: KakaoSDKFriend.PickerChatType?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
 }
 public enum PickerOrientation {
   case portrait

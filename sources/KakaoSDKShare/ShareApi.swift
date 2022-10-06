@@ -173,7 +173,8 @@ extension ShareApi {
     
     // MARK: Using KakaoTalk
     
-    func shareDefault(templateObjectJsonString:String?,
+    /// 기본 템플릿을 카카오톡으로 공유합니다.
+    public func shareDefault(templateObjectJsonString:String?,
                      serverCallbackArgs:[String:String]? = nil,
                      completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,

@@ -17,7 +17,7 @@ import Foundation
 /// 카카오톡 공유 호출 결과
 ///
 /// 카카오톡 메시지 공유에 성공했더라도 템플릿과 입력 값에 위험요소가 있을 경우 warningMsg, argumentMsg에 기록될 수 있습니다. 개발 단계에서 꼼꼼히 체크하시길 권장합니다.
-public struct SharingResult {
+public struct SharingResult : Codable {
     
     // MARK: Fields
     

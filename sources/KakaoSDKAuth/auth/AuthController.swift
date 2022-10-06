@@ -30,6 +30,9 @@ public enum Prompt : String {
     
     ///:nodoc:
     case Signup = "signup"
+    
+    ///:nodoc:
+    case UnifyDaum = "unify_daum"
 }
 
 public class AuthController {
@@ -151,17 +154,6 @@ public class AuthController {
     }
     
     // MARK: Login with Web Cookie
-
-    ///:nodoc: 카카오 계정 페이지에서 로그인을 하기 위한 지원스펙 입니다.
-    public func authorizeWithAuthenticationSession(accountParameters: [String:String]? = nil,
-                                                   completion: @escaping (OAuthToken?, Error?) -> Void) {
-        return self.authorizeWithAuthenticationSession(agtToken: nil,
-                                                       scopes: nil,
-                                                       channelPublicIds:nil,
-                                                       serviceTerms:nil,
-                                                       accountParameters: accountParameters,
-                                                       completion: completion )
-    }    
     
     /// :nodoc: iOS 11 이상에서 제공되는 (SF/ASWeb)AuthenticationSession 을 이용하여 로그인 페이지를 띄우고 쿠키 기반 로그인을 수행합니다. 이미 사파리에에서 로그인하여 카카오계정의 쿠키가 있다면 이를 활용하여 ID/PW 입력 없이 간편하게 로그인할 수 있습니다.
     public func authorizeWithAuthenticationSession(prompts : [Prompt]? = nil,
@@ -169,7 +161,7 @@ public class AuthController {
                                                    loginHint: String? = nil,
                                                    nonce: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
-        return self.authorizeWithAuthenticationSession(prompts: prompts,
+        return _authorizeWithAuthenticationSession(prompts: prompts,
                                                        state:state,
                                                        agtToken: nil,
                                                        scopes: nil,
@@ -188,7 +180,7 @@ public class AuthController {
                                                    loginHint: String? = nil,
                                                    nonce: String? = nil,
                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
-        return self.authorizeWithAuthenticationSession(prompts: prompts,
+        return _authorizeWithAuthenticationSession(prompts: prompts,
                                                        state:state,
                                                        agtToken: nil,
                                                        scopes: nil,
@@ -215,7 +207,7 @@ public class AuthController {
                 return
             }
             else {
-                strongSelf.authorizeWithAuthenticationSession(agtToken: agtToken, scopes: scopes, nonce:nonce) { (oauthToken, error) in
+                strongSelf._authorizeWithAuthenticationSession(agtToken: agtToken, scopes: scopes, nonce:nonce) { (oauthToken, error) in
                     if let topVC = UIApplication.getMostTopViewController() {
                         let topVCName = "\(type(of: topVC))"
                         SdkLog.d("top vc: \(topVCName)")
@@ -240,16 +232,18 @@ public class AuthController {
     }
     
     /// :nodoc:
-    func authorizeWithAuthenticationSession(prompts: [Prompt]? = nil,
-                                            state: String? = nil,
-                                            agtToken: String? = nil,
-                                            scopes:[String]? = nil,
-                                            channelPublicIds: [String]? = nil,
-                                            serviceTerms: [String]? = nil,
-                                            loginHint: String? = nil,
-                                            accountParameters: [String:String]? = nil,
-                                            nonce: String? = nil,
-                                            completion: @escaping (OAuthToken?, Error?) -> Void) {
+    public func _authorizeWithAuthenticationSession(prompts: [Prompt]? = nil,
+                                                    state: String? = nil,
+                                                    agtToken: String? = nil,
+                                                    scopes:[String]? = nil,
+                                                    channelPublicIds: [String]? = nil,
+                                                    serviceTerms: [String]? = nil,
+                                                    loginHint: String? = nil,
+                                                    accountParameters: [String:String]? = nil,
+                                                    nonce: String? = nil,
+                                                    accountsSkipIntro: Bool? = nil,
+                                                    accountsTalkLoginVisible: Bool? = nil,
+                                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {
             [weak self] (callbackUrl:URL?, error:Error?) in
@@ -310,7 +304,9 @@ public class AuthController {
                                              channelPublicIds: channelPublicIds,
                                              serviceTerms: serviceTerms,
                                              loginHint: loginHint,
-                                             nonce: nonce)
+                                             nonce: nonce,
+                                             accountsSkipIntro: accountsSkipIntro,
+                                             accountsTalkLoginVisible: accountsTalkLoginVisible)
         
         var url: URL? = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters)
         
@@ -421,7 +417,9 @@ extension AuthController {
                                channelPublicIds: [String]? = nil,
                                serviceTerms: [String]? = nil,
                                loginHint: String? = nil,
-                               nonce: String? = nil) -> [String:Any]
+                               nonce: String? = nil,
+                               accountsSkipIntro: Bool? = nil,
+                               accountsTalkLoginVisible: Bool? = nil) -> [String:Any]
     {
         self.resetCodeVerifier()
         
@@ -468,6 +466,14 @@ extension AuthController {
         
         if let nonce = nonce {
             parameters["nonce"] = nonce
+        }
+        
+        if let accountsSkipIntro = accountsSkipIntro {
+            parameters["accounts_skip_intro"] = accountsSkipIntro
+        }
+        
+        if let accountsTalkLoginVisible = accountsTalkLoginVisible {
+            parameters["accounts_talk_login_visible"] = accountsTalkLoginVisible
         }
         
         self.codeVerifier = SdkCrypto.shared.generateCodeVerifier()

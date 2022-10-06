@@ -17,12 +17,22 @@ import Foundation
 public class SdkJSONEncoder : JSONEncoder {
     public static var `default`: SdkJSONEncoder { return SdkJSONEncoder() }
     public static var `custom`: SdkJSONEncoder { return SdkJSONEncoder(useCustomStrategy:true) }
-    
-   init(useCustomStrategy:Bool = false) {
+    public static var `customDate`: SdkJSONEncoder { return SdkJSONEncoder(useCustomStrategy:true, useDateFormatterStrategy:true) }
+        
+   init(useCustomStrategy:Bool = false, useDateFormatterStrategy:Bool = false) {
         super.init()
         if (useCustomStrategy) {
             self.keyEncodingStrategy = .convertToSnakeCase
         }
+       
+       if (useDateFormatterStrategy) {
+           self.keyEncodingStrategy = .convertToSnakeCase
+           let formatter = DateFormatter()
+           formatter.dateFormat = "yyyy-MM-dd HH:mm:ssSSS"
+           formatter.locale = Locale.current
+           formatter.timeZone = TimeZone.current
+           self.dateEncodingStrategy = .formatted(formatter)
+       }
     }
 }
 
