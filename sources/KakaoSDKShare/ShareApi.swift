@@ -35,6 +35,7 @@ public class ShareApi {
         return false
     }
     
+    /// 카카오톡 앱을 통한 공유 가능 여부 확인
     public static func isKakaoTalkSharingAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
     }

@@ -6,27 +6,27 @@
 	<dict>
 		<key>Headers/KakaoSDKFriend-Swift.h</key>
 		<data>
-		SMlYIuSlukVKIOuxvXQ+nM6yi+s=
+		NV7SuwfD4cAVe7I/D8BpBps0+Xo=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		97I8xWzvwWB9qYpzO33aQvVQR/M=
+		aaAI0e8vHn2DsqnFxmWuitLtHqw=
 		</data>
 		<key>KakaoSDKFriendResources.bundle/Assets.car</key>
 		<data>
-		fASgyywbAIN33pYvLy7XsequFic=
+		Do7RZLfri/FyPUbH+yIYWB2xCZg=
 		</data>
 		<key>KakaoSDKFriendResources.bundle/Info.plist</key>
 		<data>
-		fKDKZ76SL5CkoR40+azcpnzYUyg=
+		AVzEn9alC0LKiLua5O8iiVV6n1k=
 		</data>
 		<key>KakaoSDKFriendResources.bundle/KakaoSDKFriendResources</key>
 		<data>
-		rVhIcIiAC47qUJvZ+Lb40x+wDAM=
+		Z3aQYL9XT3Vf3yswpyXMHWaAaco=
 		</data>
 		<key>KakaoSDKFriendResources.bundle/_CodeSignature/CodeResources</key>
 		<data>
-		oumOvkC7ZB0Q7LsWcHXklP4vMrk=
+		t/iclfHZndc+Yk9biblaZwJWbLk=
 		</data>
 		<key>KakaoSDKFriendResources.bundle/en.lproj/KakaoSDKFriendLocalizable.strings</key>
 		<dict>
@@ -55,29 +55,45 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<data>
+		PAxqv0sHMayhbkCvIVYMc7aUclM=
+		</data>
+		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		GGoeN5zUzpmK0wRAx8N/kTXbl+k=
+		</data>
 		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		79xUcSUxQv6ugXg3Dh8upzx8uVk=
+		zjHdpDU0+7Yx/0rdhRYX6ijC1po=
 		</data>
 		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		A9vkvj7cTk/xF6WXIXDfcDPn4ws=
+		GGoeN5zUzpmK0wRAx8N/kTXbl+k=
 		</data>
 		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		qbyFcmUWdAv19sMn8AFMOoevC/g=
+		6lOppTIpHxo5+zzfd1AayFpXQpo=
+		</data>
+		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		PAxqv0sHMayhbkCvIVYMc7aUclM=
+		</data>
+		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		lQR+WXpVGfTk76EDRROGlPlyW30=
 		</data>
 		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		gnh1Rm0ltRVcsZT9rVKMJ1aTkDI=
+		Mg3dGwds4mRxLDXdor8Cp8Izft4=
 		</data>
 		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2z9+CKUvox4/M9pArZW9nd50Zi4=
+		lQR+WXpVGfTk76EDRROGlPlyW30=
 		</data>
 		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		9fhBjyMpYkk4B4fr+kHhsWXiwcc=
+		IUTbK4yV2uKZnUrNmX1AtRNxXDE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -90,35 +106,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7q0am/omhiBhsejd7a74HxhMrJ9Fa1iVpwybd/tlqrE=
+			gYe4mnodZ6SErstx6Ht1k5oHqEAS8NJi06WCZSh0HZY=
 			</data>
 		</dict>
 		<key>KakaoSDKFriendResources.bundle/Assets.car</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+Z+ysmA/hJbEg8Ya7NpknrxNszgmiaKooDxsBNsHF/k=
+			8Mcmb362zqBw78ErByinRR822TopJYwa7zpEwHnEfSY=
 			</data>
 		</dict>
 		<key>KakaoSDKFriendResources.bundle/Info.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SW88uCl8pfhVF6nATTjn5QilY3kWsAt6JjrbeDshM1M=
+			l9ZKBwq/DxoPh/udUlrPGh2g/Mj//RC1JeFmRW94uUM=
 			</data>
 		</dict>
 		<key>KakaoSDKFriendResources.bundle/KakaoSDKFriendResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OwW8HcNn37pOCZXC722l8Kw0pYT47cLTqLBuUOwBkWg=
+			cqUUu5dqehkKYstPknpdWj3jAsQGfVueNbBqjCM7hCA=
 			</data>
 		</dict>
 		<key>KakaoSDKFriendResources.bundle/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			u5C9x69w6z6SgkHchDy+Y2hm34j/06D6SCymTGcnEZM=
+			c7XiTPQ8mxx2nfG4diSl4FL5BYuhHiOnyQqBXQjGMBw=
 			</data>
 		</dict>
 		<key>KakaoSDKFriendResources.bundle/en.lproj/KakaoSDKFriendLocalizable.strings</key>
@@ -148,46 +164,74 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iM7Lzq2dT0VkgLLton6H6eyI5Mm4aYuQcRX6dpu6XYo=
+			</data>
+		</dict>
+		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KIVamd/V/HOYKR/WbPVv4ANIIsToKvJUd6m3ts/5HxE=
+			</data>
+		</dict>
 		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZNquzaOf0nhrNhvwG3MiUCo2M2k5pLv/YWf0Z8WK+k=
+			THncd/TwTv0NW1KDCaiBEea0Eayka2olYX+56Xgb2ls=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5WfE/Hxcpu5bFfcwZpa/7zvOMCp9RMFOujA/5q4jGjU=
+			KIVamd/V/HOYKR/WbPVv4ANIIsToKvJUd6m3ts/5HxE=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriend.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Khu9u3HO+0aVjm6r3lDGHz4tD1gp+8zv/RYNZJbqDng=
+			B93JpjKcVGQqO7D9Wxshg7yssBnuotJhDeBIwB/gloo=
+			</data>
+		</dict>
+		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			iM7Lzq2dT0VkgLLton6H6eyI5Mm4aYuQcRX6dpu6XYo=
+			</data>
+		</dict>
+		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6iA5oA1vLreeiPe5mQat9EqFFUQhvA/lrGEBi1rhjdE=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rpZ28XEue7geIA2m8K2wNNxWvjYBuiUOZ25jKRrDWZg=
+			LGdLys4GWRtjhZWo+EskZkzIRRzR0VqS8pwG77bowOM=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8uJ8HYx0vBfvz9o/SWgyFQ51IpVKtBCWtYvHvR9nxzQ=
+			6iA5oA1vLreeiPe5mQat9EqFFUQhvA/lrGEBi1rhjdE=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriend.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UfaZkJsK0WmkkCZOB5bcBbp85R8Rj/90oMYKQW4WnNM=
+			ZAskGIo17lKmANT2zAHNN+BYHIYyKz8dIHwBXaPnIL0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -72,15 +72,19 @@ final public class UserApi {
     }
     
     /// 카카오톡 간편로그인을 실행합니다.
-    /// - note: UserApi.isKakaoTalkLoginAvailable() 메소드로 실행 가능한 상태인지 확인이 필요합니다. 카카오톡을 실행할 수 없을 경우 loginWithKakaoAccount() 메소드로 웹 로그인을 시도할 수 있습니다.
+    /// - note: UserApi.isKakaoTalkLoginAvailable() 메소드로 실행 가능 여부 확인이 필요합니다. 카카오톡을 실행할 수 없을 경우 loginWithKakaoAccount() 메소드로 웹 로그인을 시도할 수 있습니다.
+    /// - note: launchMethod가 .UniversalLink 일 경우 카카오톡 실행 가능 여부 확인은 필수가 아닙니다.
     /// - parameters:
-    ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용
-    public func loginWithKakaoTalk(channelPublicIds: [String]? = nil,
+    ///   - launchMethod 카카오톡 간편로그인 앱 전환 방식 선택  { CustomScheme(Default), .UniversalLink }
+    ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용    
+    public func loginWithKakaoTalk(launchMethod: LaunchMethod? = nil,
+                                   channelPublicIds: [String]? = nil,
                                    serviceTerms: [String]? = nil,
                                    nonce: String? = nil,
                                    completion: @escaping (OAuthToken?, Error?) -> Void) {
         
-        AuthController.shared.authorizeWithTalk(channelPublicIds:channelPublicIds,
+        AuthController.shared.authorizeWithTalk(launchMethod: launchMethod,
+                                                channelPublicIds:channelPublicIds,
                                                 serviceTerms:serviceTerms,
                                                 completion:completion)
         
@@ -88,18 +92,22 @@ final public class UserApi {
     
     /// 앱투앱(App-to-App) 방식 카카오톡 인증 로그인을 실행합니다.
     /// 카카오톡을 실행하고, 카카오톡에 연결된 카카오계정으로 사용자 인증 후 동의 및 전자서명을 거쳐 [CertTokenInfo]을 반환합니다.
+    /// - note: launchMethod가 .UniversalLink 일 경우 카카오톡 실행가능 상태체크는 필수가 아닙니다.
     /// - parameters:
+    ///   - launchMethod 카카오톡 간편로그인 앱 전환 방식 선택  { CustomScheme(Default), .UniversalLink }
     ///   - prompts 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달, 사용할 수 있는 옵션의 종류는 [Prompt] 참고
     ///   - state 전자서명 원문
     ///   - nonce ID 토큰 재생 공격 방지를 위한 검증 값, 임의의 문자열, ID 토큰 검증 시 사용
-    public func certLoginWithKakaoTalk(prompts: [Prompt]? = nil,
+    public func certLoginWithKakaoTalk(launchMethod: LaunchMethod? = nil,
+                                       prompts: [Prompt]? = nil,
                                        state: String? = nil,
                                        channelPublicIds: [String]? = nil,
                                        serviceTerms: [String]? = nil,
                                        nonce: String? = nil,
                                        completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
-        AuthController.shared.certAuthorizeWithTalk(prompts:prompts,
+        AuthController.shared.certAuthorizeWithTalk(launchMethod: launchMethod,
+                                                    prompts:prompts,
                                                     state:state,
                                                     channelPublicIds:channelPublicIds,
                                                     serviceTerms:serviceTerms,

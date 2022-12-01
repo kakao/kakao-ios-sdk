@@ -26,6 +26,7 @@ public class Hosts {
     public let talkLink : String
     public let talkLinkVersion : String
     public let sharerLink : String
+    public let universalLink : String
     
     public init(kapi: String = "kapi.kakao.com",
                 dapi: String = "dapi.kakao.com",
@@ -35,7 +36,8 @@ public class Hosts {
                 channel: String = "pf.kakao.com",
                 talkLink: String = "kakaolink",
                 talkLinkVersion: String = "kakaotalk-5.9.7",
-                sharerLink: String  = "sharer.kakao.com")
+                sharerLink: String = "sharer.kakao.com",
+                universalLink: String = "talk-apps.kakao.com")
     {
         self.kapi = kapi
         self.dapi = dapi
@@ -46,6 +48,7 @@ public class Hosts {
         self.talkLink = talkLink
         self.talkLinkVersion = talkLinkVersion
         self.sharerLink = sharerLink
+        self.universalLink = universalLink
     }
 }
 
@@ -61,6 +64,7 @@ public enum HostType {
     case TalkLink
     case TalkLinkVersion
     case SharerLink
+    case UniversalLink
     
     public var host: String {
         switch self {
@@ -86,6 +90,8 @@ public enum HostType {
             return "\(KakaoSDK.shared.hosts().talkLinkVersion)://"
         case .SharerLink:
             return "https://\(KakaoSDK.shared.hosts().sharerLink)"
+        case .UniversalLink:
+            return "https://\(KakaoSDK.shared.hosts().universalLink)"
         }
     }
 }
@@ -167,6 +173,8 @@ public class Paths {
     
     public static let shareImageUpload = "/v2/api/talk/message/image/upload"
     public static let shareImageScrap = "/v2/api/talk/message/image/scrap"
+    
+    public static let universalLink = "/scheme"
     
     //search
     public static let searchCafe = "/v2/search/cafe"

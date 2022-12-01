@@ -1,0 +1,291 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name KakaoSDKFriend
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Alamofire
+import AuthenticationServices
+import Foundation
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
+import SafariServices
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public struct SelectedUser : Swift.Codable {
+  public let id: Swift.Int64?
+  public let uuid: Swift.String
+  public let profileNickname: Swift.String?
+  public let profileThumbnailImage: Foundation.URL?
+  public let favorite: Swift.Bool?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct SelectedUsers : Swift.Codable {
+  public var totalCount: Swift.Int
+  public var users: [KakaoSDKFriend.SelectedUser]?
+  public init()
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum PickerChatType : Swift.String, Swift.Codable {
+  case regular
+  case open
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SelectedChat : Swift.Codable {
+  public let id: Swift.Int64
+  public let memberCount: Swift.Int?
+  public let titleSource: Swift.String?
+  public let imageUrl: Foundation.URL?
+  public let type: KakaoSDKFriend.PickerChatType?
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum PickerOrientation {
+  case portrait
+  case landscape
+  case auto
+  public static func == (a: KakaoSDKFriend.PickerOrientation, b: KakaoSDKFriend.PickerOrientation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PickerServiceTypeFilter : Swift.String {
+  case talk
+  case story
+  case talkstory
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PickerFriendFilter : Swift.String {
+  case registered
+  case invitable
+  case none
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PickerUsingOsFilter : Swift.String {
+  case ios
+  case android
+  case all
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ViewAppearance : Swift.String {
+  case auto
+  case light
+  case dark
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum DisableSelectReason {
+  case msgBlocked
+  case registered
+  case unRegistered
+  case notFriend
+  case custom
+  case unknown
+  public static func == (a: KakaoSDKFriend.DisableSelectReason, b: KakaoSDKFriend.DisableSelectReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class DisableSelectOption {
+  public var reason: KakaoSDKFriend.DisableSelectReason
+  public var message: Swift.String?
+  public var uuids: [Swift.String]?
+  public init(reason: KakaoSDKFriend.DisableSelectReason, message: Swift.String? = nil, uuids: [Swift.String]? = nil)
+  @objc deinit
+}
+public class OpenPickerFriendRequestParams {
+  final public let title: Swift.String?
+  final public let serviceTypeFilter: KakaoSDKFriend.PickerServiceTypeFilter?
+  final public let viewAppearance: KakaoSDKFriend.ViewAppearance?
+  final public let orientation: KakaoSDKFriend.PickerOrientation?
+  final public let enableSearch: Swift.Bool?
+  final public let showMyProfile: Swift.Bool?
+  final public let showFavorite: Swift.Bool?
+  public var showPickedFriend: Swift.Bool?
+  public var maxPickableCount: Swift.Int?
+  public var minPickableCount: Swift.Int?
+  public init(title: Swift.String? = nil, serviceTypeFilter: KakaoSDKFriend.PickerServiceTypeFilter? = nil, viewAppearance: KakaoSDKFriend.ViewAppearance? = nil, orientation: KakaoSDKFriend.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, enableIndex: Swift.Bool? = nil, showMyProfile: Swift.Bool? = nil, showFavorite: Swift.Bool? = nil, showPickedFriend: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil)
+  @objc deinit
+}
+public class PickerFriendRequestParams {
+  final public let title: Swift.String?
+  final public let serviceTypeFilter: KakaoSDKFriend.PickerServiceTypeFilter?
+  final public let friendFilter: KakaoSDKFriend.PickerFriendFilter?
+  final public let countryCodeFilters: [Swift.String]?
+  final public let usingOsFilter: KakaoSDKFriend.PickerUsingOsFilter?
+  final public let viewAppearance: KakaoSDKFriend.ViewAppearance?
+  final public let orientation: KakaoSDKFriend.PickerOrientation?
+  final public let enableSearch: Swift.Bool?
+  final public let showMyProfile: Swift.Bool?
+  final public let showFavorite: Swift.Bool?
+  final public let disableSelectOptions: [KakaoSDKFriend.DisableSelectOption]?
+  final public let displayAllProfile: Swift.Bool?
+  public var showPickedFriend: Swift.Bool?
+  public var maxPickableCount: Swift.Int?
+  public var minPickableCount: Swift.Int?
+  public init(title: Swift.String? = nil, serviceTypeFilter: KakaoSDKFriend.PickerServiceTypeFilter? = nil, friendFilter: KakaoSDKFriend.PickerFriendFilter? = nil, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriend.PickerUsingOsFilter? = nil, viewAppearance: KakaoSDKFriend.ViewAppearance? = nil, orientation: KakaoSDKFriend.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, enableIndex: Swift.Bool? = nil, showMyProfile: Swift.Bool? = nil, showFavorite: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriend.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, showPickedFriend: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil)
+  convenience public init(_ pickerFriendRequestParams: KakaoSDKFriend.PickerFriendRequestParams)
+  convenience public init(_ openPickerFriendRequestParams: KakaoSDKFriend.OpenPickerFriendRequestParams)
+  @objc deinit
+}
+public enum PickerChatFilter : Swift.String {
+  case direct
+  case multi
+  case regular
+  case open
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PickerChatSelectionType {
+  case chat
+  case chatMember
+  public static func == (a: KakaoSDKFriend.PickerChatSelectionType, b: KakaoSDKFriend.PickerChatSelectionType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class PickerChatRequestParams {
+  final public let selectionType: KakaoSDKFriend.PickerChatSelectionType
+  final public let title: Swift.String?
+  final public let chatFilters: [KakaoSDKFriend.PickerChatFilter]?
+  final public let viewAppearance: KakaoSDKFriend.ViewAppearance?
+  final public let orientation: KakaoSDKFriend.PickerOrientation?
+  final public let enableSearch: Swift.Bool?
+  final public let disableSelectOptions: [KakaoSDKFriend.DisableSelectOption]?
+  final public let displayAllProfile: Swift.Bool?
+  public var maxPickableCount: Swift.Int?
+  public var minPickableCount: Swift.Int?
+  public init(selectionType: KakaoSDKFriend.PickerChatSelectionType, title: Swift.String? = nil, chatFilters: [KakaoSDKFriend.PickerChatFilter]? = nil, viewAppearance: KakaoSDKFriend.ViewAppearance? = nil, orientation: KakaoSDKFriend.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriend.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil)
+  @objc deinit
+}
+public class PickerTabRequestParams {
+  final public let title: Swift.String?
+  final public let viewAppearance: KakaoSDKFriend.ViewAppearance?
+  final public let orientation: KakaoSDKFriend.PickerOrientation?
+  final public let enableSearch: Swift.Bool?
+  final public let disableSelectOptions: [KakaoSDKFriend.DisableSelectOption]?
+  final public let displayAllProfile: Swift.Bool?
+  public var maxPickableCount: Swift.Int?
+  public var minPickableCount: Swift.Int?
+  final public let friendParams: KakaoSDKFriend.PickerTabRequestParams.FriendRequestParams
+  final public let chatParams: KakaoSDKFriend.PickerTabRequestParams.ChatRequestParams
+  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriend.ViewAppearance? = nil, orientation: KakaoSDKFriend.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriend.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil, friendParams: KakaoSDKFriend.PickerTabRequestParams.FriendRequestParams, chatParams: KakaoSDKFriend.PickerTabRequestParams.ChatRequestParams)
+  public class FriendRequestParams {
+    final public let serviceTypeFilter: KakaoSDKFriend.PickerServiceTypeFilter?
+    final public let friendFilter: KakaoSDKFriend.PickerFriendFilter?
+    final public let countryCodeFilters: [Swift.String]?
+    final public let usingOsFilter: KakaoSDKFriend.PickerUsingOsFilter?
+    final public let showMyProfile: Swift.Bool?
+    final public let showFavorite: Swift.Bool?
+    public var showPickedFriend: Swift.Bool?
+    public init(serviceTypeFilter: KakaoSDKFriend.PickerServiceTypeFilter? = nil, friendFilter: KakaoSDKFriend.PickerFriendFilter? = nil, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriend.PickerUsingOsFilter? = nil, enableIndex: Swift.Bool? = nil, showMyProfile: Swift.Bool? = nil, showFavorite: Swift.Bool? = nil, showPickedFriend: Swift.Bool? = nil)
+    @objc deinit
+  }
+  public class ChatRequestParams {
+    final public let selectionType: KakaoSDKFriend.PickerChatSelectionType
+    final public let chatFilters: [KakaoSDKFriend.PickerChatFilter]?
+    public init(selectionType: KakaoSDKFriend.PickerChatSelectionType, chatFilters: [KakaoSDKFriend.PickerChatFilter]? = nil)
+    @objc deinit
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PickerApi {
+  public static let shared: KakaoSDKFriend.PickerApi
+  @objc deinit
+}
+extension KakaoSDKFriend.PickerApi {
+  public func selectFriends(params: KakaoSDKFriend.OpenPickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func selectFriendsPopup(params: KakaoSDKFriend.OpenPickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func selectFriend(params: KakaoSDKFriend.OpenPickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func selectFriendPopup(params: KakaoSDKFriend.OpenPickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+}
+extension KakaoSDKFriend.PickerApi {
+  public func ____sfs(params: KakaoSDKFriend.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func ____sfsp(params: KakaoSDKFriend.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func ____sf(params: KakaoSDKFriend.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func ____sfp(params: KakaoSDKFriend.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, Swift.Error?) -> Swift.Void)
+  public func ____sc(params: KakaoSDKFriend.PickerChatRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, KakaoSDKFriend.SelectedChat?, Swift.Error?) -> Swift.Void)
+  public func ____scp(params: KakaoSDKFriend.PickerChatRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, KakaoSDKFriend.SelectedChat?, Swift.Error?) -> Swift.Void)
+  public func ____s(params: KakaoSDKFriend.PickerTabRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, KakaoSDKFriend.SelectedChat?, Swift.Error?) -> Swift.Void)
+  public func ____sp(params: KakaoSDKFriend.PickerTabRequestParams, completion: @escaping (KakaoSDKFriend.SelectedUsers?, KakaoSDKFriend.SelectedChat?, Swift.Error?) -> Swift.Void)
+}
+public struct PickerUsers : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
+  case Friend
+  case ChatMember
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct PickerUserScope : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PickerChats : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct PickerChatMemberInfo : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension KakaoSDKFriend.PickerChatType : Swift.Equatable {}
+extension KakaoSDKFriend.PickerChatType : Swift.Hashable {}
+extension KakaoSDKFriend.PickerChatType : Swift.RawRepresentable {}
+extension KakaoSDKFriend.PickerOrientation : Swift.Equatable {}
+extension KakaoSDKFriend.PickerOrientation : Swift.Hashable {}
+extension KakaoSDKFriend.PickerServiceTypeFilter : Swift.Equatable {}
+extension KakaoSDKFriend.PickerServiceTypeFilter : Swift.Hashable {}
+extension KakaoSDKFriend.PickerServiceTypeFilter : Swift.RawRepresentable {}
+extension KakaoSDKFriend.PickerFriendFilter : Swift.Equatable {}
+extension KakaoSDKFriend.PickerFriendFilter : Swift.Hashable {}
+extension KakaoSDKFriend.PickerFriendFilter : Swift.RawRepresentable {}
+extension KakaoSDKFriend.PickerUsingOsFilter : Swift.Equatable {}
+extension KakaoSDKFriend.PickerUsingOsFilter : Swift.Hashable {}
+extension KakaoSDKFriend.PickerUsingOsFilter : Swift.RawRepresentable {}
+extension KakaoSDKFriend.ViewAppearance : Swift.Equatable {}
+extension KakaoSDKFriend.ViewAppearance : Swift.Hashable {}
+extension KakaoSDKFriend.ViewAppearance : Swift.RawRepresentable {}
+extension KakaoSDKFriend.DisableSelectReason : Swift.Equatable {}
+extension KakaoSDKFriend.DisableSelectReason : Swift.Hashable {}
+extension KakaoSDKFriend.PickerChatFilter : Swift.Equatable {}
+extension KakaoSDKFriend.PickerChatFilter : Swift.Hashable {}
+extension KakaoSDKFriend.PickerChatFilter : Swift.RawRepresentable {}
+extension KakaoSDKFriend.PickerChatSelectionType : Swift.Equatable {}
+extension KakaoSDKFriend.PickerChatSelectionType : Swift.Hashable {}
+extension KakaoSDKFriend.PickerUserScopeGroup : Swift.Equatable {}
+extension KakaoSDKFriend.PickerUserScopeGroup : Swift.Hashable {}
+extension KakaoSDKFriend.PickerUserScopeGroup : Swift.RawRepresentable {}

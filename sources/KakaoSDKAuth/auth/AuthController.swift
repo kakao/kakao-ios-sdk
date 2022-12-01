@@ -35,6 +35,35 @@ public enum Prompt : String {
     case UnifyDaum = "unify_daum"
 }
 
+/// 톡 간편로그인 호출 방식
+public enum LaunchMethod: String {
+    
+    /// 커스텀 스킴
+    case CustomScheme
+    
+    /// 유니버셜 링크
+    case UniversalLink
+}
+
+extension SdkUtils {
+    /// :nodoc: //launchMethod 추가 익스텐션
+    static public func makeUrlWithParameters(url:String, parameters:[String:Any]?, launchMethod:LaunchMethod? = nil) -> URL? {
+        if let launchMethod = launchMethod, launchMethod == .UniversalLink {
+            if let customSchemeUrl = makeUrlWithParameters(url, parameters: parameters) {
+                let customSchemeStringUrl = "\(customSchemeUrl.absoluteString)"
+                let escapedStringUrl = customSchemeStringUrl.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+                
+                let universalLinkStringUrl = "\(Urls.compose(.UniversalLink, path:Paths.universalLink))/\(escapedStringUrl ?? "")"
+                return URL(string: universalLinkStringUrl)
+            }
+            else { return nil }
+        }
+        else {
+            return makeUrlWithParameters(url, parameters: parameters)
+        }
+    }
+}
+
 public class AuthController {
     
     // MARK: Fields
@@ -76,7 +105,8 @@ public class AuthController {
     
     // MARK: Login with KakaoTalk
     /// :nodoc:
-    public func authorizeWithTalk(prompts: [Prompt]? = nil,
+    public func authorizeWithTalk(launchMethod: LaunchMethod? = nil,
+                                  prompts: [Prompt]? = nil,
                                   state: String? = nil,
                                   channelPublicIds: [String]? = nil,
                                   serviceTerms: [String]? = nil,
@@ -113,8 +143,10 @@ public class AuthController {
                                                     serviceTerms: serviceTerms,
                                                     nonce:nonce)
 
-        guard let url = SdkUtils.makeUrlWithParameters(Urls.compose(.TalkAuth, path:Paths.authTalk), parameters: parameters) else {
-            SdkLog.e("Bad Parameter.")
+        guard let url = SdkUtils.makeUrlWithParameters(url:Urls.compose(.TalkAuth, path:Paths.authTalk),
+                                                       parameters: parameters,
+                                                       launchMethod: launchMethod) else {
+            SdkLog.e("Bad Parameter - make URL error")
             completion(nil, SdkError(reason: .BadParameter))
             return
         }
@@ -531,11 +563,12 @@ class DefaultPresentationContextProvider: NSObject, ASWebAuthenticationPresentat
 extension AuthController {
 
     /// :nodoc:
-    public func certAuthorizeWithTalk(prompts: [Prompt]? = nil,
+    public func certAuthorizeWithTalk(launchMethod: LaunchMethod? = nil,
+                                      prompts: [Prompt]? = nil,
                                       state: String? = nil,
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
-                                      nonce: String? = nil,
+                                      nonce: String? = nil,                                      
                                       completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         AUTH_CONTROLLER.authorizeWithTalkCompletionHandler = { (callbackUrl) in
@@ -571,7 +604,9 @@ extension AuthController {
                                                     serviceTerms: serviceTerms,
                                                     nonce: nonce)
 
-        guard let url = SdkUtils.makeUrlWithParameters(Urls.compose(.TalkAuth, path:Paths.authTalk), parameters: parameters) else {
+        guard let url = SdkUtils.makeUrlWithParameters(url:Urls.compose(.TalkAuth, path:Paths.authTalk),
+                                                       parameters: parameters,
+                                                       launchMethod: launchMethod) else {
             SdkLog.e("Bad Parameter.")
             completion(nil, SdkError(reason: .BadParameter))
             return

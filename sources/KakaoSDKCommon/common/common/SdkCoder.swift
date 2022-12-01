@@ -28,9 +28,9 @@ public class SdkJSONEncoder : JSONEncoder {
        if (useDateFormatterStrategy) {
            self.keyEncodingStrategy = .convertToSnakeCase
            let formatter = DateFormatter()
-           formatter.dateFormat = "yyyy-MM-dd HH:mm:ssSSS"
+           formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
            formatter.locale = Locale.current
-           formatter.timeZone = TimeZone.current
+           formatter.timeZone = TimeZone(abbreviation: "UTC")
            self.dateEncodingStrategy = .formatted(formatter)
        }
     }
