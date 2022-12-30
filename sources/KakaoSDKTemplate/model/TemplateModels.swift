@@ -24,7 +24,8 @@ import KakaoSDKCommon
 /// `ListTemplate`<br>
 /// `LocationTemplate`<br>
 /// `CommerceTemplate`<br>
-/// `TextTemplate`
+/// `TextTemplate` <br>
+/// `CalendarTemplate`
 public protocol Templatable {
     
     /// API 요청 파라미터로 사용하기 위해 현재 객체를 JSON으로 변환합니다. SDK 내부적으로 사용합니다.
@@ -619,7 +620,6 @@ public struct TextTemplate : Codable, Templatable {
 
 /// 톡캘린더의 구독 캘린더 또는 공개 일정 정보를 포함한 메시지 형식입니다.
 /// 카카오톡 채널의 구독 캘린더 또는 공개 일정을 사용자의 톡캘린더에 추가하는 기능을 제공합니다.
-
 public struct CalendarTemplate : Codable, Templatable {
     
     /// 캘린더 ID 타입 열거형
@@ -641,7 +641,7 @@ public struct CalendarTemplate : Codable, Templatable {
     /// event, calendar 둘 중 하나
     public let idType: IdType
     
-    /// 위치에 대해 설명하는 컨텐츠 정보
+    /// 일정에 대해 설명하는 컨텐츠 정보
     /// - seealso: `Content`
     public let content: Content
     
