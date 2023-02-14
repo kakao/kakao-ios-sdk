@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.13.1
+// sdk-version:2.14.0
 import PackageDescription
 
 let package = Package(
@@ -15,10 +15,7 @@ let package = Package(
             targets: ["KakaoSDKCommon", "KakaoSDKAuth", "KakaoSDKUser", "KakaoSDKTalk", "KakaoSDKStory", "KakaoSDKShare", "KakaoSDKNavi", "KakaoSDKTemplate"]),
         .library(
             name: "KakaoSDKCommon",
-            targets: ["KakaoSDKCommon"]),
-        .library(
-            name: "KakaoSDKCommonCore",
-            targets: ["KakaoSDKCommonCore"]),
+            targets: ["KakaoSDKCommon"]),        
         .library(
             name: "KakaoSDKAuth",
             targets: ["KakaoSDKAuth"]),
@@ -53,10 +50,6 @@ let package = Package(
                 .product(name: "Alamofire", package: "Alamofire"),
             ],
             exclude: ["Info.plist", "README.md"]
-        ),
-        .target(
-            name: "KakaoSDKCommonCore",
-            path: "sources/KakaoSDKCommon/Common"
         ),
         .target(
             name: "KakaoSDKAuth",
