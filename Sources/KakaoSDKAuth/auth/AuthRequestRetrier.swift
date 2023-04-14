@@ -89,7 +89,7 @@ public class AuthRequestRetrier : RequestInterceptor {
                 
                 if let requiredScopes = sdkError.getApiError().info?.requiredScopes {
                     DispatchQueue.main.async {
-                        AuthController.shared.authorizeWithAuthenticationSession(scopes: requiredScopes) { (_, error) in
+                        AuthController.shared._authorizeByAgtWithAuthenticationSession(scopes: requiredScopes) { (_, error) in
                             if let error = error {
                                 completion(.doNotRetryWithError(error))
                             }
