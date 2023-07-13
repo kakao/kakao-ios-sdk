@@ -15,7 +15,6 @@
 import Foundation
 import UIKit
 
-import Alamofire
 import KakaoSDKCommon
 import KakaoSDKTemplate
 

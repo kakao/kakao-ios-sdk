@@ -64,7 +64,7 @@ open class SdkLog {
     public let developLoglevel : LogLevel
     public let releaseLogLevel : LogLevel
     
-    public init(developLogLevel : LogLevel = LogLevel.d, releaseLogLevel: LogLevel = LogLevel.i) {
+    public init(developLogLevel : LogLevel = LogLevel.v, releaseLogLevel: LogLevel = LogLevel.i) {
         self.developLoglevel = developLogLevel
         self.releaseLogLevel = releaseLogLevel
     }

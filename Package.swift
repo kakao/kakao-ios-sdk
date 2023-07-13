@@ -1,18 +1,18 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.15.0
+// sdk-version:2.16.0
 import PackageDescription
 
 let package = Package(
     name: "KakaoOpenSDK",
     platforms: [
-        .iOS(.v11)
+        .iOS(.v13)
     ],
     products: [
         .library(
             name: "KakaoSDK",
-            targets: ["KakaoSDKCommon", "KakaoSDKAuth", "KakaoSDKUser", "KakaoSDKTalk", "KakaoSDKStory", "KakaoSDKShare", "KakaoSDKNavi", "KakaoSDKTemplate"]),
+            targets: ["KakaoSDKCommon", "KakaoSDKAuth", "KakaoSDKUser", "KakaoSDKTalk", "KakaoSDKFriend", "KakaoSDKFriendCore", "KakaoSDKStory", "KakaoSDKShare", "KakaoSDKNavi", "KakaoSDKTemplate"]),
         .library(
             name: "KakaoSDKCommon",
             targets: ["KakaoSDKCommon"]),        
@@ -25,6 +25,12 @@ let package = Package(
         .library(
             name: "KakaoSDKTalk",
             targets: ["KakaoSDKTalk"]),
+        .library(
+            name: "KakaoSDKFriend",
+            targets: ["KakaoSDKFriend"]),
+        .library(
+            name: "KakaoSDKFriendCore",
+            targets: ["KakaoSDKFriendCore"]),
         .library(
             name: "KakaoSDKStory",
             targets: ["KakaoSDKStory"]),
@@ -72,6 +78,18 @@ let package = Package(
                 .target(name: "KakaoSDKTemplate")
             ],
             exclude: ["Info.plist", "README.md"]
+        ),
+        .target(
+            name: "KakaoSDKFriend",
+            dependencies: [
+                .target(name: "KakaoSDKUser"),
+                .target(name: "KakaoSDKFriendCore")
+            ],
+            exclude: ["Info.plist", "README.md"]
+        ),
+        .binaryTarget(
+            name: "KakaoSDKFriendCore",
+            path: "Sources/KakaoSDKFriendCore/KakaoSDKFriendCore.xcframework"
         ),
         .target(
             name: "KakaoSDKStory",

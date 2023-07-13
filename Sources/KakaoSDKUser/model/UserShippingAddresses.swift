@@ -97,7 +97,6 @@ public struct ShippingAddress : Codable {
     public let zipCode: String?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, updatedAt, type, baseAddress, detailAddress, receiverName, receiverPhoneNumber1, receiverPhoneNumber2, zoneNumber, zipCode
-        case isDefault = "default"
+        case id, name, updatedAt, type, baseAddress, detailAddress, receiverName, receiverPhoneNumber1, receiverPhoneNumber2, zoneNumber, zipCode, isDefault
     }
 }

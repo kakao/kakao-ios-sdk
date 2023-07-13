@@ -78,16 +78,13 @@ extension UserApi {
     /// - note: launchMethod가 .UniversalLink 일 경우 카카오톡 실행 가능 여부 확인은 필수가 아닙니다.
     /// - parameters:
     ///   - launchMethod 카카오톡 간편로그인 앱 전환 방식 선택  { CustomScheme(Default), .UniversalLink }
-    ///   - state 카카오 로그인 과정 중 동일한 값을 유지하는 임의의 문자열(정해진 형식 없음)
     ///   - nonce ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
     public func loginWithKakaoTalk(launchMethod: LaunchMethod? = nil,
                                    channelPublicIds: [String]? = nil,
                                    serviceTerms: [String]? = nil,
-                                   state: String? = nil,
                                    nonce: String? = nil,
                                    completion: @escaping (OAuthToken?, Error?) -> Void) {        
         AuthController.shared._authorizeWithTalk(launchMethod: launchMethod,
-                                                 state: state,
                                                  channelPublicIds:channelPublicIds,
                                                  serviceTerms:serviceTerms,
                                                  nonce:nonce,
@@ -101,15 +98,12 @@ extension UserApi {
     /// - parameters:
     ///   - prompts 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달. [Prompt]
     ///   - loginHint 카카오계정 로그인 페이지의 ID에 자동 입력할 이메일 또는 전화번호
-    ///   - state 카카오 로그인 과정 중 동일한 값을 유지하는 임의의 문자열(정해진 형식 없음)
     ///   - nonce ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       loginHint: String? = nil,
-                                      state: String? = nil,
                                       nonce: String? = nil,
                                       completion: @escaping (OAuthToken?, Error?) -> Void) {
-        AuthController.shared._authorizeWithAuthenticationSession(prompts: prompts,
-                                                                  state:state,
+        AuthController.shared._authorizeWithAuthenticationSession(prompts: prompts,                                                                  
                                                                   loginHint: loginHint,
                                                                   nonce: nonce,
                                                                   completion:completion)
@@ -134,21 +128,18 @@ extension UserApi {
     /// **선택 동의** 으로 설정된 동의항목에 대한 **추가 항목 동의 받기**는, 반드시 **사용자가 동의를 거부하더라도 서비스 이용이 지장이 없는** 시나리오에서 요청해야 합니다.
     
     public func loginWithKakaoAccount(scopes:[String],
-                                      state: String? = nil,
                                       nonce: String? = nil,
                                       completion: @escaping (OAuthToken?, Error?) -> Void) {
-        AuthController.shared._authorizeByAgtWithAuthenticationSession(scopes:scopes, state:state, nonce:nonce, completion:completion)
+        AuthController.shared._authorizeByAgtWithAuthenticationSession(scopes:scopes, nonce:nonce, completion:completion)
     }
     
     /// :nodoc: 카카오싱크 전용입니다. 자세한 내용은 카카오싱크 전용 개발가이드를 참고하시기 바랍니다.
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
-                                      state: String? = nil,
                                       nonce: String? = nil,
                                       completion: @escaping (OAuthToken?, Error?) -> Void) {
-        AuthController.shared._authorizeWithAuthenticationSession(prompts: prompts,
-                                                                  state:state,
+        AuthController.shared._authorizeWithAuthenticationSession(prompts: prompts,                                                                  
                                                                   channelPublicIds: channelPublicIds,
                                                                   serviceTerms: serviceTerms,
                                                                   nonce: nonce,
@@ -380,10 +371,13 @@ extension UserApi {
     
     /// 사용자가 카카오 간편가입을 통해 동의한 서비스 약관 내역을 반환합니다.
     /// - seealso: `UserServiceTerms`
-    public func serviceTerms(extra:String? = nil, completion:@escaping (UserServiceTerms?, Error?) -> Void) {
+    /// - parameters:
+    ///     - result app_service_terms를 지정해 앱에 사용 설정된 서비스 약관 목록 요청
+    ///     - tags 조회할 서비스 약관에 설정된 tag 목록
+    public func serviceTerms(result:String? = nil, tags: [String]? = nil, completion:@escaping (UserServiceTerms?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                           Urls.compose(path:Paths.userServiceTerms),
-                          parameters: ["extra": extra].filterNil(),
+                              parameters: ["result": result, "tags": tags?.joined(separator: ",")].filterNil(),
                           apiType: .KApi) { (response, data, error) in
                             if let error = error {
                                 completion(nil, error)
@@ -396,6 +390,26 @@ extension UserApi {
                             }
                             
                             completion(nil, SdkError())
+        }
+    }
+    
+    /// 특정 서비스 약관에 대한 동의를 철회하고, 동의 철회가 반영된 서비스 약관 목록 반환합니다.
+    /// - parameters:
+    ///     - tags 조회할 서비스 약관에 설정된 tag 목록
+    public func revokeServiceTerms(tags: [String], completion: @escaping (UserRevokedServiceTerms?, Error?) -> Void) {
+        AUTH_API.responseData(.post, Urls.compose(path: Paths.userRevokeServiceTerms), parameters: ["tags": tags.joined(separator: ",")],apiType: .KApi) { (response, data, error) in
+            
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            if let data = data {
+                completion(try? SdkJSONDecoder.custom.decode(UserRevokedServiceTerms.self, from: data), nil)
+                return
+            }
+            
+            completion(nil, SdkError())
         }
     }
     

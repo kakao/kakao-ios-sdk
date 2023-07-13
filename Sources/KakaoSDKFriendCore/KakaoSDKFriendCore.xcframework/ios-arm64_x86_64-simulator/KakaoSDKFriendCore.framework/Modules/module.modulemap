@@ -1,0 +1,4 @@
+framework module KakaoSDKFriendCore {
+  header "KakaoSDKFriendCore-Swift.h"
+  requires objc
+}

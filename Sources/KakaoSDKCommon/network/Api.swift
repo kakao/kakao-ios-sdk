@@ -51,11 +51,11 @@ public class Api {
 extension Api {    
     private func initSession() {
         let apiSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
-        apiSessionConfiguration.tlsMinimumSupportedProtocol = .tlsProtocol12
+        apiSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
         addSession(type: .Api, session:Session(configuration: apiSessionConfiguration, interceptor: ApiRequestAdapter()))
         
         let authSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
-        authSessionConfiguration.tlsMinimumSupportedProtocol = .tlsProtocol12
+        authSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
         addSession(type: .Auth, session:Session(configuration: authSessionConfiguration, interceptor: ApiRequestAdapter()))
     }
     

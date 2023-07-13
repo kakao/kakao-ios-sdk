@@ -118,9 +118,10 @@ public class Paths {
     public static let userLogout = "/v1/user/logout"
     public static let userUnlink = "/v1/user/unlink"
     public static let userShippingAddress = "/v1/user/shipping_address"
-    public static let userServiceTerms = "/v1/user/service/terms"
+    public static let userServiceTerms = "/v2/user/service_terms"
     public static let userScopes = "/v2/user/scopes"
     public static let userRevokeScopes = "/v2/user/revoke/scopes"
+    public static let userRevokeServiceTerms = "/v2/user/revoke/service_terms"
     
     //talk
     public static let talkProfile = "/v1/api/talk/profile"
@@ -137,7 +138,7 @@ public class Paths {
     
     //friend
     public static let selectFriends = "/v1/friends/sdk"
-    public static let userScpoes = "/v2/user/scopes/sdk"
+    public static let sdkUserScopes = "/v2/user/scopes/sdk"
     
     public static let selectChats = "/v1/api/talk/chat/list/sdk"
     public static let selectChatMembers = "/v1/api/talk/members/sdk"
