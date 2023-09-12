@@ -36,7 +36,7 @@ public class AuthRequestRetrier : RequestInterceptor {
         if let sdkError = API.getSdkError(error: error) {
             if !sdkError.isApiFailed {
                 SdkLog.e("\(logString)\n error:\(error)\n not api error -> pass through\n\n")
-                completion(.doNotRetryWithError(SdkError(message:"not api error -> pass through")))
+                completion(.doNotRetryWithError(sdkError))
                 return
             }
 

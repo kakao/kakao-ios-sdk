@@ -226,3 +226,51 @@ extension AuthApi {
                                 }
     }
 }
+
+// MARK: for Cert Prepare
+extension AuthApi {
+    /// :nodoc:
+    public func prepare(certType: CertType,
+                        txId: String? = nil, //certType == .K2220 일때 not null
+                        settleId: String? = nil,
+                        signData: String? = nil,
+                        completion: @escaping (String?, Error?) -> Void) {
+        
+        if certType == .K2220 {
+            guard txId != nil else {
+                completion(nil, SdkError(reason: .BadParameter, message: "txId is nil"))
+                return
+            }
+        }
+        
+        API.responseData(.post,
+                         Urls.compose(.Kauth, path: Paths.authPrepare),
+                         parameters: [
+                            "client_id": try! KakaoSDK.shared.appKey(),
+                            "cert_type": certType.rawValue,
+                            "tx_id": txId,
+                            "settle_id":settleId,
+                            "sign_data": signData
+                            ].filterNil(),
+                         sessionType: .Auth,
+                         apiType: .KAuth) { (response, data, error) in
+            
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            if let data = data {
+                if let json = (try? JSONSerialization.jsonObject(with:data, options:[])) as? [String: Any] {
+                    completion(json["kauth_tx_id"] as? String, nil)
+                    return
+                }
+                
+                completion(nil, SdkError(reason: .Unknown, message: "prepare - token parsing error."))
+                return
+            }
+            
+            completion(nil, SdkError(reason: .Unknown, message: "prepare - data is nil."))
+        }
+    }
+}

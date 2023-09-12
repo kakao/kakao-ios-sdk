@@ -236,8 +236,8 @@ extension TalkApi {
     /// - seealso: `Channels`
     public func channels(publicIds: [String]? = nil,
                          completion:@escaping (Channels?, Error?) -> Void) {
-        AUTH_API.responseData(.get, Urls.compose(path:Paths.channels),
-                          parameters: ["channel_public_ids":publicIds?.toJsonString()].filterNil(),
+        AUTH_API.responseData(.get, Urls.compose(path:Paths.channels),                              
+                              parameters: ["channel_ids":publicIds?.joined(separator:","), "channel_id_type":"channel_public_id"].filterNil(),
                           apiType: .KApi) { (response, data, error) in
                             if let error = error {
                                 completion(nil, error)

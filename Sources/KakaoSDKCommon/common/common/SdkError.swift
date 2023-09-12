@@ -45,6 +45,8 @@ extension SdkError {
             self = .ClientFailed(reason: reason, errorMessage: message ?? "authentication tokens not exist.")
         case .CastingFailed:
             self = .ClientFailed(reason: reason, errorMessage: message ?? "casting failed.")
+        case .IllegalState:
+            self = .ClientFailed(reason: reason, errorMessage:message ?? "illegal state.")
         case .Unknown:
             self = .ClientFailed(reason: reason, errorMessage:message ?? "unknown error.")
         }
@@ -191,6 +193,9 @@ public enum ClientFailureReason {
     
     /// type casting 실패
     case CastingFailed
+    
+    /// 정상적으로 실행할 수 없는 상태
+    case IllegalState
 }
 
 /// API 서버 에러 종류 입니다.
@@ -246,6 +251,17 @@ public enum ApiFailureReason : Int, Codable {
     
     ///연령제한에 걸림
     case UnderAgeLimit = -406
+    
+    //TODO: aos와 이름 맞춰야 함.
+    ///아직 서명이 완료되지 않은 경우 (papi error code=E2006)
+    case SigningIsNotCompleted = -421
+    
+    ///전자서명 유효시간 내에(5분) 서명이 완료되지 않은 경우 (papi error code=E2007)
+    case InvalidTransaction = -422
+    
+    ///public key 유효시간(24시간)이 expired 된 경우 (papi error code=E2016)
+    case TransactionHasExpired = -423
+    
 
     /// 앱의 연령제한보다 사용자의 연령이 낮음
     case LowerAgeLimit = -451

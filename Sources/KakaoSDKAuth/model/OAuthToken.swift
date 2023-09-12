@@ -240,3 +240,8 @@ public struct CertTokenInfo: Codable {
         self.txId = txId
     }
 }
+
+public enum CertType: String {
+    case K2100 = "k2100"
+    case K2220 = "k2220"
+}

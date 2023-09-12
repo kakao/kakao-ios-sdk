@@ -29,6 +29,7 @@ public class AuthApiCommon {
     public init() {
         AUTH.checkMigration()  //for token migration
         initSession()
+        TokenRefresher.shared.registTokenRefresher()
     }
     
     func initSession() {

@@ -84,6 +84,8 @@ extension Api {
                 default:
                     break
                 }
+            case .requestAdaptationFailed(let error):
+                return error as? SdkError
             default:
                 break
             }

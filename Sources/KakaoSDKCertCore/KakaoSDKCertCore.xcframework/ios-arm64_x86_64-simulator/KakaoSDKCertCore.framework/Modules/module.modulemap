@@ -1,0 +1,11 @@
+framework module KakaoSDKCertCore {
+  umbrella header "KakaoSDKCertCore.h"
+
+  export *
+  module * { export * }
+}
+
+module KakaoSDKCertCore.Swift {
+  header "KakaoSDKCertCore-Swift.h"
+  requires objc
+}

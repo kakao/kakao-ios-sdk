@@ -1,0 +1,111 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KakaoSDKCertCore
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CommonCrypto
+import CryptoKit
+import Foundation
+@_exported import KakaoSDKCertCore
+import LocalAuthentication
+import Security
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public class CertCore {
+  public static let shared: KakaoSDKCertCore.CertCore
+  public init()
+  public func setSessionInfo(sessionInfo: KakaoSDKCertCore.SessionInfo)
+  @objc deinit
+}
+public struct SessionInfo : Swift.Codable {
+  public let userId: Swift.Int64
+  public let sessionStartAt: Foundation.Date
+  public let sessionEndAt: Foundation.Date
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension KakaoSDKCertCore.CertCore {
+  public func __publicKey() -> Swift.String?
+  public func __sign(data: Swift.String, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  public func __isValidSession() -> Swift.Bool
+  public func __sessionInfo() -> KakaoSDKCertCore.SessionInfo?
+  public func __deleteKeyPair()
+}
+public enum CCSdkError : Swift.Error {
+  case ClientFailed(reason: KakaoSDKCertCore.CCClientFailureReason, errorMessage: Swift.String?)
+}
+extension KakaoSDKCertCore.CCSdkError {
+  public init(reason: KakaoSDKCertCore.CCClientFailureReason = .Unknown, message: Swift.String? = nil)
+  public func getClientError() -> (reason: KakaoSDKCertCore.CCClientFailureReason, message: Swift.String?)
+}
+public enum CCClientFailureReason {
+  case Unknown
+  case Cancelled
+  case TokenNotFound
+  case NotSupported
+  case BadParameter
+  case MustInitAppKey
+  case ExceedKakaoLinkSizeLimit
+  case CastingFailed
+  case IllegalState
+  public static func == (a: KakaoSDKCertCore.CCClientFailureReason, b: KakaoSDKCertCore.CCClientFailureReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CCLogEvent : Swift.String {
+  case v
+  case d
+  case i
+  case w
+  case e
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum CCLogLevel : Swift.Int {
+  case v
+  case d
+  case i
+  case w
+  case e
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class CCSdkLog {
+  public static let shared: KakaoSDKCertCore.CCSdkLog
+  final public let maxLogs: Swift.Int
+  public var debugLogs: [(Foundation.Date, Swift.String)] {
+    get
+  }
+  final public let developLoglevel: KakaoSDKCertCore.CCLogLevel
+  final public let releaseLogLevel: KakaoSDKCertCore.CCLogLevel
+  public init(developLogLevel: KakaoSDKCertCore.CCLogLevel = CCLogLevel.v, releaseLogLevel: KakaoSDKCertCore.CCLogLevel = CCLogLevel.i)
+  public func clearLog()
+  public class func sourceFileName(filePath: Swift.String) -> Swift.String
+  public class func v(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func d(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func i(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func w(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func e(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  @objc deinit
+}
+extension Foundation.Date {
+  public func toString() -> Swift.String
+  public func toSimpleString() -> Swift.String
+}
+extension KakaoSDKCertCore.CCClientFailureReason : Swift.Equatable {}
+extension KakaoSDKCertCore.CCClientFailureReason : Swift.Hashable {}
+extension KakaoSDKCertCore.CCLogEvent : Swift.Equatable {}
+extension KakaoSDKCertCore.CCLogEvent : Swift.Hashable {}
+extension KakaoSDKCertCore.CCLogEvent : Swift.RawRepresentable {}
+extension KakaoSDKCertCore.CCLogLevel : Swift.Equatable {}
+extension KakaoSDKCertCore.CCLogLevel : Swift.Hashable {}
+extension KakaoSDKCertCore.CCLogLevel : Swift.RawRepresentable {}

@@ -326,7 +326,8 @@ extension AuthController {
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
                                       nonce: String? = nil,
-                                      settleId: String? = nil) -> [String:Any] {
+                                      settleId: String? = nil,
+                                      kauthTxId: String? = nil) -> [String:Any] {
         self.resetCodeVerifier()
         
         var parameters = [String:Any]()
@@ -358,7 +359,9 @@ extension AuthController {
         if let settleId = settleId {
             extraParameters["settle_id"] = settleId
         }
-        
+        if let kauthTxId = kauthTxId {
+            extraParameters["kauth_tx_id"] = kauthTxId
+        }
         if let approvalType = KakaoSDK.shared.approvalType().type {
             extraParameters["approval_type"] = approvalType
         }
@@ -392,7 +395,8 @@ extension AuthController {
                                nonce: String? = nil,
                                accountsSkipIntro: Bool? = nil,
                                accountsTalkLoginVisible: Bool? = nil,
-                               settleId: String? = nil) -> [String:Any] {
+                               settleId: String? = nil,
+                               kauthTxId: String? = nil) -> [String:Any] {
         self.resetCodeVerifier()
         
         var parameters = [String:Any]()
@@ -452,6 +456,10 @@ extension AuthController {
             parameters["settle_id"] = settleId
         }
         
+        if let kauthTxId = kauthTxId {
+            parameters["kauth_tx_id"] = kauthTxId
+        }
+        
         self.codeVerifier = SdkCrypto.shared.generateCodeVerifier()
         if let codeVerifier = self.codeVerifier {
             SdkLog.d("code_verifier: \(codeVerifier)")
@@ -472,13 +480,12 @@ extension AuthController {
 
     /// :nodoc:
     public func _certAuthorizeWithTalk(launchMethod: LaunchMethod? = nil,
-                                      prompts: [Prompt]? = nil,
-                                      state: String? = nil,
-                                      channelPublicIds: [String]? = nil,
-                                      serviceTerms: [String]? = nil,
-                                      nonce: String? = nil,
-                                      settleId: String? = nil,
-                                      completion: @escaping (CertTokenInfo?, Error?) -> Void) {
+                                       prompts: [Prompt]? = nil,
+                                       channelPublicIds: [String]? = nil,
+                                       serviceTerms: [String]? = nil,
+                                       nonce: String? = nil,
+                                       kauthTxId: String? = nil,
+                                       completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         AUTH_CONTROLLER.authorizeWithTalkCompletionHandler = { (callbackUrl) in
             let parseResult = callbackUrl.oauthResult()
@@ -506,14 +513,13 @@ extension AuthController {
         if let prompts = prompts {
             certPrompts = prompts + certPrompts
         }
-        
+                   
         let parameters = self.makeParametersForTalk(prompts:certPrompts,
-                                                    state:state,
                                                     channelPublicIds: channelPublicIds,
                                                     serviceTerms: serviceTerms,
                                                     nonce: nonce,
-                                                    settleId: settleId)
-
+                                                    kauthTxId: kauthTxId)
+        
         guard let url = SdkUtils.makeUrlWithParameters(url:Urls.compose(.TalkAuth, path:Paths.authTalk),
                                                        parameters: parameters,
                                                        launchMethod: launchMethod) else {
@@ -536,15 +542,14 @@ extension AuthController {
     
     /// :nodoc:
     public func _certAuthorizeWithAuthenticationSession(prompts: [Prompt]? = nil,
-                                                       state: String? = nil,
-                                                       agtToken: String? = nil,
-                                                       scopes:[String]? = nil,
-                                                       channelPublicIds: [String]? = nil,
-                                                       serviceTerms: [String]? = nil,
-                                                       loginHint: String? = nil,
-                                                       nonce: String? = nil,
-                                                       settleId: String? = nil,
-                                                       completion: @escaping (CertTokenInfo?, Error?) -> Void) {
+                                                        agtToken: String? = nil,
+                                                        scopes:[String]? = nil,
+                                                        channelPublicIds: [String]? = nil,
+                                                        serviceTerms: [String]? = nil,
+                                                        loginHint: String? = nil,
+                                                        nonce: String? = nil,
+                                                        kauthTxId: String? = nil,
+                                                        completion: @escaping (CertTokenInfo?, Error?) -> Void) {
         
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {
             [weak self] (callbackUrl:URL?, error:Error?) in
@@ -598,15 +603,14 @@ extension AuthController {
             certPrompts = prompts + certPrompts
         }
         
-        let parameters = self.makeParameters(prompts: certPrompts,
-                                             state: state,
+        let parameters = self.makeParameters(prompts: certPrompts,                                             
                                              agtToken: agtToken,
                                              scopes: scopes,
                                              channelPublicIds: channelPublicIds,
                                              serviceTerms: serviceTerms,
                                              loginHint: loginHint,
                                              nonce: nonce,
-                                             settleId: settleId)
+                                             kauthTxId: kauthTxId)
         
         if let url = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters) {
             SdkLog.d("\n===================================================================================================")
