@@ -15,7 +15,8 @@
 import Foundation
 
 /// 로그인 요청에서 사용되는 OAuth 에러를 나타냅니다.
-/// - seealso: `AuthFailureReason`
+/// ## SeeAlso
+/// - ``AuthFailureReason``
 public struct AuthErrorInfo : Codable {
     
     /// 에러 코드

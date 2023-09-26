@@ -15,7 +15,8 @@
 import Foundation
 import KakaoSDKCommon
 
-/// :nodoc: 템플릿 조회 결과 (SDK 내부용)
+@_documentation(visibility: private)
+/// 템플릿 조회 결과 (SDK 내부용)
 public struct ValidationResult : Codable {
     
     public let templateId : Int64

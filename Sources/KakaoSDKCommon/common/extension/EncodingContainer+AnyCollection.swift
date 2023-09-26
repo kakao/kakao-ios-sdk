@@ -23,7 +23,7 @@
 
 import Foundation
 
-///:nodoc:
+@_documentation(visibility: private)
 extension KeyedEncodingContainer {
     public mutating func encode(_ value: [String: Any], forKey key: KeyedEncodingContainer<K>.Key) throws {
         var container = nestedContainer(keyedBy: AnyCodingKey.self, forKey: key)
@@ -81,7 +81,7 @@ private extension KeyedEncodingContainer where K == AnyCodingKey {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 private extension UnkeyedEncodingContainer {
     mutating func encode(_ value: [Any]) throws {
         for v in value {

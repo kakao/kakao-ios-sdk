@@ -126,7 +126,9 @@ public struct StoryLike : Codable {
 }
 
 /// 스토리 조회 API 응답 클래스 입니다.
-/// - seealso: `StoryApi.story(id:)` <br>`StoryApi.stories(lastId:)`
+/// ## SeeAlso
+/// - ``StoryApi.story(id:)``
+/// - ``StoryApi.stories(lastId:)``
 public struct Story : Codable {
     
     // MARK: Enumerations
@@ -172,7 +174,8 @@ public struct Story : Codable {
     public let url: URL
     
     /// 미디어 형식
-    /// - seealso: `MediaType`
+    /// ## SeeAlso
+    /// - ``MediaType``
     public let mediaType: MediaType?
     
     /// 작성된 시간
@@ -182,7 +185,8 @@ public struct Story : Codable {
     public let content: String?
     
     /// 미디어 목록
-    /// - seealso: `StoryMedia`
+    /// ## SeeAlso
+    /// - ``StoryMedia``
     public let media: [StoryMedia]?
     
     /// 댓글 수
@@ -192,15 +196,18 @@ public struct Story : Codable {
     public let likeCount: Int
     
     /// 공개 범위
-    /// - seealso: `Permission`
+    /// ## SeeAlso
+    /// - ``Permission``
     public let permission: Permission?
     
     /// 댓글 목록
-    /// - seealso: `StoryComment`
+    /// ## SeeAlso
+    /// - ``StoryComment``
     public let comments: [StoryComment]?
     
     /// 좋아요 정보 목록
-    /// - seealso: `StoryLike`
+    /// ## SeeAlso
+    /// - ``StoryLike``
     public let likes: [StoryLike]?
     
 //    enum CodingKeys: String, CodingKey {
@@ -216,7 +223,7 @@ public struct Story : Codable {
 //    }
 }
 
-/// :nodoc:
+@_documentation(visibility: private)
 public struct Stories : Codable {
     public let stories: [Story]?
     

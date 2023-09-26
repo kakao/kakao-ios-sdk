@@ -15,7 +15,8 @@
 import Foundation
 
 /// 카카오스토리 프로필 가져오기 API 응답 클래스 입니다.
-/// - seealso: `StoryApi.profile(secureResource:)`
+/// ## SeeAlso
+/// - ``StoryApi.profile(secureResource:)``
 public struct StoryProfile : Codable {
     
     // MARK: Enumerations
@@ -50,7 +51,8 @@ public struct StoryProfile : Codable {
     public let birthday: String?
     
     /// 생일 타입
-    /// - seealso: `BirthdayType`
+    /// ## SeeAlso
+    /// - ``BirthdayType``
     public let birthdayType: BirthdayType?
     
     

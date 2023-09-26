@@ -15,7 +15,9 @@
 import Foundation
 
 /// 앱에 가입한 사용자의 배송지 정보 API 응답 클래스 입니다.
-/// - seealso: `UserApi.shippingAddresses(fromUpdatedAt:pageSize:)` <br>`UserApi.shippingAddresses(addressId:)`
+/// ## SeeAlso
+/// - ``UserApi/shippingAddresses(fromUpdatedAt:pageSize:completion:)``
+/// - ``UserApi/shippingAddresses(addressId:completion:)``
 ///
 /// 배송지 목록은 기본 배송지가 가장 상위에 배치되고, 그 이후에는 배송지가 수정된 시각을 기준으로 최신순으로 정렬됩니다.
 /// pageSize를 설정하여 배송지 목록을 여러 페이지를 나누어 조회하거나, addressId를 이용하여 특정 배송지 아이디에 대한 배송지 정보만 조회할 수도 있습니다.
@@ -32,7 +34,8 @@ public struct UserShippingAddresses : Codable {
     /// 사용자가 소유한 배송지 목록
     ///
     /// 가장 최근 수정했던 순으로 정렬됩니다. (단, 기본 배송지는 수정시각과 상관없이 첫번째에 위치) shippingAddresses는 사용자의 동의를 받지 않은 경우 nil이 반환됩니다. shippingAddresses가 nil이면 needsAgreement 속성 값을 확인하여 사용자에게 정보 제공에 대한 동의를 요청하고 정보 획득을 시도해 볼 수 있습니다.
-    /// - seealso: `ShippingAddress`
+    /// ## SeeAlso
+    /// - ``ShippingAddress``
     public let shippingAddresses: [ShippingAddress]?
     
     
@@ -44,7 +47,8 @@ public struct UserShippingAddresses : Codable {
 
 
 /// 배송지 정보 클래스 입니다.
-/// - seealso: `UserShippingAddresses`
+/// ## SeeAlso
+/// - ``UserShippingAddresses``
 public struct ShippingAddress : Codable {
     
     // MARK: Enumerations
@@ -72,7 +76,8 @@ public struct ShippingAddress : Codable {
     public let updatedAt: Date?
     
     /// 배송지 타입
-    /// - seealso: Type
+    /// ## SeeAlso
+    /// - ``ShippingAddress/Type-swift.enum``
     public let type: Type?
     
     /// 주소 검색을 통해 자동으로 입력되는 기본 주소

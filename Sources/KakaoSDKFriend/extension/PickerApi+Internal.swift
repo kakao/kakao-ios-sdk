@@ -20,16 +20,14 @@ import KakaoSDKAuth
 import KakaoSDKUser
 @_exported import KakaoSDKFriendCore
 
-/// :nodoc:
+@_documentation(visibility: private)
 extension PickerApi {
-    /// :nodoc:
     func updateSharingData() {
         self.updateSharingData(SharingData(kapiHost: KakaoSDK.shared.hosts().kapi,
                                            kaHeader: KakaoSDK.shared.kaHeader(),
                                            appKey: try! KakaoSDK.shared.appKey()))
     }
-    
-    /// :nodoc: 
+        
     func refreshAuth(completion:@escaping (Error?) -> Void) {
         if (AuthApi.hasToken()) {
             if shouldRefreshToken() == true {
@@ -54,16 +52,15 @@ extension PickerApi {
             completion(SdkError(reason: .TokenNotFound))
         }
     }
-    
-    /// :nodoc:
+        
     func assignScopeRequestor() {
         self.scopeRequestor = self
     }    
 }
 
-/// :nodoc:
+@_documentation(visibility: private)
 extension PickerApi {
-    /// :nodoc: 반복 실행 Helper
+    /// 반복 실행 Helper
     public func prepareCallPickerApi(completion:@escaping (Error?) -> Void) {
         updateSharingData()
         refreshAuth { [weak self] error in
@@ -78,8 +75,8 @@ extension PickerApi {
     }
 }
 
+@_documentation(visibility: private)
 extension PickerApi : ScopeRequestable {
-    /// :nodoc:
     public func requestPickerScope(requiredScope:[String], completion:@escaping (Error?) -> Void) {
         UserApi.shared.scopes(scopes: requiredScope) { scopeInfo, error in
             if let scopeError = error {
@@ -115,9 +112,9 @@ extension PickerApi : ScopeRequestable {
     }
 }
 
-/// :nodoc: error type casting helper
+@_documentation(visibility: private)
+/// error type casting helper
 extension PickerApi {
-    /// :nodoc:
     public func castSdkError(responseInfo:ResponseInfo?, error:Error?) -> Error? {
         if let kfSdkError = error as? KFSdkError {
             return SdkError(fromKfSdkError:kfSdkError)

@@ -15,7 +15,8 @@
 import Foundation
 
 /// 서비스 약관 조회 API 응답 클래스
-/// - seealso: `UserApi.serviceTerms()`
+/// ## SeeAlso
+/// - ``UserApi/serviceTerms(result:tags:completion:)``
 public struct UserServiceTerms : Codable {
     
     // MARK: Fields
@@ -24,12 +25,14 @@ public struct UserServiceTerms : Codable {
     public let id: Int64
     
     /// 조회한 서비스 약관 목록
-    /// - seealso: `ServiceTerms`
+    /// ## SeeAlso
+    /// - ``ServiceTerms``
     public let serviceTerms: [ServiceTerms]?
 }
 
 /// 3rd party 서비스 약관 정보 클래스
-/// - seealso: `UserServiceTerms`
+/// ## SeeAlso
+/// - ``UserServiceTerms``
 public struct ServiceTerms : Codable {
     
     // MARK: Fields
@@ -51,7 +54,8 @@ public struct ServiceTerms : Codable {
 }
 
 /// 서비스 약관 철회 API 응답 클래스
-/// - seealso: `RevokedServiceTerms`
+/// ## SeeAlso
+/// - ``RevokedServiceTerms``
 public struct UserRevokedServiceTerms : Codable {
     
     // MARK: Fields
@@ -64,7 +68,8 @@ public struct UserRevokedServiceTerms : Codable {
 }
 
 /// 동의 철회가 반영된 서비스  약관 클래스
-/// - seealso: `UserRevokedServiceTerms`
+/// ## SeeAlso
+/// - ``UserRevokedServiceTerms``
 public struct RevokedServiceTerms : Codable {
     
     // MARK: Fields

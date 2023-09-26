@@ -14,7 +14,7 @@
 
 import Foundation
 
-/// :nodoc: 로그레벨입니다.
+@_documentation(visibility: private)
 /// - verbose: Log type verbose
 /// - info: Log type info
 /// - debug: Log type debug
@@ -28,7 +28,8 @@ public enum LogEvent: String {
     case e = "[‼️]" // error
 }
 
-/// :nodoc: 로그레벨입니다.
+@_documentation(visibility: private)
+/// 로그레벨입니다.
 public enum LogLevel : Int {
     case v = 0
     case d = 1
@@ -37,8 +38,9 @@ public enum LogLevel : Int {
     case e = 4
 }
 
-/// :nodoc: SdkLog 클래스 입니다.
-public class SdkLog {
+@_documentation(visibility: private)
+/// SdkLog 클래스 입니다.
+open class SdkLog {
     public static let shared = SdkLog()
     
     public let maxLogs = 10
@@ -133,7 +135,7 @@ public class SdkLog {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 extension Date {
     public func toString() -> String {
         return SdkLog.dateFormatter.string(from: self as Date)

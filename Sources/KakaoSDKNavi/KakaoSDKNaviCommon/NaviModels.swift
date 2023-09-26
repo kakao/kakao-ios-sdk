@@ -15,7 +15,8 @@
 import Foundation
 
 /// 좌표계 타입을 선택합니다.
-/// - seealso: `NaviOptions.coordType`
+/// ## SeeAlso
+/// - ``NaviOption/coordType``
 public enum CoordType : String, Codable {
     
     /// Katec 좌표계 (서버 기본값)
@@ -26,7 +27,8 @@ public enum CoordType : String, Codable {
 }
 
 /// 길안내를 사용할 차종(1~7)을 선택합니다.
-/// - seealso: `NaviOptions.vehicleType`
+/// ## SeeAlso
+/// - ``NaviOption/vehicleType``
 public enum VehicleType : Int, Codable {
     
     /// 1종 (승용차/소형승합차/소형화물화)
@@ -52,7 +54,8 @@ public enum VehicleType : Int, Codable {
 }
 
 /// 안내할 경로를 최적화하기 위한 옵션입니다.
-/// - seealso: `NaviOptions.rpOption`
+/// ## SeeAlso
+/// - ``NaviOption/rpOption``
 public enum RpOption : Int, Codable {
     
     /// 빠른길
@@ -125,15 +128,18 @@ public struct NaviOption : Codable {
     // MARK: Fields
     
     /// 사용할 좌표계
-    /// - seealso: `CoordType`
+    /// ## SeeAlso
+    /// - ``CoordType``
     public let coordType : CoordType?
     
     /// 차종
-    /// - seealso: `VehicleType`
+    /// ## SeeAlso
+    /// - ``VehicleType``
     public let vehicleType : VehicleType?
     
     /// 경로 옵션
-    /// - seealso: `RpOption`
+    /// ## SeeAlso
+    /// - ``RpOption``
     public let rpOption : RpOption?
     
     /// 전체 경로정보 보기 사용여부

@@ -14,7 +14,7 @@
 
 import Foundation
 
-///:nodoc:
+@_documentation(visibility: private)
 public class Hosts {
     public static let shared = Hosts()
     
@@ -29,6 +29,7 @@ public class Hosts {
     public let sharerLink : String
     public let universalLink : String
     public let cert : String
+    public let plusFriend: String
     
     public init(kapi: String = "kapi.kakao.com",
                 dapi: String = "dapi.kakao.com",
@@ -40,7 +41,8 @@ public class Hosts {
                 talkLinkVersion: String = "kakaotalk-5.9.7",
                 sharerLink: String = "sharer.kakao.com",
                 universalLink: String = "talk-apps.kakao.com",
-                cert: String = "cert-sign-papi.kakao.com")
+                cert: String = "cert-sign-papi.kakao.com",
+                plusFriend: String = "kakaoplus")
     {
         self.kapi = kapi
         self.dapi = dapi
@@ -53,10 +55,11 @@ public class Hosts {
         self.sharerLink = sharerLink
         self.universalLink = universalLink
         self.cert = cert
+        self.plusFriend = plusFriend
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public enum HostType {
     case Kapi
     case Dapi
@@ -71,6 +74,7 @@ public enum HostType {
     case SharerLink
     case UniversalLink
     case Cert
+    case PlusFriend
     
     public var host: String {
         switch self {
@@ -100,11 +104,13 @@ public enum HostType {
             return "https://\(KakaoSDK.shared.hosts().universalLink)"
         case .Cert:
             return "http://\(KakaoSDK.shared.hosts().cert)"
+        case .PlusFriend:
+            return "\(KakaoSDK.shared.hosts().plusFriend)://"
         }
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public class Paths {
     //kauth
     public static let authAuthorize = "/oauth/authorize"
@@ -136,6 +142,9 @@ public class Paths {
     public static let defaultMemo = "/v2/api/talk/memo/default/send"
     public static let scrapMemo = "/v2/api/talk/memo/scrap/send"    
     public static let channels = "/v2/api/talk/channels"
+    
+    // plusfriend
+    public static let channelValidate = "/v1/app/validate/sdk"
     
     public static let friends = "/v1/api/talk/friends"
     
@@ -200,7 +209,7 @@ public class Paths {
     public static let demoSignTest = "/k2220/sign/temp"
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public class Urls {
     public static func compose(_ hostType:HostType = .Kapi, path:String) -> String {
         return "\(hostType.host)\(path)"

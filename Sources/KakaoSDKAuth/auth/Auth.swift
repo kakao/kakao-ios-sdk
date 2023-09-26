@@ -16,10 +16,10 @@ import Foundation
 import UIKit
 import KakaoSDKCommon
 
-/// :nodoc:
+@_documentation(visibility: private)
 public let AUTH = Auth.shared
 
-/// :nodoc:
+@_documentation(visibility: private)
 public class Auth {
     static public let retryTokenRefreshCount = 3
     static public let shared = Auth()
@@ -43,7 +43,7 @@ extension Auth {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 extension Auth {    
     public func checkMigration() {
         //nop

@@ -15,7 +15,7 @@
 import Foundation
 import UIKit
 
-///:nodoc:
+@_documentation(visibility: private)
 public class Constants {
     static public let responseType = "code"
     
@@ -61,13 +61,13 @@ public class Constants {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public enum SdkType : String {
     case Swift = "swift"
     case RxSwift = "rx_swift"
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public class ApprovalType {
     public static let shared = ApprovalType()
     public var type : String?
@@ -77,13 +77,13 @@ public class ApprovalType {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public enum ApiType {
     case KApi
     case KAuth
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 public class SdkIdentifier {
     public let customIdentifier : String?
     

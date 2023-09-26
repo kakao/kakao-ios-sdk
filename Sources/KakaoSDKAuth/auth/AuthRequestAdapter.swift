@@ -16,7 +16,7 @@ import Foundation
 import Alamofire
 import KakaoSDKCommon
 
-///:nodoc:
+@_documentation(visibility: private)
 public class AuthRequestAdapter : RequestInterceptor {
     public init() {}
     

@@ -19,10 +19,12 @@ import Foundation
 // 관련 히스토리 https://kakao.agit.in/g/300008305/wall/306743222#comment_panel_306948604. 쓰레드 내 스펙 문서 링크도 404
 
 /// 카카오스토리 포스팅을 위한 스크랩 API 응답 클래스 입니다.
-/// - seealso: `StoryApi.linkInfo(url:)`
+/// ## SeeAlso
+/// - ``StoryApi.linkInfo(url:)``
 ///
 /// 이 스크랩된 정보를 바탕으로 URL 링크를 포스팅 할 수 있습니다.
-/// - seealso: `StoryApi.postLink(content:linkInfo:permission:enableShare:androidExecParam:iosExecParam:androidMarketParam:iosMarketParam:)`
+/// ## SeeAlso
+/// - ``StoryApi/postLink(content:linkInfo:permission:enableShare:androidExecParam:iosExecParam:androidMarketParam:iosMarketParam:completion:)``
 public struct LinkInfo : Codable {
     
     // MARK: Fields

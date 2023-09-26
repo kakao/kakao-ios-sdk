@@ -15,7 +15,7 @@
 import Foundation
 import KakaoSDKCommon
 
-///:nodoc:
+@_documentation(visibility: private)
 public class MigrateManager {
     public static func checkSdkVersionForMigration() {
         SdkLog.d("============================================================================================================")

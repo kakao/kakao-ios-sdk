@@ -21,9 +21,9 @@ import KakaoSDKCommon
 /// 사용하는 좌표계를 변경하거나 각종 옵션을 설정하려면 `NaviOptions` 를 생성하고 해당 API **options** 파라미터로 함께 전달합니다.
 /// 경유지가 있다면 경유지에 대한 `NaviLocation` 객체를 추가로 만들고 배열에 담아 해당 API **viaList** 파라미터로 전달합니다.
 ///
-/// - seealso:
-/// `NaviLocation` <br>
-/// `NaviOptions`
+/// ## SeeAlso
+/// - ``NaviLocation``
+/// - ``NaviOption``
 ///
 /// 아래는 간단한 카카오내비 길안내 예제입니다.
 ///

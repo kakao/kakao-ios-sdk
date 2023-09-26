@@ -57,7 +57,8 @@ public enum FriendOrder : String, Codable {
 }
 
 /// 친구 목록 조회 API 응답 클래스 입니다.
-/// - seealso: `TalkApi.friends(offset:limit:order:)`
+/// ## SeeAlso
+/// - ``TalkApi.friends(offset:limit:order:)``
 public struct Friends<T:Codable> : Codable {
     
     // MARK: Fields
@@ -84,7 +85,8 @@ public struct Friends<T:Codable> : Codable {
 }
 
 /// 친구 목록 조회 컨텍스트 입니다.
-/// - seealso: `TalkApi.friends(friendsContext:)`
+/// ## SeeAlso
+/// - ``TalkApi/friends(context:completion:)``
 public struct FriendsContext {
     public let offset : Int?
     public let limit : Int?
@@ -123,7 +125,7 @@ public struct Friend : Codable {
     /// 사용자 아이디
     public let id: Int64?
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public let serviceUserId: Int64?
     
     /// 메시지를 전송하기 위한 고유 아이디

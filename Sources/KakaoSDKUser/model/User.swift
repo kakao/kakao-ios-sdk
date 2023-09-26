@@ -15,7 +15,8 @@
 import Foundation
 
 /// 사용자 정보 요청 API 응답으로 제공되는 사용자 정보 최상위 클래스입니다.
-/// - seealso: `UserApi.me(propertyKeys:secureResource:)`
+/// ## SeeAlso
+/// - ``UserApi/me(propertyKeys:secureResource:completion:)``
 public struct User : Codable {
     
     // MARK: Fields
@@ -48,7 +49,8 @@ public struct User : Codable {
     /// 사용자의 카카오계정 정보
     ///
     /// 이메일, 프로필 정보 등이 제공됩니다. 이 필드를 통해 내려 받을 수 있는 정보가 하나도 없을 경우 nil이 될 수 있습니다.
-    /// - seealso: `Account`
+    /// ## SeeAlso
+    /// - ``Account``
     public let kakaoAccount: Account?
     
     /// 앱이 그룹에 속해 있는 경우 그룹 내 사용자 식별 토큰입니다. 앱의 그룹정보가 변경될 경우 토큰 값도 변경됩니다. 제휴를 통해 권한이 부여된 특정 앱에만 제공됩니다.
@@ -109,7 +111,8 @@ public enum BirthdayType : String, Codable {
 }
 
 /// 카카오계정에 등록된 사용자 개인정보를 제공합니다.
-/// - seealso: `User.kakaoAccount`
+/// ## SeeAlso
+/// - ``User/kakaoAccount``
 ///
 /// 내려오는 실제 정보는 https://accounts.kakao.com 으로 접속하여 해당 계정으로 로그인한 후 확인하실 수 있습니다.
 ///
@@ -130,7 +133,8 @@ public struct Account : Codable {
     public let profileImageNeedsAgreement: Bool?
     
     /// 카카오계정에 등록한 프로필 정보
-    /// - seealso: `Profile`
+    /// ## SeeAlso
+    /// - ``Profile``
     public let profile: Profile?
     
     /// 카카오계정 이름에 대한 사용자 동의 필요 여부
@@ -150,7 +154,8 @@ public struct Account : Codable {
     /// ageRange 제공에 대한 사용자 동의 필요 여부
     public let ageRangeNeedsAgreement: Bool?
     /// 연령대
-    /// - seealso: `AgeRange`
+    /// ## SeeAlso
+    /// - ``AgeRange``
     public let ageRange: AgeRange?
     /// birthyear 제공에 대한 사용자 동의 필요 여부
     public let birthyearNeedsAgreement: Bool?
@@ -166,7 +171,8 @@ public struct Account : Codable {
     /// gender 제공에 대한 사용자의 동의 필요 여부
     public let genderNeedsAgreement: Bool?
     /// 성별
-    /// - seealso: `Gender`
+    /// ## SeeAlso
+    /// - ``Gender``
     public let gender: Gender?
     
     /// phoneNumber 제공에 대한 사용자 동의 필요 여부
@@ -209,7 +215,8 @@ public struct Account : Codable {
 }
 
 /// 카카오계정에 등록된 사용자의 프로필 정보를 제공합니다.
-/// - seealso: `Account.profile`
+/// ## SeeAlso
+/// - ``Account/profile``
 public struct Profile : Codable {
     
     // MARK: Fields

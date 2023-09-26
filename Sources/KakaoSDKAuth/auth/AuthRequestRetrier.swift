@@ -16,7 +16,7 @@ import Foundation
 import Alamofire
 import KakaoSDKCommon
 
-///:nodoc:
+@_documentation(visibility: private)
 @available(iOSApplicationExtension, unavailable)
 public class AuthRequestRetrier : RequestInterceptor {
     private var requestsToRetry: [(RetryResult) -> Void] = []

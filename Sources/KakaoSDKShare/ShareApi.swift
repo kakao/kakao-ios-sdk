@@ -35,6 +35,7 @@ public class ShareApi {
     }
     
     /// 카카오톡 앱을 통한 공유 가능 여부 확인
+    @available(iOS 13.0, *)
     @available(iOSApplicationExtension, unavailable)
     public static func isKakaoTalkSharingAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
@@ -79,7 +80,8 @@ extension ShareApi {
     ///
     /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
     ///
-    /// - seealso: [Template](../../KakaoSDKTemplate/Protocols/Templatable.html)
+    /// ## SeeAlso
+    /// - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKShare'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
     public func makeDefaultUrl(templatable:Templatable, serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"default",
@@ -206,23 +208,27 @@ extension ShareApi {
                                 }
         }
     }
-    
+        
     /// 기본 템플릿을 카카오톡으로 공유합니다.
-    /// - seealso: [Template](../../KakaoSDKTemplate/Protocols/Templatable.html) <br> `SharingResult`
+    /// ## SeeAlso
+    /// - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKShare'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
+    /// - ``SharingResult``
     public func shareDefault(templatable: Templatable, serverCallbackArgs:[String:String]? = nil,
                             completion:@escaping (SharingResult?, Error?) -> Void) {
         self.shareDefault(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
     /// 기본 템플릿을 카카오톡으로 공유합니다.
-    /// - seealso: `SharingResult`
+    /// ## SeeAlso
+    /// - ``SharingResult``
     public func shareDefault(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil,
                             completion:@escaping (SharingResult?, Error?) -> Void ) {
         self.shareDefault(templateObjectJsonString: templateObject.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
     /// 지정된 URL을 스크랩하여 만들어진 템플릿을 카카오톡으로 공유합니다.
-    /// - seealso: `SharingResult`
+    /// ## SeeAlso
+    /// - ``SharingResult``
     public func shareScrap(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
                           completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
@@ -256,8 +262,9 @@ extension ShareApi {
         }
     }
     
-    /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 카카오톡으로 공유합니다. 템플릿을 생성하는 방법은 https://developers.kakao.com/docs/latest/ko/message/ios#create-message 을 참고하시기 바랍니다.
-    /// - seealso: `SharingResult`
+    /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 카카오톡으로 공유합니다. 템플릿을 생성하는 방법은 [https://developers.kakao.com/docs/latest/ko/message/ios#create-message](https://developers.kakao.com/docs/latest/ko/message/ios#create-message) 을 참고하시기 바랍니다.
+    /// ## SeeAlso
+    /// - ``SharingResult``
     public func shareCustom(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
                            completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,

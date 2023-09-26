@@ -77,9 +77,9 @@ extension UserApi {
     /// - note: UserApi.isKakaoTalkLoginAvailable() 메소드로 실행 가능 여부 확인이 필요합니다. 카카오톡을 실행할 수 없을 경우 loginWithKakaoAccount() 메소드로 웹 로그인을 시도할 수 있습니다.
     /// - note: launchMethod가 .UniversalLink 일 경우 카카오톡 실행 가능 여부 확인은 필수가 아닙니다.
     /// - parameters:
-    ///   - launchMethod 카카오톡 간편로그인 앱 전환 방식 선택  { CustomScheme(Default), .UniversalLink }
-    ///   - nonce ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
-    public func loginWithKakaoTalk(launchMethod: LaunchMethod? = nil,
+    ///   - launchMethod: 카카오톡 간편로그인 앱 전환 방식 선택  { CustomScheme, .UniversalLink(Default) }
+    ///   - nonce: ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
+    public func loginWithKakaoTalk(launchMethod: LaunchMethod? = .UniversalLink,
                                    channelPublicIds: [String]? = nil,
                                    serviceTerms: [String]? = nil,
                                    nonce: String? = nil,
@@ -96,9 +96,9 @@ extension UserApi {
     
     /// iOS 11 이상에서 제공되는 (SF/ASWeb)AuthenticationSession 을 이용하여 로그인 페이지를 띄우고 쿠키 기반 로그인을 수행합니다. 이미 사파리에에서 로그인하여 카카오계정의 쿠키가 있다면 이를 활용하여 ID/PW 입력 없이 간편하게 로그인할 수 있습니다.
     /// - parameters:
-    ///   - prompts 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달. [Prompt]
-    ///   - loginHint 카카오계정 로그인 페이지의 ID에 자동 입력할 이메일 또는 전화번호
-    ///   - nonce ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
+    ///   - prompts: 동의 화면 요청 시 추가 상호작용을 요청하고자 할 때 전달. [Prompt]
+    ///   - loginHint: 카카오계정 로그인 페이지의 ID에 자동 입력할 이메일 또는 전화번호
+    ///   - nonce: ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       loginHint: String? = nil,
                                       nonce: String? = nil,
@@ -133,7 +133,8 @@ extension UserApi {
         AuthController.shared._authorizeByAgtWithAuthenticationSession(scopes:scopes, nonce:nonce, completion:completion)
     }
     
-    /// :nodoc: 카카오싱크 전용입니다. 자세한 내용은 카카오싱크 전용 개발가이드를 참고하시기 바랍니다.
+    @_documentation(visibility: private)
+    /// 카카오싱크 전용입니다. 자세한 내용은 카카오싱크 전용 개발가이드를 참고하시기 바랍니다.
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
@@ -176,7 +177,8 @@ extension UserApi {
     
     
     /// 사용자에 대한 다양한 정보를 얻을 수 있습니다.
-    /// - seealso: `User`
+    /// ## SeeAlso
+    /// - ``User``
     public func me(propertyKeys: [String]? = nil,
                    secureResource: Bool = true,
                    completion:@escaping (User?, Error?) -> Void) {
@@ -202,7 +204,8 @@ extension UserApi {
     ///
     /// 저장 가능한 키 이름은 개발자 사이트의 [내 애플리케이션]  > [제품 설정] >  [카카오 로그인] > [사용자 프로퍼티] 메뉴에서 확인하실 수 있습니다. 앱 연결 시 기본 저장되는 nickanme, profile_image, thumbnail_image 값도 덮어쓰기 가능하며
     /// 새로운 컬럼을 추가하면 해당 키 이름으로 값을 저장할 수 있습니다.
-    /// - seealso: `User.properties`
+    /// ## SeeAlso
+    /// - ``User/properties``
     public func updateProfile(properties: [String:Any],
                               completion:@escaping (Error?) -> Void) {
         AUTH_API.responseData(.post,
@@ -219,7 +222,8 @@ extension UserApi {
     }
     
     /// 현재 토큰의 기본적인 정보를 조회합니다. me()에서 제공되는 다양한 사용자 정보 없이 가볍게 토큰의 유효성을 체크하는 용도로 사용하는 경우 추천합니다.
-    /// - seealso: `AccessTokenInfo`
+    /// ## SeeAlso
+    /// - ``AccessTokenInfo``
     public func accessTokenInfo(completion:@escaping (AccessTokenInfo?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                           Urls.compose(path:Paths.userAccessTokenInfo),
@@ -274,7 +278,8 @@ extension UserApi {
     }
     
     /// 앱에 가입한 사용자의 배송지 정보를 얻을 수 있습니다.
-    /// - seealso: `UserShippingAddresses`
+    /// ## SeeAlso
+    /// - ``UserShippingAddresses``
     public func shippingAddresses(fromUpdatedAt: Date? = nil, pageSize: Int? = nil, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                          Urls.compose(path:Paths.userShippingAddress),
@@ -295,7 +300,8 @@ extension UserApi {
     }
     
     /// 앱에 가입한 사용자의 배송지 정보를 얻을 수 있습니다.
-    /// - seealso: `UserShippingAddresses`
+    /// ## SeeAlso
+    /// - ``UserShippingAddresses``
     public func shippingAddresses(addressId: Int64, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                           Urls.compose(path:Paths.userShippingAddress),
@@ -316,10 +322,11 @@ extension UserApi {
     }
     
     /// 사용자가 카카오 간편가입을 통해 동의한 서비스 약관 내역을 반환합니다.
-    /// - seealso: `UserServiceTerms`
+    /// ## SeeAlso
+    /// - ``UserServiceTerms``
     /// - parameters:
-    ///     - result app_service_terms를 지정해 앱에 사용 설정된 서비스 약관 목록 요청
-    ///     - tags 조회할 서비스 약관에 설정된 tag 목록
+    ///     - result: app_service_terms를 지정해 앱에 사용 설정된 서비스 약관 목록 요청
+    ///     - tags: 조회할 서비스 약관에 설정된 tag 목록
     public func serviceTerms(result:String? = nil, tags: [String]? = nil, completion:@escaping (UserServiceTerms?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                           Urls.compose(path:Paths.userServiceTerms),
@@ -341,7 +348,7 @@ extension UserApi {
     
     /// 특정 서비스 약관에 대한 동의를 철회하고, 동의 철회가 반영된 서비스 약관 목록 반환합니다.
     /// - parameters:
-    ///     - tags 조회할 서비스 약관에 설정된 tag 목록
+    ///     - tags: 조회할 서비스 약관에 설정된 tag 목록
     public func revokeServiceTerms(tags: [String], completion: @escaping (UserRevokedServiceTerms?, Error?) -> Void) {
         AUTH_API.responseData(.post, Urls.compose(path: Paths.userRevokeServiceTerms), parameters: ["tags": tags.joined(separator: ",")],apiType: .KApi) { (response, data, error) in
             
@@ -362,7 +369,7 @@ extension UserApi {
     /// 사용자가 동의한 동의 항목의 상세 정보 목록을 조회합니다.
     /// [내 애플리케이션] > [카카오 로그인] > [동의 항목]에 설정된 동의 항목의 목록과 사용자의 동의 여부를 반환합니다.
     /// - parameters:
-    ///   - scopes 추가할 동의 항목 ID 목록 (옵셔널)
+    ///   - scopes: 추가할 동의 항목 ID 목록 (옵셔널)
     public func scopes(scopes:[String]? = nil, completion:@escaping (ScopeInfo?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                           Urls.compose(path:Paths.userScopes),
@@ -385,7 +392,7 @@ extension UserApi {
     /// 사용자의 특정 동의 항목에 대한 동의를 철회(Revoke)합니다.
     /// 동의 내역 확인하기 API를 통해 조회한 동의 항목 정보 중 동의 철회 가능 여부(revocable) 값이 true인 동의 항목만 철회 가능합니다.
     /// - parameters:
-    ///   - scopes 추가할 동의 항목 ID 목록
+    ///   - scopes: 추가할 동의 항목 ID 목록
     public func revokeScopes(scopes:[String], completion:@escaping (ScopeInfo?, Error?) -> Void) {
         AUTH_API.responseData(.post,
                           Urls.compose(path:Paths.userRevokeScopes),

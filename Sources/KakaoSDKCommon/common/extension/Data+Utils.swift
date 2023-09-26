@@ -14,7 +14,7 @@
 
 import Foundation
 
-///:nodoc:
+@_documentation(visibility: private)
 extension Data {
     public func hexEncodedString() -> String {
         return map { String(format: "%02hhx ", $0) }.joined()

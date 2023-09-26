@@ -16,9 +16,9 @@ import Foundation
 import KakaoSDKCommon
 @_exported import KakaoSDKFriendCore
 
-/// :nodoc: //SdkError casting helper
+@_documentation(visibility: private)
+/// SdkError casting helper
 extension SdkError {
-    /// :nodoc:
     public init(fromKfSdkError kfSdkError:KFSdkError) {
         switch kfSdkError {
         case .ClientFailed(let reason, let message):
@@ -29,9 +29,9 @@ extension SdkError {
     }
 }
 
-/// :nodoc: //SdkError casting helper
+@_documentation(visibility: private)
+/// SdkError casting helper
 extension ClientFailureReason {
-    /// :nodoc:
     public init(fromKfClientFailureReason kfClientFailureReason:KFClientFailureReason) {
         switch kfClientFailureReason {
         case .Unknown:

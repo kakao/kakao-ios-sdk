@@ -19,13 +19,13 @@ import KakaoSDKCommon
 ///
 /// 이 모듈에서 제공되는 모든 템플릿 클래스는 이 프로토콜을 구현하고 있습니다. 생성된 템플릿으로 카카오톡 공유, 카카오톡 메시지 전송에 활용할 수 있습니다.
 ///
-/// - see:
-/// `FeedTemplate`<br>
-/// `ListTemplate`<br>
-/// `LocationTemplate`<br>
-/// `CommerceTemplate`<br>
-/// `TextTemplate` <br>
-/// `CalendarTemplate`
+/// ## SeeAlso
+/// - ``FeedTemplate``
+/// - ``ListTemplate``
+/// - ``LocationTemplate``
+/// - ``CommerceTemplate``
+/// - ``TextTemplate``
+/// - ``CalendarTemplate``
 public protocol Templatable {
     
     /// API 요청 파라미터로 사용하기 위해 현재 객체를 JSON으로 변환합니다. SDK 내부적으로 사용합니다.
@@ -80,7 +80,7 @@ public struct Button : Codable {
     public var title : String
     
     /// 버튼 클릭 시 이동할 링크 정보
-    /// - seealso: `Link`
+    /// ## SeeAlso `Link`
     public var link : Link
     
     
@@ -99,7 +99,7 @@ public struct Button : Codable {
 ///   - 링크에 사용되는 **도메인**은 반드시 내 애플리케이션 설정에 등록되어야 합니다. 도메인은 개발자 웹사이트의 **[내 애플리케이션] - [앱 설정] - [플랫폼] - [Web]** 메뉴에서 등록할 수 있습니다.
 ///   - 링크 실행 우선순위는 {android/ios}**ExecutionParams > mobileWebURL > webURL** 입니다.
 ///
-///   - 자세한 사항은 가이드(https://developers.kakao.com/docs/latest/ko/message/message-template#component)를 참고하시기 바랍니다.
+///   - 자세한 사항은 [가이드](https://developers.kakao.com/docs/latest/ko/message/message-template#component)를 참고하시기 바랍니다.
 public struct Link : Codable {
     
     // MARK: Fields
@@ -151,7 +151,7 @@ public struct Content : Codable {
     public let description : String?
     
     /// 컨텐츠 클릭 시 이동할 링크 정보
-    /// - seealso: `Link`
+    /// ## SeeAlso `Link`
     public let link : Link
     
     
@@ -321,23 +321,23 @@ public struct FeedTemplate : Codable, Templatable {
     public let objectType : String
     
     /// 메시지의 메인 콘텐츠 정보입니다.
-    /// - seealso: `Content`
+    /// ## SeeAlso `Content`
     
     public let content: Content
     
     /// 아이템 영역에 포함할 콘텐츠 정보입니다.
-    /// - seealso: `ItemContent`
+    /// ## SeeAlso `ItemContent`
     public let itemContent: ItemContent?
     
     /// 콘텐츠에 대한 소셜 정보입니다.
-    /// - seealso: `Social`
+    /// ## SeeAlso `Social`
     public let social: Social?
     
     /// 기본 버튼 타이틀(자세히 보기)을 변경하고 싶을 때 설정. 이 값을 사용하면 클릭 시 이동할 링크는 content 에 입력된 값이 사용됩니다.
     public let buttonTitle: String?
     
     /// 버튼 목록, 최대 2개. 버튼 타이틀과 링크를 변경하고 싶을 때, 버튼 두 개를 넣고 싶을 때 사용합니다.
-    /// - seealso: `Button`
+    /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
     
@@ -360,7 +360,7 @@ public struct FeedTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
@@ -397,23 +397,26 @@ public struct ListTemplate : Codable, Templatable {
     /// 리스트 상단에 노출되는 헤더 타이틀. (최대 200자)
     public let headerTitle : String
     
-    /// :nodoc: 리스트 템플릿의 상단에 보이는 이미지 URL : headerImageUrl은 2.0.3에 삭제 되었습니다.
-    /// :nodoc: 리스트 템플릿의 상단에 보이는 이미지 가로 길이, 권장 800 (단위: 픽셀) : headerImageWidth 은 2.0.3에 삭제 되었습니다.
-    /// :nodoc: 리스트 템플릿의 상단에 보이는 이미지 세로 길이, 권장 190 (단위: 픽셀) : headerImageHeight 은 2.0.3에 삭제 되었습니다.
+    // 리스트 템플릿의 상단에 보이는 이미지 URL : headerImageUrl은 2.0.3에 삭제 되었습니다.
+    // 리스트 템플릿의 상단에 보이는 이미지 가로 길이, 권장 800 (단위: 픽셀) : headerImageWidth 은 2.0.3에 삭제 되었습니다.
+    // 리스트 템플릿의 상단에 보이는 이미지 세로 길이, 권장 190 (단위: 픽셀) : headerImageHeight 은 2.0.3에 삭제 되었습니다.
     
     /// 헤더 타이틀 내용에 해당하는 링크 정보.
-    /// - seealso: `Link`
+    /// ## SeeAlso
+    /// - ``Link``
     public let headerLink : Link
     
     /// 리스트에 노출되는 컨텐츠 목록. (최소 2개, 최대 3개)
-    /// - seealso: `Content`
+    /// ## SeeAlso
+    /// - ``Content``
     public let contents: [Content]
     
     /// 기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정. 이 값을 사용하면 클릭 시 이동할 링크는 content에 입력된 값이 사용됩니다.
     public let buttonTitle: String?
     
     /// 버튼 목록. 버튼 타이틀과 링크를 변경하고 싶을때, 버튼 두개를 사용하고 싶을때 사용.
-    /// - seealso: `Button`
+    /// ## SeeAlso
+    /// - ``Button``
     public let buttons : [Button]?
     
     
@@ -470,18 +473,18 @@ public struct LocationTemplate : Codable, Templatable {
     public let addressTitle: String?
     
     /// 위치에 대해 설명하는 컨텐츠 정보
-    /// - seealso: `Content`
+    /// ## SeeAlso `Content`
     public let content: Content
     
     /// 댓글수, 좋아요수 등, 컨텐츠에 대한 소셜 정보
-    /// - seealso: `Social`
+    /// ## SeeAlso `Social`
     public let social: Social?
     
     /// 기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정. 이 값을 사용하면 클릭 시 이동할 링크는 content에 입력된 값이 사용됩니다.
     public let buttonTitle: String?
     
     /// 버튼 목록. 기본 버튼의 타이틀 외에 링크도 변경하고 싶을 때 설정 합니다. (최대 1개, 오른쪽 "위치 보기" 버튼은 고정)
-    /// - seealso: `Button`
+    /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
     
@@ -535,18 +538,18 @@ public struct CommerceTemplate : Codable, Templatable {
     public let objectType : String
     
     /// 메시지의 내용. 텍스트 및 이미지, 링크 정보를 포함합니다.
-    /// - seealso: `Content`
+    /// ## SeeAlso `Content`
     public let content: Content
     
     /// 컨텐츠에 대한 가격 정보.
-    /// - seealso: `CommerceDetail`
+    /// ## SeeAlso `CommerceDetail`
     public let commerce : CommerceDetail
     
     /// 기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정. 이 값을 사용하면 클릭 시 이동할 링크는 content에 입력된 값이 사용됩니다.
     public let buttonTitle: String?
     
     /// 버튼 목록. 버튼 타이틀과 링크를 변경하고 싶을때, 버튼 두개를 사용하고 싶을때 사용합니다. (최대 2개)
-    /// - seealso: `Button`
+    /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
     
@@ -584,14 +587,14 @@ public struct TextTemplate : Codable, Templatable {
     public let text: String
     
     /// 컨텐츠 클릭 시 이동할 링크 정보
-    /// - seealso: `Link`
+    /// ## SeeAlso `Link`
     public let link: Link
     
     /// 기본 버튼 타이틀("자세히 보기")을 변경하고 싶을 때 설정. 이 값을 사용하면 클릭 시 이동할 링크는 content에 입력된 값이 사용됩니다.
     public let buttonTitle: String?
     
     /// 버튼 목록. 버튼 타이틀과 링크를 변경하고 싶을때, 버튼 두개를 사용하고 싶을때 사용합니다. (최대 2개)
-    /// - seealso: `Button`
+    /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
     
@@ -642,11 +645,13 @@ public struct CalendarTemplate : Codable, Templatable {
     public let idType: IdType
     
     /// 일정에 대해 설명하는 컨텐츠 정보
-    /// - seealso: `Content`
+    /// ## SeeAlso
+    /// - ``Content``
     public let content: Content
     
     /// 버튼 목록. 기본 버튼의 타이틀 외에 링크도 변경하고 싶을 때 설정 합니다. (최대 1개, 오른쪽 "위치 보기" 버튼은 고정)
-    /// - seealso: `Button`
+    /// ## SeeAlso
+    /// - ``Button``
     public let buttons : [Button]?
     
     

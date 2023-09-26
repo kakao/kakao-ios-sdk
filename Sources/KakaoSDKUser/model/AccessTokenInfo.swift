@@ -15,7 +15,8 @@
 import Foundation
 
 /// 토큰 정보 요청 API 응답 클래스 입니다.
-/// - seealso: `UserApi.accessTokenInfo()`
+/// ## SeeAlso
+/// - ``UserApi/accessTokenInfo(completion:)``
 public struct AccessTokenInfo: Codable {
     
     // MARK: Fields

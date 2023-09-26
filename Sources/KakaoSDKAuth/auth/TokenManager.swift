@@ -19,7 +19,8 @@ import KakaoSDKCommon
 ///
 /// 카카오 SDK에서 제공하는 로그인 기반 API를 호출할 때 SDK 내부적으로 이 곳에 저장된 토큰을 사용합니다. 토큰은 UserDefaults에 저장되며 기기 고유값을 이용해 암호화하여 저장됩니다.
 ///
-/// - seealso: `TokenManagable`
+/// ## SeeAlso
+/// - ``TokenManagable``
 final public class TokenManager : TokenManagable {
     
     // MARK: Fields
@@ -31,7 +32,8 @@ final public class TokenManager : TokenManagable {
     
     var token : OAuthToken?
     
-    /// :nodoc: 토큰 관리자를 초기화합니다. UserDefaults에 저장되어 있는 토큰을 읽어옵니다.
+    @_documentation(visibility: private)
+    /// 토큰 관리자를 초기화합니다. UserDefaults에 저장되어 있는 토큰을 읽어옵니다.
     public init() {
         self.token = Properties.loadCodable(key:OAuthTokenKey)
     }

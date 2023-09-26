@@ -17,7 +17,7 @@ import UIKit
 
 import CommonCrypto
 
-///:nodoc:
+@_documentation(visibility: private)
 public class SdkCrypto {
     public static let shared = SdkCrypto()
     
@@ -179,7 +179,7 @@ public class SdkCrypto {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 extension SdkCrypto {
     public func generateCodeVerifier() -> String? {
         let uuid = UUID().uuidString
@@ -234,7 +234,7 @@ extension SdkCrypto {
     }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 extension SdkCrypto {
     // MARK: - Helper ---------------------------------------------------------------------------------
     

@@ -27,7 +27,7 @@ public enum SdkError : Error {
     case AuthFailed(reason:AuthFailureReason, errorInfo:AuthErrorInfo?)
 }
 
-/// :nodoc:
+@_documentation(visibility: private)
 extension SdkError {
     public init(reason:ClientFailureReason = .Unknown, message:String? = nil) {
         switch reason {
@@ -53,7 +53,7 @@ extension SdkError {
     }
 }
 
-/// :nodoc:
+@_documentation(visibility: private)
 extension SdkError {
     public init?(response:HTTPURLResponse, data:Data, type:ApiType) {
         if 200 ..< 300 ~= response.statusCode { return nil }
@@ -98,7 +98,8 @@ extension SdkError {
 extension SdkError {
     
     /// 클라이언트 에러인지 확인합니다.
-    /// - seealso: `ClientFailureReason`
+    /// ## SeeAlso
+    /// - ``ClientFailureReason``
     public var isClientFailed : Bool {
         if case .ClientFailed = self {
             return true
@@ -107,7 +108,8 @@ extension SdkError {
     }
     
     /// API 서버 에러인지 확인합니다.
-    /// - seealso: `ApiFailureReason`
+    /// ## SeeAlso
+    /// - ``ApiFailureReason``
     public var isApiFailed : Bool {
         if case .ApiFailed = self {
             return true
@@ -116,7 +118,8 @@ extension SdkError {
     }
     
     /// 인증 서버 에러인지 확인합니다.
-    /// - seealso: `AuthFailureReason`
+    /// ## SeeAlso
+    /// - ``AuthFailureReason``
     public var isAuthFailed : Bool {
         if case .AuthFailed = self {
             return true
@@ -125,7 +128,8 @@ extension SdkError {
     }
     
     /// 클라이언트 에러 정보를 얻습니다. `isClientFailed`가 true인 경우 사용해야 합니다.
-    /// - seealso: `ClientFailureReason`
+    /// ## SeeAlso
+    /// - ``ClientFailureReason``
     public func getClientError() -> (reason:ClientFailureReason, message:String?) {
         if case let .ClientFailed(reason, message) = self {
             return (reason, message)
@@ -134,7 +138,9 @@ extension SdkError {
     }
     
     /// API 요청 에러에 대한 정보를 얻습니다. `isApiFailed`가 true인 경우 사용해야 합니다.
-    /// - seealso: `ApiFailureReason` <br> `ErrorInfo`
+    /// ## SeeAlso
+    /// - ``ApiFailureReason``
+    /// - ``ErrorInfo``
     public func getApiError() -> (reason:ApiFailureReason, info:ErrorInfo?) {
         if case let .ApiFailed(reason, info) = self {
             return (reason, info)
@@ -143,7 +149,9 @@ extension SdkError {
     }
     
     /// 로그인 요청 에러에 대한 정보를 얻습니다. `isAuthFailed`가 true인 경우 사용해야 합니다.
-    /// - seealso: `AuthFailureReason` <br> `AuthErrorInfo`
+    /// ## SeeAlso
+    /// - ``AuthFailureReason``
+    /// - ``AuthErrorInfo``
     public func getAuthError() -> (reason:AuthFailureReason, info:AuthErrorInfo?) {
         if case let .AuthFailed(reason, info) = self {
             return (reason, info)
@@ -315,7 +323,7 @@ public enum ApiFailureReason : Int, Codable {
     case UnderMaintenance = -9798
 }
 
-/// :nodoc:
+@_documentation(visibility: private)
 extension ApiFailureReason {
     public init(from decoder: Decoder) throws {
         self = try ApiFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown
@@ -352,11 +360,12 @@ public enum AuthFailureReason : String, Codable {
     /// 서버 내부 에러
     case ServerError = "server_error"
     
-    /// :nodoc: 카카오싱크 전용
+    @_documentation(visibility: private)
+    /// 카카오싱크 전용
     case AutoLogin = "auto_login"
 }
 
-/// :nodoc:
+@_documentation(visibility: private)
 extension AuthFailureReason {
     public init(from decoder: Decoder) throws {
         self = try AuthFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown

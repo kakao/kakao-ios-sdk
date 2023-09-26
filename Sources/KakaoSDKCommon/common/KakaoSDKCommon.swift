@@ -32,7 +32,7 @@ final public class KakaoSDK {
     // MARK: Fields
     
     //static 라이브러리용 버전.
-    private let _version = "2.17.0"
+    private let _version = "2.18.0"
     
     /// 카카오 SDK의 싱글톤 객체입니다. SDK를 사용할 때 반드시 이 객체가 가장 먼저 초기화되어야 합니다.
     public static let shared = KakaoSDK()
@@ -76,7 +76,7 @@ final public class KakaoSDK {
                                    sdkType: .Swift)
     }
 
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func initialize(appKey: String,
                            customScheme: String? = nil,
                            loggingEnable: Bool = false,
@@ -101,27 +101,28 @@ final public class KakaoSDK {
     }
     
     /// 초기화 시 지정한 loggingEnable
-    /// - seealso: `SdkLog`
+    /// ## SeeAlso
+    /// - ``SdkLog``
     public func isLoggingEnable() -> Bool {
         return _loggingEnable
     }
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func hosts() -> Hosts {
         return _hosts != nil ? _hosts! : Hosts.shared
     }
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func approvalType() -> ApprovalType {
         return _approvalType != nil ? _approvalType! : ApprovalType.shared
     }
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func sdkType() -> SdkType {
         return _sdkType != nil ? _sdkType : .Swift
     }
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func scheme() throws -> String {
         guard _appKey != nil else {
             throw SdkError(reason: .MustInitAppKey)
@@ -129,7 +130,7 @@ final public class KakaoSDK {
         return _customScheme ?? "kakao\(_appKey!)"
     }
     
-    /// :nodoc:
+    @_documentation(visibility: private)
     public func sdkIdentifier() -> SdkIdentifier? {
         return _sdkIdentifier
     }
@@ -137,7 +138,7 @@ final public class KakaoSDK {
 
 extension KakaoSDK {
     /// 설정된 앱키를 가져옵니다.
-    /// - throws: `SdkError.ClientFailureReason.MustInitAppKey`: SDK가 초기화되지 않았습니다. 앱키를 가져오기 전에 initSDK를 이용하여 먼저 싱글톤 인스턴스를 초기화해야 합니다.
+    /// - throws: ``ClientFailureReason/MustInitAppKey``: SDK가 초기화되지 않았습니다. 앱키를 가져오기 전에 initSDK를 이용하여 먼저 싱글톤 인스턴스를 초기화해야 합니다.
     public func appKey() throws -> String {
         guard _appKey != nil else {
             throw SdkError(reason: .MustInitAppKey)

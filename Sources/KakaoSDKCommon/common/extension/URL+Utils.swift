@@ -14,7 +14,7 @@
 
 import Foundation
 
-///:nodoc:
+@_documentation(visibility: private)
 extension URL {
   public func params() -> [String:Any]? {
     var dict = [String:Any]()
@@ -32,7 +32,7 @@ extension URL {
   }
 }
 
-///:nodoc:
+@_documentation(visibility: private)
 extension URL {
     public func oauthResult() -> (code: String?, error: Error?, state: String?) {
         var parameters = [String: String]()

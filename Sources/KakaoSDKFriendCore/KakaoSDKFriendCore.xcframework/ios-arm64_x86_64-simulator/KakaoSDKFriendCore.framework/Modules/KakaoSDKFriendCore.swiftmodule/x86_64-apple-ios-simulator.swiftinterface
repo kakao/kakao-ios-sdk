@@ -9,7 +9,7 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
-public enum KFLogEvent : Swift.String {
+ public enum KFLogEvent : Swift.String {
   case v
   case d
   case i
@@ -21,7 +21,7 @@ public enum KFLogEvent : Swift.String {
     get
   }
 }
-public enum KFLogLevel : Swift.Int {
+ public enum KFLogLevel : Swift.Int {
   case v
   case d
   case i
@@ -33,7 +33,7 @@ public enum KFLogLevel : Swift.Int {
     get
   }
 }
-public class KFSdkLog {
+ public class KFSdkLog {
   public static let shared: KakaoSDKFriendCore.KFSdkLog
   final public let maxLogs: Swift.Int
   public var debugLogs: [(Foundation.Date, Swift.String)] {
@@ -51,7 +51,7 @@ public class KFSdkLog {
   public class func e(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
   @objc deinit
 }
-extension Foundation.Date {
+ extension Foundation.Date {
   public func toString() -> Swift.String
   public func toSimpleString() -> Swift.String
 }
@@ -71,11 +71,11 @@ public struct SelectedUsers : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct PickerUsers : Swift.Codable {
+ public struct PickerUsers : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
+ public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
   case Friend
   case ChatMember
   public init?(rawValue: Swift.String)
@@ -84,18 +84,18 @@ public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
     get
   }
 }
-public struct PickerUserScope : Swift.Codable {
+ public struct PickerUserScope : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public let CF: KakaoSDKFriendCore.Caprifire
-public struct ResponseInfo {
+ public let CF: KakaoSDKFriendCore.Caprifire
+ public struct ResponseInfo {
   public let response: Foundation.HTTPURLResponse?
   public let data: Foundation.Data?
   public init?(_ response: Foundation.HTTPURLResponse?, _ data: Foundation.Data?)
 }
-public class Caprifire {
-  public static let shared: KakaoSDKFriendCore.Caprifire
+ public class Caprifire {
+   public static let shared: KakaoSDKFriendCore.Caprifire
   public init()
   public enum HTTPMethod : Swift.String {
     case get
@@ -111,7 +111,7 @@ public class Caprifire {
   public func request(_ url: Foundation.URL, method: KakaoSDKFriendCore.Caprifire.HTTPMethod = .get, parameters: [Swift.String : Any]? = nil, headers: [Swift.String : Swift.String]? = nil) -> Foundation.URLRequest
   @objc deinit
 }
-extension KakaoSDKFriendCore.Caprifire {
+ extension KakaoSDKFriendCore.Caprifire {
   public func queryComponents(fromKey key: Swift.String, value: Any) -> [(Swift.String, Swift.String)]
   public func escape(_ string: Swift.String) -> Swift.String
   public enum ArrayEncoding {
@@ -134,31 +134,31 @@ extension KakaoSDKFriendCore.Caprifire {
     }
   }
 }
-extension Foundation.CharacterSet {
+ extension Foundation.CharacterSet {
   public static let cfURLQueryAllowed: Foundation.CharacterSet
 }
 public protocol ScopeRequestable : AnyObject {
   func requestPickerScope(requiredScope: [Swift.String], completion: @escaping ((any Swift.Error)?) -> Swift.Void)
 }
-extension Swift.Array where Element == Swift.Int64 {
+ extension Swift.Array where Element == Swift.Int64 {
   public func KFtoJsonString() -> Swift.String?
 }
-public struct PickerChats : Swift.Codable {
+ public struct PickerChats : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct PickerChatMemberInfo : Swift.Codable {
+ public struct PickerChatMemberInfo : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public enum KFSdkError : Swift.Error {
+ public enum KFSdkError : Swift.Error {
   case ClientFailed(reason: KakaoSDKFriendCore.KFClientFailureReason, errorMessage: Swift.String?)
 }
-extension KakaoSDKFriendCore.KFSdkError {
+ extension KakaoSDKFriendCore.KFSdkError {
   public init(reason: KakaoSDKFriendCore.KFClientFailureReason = .Unknown, message: Swift.String? = nil)
   public func getClientError() -> (reason: KakaoSDKFriendCore.KFClientFailureReason, message: Swift.String?)
 }
-public enum KFClientFailureReason {
+ public enum KFClientFailureReason {
   case Unknown
   case Cancelled
   case TokenNotFound
@@ -174,7 +174,7 @@ public enum KFClientFailureReason {
     get
   }
 }
-public enum KFHostType {
+ public enum KFHostType {
   case Kapi
   public var host: Swift.String {
     get
@@ -185,21 +185,21 @@ public enum KFHostType {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class KFPaths {
+@_hasMissingDesignatedInitializers  public class KFPaths {
   public static let selectFriends: Swift.String
   public static let userScpoes: Swift.String
   public static let selectChats: Swift.String
   public static let selectChatMembers: Swift.String
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class KFUrls {
+@_hasMissingDesignatedInitializers  public class KFUrls {
   public static func compose(_ hostType: KakaoSDKFriendCore.KFHostType = .Kapi, path: Swift.String) -> Swift.String
   @objc deinit
 }
-extension Swift.Dictionary {
+ extension Swift.Dictionary {
   public mutating func merge(_ dictionary: [Key : Value])
 }
-@_hasMissingDesignatedInitializers public class KFJSONDecoder : Foundation.JSONDecoder {
+@_hasMissingDesignatedInitializers  public class KFJSONDecoder : Foundation.JSONDecoder {
   public static var `default`: KakaoSDKFriendCore.KFJSONDecoder {
     get
   }
@@ -423,10 +423,10 @@ public struct SelectedChat : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-extension Swift.Dictionary where Key == Swift.String, Value == Any? {
+ extension Swift.Dictionary where Key == Swift.String, Value == Any? {
   public func KFfilterNil() -> [Swift.String : Any]?
 }
-extension UIKit.UIApplication {
+ extension UIKit.UIApplication {
   @available(iOSApplicationExtension, unavailable)
   @_Concurrency.MainActor(unsafe) public class func getMostTopViewControllerForKF(base: UIKit.UIViewController? = nil) -> UIKit.UIViewController?
   @available(iOSApplicationExtension, unavailable)
