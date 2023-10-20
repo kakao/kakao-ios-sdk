@@ -15,7 +15,9 @@
 import Foundation
 import KakaoSDKCommon
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 /// 템플릿 조회 결과 (SDK 내부용)
 public struct ValidationResult : Codable {
     

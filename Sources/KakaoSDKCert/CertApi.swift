@@ -17,7 +17,9 @@ import Foundation
 import KakaoSDKCommon
 import KakaoSDKAuth
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 @_exported import KakaoSDKCertCore
 
 /// 카카오 인증서비스를 위한 Api 입니다.

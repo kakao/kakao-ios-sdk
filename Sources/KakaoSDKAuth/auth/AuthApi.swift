@@ -35,14 +35,18 @@ final public class AuthApi {
         return Auth.shared.tokenManager.getToken() != nil
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     /// 인증코드 요청입니다.
     public func authorizeRequest(parameters:[String:Any]) -> URLRequest? {
         guard let finalUrl = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters) else { return nil }
         return URLRequest(url: finalUrl)
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     /// 추가 항목 동의 받기 요청시 인증값으로 사용되는 임시토큰 발급 요청입니다. SDK 내부 전용입니다.
     public func agt(completion:@escaping (String?, Error?) -> Void) {
         API.responseData(.post,
@@ -173,7 +177,9 @@ final public class AuthApi {
 
 
 extension AuthApi {
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func certToken(code: String,
                           codeVerifier: String? = nil,
                           redirectUri: String = KakaoSDK.shared.redirectUri(),
@@ -231,7 +237,9 @@ extension AuthApi {
 
 // MARK: for Cert Prepare
 extension AuthApi {
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func prepare(certType: CertType,
                         txId: String? = nil, //certType == .K2220 일때 not null
                         settleId: String? = nil,

@@ -28,12 +28,14 @@ public struct ErrorInfo : Codable {
     /// 사용자에게 API 호출에 필요한 동의를 받지 못하여 `ApiFailureReason.InsufficientScope` 에러가 발생한 경우 필요한 scope 목록이 내려옵니다. 이 scope 목록으로 추가 항목 동의 받기를 요청해야 합니다.
     public let requiredScopes: [String]?
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     /// API 타입
     public let apiType: String?
     
     public let allowedScopes: [String]?
-
+    
     public init(code: ApiFailureReason, msg:String, requiredScopes:[String]?) {
         self.code = code
         self.msg = msg

@@ -125,7 +125,9 @@ public struct Friend : Codable {
     /// 사용자 아이디
     public let id: Int64?
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public let serviceUserId: Int64?
     
     /// 메시지를 전송하기 위한 고유 아이디

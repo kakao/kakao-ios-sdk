@@ -32,7 +32,7 @@ final public class KakaoSDK {
     // MARK: Fields
     
     //static 라이브러리용 버전.
-    private let _version = "2.18.0"
+    private let _version = "2.18.1"
     
     /// 카카오 SDK의 싱글톤 객체입니다. SDK를 사용할 때 반드시 이 객체가 가장 먼저 초기화되어야 합니다.
     public static let shared = KakaoSDK()
@@ -46,14 +46,14 @@ final public class KakaoSDK {
     private var _approvalType : ApprovalType? = nil
     
     private var _sdkType : SdkType!
-
+    
     private var _sdkIdentifier : SdkIdentifier? = nil
     
     public init() {
         _appKey = nil
         _customScheme = nil
     }
-        
+    
     // MARK: Initializers
     
     /// SDK 초기화를 수행합니다.
@@ -75,8 +75,10 @@ final public class KakaoSDK {
                                    sdkIdentifier: sdkIdentifier,
                                    sdkType: .Swift)
     }
-
+    
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func initialize(appKey: String,
                            customScheme: String? = nil,
                            loggingEnable: Bool = false,
@@ -107,22 +109,30 @@ final public class KakaoSDK {
         return _loggingEnable
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func hosts() -> Hosts {
         return _hosts != nil ? _hosts! : Hosts.shared
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func approvalType() -> ApprovalType {
         return _approvalType != nil ? _approvalType! : ApprovalType.shared
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func sdkType() -> SdkType {
         return _sdkType != nil ? _sdkType : .Swift
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func scheme() throws -> String {
         guard _appKey != nil else {
             throw SdkError(reason: .MustInitAppKey)
@@ -130,7 +140,9 @@ final public class KakaoSDK {
         return _customScheme ?? "kakao\(_appKey!)"
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func sdkIdentifier() -> SdkIdentifier? {
         return _sdkIdentifier
     }

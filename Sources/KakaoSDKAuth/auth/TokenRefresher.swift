@@ -17,6 +17,7 @@ import Foundation
 import KakaoSDKCommon
 
 ///:nodoc:
+@available(iOSApplicationExtension, unavailable)
 class TokenRefresher {
     static let shared = TokenRefresher()
     
@@ -24,7 +25,7 @@ class TokenRefresher {
     private let coolTime: TimeInterval = 60 * 60 * 6 // 6시간
     
     init() {
-        SdkLog.d("[TokenRefresher] didBecomActiveNotification observer for ATI added.")
+        //SdkLog.v("[TokenRefresher] didBecomActiveNotification observer for CAT added.")
         NotificationCenter.default.addObserver(self, selector: #selector(self.didBecomeActiveForRefreshToken), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
@@ -32,13 +33,14 @@ class TokenRefresher {
     }
 }
 
+@available(iOSApplicationExtension, unavailable)
 extension TokenRefresher {
     ///:nodoc:
     @objc func didBecomeActiveForRefreshToken(_ notification: Notification) {
         if (shouldRefreshToken()) {
-            ati {[weak self] (_) in
+            cat {[weak self] (_) in
                 self?.updatedAt = Date()
-                SdkLog.d("[TokenRefresher] ATI call time updated")
+                //SdkLog.v("[TokenRefresher] CAT call time updated")
             }
         }
     }
@@ -49,11 +51,11 @@ extension TokenRefresher {
         
         if let updatedAt = updatedAt {
             if (abs(updatedAt.timeIntervalSince1970 - currentTimeStamp) < coolTime) {
-                SdkLog.d("[TokenRefresher] dont have to call ATI ==> cooltimeInterval: \(coolTime)  passedTimeInterval: \(abs(updatedAt.timeIntervalSince1970 - currentTimeStamp))")
+                //SdkLog.v("[TokenRefresher] dont have to call CAT ==> cooltimeInterval: \(coolTime)  passedTimeInterval: \(abs(updatedAt.timeIntervalSince1970 - currentTimeStamp))")
                 return false
             }
             else {
-                SdkLog.d("[TokenRefresher] have to call ATI : ==> cooltimeInterval: \(coolTime)  passedTimeInterval: \(abs(updatedAt.timeIntervalSince1970 - currentTimeStamp))")
+                //SdkLog.v("[TokenRefresher] have to call CAT : ==> cooltimeInterval: \(coolTime)  passedTimeInterval: \(abs(updatedAt.timeIntervalSince1970 - currentTimeStamp))")
             }
         }
         
@@ -61,18 +63,18 @@ extension TokenRefresher {
     }
     
     ///:nodoc:
-    func ati(completion:@escaping (Error?) -> Void) {
+    func cat(completion:@escaping (Error?) -> Void) {
         AUTH_API.responseData(.get,
-              Urls.compose(path:Paths.userAccessTokenInfo),
+              Urls.compose(path:Paths.checkAccessToken),
               apiType: .KApi) { (response, data, error) in
                 if let error = error {
-                    SdkLog.e(error)
+                    //SdkLog.v(error)
                     completion(error)
                     return
                 }
                 
                 if let _ = data {
-                    SdkLog.d("[TokenRefresher] success to call ATI")
+                    //SdkLog.v("[TokenRefresher] success to call CAT")
                     completion(nil)
                     return
                 }

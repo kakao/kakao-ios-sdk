@@ -15,7 +15,9 @@
 import Foundation
 import UIKit
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 extension UIApplication {
     @available(iOSApplicationExtension, unavailable)
     public class func getMostTopViewController(base: UIViewController? = nil) -> UIViewController? {

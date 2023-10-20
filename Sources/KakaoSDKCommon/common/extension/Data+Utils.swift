@@ -14,7 +14,9 @@
 
 import Foundation
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 extension Data {
     public func hexEncodedString() -> String {
         return map { String(format: "%02hhx ", $0) }.joined()

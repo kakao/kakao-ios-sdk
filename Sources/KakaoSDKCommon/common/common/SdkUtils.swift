@@ -14,7 +14,9 @@
 
 import Foundation
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 public class SdkUtils {
     static public func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T {
         guard let returnValue = object as? T else {
@@ -49,7 +51,9 @@ public class SdkUtils {
     }
 }
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 extension SdkUtils {
     ///launchMethod 추가 익스텐션
     static public func makeUrlWithParameters(url:String, parameters:[String:Any]?, launchMethod:LaunchMethod? = nil) -> URL? {

@@ -14,7 +14,9 @@
 
 import Foundation
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 extension Date {
     public func toSeconds() -> Int64 {
         return Int64(self.timeIntervalSince1970)

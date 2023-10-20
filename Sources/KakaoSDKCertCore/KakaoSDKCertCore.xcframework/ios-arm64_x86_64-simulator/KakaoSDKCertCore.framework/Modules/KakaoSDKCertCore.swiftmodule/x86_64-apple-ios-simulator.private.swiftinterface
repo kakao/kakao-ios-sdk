@@ -26,9 +26,9 @@ public struct SessionInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 extension KakaoSDKCertCore.CertCore {
-   public func __publicKey() -> Swift.String?
-   public func __sign(data: Swift.String, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
-   public func __isValidSession() -> Swift.Bool
+  public func __publicKey() -> Swift.String?
+  public func __sign(data: Swift.String, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  public func __isValidSession() -> Swift.Bool
   public func __sessionInfo() -> KakaoSDKCertCore.SessionInfo?
   public func __deleteKeyPair()
 }

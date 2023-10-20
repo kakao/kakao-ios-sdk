@@ -223,7 +223,9 @@ public struct Story : Codable {
 //    }
 }
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 public struct Stories : Codable {
     public let stories: [Story]?
     

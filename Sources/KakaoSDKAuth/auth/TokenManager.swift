@@ -32,7 +32,9 @@ final public class TokenManager : TokenManagable {
     
     var token : OAuthToken?
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     /// 토큰 관리자를 초기화합니다. UserDefaults에 저장되어 있는 토큰을 읽어옵니다.
     public init() {
         self.token = Properties.loadCodable(key:OAuthTokenKey)
@@ -41,6 +43,9 @@ final public class TokenManager : TokenManagable {
     
     // MARK: TokenManagable Methods
     
+#if swift(>=5.8)
+    @_documentation(visibility: private)
+#endif
     /// UserDefaults에 토큰을 저장합니다.
     public func setToken(_ token: OAuthToken?) {
         Properties.saveCodable(key:OAuthTokenKey, data:token)
@@ -52,6 +57,9 @@ final public class TokenManager : TokenManagable {
         return self.token
     }
     
+#if swift(>=5.8)
+    @_documentation(visibility: private)
+#endif
     /// UserDefaults에 저장된 토큰을 삭제합니다.
     public func deleteToken() {
         Properties.delete(OAuthTokenKey)

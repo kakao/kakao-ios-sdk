@@ -17,7 +17,9 @@ import SafariServices
 import AuthenticationServices
 import KakaoSDKCommon
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 @available(iOSApplicationExtension, unavailable)
 let AUTH_CONTROLLER = AuthController.shared
 
@@ -33,7 +35,9 @@ public enum Prompt : String {
     /// 사용자가 카카오계정 신규 가입 후 로그인하도록 할 때 사용
     case Create = "create"
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     case UnifyDaum = "unify_daum"
     
     /// 카카오계정 간편 로그인을 요청할 때 사용
@@ -48,7 +52,9 @@ class DefaultPresentationContextProvider: NSObject, ASWebAuthenticationPresentat
     }
 }
 
+#if swift(>=5.8)
 @_documentation(visibility: private)
+#endif
 @available(iOSApplicationExtension, unavailable)
 public class AuthController {
     
@@ -71,7 +77,6 @@ public class AuthController {
     public var codeVerifier : String?
     
     //내부 디폴트브라우져용 time delay
-    @_documentation(visibility: private)
     public static let delayForAuthenticationSession : Double = 0.4
     
     public init() {
@@ -92,7 +97,6 @@ public class AuthController {
     }
     
     // MARK: Login with KakaoTalk
-    @_documentation(visibility: private)
     public func _authorizeWithTalk(launchMethod: LaunchMethod? = nil,
                                   prompts: [Prompt]? = nil,
                                   state: String? = nil,
@@ -173,7 +177,6 @@ public class AuthController {
         return false
     }
     
-    @_documentation(visibility: private)
     public func _authorizeByAgtWithAuthenticationSession(scopes:[String],
                                                          state: String? = nil,
                                                          nonce: String? = nil,
@@ -214,7 +217,6 @@ public class AuthController {
         }
     }
     
-    @_documentation(visibility: private)
     public func _authorizeWithAuthenticationSession(prompts: [Prompt]? = nil,
                                                     state: String? = nil,
                                                     agtToken: String? = nil,
@@ -322,7 +324,6 @@ public class AuthController {
 extension AuthController {
     //Rx 공통 Helper
     
-    @_documentation(visibility: private)
     public func makeParametersForTalk(prompts: [Prompt]? = nil,
                                       state: String? = nil,
                                       channelPublicIds: [String]? = nil,
@@ -480,7 +481,6 @@ extension AuthController {
 @available(iOSApplicationExtension, unavailable)
 extension AuthController {
 
-    @_documentation(visibility: private)
     public func _certAuthorizeWithTalk(launchMethod: LaunchMethod? = nil,
                                        prompts: [Prompt]? = nil,
                                        channelPublicIds: [String]? = nil,
@@ -542,7 +542,6 @@ extension AuthController {
         }
     }
     
-    @_documentation(visibility: private)
     public func _certAuthorizeWithAuthenticationSession(prompts: [Prompt]? = nil,
                                                         agtToken: String? = nil,
                                                         scopes:[String]? = nil,

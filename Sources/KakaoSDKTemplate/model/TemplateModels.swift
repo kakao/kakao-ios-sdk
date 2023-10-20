@@ -360,7 +360,9 @@ public struct FeedTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
+#if swift(>=5.8)
     @_documentation(visibility: private)
+#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
