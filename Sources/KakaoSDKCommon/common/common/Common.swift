@@ -106,8 +106,8 @@ public class SdkIdentifier {
 public enum LaunchMethod: String {
     
     /// 커스텀 스킴
-    case CustomScheme
+    case CustomScheme = "uri_scheme"
     
     /// 유니버셜 링크
-    case UniversalLink
+    case UniversalLink = "universal_link"
 }

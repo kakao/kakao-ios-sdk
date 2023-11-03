@@ -133,7 +133,8 @@ public class AuthController {
                                                     state:state,
                                                     channelPublicIds: channelPublicIds,
                                                     serviceTerms: serviceTerms,
-                                                    nonce:nonce)
+                                                    nonce:nonce,
+                                                    launchMethod:launchMethod)
 
         guard let url = SdkUtils.makeUrlWithParameters(url:Urls.compose(.TalkAuth, path:Paths.authTalk),
                                                        parameters: parameters,
@@ -148,9 +149,47 @@ public class AuthController {
                 SdkLog.i("카카오톡 실행: \(url.absoluteString)")
             }
             else {
-                SdkLog.e("카카오톡 실행 취소")
-                completion(nil, SdkError(reason: .Cancelled, message: "The KakaoTalk authentication has been canceled by user."))
-                return
+                //유니버셜링크 방식일때 톡이 설치되어 있지만 톡을 실행하지 못하는 현상 대응
+                if launchMethod == .UniversalLink {
+                    self._retryOpen(withLaunchMethod:.CustomScheme, parameters: parameters, completion: completion)
+                }
+                else {
+                    SdkLog.e("카카오톡 실행 실패")
+                    completion(nil, SdkError(reason: .NotSupported))
+                    return
+                }
+            }
+        }
+    }
+    
+    func _retryOpen(withLaunchMethod:LaunchMethod, parameters:[String:Any], completion: @escaping (OAuthToken?, Error?) -> Void) {
+        var modifiedParameters = [String:Any]()
+        
+        for (key, value) in parameters {
+            if key == "deep_link_method" {
+                modifiedParameters[key] = "\(value),\(withLaunchMethod.rawValue)"
+            }    
+            else {
+                modifiedParameters[key] = value
+            }
+        }
+
+        guard let url = SdkUtils.makeUrlWithParameters(url:Urls.compose(.TalkAuth, path:Paths.authTalk),
+                                                       parameters: modifiedParameters,
+                                                       launchMethod: withLaunchMethod) else {
+            SdkLog.e("(\(withLaunchMethod) retry) Bad Parameter - make URL error")
+            completion(nil, SdkError(reason: .BadParameter, message:"(\(withLaunchMethod) retry) Bad Parameter - make URL error"))
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:]) { (result) in
+            if (result) {
+                SdkLog.i("(\(withLaunchMethod) retry) 카카오톡 실행: \(url.absoluteString)")
+            }
+            else {
+                SdkLog.e("(\(withLaunchMethod) retry) 카카오톡 실행 실패 \n url:\(url.absoluteString)")
+               completion(nil, SdkError(reason: .NotSupported, message: "(\(withLaunchMethod) retry) KakaoTalk launch failed."))
+               return
             }
         }
     }
@@ -330,7 +369,8 @@ extension AuthController {
                                       serviceTerms: [String]? = nil,
                                       nonce: String? = nil,
                                       settleId: String? = nil,
-                                      kauthTxId: String? = nil) -> [String:Any] {
+                                      kauthTxId: String? = nil,
+                                      launchMethod: LaunchMethod? = nil) -> [String:Any] {
         self.resetCodeVerifier()
         
         var parameters = [String:Any]()
@@ -338,6 +378,10 @@ extension AuthController {
         parameters["redirect_uri"] = KakaoSDK.shared.redirectUri()
         parameters["response_type"] = Constants.responseType
         parameters["headers"] = ["KA": Constants.kaHeader].toJsonString()
+        
+        if let launchMethod = launchMethod {
+            parameters["deep_link_method"] = launchMethod.rawValue
+        }
         
         var extraParameters = [String: Any]()
         

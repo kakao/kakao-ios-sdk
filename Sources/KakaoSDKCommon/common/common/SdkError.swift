@@ -40,7 +40,7 @@ extension SdkError {
         case .Cancelled:
             self = .ClientFailed(reason: reason, errorMessage:message ?? "user cancelled")
         case .NotSupported:
-            self = .ClientFailed(reason: reason, errorMessage: "target app is not installed.")
+            self = .ClientFailed(reason: reason, errorMessage:message ?? "target app is not installed.")
         case .BadParameter:
             self = .ClientFailed(reason: reason, errorMessage:message ?? "bad parameters.")
         case .TokenNotFound:
