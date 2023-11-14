@@ -175,11 +175,11 @@ extension Api {
     public func upload(_ HTTPMethod: Alamofire.HTTPMethod,
                        _ url: String,
                        images: [UIImage?] = [],
-                       parameters: [String: Any]? = nil,                    //현재 authapi인 story만 쓰고 있고 나중을 위해 열어둠
-                       headers: [String: String]? = nil,                    //현재 authapi인 story만 쓰고 있고 나중을 위해 열어둠
-                       needsAccessToken: Bool = true,                       //현재 authapi인 story만 쓰고 있고 나중을 위해 열어둠
-                       needsKAHeader: Bool = false,                         //현재 authapi인 story만 쓰고 있고 나중을 위해 열어둠
-                       sessionType: SessionType = .AuthApi,   //현재 authapi인 story만 쓰고 있고 나중을 위해 열어둠
+                       parameters: [String: Any]? = nil,
+                       headers: [String: String]? = nil,
+                       needsAccessToken: Bool = true,
+                       needsKAHeader: Bool = false,
+                       sessionType: SessionType = .AuthApi,   
                        apiType: ApiType,
                        completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
         

@@ -163,22 +163,7 @@ public class Paths {
     public static let sdkUserScopes = "/v2/user/scopes/sdk"
     
     public static let selectChats = "/v1/api/talk/chat/list/sdk"
-    public static let selectChatMembers = "/v1/api/talk/members/sdk"
-    
-    //story
-    public static let isStoryUser = "/v1/api/story/isstoryuser"
-    public static let storyProfile = "/v1/api/story/profile"
-    public static let storyLinkInfo = "/v1/api/story/linkinfo"
-    
-    public static let myStory = "/v1/api/story/mystory"
-    public static let myStories = "/v1/api/story/mystories"
-    public static let deleteMyStory = "/v1/api/story/delete/mystory"
-    
-    public static let postNote = "/v1/api/story/post/note"
-    public static let postLink = "/v1/api/story/post/link"
-    public static let postPhoto = "/v1/api/story/post/photo"
-    
-    public static let uploadMulti = "/v1/api/story/upload/multi"
+    public static let selectChatMembers = "/v1/api/talk/members/sdk"                
     
     //channel
     public static let channel = ""

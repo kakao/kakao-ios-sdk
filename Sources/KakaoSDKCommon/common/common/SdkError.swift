@@ -304,24 +304,15 @@ public enum ApiFailureReason : Int, Codable {
     
     /// 일간 메시지 전송 허용 횟수 초과
     case TalkSendMessageDailyLimitExceed = -532
+        
+    /// 이미지 업로드 시 최대 용량을 초과한 경우
+    case ImageUploadSizeExceed = -602
     
-    /// 카카오스토리 사용자가 아님
-    case NotStoryUser = -601
+    /// 카카오 플랫폼 내부에서 요청 처리 중 타임아웃이 발생한 경우
+    case ServerTimeout = -603
     
-    /// 카카오스토리 이미지 업로드 사이즈 제한 초과
-    case StoryImageUploadSizeExceed = -602
-    
-    /// 카카오스토리 이미지 업로드 타임아웃
-    case StoryUploadTimeout = -603
-    
-    /// 카카오스토리 스크랩시 잘못된 스크랩 URL로 호출할 경우
-    case StoryInvalidScrapUrl = -604
-    
-    /// 카카오스토리의 내정보 요청시 잘못된 내스토리 아이디(포스트 아이디)로 호출할 경우
-    case StoryInvalidPostId = -605
-    
-    /// 카카오스토리 이미지 업로드시 허용된 업로드 파일 수가 넘을 경우
-    case StoryMaxUploadNumberExceed = -606
+    /// 이미지 업로드시 허용된 업로드 파일 수가 넘을 경우
+    case ImageMaxUploadNumberExceed = -606
     
     /// 서버 점검 중
     case UnderMaintenance = -9798
