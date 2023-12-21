@@ -89,6 +89,7 @@ public class ApprovalType {
 public enum ApiType {
     case KApi
     case KAuth
+    case Apps
 }
 
 #if swift(>=5.8)

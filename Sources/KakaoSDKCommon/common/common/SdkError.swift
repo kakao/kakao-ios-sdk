@@ -25,6 +25,9 @@ public enum SdkError : Error {
     
     /// 로그인 에러
     case AuthFailed(reason:AuthFailureReason, errorInfo:AuthErrorInfo?)
+    
+    /// Apps 에러
+    case AppsFailed(reason:AppsFailureReason, errorInfo:AppsErrorInfo?)
 }
 
 #if swift(>=5.8)
@@ -77,17 +80,22 @@ extension SdkError {
             else {
                 return nil
             }
-        }
-    }
-    
-    public init?(parameters: [String: String]) {
-        if let authErrorInfo = try? SdkJSONDecoder.custom.decode(AuthErrorInfo.self, from: JSONSerialization.data(withJSONObject: parameters, options: [])) {
-            self = .AuthFailed(reason: authErrorInfo.error, errorInfo: authErrorInfo)
-        } else {
+        @unknown default:
             return nil
         }
     }
     
+    //for Auth
+    public init?(parameters: [String: String]) {
+        if let authErrorInfo = try? SdkJSONDecoder.custom.decode(AuthErrorInfo.self, from: JSONSerialization.data(withJSONObject: parameters, options: [])) {
+            self = .AuthFailed(reason: authErrorInfo.error, errorInfo: authErrorInfo)
+        } 
+        else {
+            return nil
+        }
+    }
+    
+    //for Api
     public init(scopes:[String]?) {
         let errorInfo = ErrorInfo(code: .InsufficientScope, msg: "", requiredScopes: scopes)
         self = .ApiFailed(reason: errorInfo.code, errorInfo: errorInfo)
@@ -95,6 +103,16 @@ extension SdkError {
     
     public init(apiFailedMessage:String? = nil) {
         self = .ApiFailed(reason: .Unknown, errorInfo: ErrorInfo(code: .Unknown, msg:apiFailedMessage ?? "Unknown Error", requiredScopes: nil))
+    }
+    
+    //for Apps
+    public init?(appsParameters: [String: String]) {
+        if let appsErrorInfo = try? SdkJSONDecoder.custom.decode(AppsErrorInfo.self, from: JSONSerialization.data(withJSONObject: appsParameters, options: [])) {
+            self = .AppsFailed(reason: appsErrorInfo.errorCode, errorInfo: appsErrorInfo)
+        }
+        else {
+            return nil
+        }
     }
 }
 
@@ -131,6 +149,17 @@ extension SdkError {
         return false
     }
     
+    /// APPS 서버 에러인지 확인합니다.
+    /// ## SeeAlso
+    /// - ``AppsFailureReason``
+    public var isAppsFailed : Bool {
+        if case .AppsFailed = self {
+            return true
+        }
+        return false
+    }
+    
+    
     /// 클라이언트 에러 정보를 얻습니다. `isClientFailed`가 true인 경우 사용해야 합니다.
     /// ## SeeAlso
     /// - ``ClientFailureReason``
@@ -161,6 +190,17 @@ extension SdkError {
             return (reason, info)
         }
         return (AuthFailureReason.Unknown, nil)
+    }
+    
+    /// APPS 요청 에러에 대한 정보를 얻습니다. `isAppsFailed`가 true인 경우 사용해야 합니다.
+    /// ## SeeAlso
+    /// - ``AppsFailureReason``
+    /// - ``AppsErrorInfo``
+    public func getAppsError() -> (reason:AppsFailureReason, info:AppsErrorInfo?) {
+        if case let .AppsFailed(reason, info) = self {
+            return (reason, info)
+        }
+        return (AppsFailureReason.Unknown, nil)
     }
     
     /// 유효하지 않은 토큰 에러인지 체크합니다.
@@ -370,5 +410,71 @@ public enum AuthFailureReason : String, Codable {
 extension AuthFailureReason {
     public init(from decoder: Decoder) throws {
         self = try AuthFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown
+    }
+}
+
+/// Apps 요청 에러 종류 입니다.
+public enum AppsFailureReason : String, Codable {
+    /// 내부 서버 에러가 발생하는 경우
+    case InternalServerError = "KAE001"
+
+    /// 잘못된 요청을 사용하는 경우
+    case InvalidRequest = "KAE002"
+
+    /// 잘못된 파라미터를 사용하는 경우
+    case InvalidParameter = "KAE003"
+
+    /// 유효시간이 만료된 경우
+    case TimeExpired = "KAE004"
+    
+    /// 채널 정보를 확인할 수 없는 경우
+    case InvalidChannel = "KAE005"
+    
+    /// 채널 추가 가능한 상태가 아닌 경우
+    case IllegalStateChannel = "KAE006"
+
+    /// API를 사용할 수 없는 앱 타입인 경우
+    case AppTypeError = "KAE101"
+
+    /// API 사용에 필요한 scope이 설정되지 않은 경우
+    case AppScopeError = "KAE102"
+
+    /// API 사용에 필요한 권한이 없는 경우
+    case PermissionError = "KAE103"
+
+    /// API 호출에 사용할 수 없는 앱키 타입으로 API를 호출하는 경우
+    case AppKeyTypeError = "KAE104"
+    
+    /// 앱과 연결되지 않은 채널 정보로 요청한 경우
+    case AppChannelNotConnected = "KAE105"
+
+    /// Access Token, KPIDT, 톡세션 등으로 앱 유저 인증에 실패하는 경우
+    case AuthError = "KAE201"
+
+    /// 앱에 연결되지 않은 유저가 API를 호출하는 경우
+    case NotRegistredUser = "KAE202"
+
+    /// API 호출에 필요한 scope에 동의하지 않은 경우
+    case InvalidScope = "KAE203"
+
+    /// API 사용에 필요한 계정 약관 동의가 되어 있지 않은 경우
+    case AccountTermsError = "KAE204"
+
+    /// 계정 페이지에서 배송지 콜백으로 로그인 필요 응답을 전달하는 경우
+    case LoginRequired = "KAE205"
+
+    /// 계정에 등록되어있지 않은 배송지 ID를 파라미터로 사용하는 경우
+    case InvalidShippingAddressId = "KAE206"
+    
+    /// 예외
+    case Unknown
+}
+
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
+extension AppsFailureReason {
+    public init(from decoder: Decoder) throws {
+        self = try AppsFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown
     }
 }

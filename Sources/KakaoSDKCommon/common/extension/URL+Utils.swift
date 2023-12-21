@@ -62,4 +62,25 @@ extension URL {
             }
         }
     }
+
+    public func appsResult() -> (result:[String:String]?, error: Error?) {
+        var parameters = [String: String]()
+        if let queryItems = URLComponents(string: self.absoluteString)?.queryItems {
+            for item in queryItems {
+                parameters[item.name] = item.value
+            }
+        }
+        
+        let _ = parameters["method"]
+        guard let status = parameters["status"] else {
+            return (nil, SdkError(reason: .IllegalState))
+        }
+        
+        if status == "error" {
+            return (nil, SdkError(appsParameters: parameters))
+        }
+        else {
+            return (parameters, nil)
+        }
+    }
 }

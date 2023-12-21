@@ -44,9 +44,12 @@ public enum Prompt : String {
     case SelectAccount = "select_account"
 }
 
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 @available(iOS 13.0, *)
 @available(iOSApplicationExtension, unavailable)
-class DefaultPresentationContextProvider: NSObject, ASWebAuthenticationPresentationContextProviding {
+public class DefaultASWebAuthenticationPresentationContextProvider: NSObject, ASWebAuthenticationPresentationContextProviding {
     public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
         return UIApplication.sdkKeyWindow() ?? ASPresentationAnchor()
     }
@@ -81,15 +84,8 @@ public class AuthController {
     
     public init() {
         AUTH_API.checkMigrationAndInitSession()
-        
         resetCodeVerifier()
-        
-        if #available(iOS 13.0, *) {
-            self.presentationContextProvider = DefaultPresentationContextProvider()
-        }
-        else {
-            self.presentationContextProvider = nil
-        }
+        self.presentationContextProvider = DefaultASWebAuthenticationPresentationContextProvider()
     }
     
     public func resetCodeVerifier() {

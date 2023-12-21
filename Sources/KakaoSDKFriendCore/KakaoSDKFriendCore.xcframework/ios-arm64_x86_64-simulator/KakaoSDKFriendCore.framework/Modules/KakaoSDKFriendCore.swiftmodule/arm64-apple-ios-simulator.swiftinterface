@@ -392,9 +392,12 @@ public class PickerTabRequestParams {
   public func ____s(params: KakaoSDKFriendCore.PickerTabRequestParams, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____sp(params: KakaoSDKFriendCore.PickerTabRequestParams, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
 }
-public enum PickerChatType : Swift.String, Swift.Codable {
-  case regular
-  case open
+public enum PickerChatRoomType : Swift.String, Swift.Codable {
+  case MemoChat
+  case DirectChat
+  case MultiChat
+  case OpenDirectChat
+  case OpenMultiChat
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -406,7 +409,7 @@ public struct SelectedChat : Swift.Codable {
   public let memberCount: Swift.Int?
   public let titleSource: Swift.String?
   public let imageUrl: Foundation.URL?
-  public let type: KakaoSDKFriendCore.PickerChatType?
+  public let roomType: KakaoSDKFriendCore.PickerChatRoomType?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -457,6 +460,6 @@ extension KakaoSDKFriendCore.PickerChatFilter : Swift.Hashable {}
 extension KakaoSDKFriendCore.PickerChatFilter : Swift.RawRepresentable {}
 extension KakaoSDKFriendCore.PickerChatSelectionType : Swift.Equatable {}
 extension KakaoSDKFriendCore.PickerChatSelectionType : Swift.Hashable {}
-extension KakaoSDKFriendCore.PickerChatType : Swift.Equatable {}
-extension KakaoSDKFriendCore.PickerChatType : Swift.Hashable {}
-extension KakaoSDKFriendCore.PickerChatType : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.PickerChatRoomType : Swift.Equatable {}
+extension KakaoSDKFriendCore.PickerChatRoomType : Swift.Hashable {}
+extension KakaoSDKFriendCore.PickerChatRoomType : Swift.RawRepresentable {}
