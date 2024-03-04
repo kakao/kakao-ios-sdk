@@ -89,7 +89,7 @@ extension TalkApi {
     }
     
     public func _makeParametersForFollowChannel(agtToken: String? = nil, channelPublicId: String) -> [String:Any] {
-        var parameters = SdkUtils.makeParametersForApps()
+        var parameters = SdkUtils.makeParametersForApps(returnUrl: "\(try! KakaoSDK.shared.scheme())://channel")
         
         if let agt = agtToken {
             parameters["agt"] = agt

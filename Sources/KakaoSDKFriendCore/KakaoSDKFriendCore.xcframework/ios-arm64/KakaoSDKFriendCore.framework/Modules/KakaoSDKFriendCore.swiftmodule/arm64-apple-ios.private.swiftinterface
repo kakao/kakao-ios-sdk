@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KakaoSDKFriendCore
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AuthenticationServices
@@ -9,7 +9,8 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
- public enum KFLogEvent : Swift.String {
+import _SwiftConcurrencyShims
+@_documentation(visibility: private) public enum KFLogEvent : Swift.String {
   case v
   case d
   case i
@@ -21,7 +22,7 @@ import _StringProcessing
     get
   }
 }
- public enum KFLogLevel : Swift.Int {
+@_documentation(visibility: private) public enum KFLogLevel : Swift.Int {
   case v
   case d
   case i
@@ -33,7 +34,7 @@ import _StringProcessing
     get
   }
 }
- public class KFSdkLog {
+@_documentation(visibility: private) public class KFSdkLog {
   public static let shared: KakaoSDKFriendCore.KFSdkLog
   final public let maxLogs: Swift.Int
   public var debugLogs: [(Foundation.Date, Swift.String)] {
@@ -51,7 +52,7 @@ import _StringProcessing
   public class func e(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
   @objc deinit
 }
- extension Foundation.Date {
+@_documentation(visibility: private) extension Foundation.Date {
   public func toString() -> Swift.String
   public func toSimpleString() -> Swift.String
 }
@@ -71,11 +72,11 @@ public struct SelectedUsers : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
- public struct PickerUsers : Swift.Codable {
+@_documentation(visibility: private) public struct PickerUsers : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
- public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
+@_documentation(visibility: private) public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
   case Friend
   case ChatMember
   public init?(rawValue: Swift.String)
@@ -84,17 +85,17 @@ public struct SelectedUsers : Swift.Codable {
     get
   }
 }
- public struct PickerUserScope : Swift.Codable {
+@_documentation(visibility: private) public struct PickerUserScope : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
- public let CF: KakaoSDKFriendCore.Caprifire
- public struct ResponseInfo {
+@_documentation(visibility: private) public let CF: KakaoSDKFriendCore.Caprifire
+@_documentation(visibility: private) public struct ResponseInfo {
   public let response: Foundation.HTTPURLResponse?
   public let data: Foundation.Data?
   public init?(_ response: Foundation.HTTPURLResponse?, _ data: Foundation.Data?)
 }
- public class Caprifire {
+@_documentation(visibility: private) public class Caprifire {
   public static let shared: KakaoSDKFriendCore.Caprifire
   public init()
   public enum HTTPMethod : Swift.String {
@@ -134,31 +135,31 @@ extension KakaoSDKFriendCore.Caprifire {
     }
   }
 }
- extension Foundation.CharacterSet {
+@_documentation(visibility: private) extension Foundation.CharacterSet {
   public static let cfURLQueryAllowed: Foundation.CharacterSet
 }
- public protocol ScopeRequestable : AnyObject {
+@_documentation(visibility: private) public protocol ScopeRequestable : AnyObject {
   func requestPickerScope(requiredScope: [Swift.String], completion: @escaping ((any Swift.Error)?) -> Swift.Void)
 }
- extension Swift.Array where Element == Swift.Int64 {
+@_documentation(visibility: private) extension Swift.Array where Element == Swift.Int64 {
   public func KFtoJsonString() -> Swift.String?
 }
- public struct PickerChats : Swift.Codable {
+@_documentation(visibility: private) public struct PickerChats : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
- public struct PickerChatMemberInfo : Swift.Codable {
+@_documentation(visibility: private) public struct PickerChatMemberInfo : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
- public enum KFSdkError : Swift.Error {
+@_documentation(visibility: private) public enum KFSdkError : Swift.Error {
   case ClientFailed(reason: KakaoSDKFriendCore.KFClientFailureReason, errorMessage: Swift.String?)
 }
- extension KakaoSDKFriendCore.KFSdkError {
+@_documentation(visibility: private) extension KakaoSDKFriendCore.KFSdkError {
   public init(reason: KakaoSDKFriendCore.KFClientFailureReason = .Unknown, message: Swift.String? = nil)
   public func getClientError() -> (reason: KakaoSDKFriendCore.KFClientFailureReason, message: Swift.String?)
 }
- public enum KFClientFailureReason {
+@_documentation(visibility: private) public enum KFClientFailureReason {
   case Unknown
   case Cancelled
   case TokenNotFound
@@ -174,7 +175,7 @@ extension KakaoSDKFriendCore.Caprifire {
     get
   }
 }
- public enum KFHostType {
+@_documentation(visibility: private) public enum KFHostType {
   case Kapi
   public var host: Swift.String {
     get
@@ -185,21 +186,21 @@ extension KakaoSDKFriendCore.Caprifire {
     get
   }
 }
-@_hasMissingDesignatedInitializers  public class KFPaths {
+@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFPaths {
   public static let selectFriends: Swift.String
   public static let userScpoes: Swift.String
   public static let selectChats: Swift.String
   public static let selectChatMembers: Swift.String
   @objc deinit
 }
-@_hasMissingDesignatedInitializers  public class KFUrls {
+@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFUrls {
   public static func compose(_ hostType: KakaoSDKFriendCore.KFHostType = .Kapi, path: Swift.String) -> Swift.String
   @objc deinit
 }
- extension Swift.Dictionary {
+@_documentation(visibility: private) extension Swift.Dictionary {
   public mutating func merge(_ dictionary: [Key : Value])
 }
-@_hasMissingDesignatedInitializers  public class KFJSONDecoder : Foundation.JSONDecoder {
+@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFJSONDecoder : Foundation.JSONDecoder {
   public static var `default`: KakaoSDKFriendCore.KFJSONDecoder {
     get
   }
@@ -260,7 +261,7 @@ public enum DisableSelectReason {
   case unRegistered
   case notFriend
   case custom
-   case unknown
+  @_documentation(visibility: private) case unknown
   public static func == (a: KakaoSDKFriendCore.DisableSelectReason, b: KakaoSDKFriendCore.DisableSelectReason) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -371,18 +372,18 @@ public class PickerTabRequestParams {
   }
   @objc deinit
 }
- public struct SharingData {
+@_documentation(visibility: private) public struct SharingData {
   public init(kapiHost: Swift.String? = nil, kaHeader: Swift.String? = nil, appKey: Swift.String? = nil)
 }
 @_hasMissingDesignatedInitializers public class PickerApi {
   public static let shared: KakaoSDKFriendCore.PickerApi
-   weak public var scopeRequestor: (any KakaoSDKFriendCore.ScopeRequestable)?
-   public func shouldRefreshToken() -> Swift.Bool
-   public func updateSharingData(_ sharingData: KakaoSDKFriendCore.SharingData? = nil)
-   public func updateAuth(accessToken: Swift.String? = nil, expiredAt: Foundation.Date? = nil)
+  @_documentation(visibility: private) weak public var scopeRequestor: (any KakaoSDKFriendCore.ScopeRequestable)?
+  @_documentation(visibility: private) public func shouldRefreshToken() -> Swift.Bool
+  @_documentation(visibility: private) public func updateSharingData(_ sharingData: KakaoSDKFriendCore.SharingData? = nil)
+  @_documentation(visibility: private) public func updateAuth(accessToken: Swift.String? = nil, expiredAt: Foundation.Date? = nil)
   @objc deinit
 }
- extension KakaoSDKFriendCore.PickerApi {
+@_documentation(visibility: private) extension KakaoSDKFriendCore.PickerApi {
   public func ____sfs(params: KakaoSDKFriendCore.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____sfsp(params: KakaoSDKFriendCore.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____sf(params: KakaoSDKFriendCore.PickerFriendRequestParams, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
@@ -413,10 +414,10 @@ public struct SelectedChat : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
- extension Swift.Dictionary where Key == Swift.String, Value == Any? {
+@_documentation(visibility: private) extension Swift.Dictionary where Key == Swift.String, Value == Any? {
   public func KFfilterNil() -> [Swift.String : Any]?
 }
- extension UIKit.UIApplication {
+@_documentation(visibility: private) extension UIKit.UIApplication {
   @available(iOSApplicationExtension, unavailable)
   @_Concurrency.MainActor(unsafe) public class func getMostTopViewControllerForKF(base: UIKit.UIViewController? = nil) -> UIKit.UIViewController?
   @available(iOSApplicationExtension, unavailable)

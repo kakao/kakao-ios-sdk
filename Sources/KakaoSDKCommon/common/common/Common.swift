@@ -41,14 +41,20 @@ public class Constants {
         let countryCode = Locale.current.regionCode
         
         let lang = "\(langCode ?? "")-\(countryCode ?? "")"
+        
+        #if !os(visionOS)
         let resX = "\(Int(UIScreen.main.bounds.width))"
-        let resY = "\(Int(UIScreen.main.bounds.height))"
+        let resY = "\(Int(UIScreen.main.bounds.height))"        
+        let res = "\(resX)x\(resY)"
+        #else
+        let res = "_"
+        #endif
         let device = UIDevice.current.model.replacingOccurrences(of: " ", with: "_")
         let appBundleId = Bundle.main.bundleIdentifier
         let appVersion = self.appVersion()
         let customIdentifier = KakaoSDK.shared.sdkIdentifier()?.customIdentifier
         
-        let ka = "sdk/\(sdkVersion) sdk_type/\(sdkType) os/ios-\(osVersion) lang/\(lang) res/\(resX)x\(resY) device/\(device) origin/\(appBundleId ?? "") app_ver/\(appVersion ?? "")"
+        let ka = "sdk/\(sdkVersion) sdk_type/\(sdkType) os/ios-\(osVersion) lang/\(lang) res/\(res) device/\(device) origin/\(appBundleId ?? "") app_ver/\(appVersion ?? "")"
         
         return customIdentifier != nil ? "\(ka) \(customIdentifier!)":ka
     }

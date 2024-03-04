@@ -147,6 +147,9 @@ public class Paths {
     public static let userScopes = "/v2/user/scopes"
     public static let userRevokeScopes = "/v2/user/revoke/scopes"
     public static let userRevokeServiceTerms = "/v2/user/revoke/service_terms"
+            
+    // shipping address
+    public static let shippingAddressList = "/user/address"
     
     //talk
     public static let talkProfile = "/v1/api/talk/profile"
@@ -211,6 +214,8 @@ public class Paths {
 
     //token refresher
     public static let checkAccessToken = "/v1/user/check_access_token"
+    
+    public static let kpidt = "/auth/kpidt"
 }
 
 #if swift(>=5.8)

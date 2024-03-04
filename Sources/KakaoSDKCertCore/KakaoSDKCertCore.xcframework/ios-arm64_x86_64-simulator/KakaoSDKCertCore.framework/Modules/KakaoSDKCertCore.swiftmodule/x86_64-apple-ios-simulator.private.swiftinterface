@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KakaoSDKCertCore
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import CommonCrypto
@@ -12,7 +12,8 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
- public class CertCore {
+import _SwiftConcurrencyShims
+@_documentation(visibility: private) public class CertCore {
   public static let shared: KakaoSDKCertCore.CertCore
   public init()
   public func setSessionInfo(sessionInfo: KakaoSDKCertCore.SessionInfo)
@@ -32,14 +33,14 @@ extension KakaoSDKCertCore.CertCore {
   public func __sessionInfo() -> KakaoSDKCertCore.SessionInfo?
   public func __deleteKeyPair()
 }
- public enum CCSdkError : Swift.Error {
+@_documentation(visibility: private) public enum CCSdkError : Swift.Error {
   case ClientFailed(reason: KakaoSDKCertCore.CCClientFailureReason, errorMessage: Swift.String?)
 }
- extension KakaoSDKCertCore.CCSdkError {
+@_documentation(visibility: private) extension KakaoSDKCertCore.CCSdkError {
   public init(reason: KakaoSDKCertCore.CCClientFailureReason = .Unknown, message: Swift.String? = nil)
   public func getClientError() -> (reason: KakaoSDKCertCore.CCClientFailureReason, message: Swift.String?)
 }
- public enum CCClientFailureReason {
+@_documentation(visibility: private) public enum CCClientFailureReason {
   case Unknown
   case Cancelled
   case TokenNotFound
@@ -55,7 +56,7 @@ extension KakaoSDKCertCore.CertCore {
     get
   }
 }
- public enum CCLogEvent : Swift.String {
+@_documentation(visibility: private) public enum CCLogEvent : Swift.String {
   case v
   case d
   case i
@@ -67,7 +68,7 @@ extension KakaoSDKCertCore.CertCore {
     get
   }
 }
- public enum CCLogLevel : Swift.Int {
+@_documentation(visibility: private) public enum CCLogLevel : Swift.Int {
   case v
   case d
   case i
@@ -79,7 +80,7 @@ extension KakaoSDKCertCore.CertCore {
     get
   }
 }
- public class CCSdkLog {
+@_documentation(visibility: private) public class CCSdkLog {
   public static let shared: KakaoSDKCertCore.CCSdkLog
   final public let maxLogs: Swift.Int
   public var debugLogs: [(Foundation.Date, Swift.String)] {
@@ -97,7 +98,7 @@ extension KakaoSDKCertCore.CertCore {
   public class func e(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
   @objc deinit
 }
- extension Foundation.Date {
+@_documentation(visibility: private) extension Foundation.Date {
   public func toString() -> Swift.String
   public func toSimpleString() -> Swift.String
 }

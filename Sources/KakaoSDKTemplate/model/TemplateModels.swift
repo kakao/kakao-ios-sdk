@@ -136,10 +136,10 @@ public struct Content : Codable {
     // MARK: Fields
     
     /// 컨텐츠 제목
-    public let title : String
+    public let title : String?
     
     /// 이미지 URL
-    public let imageUrl : URL
+    public let imageUrl : URL?
     
     /// 이미지 너비 (단위: 픽셀)
     public let imageWidth : Int?
@@ -157,8 +157,8 @@ public struct Content : Codable {
     
     // MARK: Initializers
     
-    public init(title: String,
-                imageUrl: URL,
+    public init(title: String? = nil,
+                imageUrl: URL? = nil,
                 imageWidth: Int? = nil,
                 imageHeight: Int? = nil,
                 description: String? = nil,

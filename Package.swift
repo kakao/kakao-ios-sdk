@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.20.0
+// sdk-version:2.21.0
 import PackageDescription
 
 let package = Package(

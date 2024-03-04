@@ -1,7 +1,7 @@
 framework module KakaoSDKCertCore {
   umbrella header "KakaoSDKCertCore.h"
-
   export *
+
   module * { export * }
 }
 

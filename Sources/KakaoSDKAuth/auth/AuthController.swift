@@ -81,6 +81,7 @@ public class AuthController {
     
     //내부 디폴트브라우져용 time delay
     public static let delayForAuthenticationSession : Double = 0.4
+    public static let delayForHandleOpenUrl : Double = 0.1
     
     public init() {
         AUTH_API.checkMigrationAndInitSession()
@@ -206,7 +207,10 @@ public class AuthController {
     public static func handleOpenUrl(url:URL,  options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthController.isValidRedirectUri(url)) {
             if let authorizeWithTalkCompletionHandler = AUTH_CONTROLLER.authorizeWithTalkCompletionHandler {
-                authorizeWithTalkCompletionHandler(url)
+                DispatchQueue.main.asyncAfter(deadline: .now() + AuthController.delayForHandleOpenUrl) {
+                    authorizeWithTalkCompletionHandler(url)
+                }
+                return true
             }
         }
         return false
