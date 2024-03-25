@@ -42,6 +42,7 @@ extension CertApi {
     ///   - state: 카카오 로그인 과정 중 동일한 값을 유지하는 임의의 문자열(정해진 형식 없음)
     ///   - nonce: ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
     ///   - settleId: 정산 ID
+    ///   - identifyItems: 서명자 정보 가져오기 응답으로 확인할 서명자 정보
     public func certLoginWithKakaoTalk(certType: CertType,
                                        txId: String? = nil,
                                        launchMethod: LaunchMethod? = .UniversalLink,
@@ -51,8 +52,9 @@ extension CertApi {
                                        signData: String? = nil,
                                        nonce: String? = nil,
                                        settleId: String? = nil,
+                                       identifyItems: [IdentifyItem]? = nil,
                                        completion: @escaping (CertTokenInfo?, Error?) -> Void) {
-        AuthApi.shared.prepare(certType: certType, txId: txId, settleId: settleId, signData: signData) { (kauthTxId, error) in
+        AuthApi.shared.prepare(certType: certType, txId: txId, settleId: settleId, signData: signData, identifyItems: identifyItems) { (kauthTxId, error) in
             if let error = error {
                 completion(nil, error)
             } else {
@@ -81,6 +83,7 @@ extension CertApi {
     ///   - state: 카카오 로그인 과정 중 동일한 값을 유지하는 임의의 문자열(정해진 형식 없음)
     ///   - nonce: ID 토큰 재생 공격을 방지하기 위해, ID 토큰 검증 시 사용할 임의의 문자열(정해진 형식 없음)
     ///   - settleId: 정산 ID
+    ///   - identifyItems: 서명자 정보 가져오기 응답으로 확인할 서명자 정보
     public func certLoginWithKakaoAccount(certType: CertType,
                                           txId: String? = nil,
                                           prompts : [Prompt]? = nil,
@@ -88,8 +91,9 @@ extension CertApi {
                                           signData: String? = nil,
                                           nonce: String? = nil,
                                           settleId: String? = nil,
+                                          identifyItems: [IdentifyItem]? = nil,
                                           completion: @escaping (CertTokenInfo?, Error?) -> Void) {
-        AuthApi.shared.prepare(certType: certType, txId: txId, settleId: settleId, signData: signData) { (kauthTxId, error) in
+        AuthApi.shared.prepare(certType: certType, txId: txId, settleId: settleId, signData: signData, identifyItems: identifyItems) { (kauthTxId, error) in
             if let error = error {
                 completion(nil, error)
             } else {

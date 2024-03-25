@@ -244,6 +244,7 @@ extension AuthApi {
                         txId: String? = nil, //certType == .K2220 일때 not null
                         settleId: String? = nil,
                         signData: String? = nil,
+                        identifyItems: [IdentifyItem]? = nil,
                         completion: @escaping (String?, Error?) -> Void) {
         
         if certType == .K2220 {
@@ -260,7 +261,8 @@ extension AuthApi {
                             "cert_type": certType.rawValue,
                             "tx_id": txId,
                             "settle_id":settleId,
-                            "sign_data": signData
+                            "sign_data": signData,
+                            "sign_identify_items": identifyItems?.map({ $0.rawValue }).joined(separator: ","),
                             ].filterNil(),
                          sessionType: .Auth,
                          apiType: .KAuth) { (response, data, error) in

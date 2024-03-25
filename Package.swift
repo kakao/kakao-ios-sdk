@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.21.1
+// sdk-version:2.22.0
 import PackageDescription
 
 let package = Package(
@@ -50,7 +50,7 @@ let package = Package(
     dependencies: [
         .package(name: "Alamofire",
                   url: "https://github.com/Alamofire/Alamofire.git",
-                  Version(5,1,0)..<Version(6,0,0))
+                  Version(5,9,0)..<Version(6,0,0))
     ],
     targets: [
         .target(
@@ -58,7 +58,8 @@ let package = Package(
             dependencies: [
                 .product(name: "Alamofire", package: "Alamofire"),
             ],
-            exclude: ["Info.plist", "README.md"]
+            exclude: ["Info.plist", "README.md"],
+            resources: [.process("PrivacyInfo.xcprivacy")]
         ),
         .target(
             name: "KakaoSDKAuth",

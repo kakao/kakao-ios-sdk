@@ -271,3 +271,15 @@ public enum CertType: String {
     /// 카카오톡 축약서명
     case K2220 = "k2220"
 }
+
+/// 서명자 정보
+public enum IdentifyItem: String {
+    /// 전화번호
+    case PhoneNumber = "phone_number"
+    /// 연계 정보
+    case CI = "ci"
+    /// 이름
+    case Name = "name"
+    /// 생일
+    case Birthday = "birthday"
+}
