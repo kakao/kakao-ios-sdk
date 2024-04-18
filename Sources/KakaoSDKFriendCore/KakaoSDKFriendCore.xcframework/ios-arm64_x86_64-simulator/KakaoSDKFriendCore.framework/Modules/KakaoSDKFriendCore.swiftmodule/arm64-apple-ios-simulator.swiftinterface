@@ -380,7 +380,7 @@ public class PickerTabRequestParams {
   @_documentation(visibility: private) weak public var scopeRequestor: (any KakaoSDKFriendCore.ScopeRequestable)?
   @_documentation(visibility: private) public func shouldRefreshToken() -> Swift.Bool
   @_documentation(visibility: private) public func updateSharingData(_ sharingData: KakaoSDKFriendCore.SharingData? = nil)
-  @_documentation(visibility: private) public func updateAuth(accessToken: Swift.String? = nil, expiredAt: Foundation.Date? = nil)
+  @_documentation(visibility: private) public func updateAuth(accessToken: Swift.String? = nil, expiredAt: Foundation.Date? = nil, shouldUpdateAtTime: Swift.Bool = true)
   @objc deinit
 }
 @_documentation(visibility: private) extension KakaoSDKFriendCore.PickerApi {

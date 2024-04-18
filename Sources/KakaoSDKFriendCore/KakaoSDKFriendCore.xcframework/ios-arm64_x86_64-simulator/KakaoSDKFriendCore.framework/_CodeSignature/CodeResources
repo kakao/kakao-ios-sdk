@@ -10,15 +10,15 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		jd2nDLJAJzAYwCOm2sammR4HxY0=
+		GkALX8cs1xzU/N40esJMS2xeSJ4=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		2bVdi3Z3jrChxcsmdadgACwNNqU=
+		ktDj19XR46PlOp+Hs27hjZsJII0=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		BDg58ZG0bxeWAzVGn7kGrq5b5wM=
+		LabmZwiEPv+6+r9/9GUyI1XXnh0=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BDg58ZG0bxeWAzVGn7kGrq5b5wM=
+		LabmZwiEPv+6+r9/9GUyI1XXnh0=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		2icFV/lvTvB+V12qVPwaYALA4i8=
+		WpjZH/DrZYB3hRg5M1PdTeOytxc=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		2bVdi3Z3jrChxcsmdadgACwNNqU=
+		ktDj19XR46PlOp+Hs27hjZsJII0=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		kSghFYAZujMMtA1u99HcnLMOmsA=
+		N/h1uWIvpOx/iEJMlQ7174WnJ9w=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		kSghFYAZujMMtA1u99HcnLMOmsA=
+		N/h1uWIvpOx/iEJMlQ7174WnJ9w=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		w8EfJvcZMwDwkBhr6Gf8I5wx9nY=
+		WkIN/U1nqxnjBR7A9dAzTUR6GRQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,22 +74,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2bVdi3Z3jrChxcsmdadgACwNNqU=
+			ktDj19XR46PlOp+Hs27hjZsJII0=
 			</data>
 			<key>hash2</key>
 			<data>
-			xxayxJkC6vNLmtEklQnCJD0OrSWFH56N3crAlXnB6W4=
+			bpj2biAUV1PuXZsNb0x3rdK24B3ibmT7e74MteCv9aI=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BDg58ZG0bxeWAzVGn7kGrq5b5wM=
+			LabmZwiEPv+6+r9/9GUyI1XXnh0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vdr4KqKaJghHPrCra9FqN8LXHe7W2F6oqUIXnMOagjI=
+			l8Fh2w4GQ9YA3KeuJ2KxguzRov6gJYFZ7/PmoViYtyY=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -107,44 +107,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BDg58ZG0bxeWAzVGn7kGrq5b5wM=
+			LabmZwiEPv+6+r9/9GUyI1XXnh0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vdr4KqKaJghHPrCra9FqN8LXHe7W2F6oqUIXnMOagjI=
+			l8Fh2w4GQ9YA3KeuJ2KxguzRov6gJYFZ7/PmoViYtyY=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2icFV/lvTvB+V12qVPwaYALA4i8=
+			WpjZH/DrZYB3hRg5M1PdTeOytxc=
 			</data>
 			<key>hash2</key>
 			<data>
-			lNoXSYkWfmNGZAn6DqScfuQ9SHAVx4uJ1I0UGRiB+3Q=
+			61t936qZ5DhhAb/yqbbKeCuggj3UJNKUglnAE0bAbJU=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2bVdi3Z3jrChxcsmdadgACwNNqU=
+			ktDj19XR46PlOp+Hs27hjZsJII0=
 			</data>
 			<key>hash2</key>
 			<data>
-			xxayxJkC6vNLmtEklQnCJD0OrSWFH56N3crAlXnB6W4=
+			bpj2biAUV1PuXZsNb0x3rdK24B3ibmT7e74MteCv9aI=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kSghFYAZujMMtA1u99HcnLMOmsA=
+			N/h1uWIvpOx/iEJMlQ7174WnJ9w=
 			</data>
 			<key>hash2</key>
 			<data>
-			sjjMW/D/F/FXy2mr2j9lVux5dBvygjyUtODtxZnPhRQ=
+			cTf4JCMmv9F1XHvEWGpAoSlARfw9LxlwECXuQWRSc8Q=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -162,22 +162,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kSghFYAZujMMtA1u99HcnLMOmsA=
+			N/h1uWIvpOx/iEJMlQ7174WnJ9w=
 			</data>
 			<key>hash2</key>
 			<data>
-			sjjMW/D/F/FXy2mr2j9lVux5dBvygjyUtODtxZnPhRQ=
+			cTf4JCMmv9F1XHvEWGpAoSlARfw9LxlwECXuQWRSc8Q=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			w8EfJvcZMwDwkBhr6Gf8I5wx9nY=
+			WkIN/U1nqxnjBR7A9dAzTUR6GRQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			jFquOMHcnlYMe69Iii9l4MySTfa5AmIPk5onZWtdgN8=
+			FY9sKap4BQeZA4Q/U8HqYv/VhtwbuNbIdwL8NrKdHSY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
