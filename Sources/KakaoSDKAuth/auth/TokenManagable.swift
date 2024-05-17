@@ -14,10 +14,8 @@
 
 import Foundation
 
-/// 카카오 로그인 API를 통해 발급 받은 토큰을 관리하는 프로토콜입니다.
-///
-/// 카카오에서 제공하는 Open API 중 Authorization 헤더에 토큰을 입력해야 하는 로그인 기반 API를 호출할 때, SDK 내부적으로 이 프로토콜을 통하여 토큰 저장 및 읽기를 수행합니다.
-/// 카카오 SDK에서는 개발자의 편의를 위하여 기본 관리자를 제공하고 있습니다.
+/// 토큰 저장소 프로토콜 \
+/// Protocol for the token manager
 ///
 /// ## SeeAlso
 /// - ``TokenManager``
@@ -30,12 +28,15 @@ public protocol TokenManagable {
     
     // MARK: Methods
     
-    /// 토큰을 저장합니다.
+    /// 토큰을 ``UserDefaults``에 저장 \
+    /// Saves tokens in the ``UserDefaults``
     func setToken(_ token:OAuthToken?)
     
-    /// 저장된 토큰을 가져옵니다.
+    /// 저장된 토큰 반환 \
+    /// Returns saved tokens
     func getToken() -> OAuthToken?
     
-    /// 저장된 토큰을 삭제합니다.
+    /// 저장된 토큰 삭제 \
+    /// Deletes saved tokens
     func deleteToken()
 }

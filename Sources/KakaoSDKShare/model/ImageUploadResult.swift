@@ -14,36 +14,48 @@
 
 import Foundation
 
-/// 이미지 업로드, 스크랩 요청 결과
+/// 이미지 업로드 결과 \
+/// Image upload result
 public struct ImageUploadResult : Codable {
     
-    /// 업로드된 이미지 정보
+    /// 이미지 정보 목록 \
+    /// List of image information
     public let infos: ImageInfos
 }
 
+/// 이미지 정보 목록 \
+/// List of image information
 public struct ImageInfos : Codable {
     
-    /// 원본 이미지
+    /// 이미지 정보 \
+    /// Image information
     public let original: ImageInfo
 }
 
+/// 이미지 정보 \
+/// Image information
 public struct ImageInfo : Codable {
     
     // MARK: Fields
     
-    /// 업로드 된 이미지의 URL
+    /// 이미지 URL \
+    /// Image URL
     public let url: URL
     
-    /// 업로드 된 이미지의 Content-Type
+    /// 이미지 포맷 \
+    /// Image format
     public let contentType: String
     
-    /// 업로드 된 이미지의 용량 (단위: 바이트)
+    /// 이미지 파일 크기(단위: 바이트) \
+    /// Image file size (Unit: byte)
     public let length: Int
     
-    /// 업로드 된 이미지의 너비 (단위: 픽셀)
+    /// 이미지 너비 \
+    /// Image width
     public let width: Int
     
-    /// 업로드 된 이미지의 높이 (단위: 픽셀)
+    /// 이미지 높이 \
+    /// Image height
     public let height: Int
     
 }

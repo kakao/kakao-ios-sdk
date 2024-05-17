@@ -15,40 +15,38 @@
 import Foundation
 import KakaoSDKCommon
 
-/// 카카오내비 API 호출을 담당하는 클래스입니다.
-///
-/// 원하는 목적지 정보를 입력하여 `NaviLocation` 객체를 만들고 길안내 API를 호출할 수 있습니다.
-/// 사용하는 좌표계를 변경하거나 각종 옵션을 설정하려면 `NaviOptions` 를 생성하고 해당 API **options** 파라미터로 함께 전달합니다.
-/// 경유지가 있다면 경유지에 대한 `NaviLocation` 객체를 추가로 만들고 배열에 담아 해당 API **viaList** 파라미터로 전달합니다.
-///
+/// 카카오내비 API 클래스 \
+/// Class for the Kakao Navi APIs
 /// ## SeeAlso
 /// - ``NaviLocation``
 /// - ``NaviOption``
-///
-/// 아래는 간단한 카카오내비 길안내 예제입니다.
-///
-///     let destination = NaviLocation(name: "카카오판교오피스", x: 321286, y: 533707)
-///     guard let navigateUrl = NaviApi.shared.navigateUrl(destination: destination) else {
-///         return
-///     }
-///     UIApplication.shared.open(navigateUrl, options: [:], completion: nil)
 public class NaviApi {
     
     // MARK: Fields
     
-    /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다.
+    /// 카카오 SDK 싱글톤 객체 \
+    /// A singleton object for Kakao SDK
     public static let shared = NaviApi()
     
     
     // MARK: Using KakaoNavi
-    
+    /// 카카오내비 설치 URL 반환 \
+    /// Returns Kakao Navi installation URL
     public static var webNaviInstallUrl : URL {
         get {
             return URL(string:Urls.compose(.NaviInstall, path:Paths.webNaviInstall))!
         }
     }
     
-    /// 카카오내비 장소 공유 URL을 얻습니다. 획득한 URL을 열면 카카오내비 앱이 실행됩니다.
+    /// 카카오내비 앱으로 목적지 공유를 실행하는 URL 반환 \
+    /// Returns a URL to share the destination with the Kakao Navi app
+    /// - parameters:
+    ///   - destination: 목적지 \
+    ///                  Destination
+    ///   - option: 경로 검색 옵션 \
+    ///             Options for searching the route
+    ///   - viaList: 경유지 목록(최대: 3개) \
+    ///              List of stops (Maximum: 3 places)
     public func shareUrl(destination:NaviLocation,
                          option:NaviOption? = nil,
                          viaList:[NaviLocation]? = nil) -> URL? {
@@ -64,7 +62,18 @@ public class NaviApi {
         return makeNaviUrl(url: Urls.compose(.Navi, path:Paths.navigateDestination), destination: destination, option: shareNaviOption, viaList: viaList)
     }
     
-    /// 카카오내비 길안내 URL을 얻습니다. 획득된 URL을 열면 카카오내비 앱이 실행됩니다.
+    /// 카카오내비 앱으로 길안내를 실행하는 URL 반환 \
+    /// Returns a URL to navigate with the Kakao Navi app
+    /// - parameters:
+    ///   - destination: 목적지 \
+    ///                  Destination
+    ///   - option: 경로 검색 옵션 \
+    ///             Options for searching the route
+    ///   - viaList: 경유지 목록(최대: 3개) \
+    ///              List of stops (Maximum: 3 places)
+    ///## SeeAlso
+    ///- [길 안내하기](https://developers.kakao.com/docs/latest/ko/kakaonavi/ios#navigation) \
+    ///  [Start navigation](https://developers.kakao.com/docs/latest/en/kakaonavi/ios#navigation)
     public func navigateUrl(destination:NaviLocation,
                             option:NaviOption? = nil,
                             viaList:[NaviLocation]? = nil) -> URL? {

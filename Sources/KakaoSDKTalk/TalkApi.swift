@@ -20,14 +20,14 @@ import UIKit
 
 import AuthenticationServices
 
-/// 카카오 Open API의 카카오톡 API 호출을 담당하는 클래스입니다.
-///
-/// 프로필 가져오기, 친구 목록 가져오기, 메시지 보내기 등이 기능을 제공합니다.
+/// [카카오톡 채널](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/common), [카카오톡 소셜](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/common), [카카오톡 메시지](https://developers.kakao.com/docs/latest/ko/message/common) API 클래스 \
+/// Class for the [Kakao Talk Channel](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common), [Kakao Talk Social](https://developers.kakao.com/docs/latest/en/kakaotalk-social/common), [Kakao Talk Message](https://developers.kakao.com/docs/latest/en/message/common) APIs
 public class TalkApi {
     
     // MARK: Fields
     
-    /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다.
+    /// 카카오 SDK 싱글톤 객체 \
+    /// A singleton object for Kakao SDK
     public static let shared = TalkApi()
     
 #if swift(>=5.8)
@@ -44,18 +44,14 @@ public class TalkApi {
         self.presentationContextProvider = DefaultASWebAuthenticationPresentationContextProvider()
     }
     
-    /// 카카오톡 채널을 추가하기 위한 URL을 반환합니다. URL을 브라우저나 웹뷰에서 로드하면 연결 페이지(bridge page)를 통해 카카오톡을 실행합니다.
-    ///
-    /// - parameter channelPublicId: 카카오톡 채널 홈 URL에 들어간 {_영문}으로 구성된 고유 아이디입니다. 홈 URL은 카카오톡 채널 관리자센터 > 관리 > 상세설정 페이지에서 확인할 수 있습니다.
-    ///
-    /// 아래는 SFSafariViewController를 이용해 카카오톡 채널을 추가하는 예제입니다.
-    /// ```
-    /// guard let url = TalkApi.shared.makeUrlForAddChannel(channelPublicId:"<#Your Channel Public ID#>" else {
-    ///     return
-    /// }
-    /// let safariViewController = SFSafariViewController(url: url)
-    /// self.present(safariViewController, animated: true, completion: nil)
-    /// ```
+    /// 카카오톡 채널 추가 페이지 URL 반환 \
+    /// Returns a URL to add a Kakao Talk Channel as a friend
+    /// - parameters:
+    ///    - channelPublicId:카카오톡 채널 프로필 ID \
+    ///                      Kakao Talk Channel profile ID
+    ///## SeeAlso
+    ///- [연결 페이지](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/ios#add-channel-url) \
+    ///  [Bridge page](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/ios#add-channel-url)
     public func makeUrlForAddChannel(channelPublicId:String) -> URL? {
         SdkLog.d("===================================================================================================")
         let url = SdkUtils.makeUrlWithParameters("\(Urls.compose(.Channel, path:Paths.channel))/\(channelPublicId)/friend",parameters:["app_key":try! KakaoSDK.shared.appKey(), "kakao_agent":Constants.kaHeader, "api_ver":"1.0"].filterNil())
@@ -68,18 +64,14 @@ public class TalkApi {
         return makeUrlForChatChannel(channelPublicId: channelPublicId)
     }
     
-    /// 카카오톡 채널 1:1 대화방 실행을 위한 URL을 반환합니다. URL을 브라우저나 웹뷰에서 로드하면 브릿지 웹페이지를 통해 카카오톡을 실행합니다.
-    ///
-    /// - parameter channelPublicId: 카카오톡 채널 홈 URL에 들어간 {_영문}으로 구성된 고유 아이디입니다. 홈 URL은 카카오톡 채널 관리자센터 > 관리 > 상세설정 페이지에서 확인할 수 있습니다.
-    ///
-    /// 아래는 SFSafariViewController를 이용해 1:1 대화방을 실행하는 예제입니다.
-    /// ```
-    /// guard let url = TalkApi.shared.makeUrlForChannelChat(channelPublicId:"<#Your Channel Public ID#>" else {
-    ///     return
-    /// }
-    /// let safariViewController = SFSafariViewController(url: url)
-    /// self.present(safariViewController, animated: true, completion: nil)
-    /// ```
+    /// 카카오톡 채널 채팅 페이지 URL 반환 \
+    /// Returns a URL to start a chat with a Kakao Talk Channel
+    /// - parameters:
+    ///    - channelPublicId:카카오톡 채널 프로필 ID \
+    ///                      Kakao Talk Channel profile ID
+    ///## SeeAlso
+    ///- [연결 페이지](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/ios#chat-channel-url) \
+    ///  [Bridge page](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/ios#chat-channel-url)
     public func makeUrlForChatChannel(channelPublicId:String) -> URL? {
         SdkLog.d("===================================================================================================")
         let url = SdkUtils.makeUrlWithParameters("\(Urls.compose(.Channel, path:Paths.channel))/\(channelPublicId)/chat",
@@ -92,9 +84,12 @@ public class TalkApi {
 extension TalkApi {
     // MARK: Profile
     
-    /// 로그인된 사용자의 카카오톡 프로필 정보를 얻을 수 있습니다.
+    /// 카카오톡 프로필 가져오기 \
+    /// Retrieve Kakao Talk profile
     /// ## SeeAlso
     /// - ``TalkProfile``
+    /// - [프로필 가져오기](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/ios#get-profile) \
+    ///   [Retrieve Kakao Talk profile](https://developers.kakao.com/docs/latest/en/kakaotalk-social/ios#get-profile)
     public func profile(completion:@escaping (TalkProfile?, Error?) -> Void) {
         
         AUTH_API.responseData(.get, Urls.compose(path:Paths.talkProfile),
@@ -115,7 +110,13 @@ extension TalkApi {
     
     // MARK: Memo
     
-    /// 카카오 디벨로퍼스에서 생성한 서비스만의 커스텀 메시지 템플릿을 사용하여, 카카오톡의 "나와의 채팅방"으로 메시지를 전송합니다. 템플릿을 생성하는 방법은 [https://developers.kakao.com/docs/latest/ko/message/ios#create-message](https://developers.kakao.com/docs/latest/ko/message/ios#create-message) 을 참고하시기 바랍니다.
+    /// 나에게 사용자 정의 템플릿으로 메시지 보내기 \
+    /// Send message with custom template to me
+    /// - parameters:
+    ///    - templateId: 메시지 템플릿 ID \
+    ///                  Message template ID
+    ///    - templateArgs: 사용자 인자 \
+    ///                    User arguments
     public func sendCustomMemo(templateId: Int64, templateArgs: [String:String]? = nil, completion:@escaping (Error?) -> Void) {
         AUTH_API.responseData(.post, Urls.compose(path:Paths.customMemo), parameters: ["template_id":templateId, "template_args":templateArgs?.toJsonString()].filterNil(),
                               apiType: .KApi) { (_, _, error) in
@@ -124,9 +125,13 @@ extension TalkApi {
         }
     }
     
-    /// 기본 템플릿을 이용하여, 카카오톡의 "나와의 채팅방"으로 메시지를 전송합니다.
+    /// 나에게 기본 템플릿으로 메시지 보내기 \
+    /// Send message with default template to me
+    /// - parameters:
+    ///    - templatable: 메시지 템플릿 객체 \
+    ///                   An object of a message template
     /// ## SeeAlso
-    /// - - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKTalk'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
+    /// - [`Templatable`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKTemplate/documentation/kakaosdktemplate/templatable)
     public func sendDefaultMemo(templatable: Templatable, completion:@escaping (Error?) -> Void) {
         AUTH_API.responseData(.post, Urls.compose(path:Paths.defaultMemo), parameters: ["template_object":templatable.toJsonObject()?.toJsonString()].filterNil(),
                               apiType: .KApi) { (_, _, error) in
@@ -135,7 +140,15 @@ extension TalkApi {
         }
     }
     
-    /// 지정된 URL을 스크랩하여, 카카오톡의 "나와의 채팅방"으로 메시지를 전송합니다.
+    /// 나에게 스크랩 메시지 보내기 \
+    /// Send scrape message to me
+    ///  - parameters:
+    ///     - requestUrl: 스크랩할 URL \
+    ///                   URL to scrape
+    ///     - templateId: 메시지 템플릿 ID \
+    ///                   Message template ID
+    ///     - templateArgs: 사용자 인자 \
+    ///                     User arguments
     public func sendScrapMemo(requestUrl: String, templateId: Int64? = nil, templateArgs: [String:String]? = nil, completion:@escaping (Error?) -> Void) {
         AUTH_API.responseData(.post, Urls.compose(path:Paths.scrapMemo), parameters: ["request_url":requestUrl,"template_id":templateId, "template_args":templateArgs?.toJsonString()].filterNil(),
                               apiType: .KApi) { (_, _, error) in
@@ -146,7 +159,17 @@ extension TalkApi {
     
     // MARK: Friends
     
-    /// 카카오톡 친구 목록을 조회합니다.
+    /// 친구 목록 가져오기 \
+    /// Retrieve list of friends
+    /// - parameters:
+    ///   - offset: 친구 목록 시작 지점 \
+    ///             Start point of the friend list
+    ///   - limit: 페이지당 결과 수 \
+    ///            Number of results in a page
+    ///   - order: 정렬 방식 \
+    ///            Sorting method
+    ///   - friendOrder: 친구 정렬 방식 \
+    ///                  Method to sort the friend list
     /// ## SeeAlso
     /// - ``Friends``
     public func friends(offset: Int? = nil,
@@ -174,7 +197,8 @@ extension TalkApi {
         }
     }
     
-    /// 카카오톡 친구 목록을 FriendContext를 파라미터로 조회합니다.
+    /// 친구 목록 가져오기 \
+    /// Retrieve list of friends
     /// ## SeeAlso
     /// - ``FriendsContext``
     public func friends(context: FriendsContext?,
@@ -191,9 +215,15 @@ extension TalkApi {
     
     // MARK: Message
     
-    /// 기본 템플릿을 사용하여, 조회한 친구를 대상으로 카카오톡으로 메시지를 전송합니다.
+    /// 친구에게 기본 템플릿으로 메시지 보내기 \
+    /// Send message with default template to friends
+    ///  - parameters:
+    ///     - templatable: 메시지 템플릿 객체 \
+    ///                    An object of a message template
+    ///     - receiverUuids: 수신자 UUID \
+    ///                      Receiver UUIDs
     /// ## SeeAlso
-    /// - - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKTalk'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
+    /// - [`Templatable`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKTemplate/documentation/kakaosdktemplate/templatable)
     /// - ``MessageSendResult``
     public func sendDefaultMessage(templatable:Templatable, receiverUuids:[String],
                                    completion:@escaping (MessageSendResult?, Error?) -> Void) {
@@ -216,7 +246,15 @@ extension TalkApi {
         }
     }
     
-    /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 사용하여, 조회한 친구를 대상으로 카카오톡으로 메시지를 전송합니다. 템플릿을 생성하는 방법은 [https://developers.kakao.com/docs/latest/ko/message/ios#create-message](https://developers.kakao.com/docs/latest/ko/message/ios#create-message)을 참고하시기 바랍니다.
+    /// 친구에게 사용자 정의 템플릿으로 메시지 보내기 \
+    /// Send message with custom template
+    /// - parameters:
+    ///    - templateId: 메시지 템플릿 ID \
+    ///                  Message template ID
+    ///    - templateArgs: 사용자 인자 \
+    ///                    User arguments
+    ///    - receiverUuids: 수신자 UUID \
+    ///                     Receiver UUIDs
     /// ## SeeAlso
     /// - ``MessageSendResult``
     public func sendCustomMessage(templateId: Int64, templateArgs:[String:String]? = nil, receiverUuids:[String],
@@ -237,7 +275,17 @@ extension TalkApi {
         }
     }
     
-    /// 지정된 URL을 스크랩하여, 조회한 친구를 대상으로 카카오톡으로 메시지를 전송합니다. [스크랩 커스텀 템플릿 가이드](https://developers.kakao.com/docs/latest/ko/message/ios#send-kakaotalk-msg) 를 참고하여 템플릿을 직접 만들고 스크랩 메시지 전송에 이용할 수도 있습니다.
+    /// 친구에게 스크랩 메시지 보내기 \
+    /// Send scrape message to friends
+    /// - parameters:
+    ///    - requestUrl: 스크랩할 URL \
+    ///                   URL to scrape
+    ///    - templateId: 메시지 템플릿 ID \
+    ///                  Message template ID
+    ///    - templateArgs: 사용자 인자 \
+    ///                    User arguments
+    ///    - receiverUuids: 수신자 UUID \
+    ///                     Receiver UUIDs
     /// ## SeeAlso
     /// - ``MessageSendResult``
     public func sendScrapMessage(requestUrl: String, templateId: Int64? = nil, templateArgs:[String:String]? = nil, receiverUuids:[String],
@@ -264,7 +312,11 @@ extension TalkApi {
         
     // MARK: Kakaotalk Channel
     
-    /// 사용자가 특정 카카오톡 채널을 추가했는지 확인합니다.
+    /// 카카오톡 채널 관계 확인하기 \
+    /// Check Kakao Talk Channel relationship
+    /// - parameters:
+    ///    - publicIds: 카카오톡 채널 프로필 ID 목록 \
+    ///                 A list of Kakao Talk Channel profile IDs
     /// ## SeeAlso
     /// - ``Channels``
     public func channels(publicIds: [String]? = nil,
@@ -312,8 +364,11 @@ extension TalkApi {
         return UIApplication.shared.canOpenURL(url)
     }
     
-    /// 카카오톡 채널 추가
-    /// - parameter channelPublicId: 카카오톡 채널 홈 URL에 들어간 {_영문}으로 구성된 고유 아이디입니다. 홈 URL은 카카오톡 채널 관리자센터 > 관리 > 상세설정 페이지에서 확인할 수 있습니다.
+    /// 카카오톡 채널 친구 추가하기 \
+    /// Add Kakao Talk Channel
+    /// - parameters:
+    ///    - channelPublicId: 카카오톡 채널 프로필 ID \
+    ///                       Kakao Talk Channel profile ID
     public func addChannel(channelPublicId: String, completion: @escaping (Error?) -> Void) {
         let path = "plusfriend/home/\(channelPublicId)/add"
         if !TalkApi.isKakaoTalkChannelAvailable(path: path) {
@@ -331,8 +386,11 @@ extension TalkApi {
         }
     }
     
-    /// 카카오톡 채널 1:1 대화방 실행
-    /// - parameter channelPublicId: 카카오톡 채널 홈 URL에 들어간 {_영문}으로 구성된 고유 아이디입니다. 홈 URL은 카카오톡 채널 관리자센터 > 관리 > 상세설정 페이지에서 확인할 수 있습니다.
+    /// 카카오톡 채널 채팅하기 \
+    /// Start Kakao Talk Channel chat
+    /// - parameters:
+    ///    - channelPublicId: 카카오톡 채널 프로필 ID \
+    ///                       Kakao Talk Channel profile ID
     public func chatChannel(channelPublicId: String, completion: @escaping (Error?) -> Void) {
         let path = "plusfriend/talk/chat/\(channelPublicId)"
         if !TalkApi.isKakaoTalkChannelAvailable(path: path) {
@@ -350,8 +408,11 @@ extension TalkApi {
         }
     }
     
-    /// 카카오톡 채널 간편 추가
-    /// - parameter channelPublicId: 카카오톡 채널 홈 URL에 들어간 {_영문}으로 구성된 고유 아이디입니다. 홈 URL은 카카오톡 채널 관리자센터 > 관리 > 상세설정 페이지에서 확인할 수 있습니다.
+    /// 카카오톡 채널 간편 추가하기 \
+    /// Follow Kakao Talk Channel
+    /// - parameters:
+    ///    - channelPublicId: 카카오톡 채널 프로필 ID \
+    ///                       Kakao Talk Channel's profile ID
     public func followChannel(channelPublicId: String,
                               completion: @escaping (FollowChannelResult?, Error?) -> Void) {
         

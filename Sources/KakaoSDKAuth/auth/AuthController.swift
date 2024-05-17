@@ -23,16 +23,20 @@ import KakaoSDKCommon
 @available(iOSApplicationExtension, unavailable)
 let AUTH_CONTROLLER = AuthController.shared
 
-/// 동의 화면 요청 시 추가 상호작용을 요청할 때 사용
+/// 동의 화면에 상호작용 추가 요청 프롬프트 \
+/// Prompt to add an interaction to the consent screen
 public enum Prompt : String {
     
-    /// 기존 사용자 인증 여부와 상관없이 사용자에게 카카오계정 로그인 화면을 출력하여 다시 사용자 인증을 수행하고자 할 때 사용
+    /// 사용자 재인증 \
+    /// Reauthenticate users
     case Login = "login"
     
-    /// 인증 로그인을 요청할 때 사용
+    /// 인증 로그인 \
+    /// Certification Login
     case Cert = "cert"
     
-    /// 사용자가 카카오계정 신규 가입 후 로그인하도록 할 때 사용
+    /// 카카오계정 신규 가입 후 로그인 \
+    /// Login after signing up for a Kakao Account
     case Create = "create"
     
 #if swift(>=5.8)
@@ -40,7 +44,8 @@ public enum Prompt : String {
 #endif
     case UnifyDaum = "unify_daum"
     
-    /// 카카오계정 간편 로그인을 요청할 때 사용
+    /// 카카오계정 간편로그인 \
+    /// Kakao Account easy login
     case SelectAccount = "select_account"
 }
 
@@ -63,7 +68,8 @@ public class AuthController {
     
     // MARK: Fields
     
-    /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다.
+    /// 카카오 SDK 싱글톤 객체 \
+    /// A singleton object for Kakao SDK
     public static let shared = AuthController()
    
     public var presentationContextProvider: Any?
@@ -96,7 +102,6 @@ public class AuthController {
     // MARK: Login with KakaoTalk
     public func _authorizeWithTalk(launchMethod: LaunchMethod? = nil,
                                   prompts: [Prompt]? = nil,
-                                  state: String? = nil,
                                   channelPublicIds: [String]? = nil,
                                   serviceTerms: [String]? = nil,
                                   nonce: String? = nil,
@@ -127,7 +132,6 @@ public class AuthController {
         }
         
         let parameters = self.makeParametersForTalk(prompts:prompts,
-                                                    state:state,
                                                     channelPublicIds: channelPublicIds,
                                                     serviceTerms: serviceTerms,
                                                     nonce:nonce,
@@ -191,19 +195,11 @@ public class AuthController {
         }
     }
     
-    /// **카카오톡 간편로그인** 등 외부로부터 리다이렉트 된 코드요청 결과를 처리합니다.
-    /// AppDelegate의 openURL 메소드 내에 다음과 같이 구현해야 합니다.
-    ///
-    /// ```
-    /// func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    ///     if (AuthController.isKakaoTalkLoginUrl(url)) {
-    ///         if AuthController.handleOpenUrl(url: url, options: options) {
-    ///             return true
-    ///         }
-    ///     }
-    ///     // 서비스의 나머지 URL 핸들링 처리
-    /// }
-    /// ```
+    /// 카카오톡으로 로그인 등 외부로부터 리다이렉트된 요청 처리 \
+    /// Handles requests redirected from external such as Login with Kakao Talk
+    /// ## SeeAlso
+    /// - [카카오톡으로 로그인을 위한 설정](https://developers.kakao.com/docs/latest/ko/kakaologin/ios#before-you-begin-setting-for-kakaotalk) \
+    ///   [Configuration for Login with Kakao Talk](https://developers.kakao.com/docs/latest/en/kakaologin/ios#setting-for-kakaotalk)
     public static func handleOpenUrl(url:URL,  options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthController.isValidRedirectUri(url)) {
             if let authorizeWithTalkCompletionHandler = AUTH_CONTROLLER.authorizeWithTalkCompletionHandler {
@@ -217,7 +213,6 @@ public class AuthController {
     }
     
     public func _authorizeByAgtWithAuthenticationSession(scopes:[String],
-                                                         state: String? = nil,
                                                          nonce: String? = nil,
                                                          completion: @escaping (OAuthToken?, Error?) -> Void) {
         
@@ -232,7 +227,7 @@ public class AuthController {
                 return
             }
             else {
-                strongSelf._authorizeWithAuthenticationSession(state:state, agtToken: agtToken, scopes: scopes, nonce:nonce) { (oauthToken, error) in
+                strongSelf._authorizeWithAuthenticationSession(agtToken: agtToken, scopes: scopes, nonce:nonce) { (oauthToken, error) in
                     if let topVC = UIApplication.getMostTopViewController() {
                         let topVCName = "\(type(of: topVC))"
                         SdkLog.d("top vc: \(topVCName)")
@@ -257,7 +252,6 @@ public class AuthController {
     }
     
     public func _authorizeWithAuthenticationSession(prompts: [Prompt]? = nil,
-                                                    state: String? = nil,
                                                     agtToken: String? = nil,
                                                     scopes:[String]? = nil,
                                                     channelPublicIds: [String]? = nil,
@@ -320,7 +314,6 @@ public class AuthController {
         }
         
         let parameters = self.makeParameters(prompts: prompts,
-                                             state: state,
                                              agtToken: agtToken,
                                              scopes: scopes,
                                              channelPublicIds: channelPublicIds,
@@ -364,7 +357,6 @@ extension AuthController {
     //Rx 공통 Helper
     
     public func makeParametersForTalk(prompts: [Prompt]? = nil,
-                                      state: String? = nil,
                                       channelPublicIds: [String]? = nil,
                                       serviceTerms: [String]? = nil,
                                       nonce: String? = nil,
@@ -390,9 +382,6 @@ extension AuthController {
             if let prompt = promptsValues?.joined(separator: ",") {
                 extraParameters["prompt"] = prompt
             }
-        }
-        if let state = state {
-            extraParameters["state"] = state
         }
         if let channelPublicIds = channelPublicIds?.joined(separator: ",") {
             extraParameters["channel_public_id"] = channelPublicIds
@@ -433,7 +422,6 @@ extension AuthController {
     
     
     public func makeParameters(prompts : [Prompt]? = nil,
-                               state: String? = nil,
                                agtToken: String? = nil,
                                scopes:[String]? = nil,
                                channelPublicIds: [String]? = nil,
@@ -469,10 +457,6 @@ extension AuthController {
             if let prompt = promptsValues?.joined(separator: ",") {
                 parameters["prompt"] = prompt
             }
-        }
-        
-        if let state = state {
-            parameters["state"] = state
         }
         
         if let channelPublicIds = channelPublicIds?.joined(separator: ",") {

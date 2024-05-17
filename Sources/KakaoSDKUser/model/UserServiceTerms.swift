@@ -14,69 +14,84 @@
 
 import Foundation
 
-/// 서비스 약관 조회 API 응답 클래스
+/// 서비스 약관 동의 내역 확인하기 응답 \
+/// Response for Retrieve consent details for service terms
 /// ## SeeAlso
 /// - ``UserApi/serviceTerms(result:tags:completion:)``
 public struct UserServiceTerms : Codable {
     
     // MARK: Fields
     
-    /// 회원 번호
+    /// 회원번호 \
+    /// Service user ID
     public let id: Int64
     
-    /// 조회한 서비스 약관 목록
+    /// 서비스 약관 목록 \
+    /// List of service terms
     /// ## SeeAlso
     /// - ``ServiceTerms``
     public let serviceTerms: [ServiceTerms]?
 }
 
-/// 3rd party 서비스 약관 정보 클래스
+/// 서비스 약관 정보 \
+/// Service terms information
 /// ## SeeAlso
 /// - ``UserServiceTerms``
 public struct ServiceTerms : Codable {
     
     // MARK: Fields
     
-    /// 3rd에서 동의한 약관의 항목들을 정의한 값
+    /// 태그 \
+    /// Tag
     public let tag: String
     
-    /// 최근 동의 시각
+    /// 마지막으로 동의한 시간 \
+    /// The last time the user agreed to the scope
     public let agreedAt: Date?
     
-    /// 동의  여부
+    /// 동의 여부 \
+    /// The consent status of the service terms
     public let agreed: Bool
     
-    /// 필수 동의 여부
+    /// 필수 동의 여부 \
+    /// Whether consent is required
     public let required: Bool
     
-    /// 철회 가능 여부
+    /// 철회 가능 여부 \
+    /// Whether consent is revocable
     public let revocable: Bool
 }
 
-/// 서비스 약관 철회 API 응답 클래스
+/// 서비스 약관 동의 철회하기 응답 \
+/// Response for Revoke consent for service terms
 /// ## SeeAlso
 /// - ``RevokedServiceTerms``
 public struct UserRevokedServiceTerms : Codable {
     
     // MARK: Fields
     
-    /// 회원 번호
+    /// 회원번호 \
+    /// Service user ID
     public var id: Int64
     
-    /// 동의 철회가 반영된 서비스 약관 목록
+    /// 동의 철회에 성공한 서비스 약관 목록 \
+    /// List of revoked service terms
     public var revokedServiceTerms: [RevokedServiceTerms]?
 }
 
-/// 동의 철회가 반영된 서비스  약관 클래스
+/// 동의 철회된 서비스 약관 정보 \
+/// Revoked service terms information
 /// ## SeeAlso
 /// - ``UserRevokedServiceTerms``
 public struct RevokedServiceTerms : Codable {
     
     // MARK: Fields
     
-    /// 3rd에서 설정한 서비스 약관의 tag
+    /// 태그 \
+    /// Tag
     public let tag: String
     
-    /// 동의 여부
+    /// 동의 여부 \
+    /// The consent status of the service terms
     public let agreed: Bool
 }

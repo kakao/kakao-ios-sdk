@@ -15,23 +15,28 @@
 import Foundation
 
 
-/// 카카오톡 프로필 가져오기 API 응답 클래스 입니다.
+/// 카카오톡 프로필 \
+/// Kakao Talk profile
 /// ## SeeAlso
 /// - ``TalkApi/profile(completion:)``
 public struct TalkProfile : Codable {
     
     // MARK: Fields
     
-    /// 카카오톡 닉네임
+    /// 프로필 닉네임 \
+    /// Profile nickname
     public let nickname: String?
     
-    /// 카카오톡 프로필 이미지 URL
+    /// 프로필 이미지 \
+    /// Profile image
     public let profileImageUrl: URL?
     
-    /// 카카오톡 프로필 이미지 썸네일 URL
+    /// 프로필 썸네일 이미지 \
+    /// Profile thumbnail image
     public let thumbnailUrl: URL?
     
-    /// 카카오톡 국가 코드
+    /// 국가 코드 \
+    /// Country code
     public let countryISO: String?  // nullability: http://papi.talk.kakao.com:8354/doc/protocol/common_type.md#User    
     
     enum CodingKeys : String, CodingKey {

@@ -18,15 +18,18 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKTemplate
 
-/// 카카오톡 공유 호출을 담당하는 클래스입니다.
+/// [카카오톡 공유](https://developers.kakao.com/docs/latest/ko/message/common) API 클래스 \
+/// Class for the [Kakao Talk Sharing](https://developers.kakao.com/docs/latest/en/message/common) APIs
 public class ShareApi {
     
     // MARK: Fields
     
-    /// 간편하게 API를 호출할 수 있도록 제공되는 공용 싱글톤 객체입니다. 
+    /// 카카오 SDK 싱글톤 객체 \
+    /// A singleton object for Kakao SDK
     public static let shared = ShareApi()
         
-    /// 카카오톡 공유 API로부터 리다이렉트 된 URL 인지 체크합니다.
+    /// 카카오톡 공유 API로부터 리다이렉트된 URL인지 확인 \
+    /// Checks whether the URL is redirected by the Kakao Talk Sharing APIs
     public static func isKakaoTalkSharingUrl(_ url:URL) -> Bool {
         if url.absoluteString.hasPrefix("\(try! KakaoSDK.shared.scheme())://kakaolink") {
             return true
@@ -34,7 +37,8 @@ public class ShareApi {
         return false
     }
     
-    /// 카카오톡 앱을 통한 공유 가능 여부 확인
+    /// 카카오톡 공유 가능 여부 확인 \
+    /// Checks whether the Kakao Talk Sharing is available
     @available(iOS 13.0, *)
     @available(iOSApplicationExtension, unavailable)
     public static func isKakaoTalkSharingAvailable() -> Bool {
@@ -45,6 +49,9 @@ public class ShareApi {
 extension ShareApi {
     // MARK: Fields
     
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
     public static func isExceededLimit(linkParameters: [String: Any]?, validationResult: ValidationResult, extras: [String: Any]?) -> Bool {
         var attachment = [String: Any]()
         
@@ -76,10 +83,13 @@ extension ShareApi {
 
     // MARK: Using Web Sharer
     
-    /// 기본 템플릿을 공유하는 웹 공유 URL을 얻습니다.
-    ///
-    /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
-    ///
+    /// 기본 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// Creates a URL to share a default template via Kakao Talk
+    /// - parameters:
+    ///    - templatable: 기본 템플릿으로 변환 가능한 객체 \
+    ///                   Object to convert to a default template
+    ///    - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                          Keys and values for the Kakao Talk Sharing success callback
     /// ## SeeAlso
     /// - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKShare'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
     public func makeDefaultUrl(templatable:Templatable, serverCallbackArgs:[String:String]? = nil) -> URL? {
@@ -90,8 +100,13 @@ extension ShareApi {
                                   serverCallbackArgs:serverCallbackArgs)
     }
     
-    /// 기본 템플릿을 공유하는 웹 공유 URL을 얻습니다.
-    /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
+    /// 기본 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// Creates a URL to share a default template via Kakao Talk
+    /// - parameters:
+    ///   - templateObject: 기본 템플릿 객체 \
+    ///                     Default template object
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                          Keys and values for the Kakao Talk Sharing success callback
     public func makeDefaultUrl(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"default",
@@ -100,9 +115,17 @@ extension ShareApi {
                                   serverCallbackArgs:serverCallbackArgs)
     }
     
-    /// 지정된 URL을 스크랩하여 만들어진 템플릿을 공유하는 웹 공유 URL을 얻습니다.
-    ///
-    /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
+    /// 스크랩 정보로 구성된 메시지 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// Creates a URL to share a scrape message via Kakao Talk
+    /// - parameters:
+    ///   - requestUrl: 스크랩할 URL \
+    ///                 URL to scrape
+    ///   - templateId: 사용자 정의 템플릿 ID \
+    ///                 Custom template ID
+    ///   - templateArgs: 사용자 인자 키와 값 \
+    ///                   Keys and values of the user argument
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                          Keys and values for the Kakao Talk Sharing success callback
     public func makeScrapUrl(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"scrap",
@@ -113,9 +136,15 @@ extension ShareApi {
                                   serverCallbackArgs:serverCallbackArgs)
     }
     
-    /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 공유하는 웹 공유 URL을 얻습니다.
-    ///
-    /// 획득한 URL을 브라우저에 요청하면 카카오톡이 없는 환경에서도 메시지를 공유할 수 있습니다. 공유 웹페이지 진입시 로그인된 계정 쿠키가 없다면 카카오톡에 연결된 카카오계정으로 로그인이 필요합니다.
+    /// 사용자 정의 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// Creates a URL to share a custom template via Kakao Talk
+    /// - parameters:
+    ///   - templateId: 사용자 정의 템플릿 ID \
+    ///                 Custom template ID
+    ///   - templateArgs: 사용자 인자 키와 값 \
+    ///                   Keys and values of the user argument
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                          Keys and values for the Kakao Talk Sharing success callback
     public func makeCustomUrl(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
         return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"custom",
@@ -139,6 +168,9 @@ extension ShareApi {
 extension ShareApi {
     // MARK: Fields
     
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
     public func transformResponseToSharingResult(response: HTTPURLResponse?, data:Data?, targetAppKey: String? = nil, serverCallbackArgs:[String:String]? = nil, completion:@escaping (SharingResult?, Error?) -> Void) {
         
         if let data = data, let validationResult = try? SdkJSONDecoder.default.decode(ValidationResult.self, from: data) {
@@ -176,7 +208,13 @@ extension ShareApi {
     
     // MARK: Using KakaoTalk
     
-    /// 기본 템플릿을 카카오톡으로 공유합니다.
+    /// 기본 템플릿으로 메시지 보내기 \
+    /// Send message with default template
+    /// - parameters:
+    ///   - templateObjectJsonString: 기본 템플릿 객체를 JSON 형식으로 변환한 문자열 \
+    ///                               String converted in JSON format from a default template
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                          Keys and values for the Kakao Talk Sharing success callback
     public func shareDefault(templateObjectJsonString:String?,
                      serverCallbackArgs:[String:String]? = nil,
                      completion:@escaping (SharingResult?, Error?) -> Void ) {
@@ -209,7 +247,13 @@ extension ShareApi {
         }
     }
         
-    /// 기본 템플릿을 카카오톡으로 공유합니다.
+    /// 기본 템플릿으로 메시지 보내기 \
+    /// Send message with default template
+    /// - parameters:
+    ///   - templatable: 기본 템플릿으로 변환 가능한 객체 \
+    ///                  Object to convert to a default template
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                         Keys and values for the Kakao Talk Sharing success callback
     /// ## SeeAlso
     /// - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKShare'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
     /// - ``SharingResult``
@@ -218,7 +262,13 @@ extension ShareApi {
         self.shareDefault(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
-    /// 기본 템플릿을 카카오톡으로 공유합니다.
+    /// 기본 템플릿으로 메시지 보내기 \
+    /// Send message with default template
+    /// - parameters:
+    ///   - templateObject: 기본 템플릿 객체 \
+    ///                     Default template object
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                         Keys and values for the Kakao Talk Sharing success callback
     /// ## SeeAlso
     /// - ``SharingResult``
     public func shareDefault(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil,
@@ -226,7 +276,17 @@ extension ShareApi {
         self.shareDefault(templateObjectJsonString: templateObject.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
-    /// 지정된 URL을 스크랩하여 만들어진 템플릿을 카카오톡으로 공유합니다.
+    /// 스크랩 메시지 보내기 \
+    /// Send scrape message
+    ///  - parameters:
+    ///    - requestUrl: 스크랩할 URL \
+    ///                  URL to scrape
+    ///    - templateId: 사용자 정의 템플릿 ID \
+    ///                  Custom template ID
+    ///    - templateArgs: 사용자 인자 키와 값 \
+    ///                    Keys and values of the user argument
+    ///    - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                          Keys and values for the Kakao Talk Sharing success callback
     /// ## SeeAlso
     /// - ``SharingResult``
     public func shareScrap(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
@@ -262,7 +322,15 @@ extension ShareApi {
         }
     }
     
-    /// 카카오 디벨로퍼스에서 생성한 메시지 템플릿을 카카오톡으로 공유합니다. 템플릿을 생성하는 방법은 [https://developers.kakao.com/docs/latest/ko/message/ios#create-message](https://developers.kakao.com/docs/latest/ko/message/ios#create-message) 을 참고하시기 바랍니다.
+    /// 사용자 정의 템플릿으로 메시지 보내기 \
+    /// Send message with custom template
+    /// - parameters:
+    ///   - templateId: 사용자 정의 템플릿 ID \
+    ///                 Custom template ID
+    ///   - templateArgs: 사용자 인자 키와 값 \
+    ///                   Keys and values of the user argument
+    ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
+    ///                         Keys and values for the Kakao Talk Sharing success callback
     /// ## SeeAlso
     /// - ``SharingResult``
     public func shareCustom(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
@@ -299,7 +367,13 @@ extension ShareApi {
         
     // MARK: Image Upload
     
-    /// 카카오톡 공유 컨텐츠 이미지로 활용하기 위해 로컬 이미지를 카카오 이미지 서버로 업로드 합니다.
+    /// 이미지 업로드하기 \
+    /// Upload image
+    /// - parameters:
+    ///   - image: 이미지 파일 \
+    ///            Image file
+    ///   - secureResource: 이미지 URL을 HTTPS로 설정 \
+    ///                     Whether to use HTTPS for the image URL
     public func imageUpload(image: UIImage, secureResource: Bool = true,
                             completion:@escaping (ImageUploadResult?, Error?) -> Void ) {
         return API.upload(.post, Urls.compose(path:Paths.shareImageUpload),
@@ -322,7 +396,13 @@ extension ShareApi {
         }
     }
     
-    /// 카카오톡 공유 컨텐츠 이미지로 활용하기 위해 원격 이미지를 카카오 이미지 서버로 스크랩 합니다.
+    /// 이미지 스크랩하기 \
+    /// Scrape image
+    /// - parameters:
+    ///   - imageUrl: 이미지 URL \
+    ///               Image URL
+    ///   - secureResource: 이미지 URL을 HTTPS로 설정 \
+    ///                     Whether to use HTTPS for the image URL
     public func imageScrap(imageUrl: URL, secureResource: Bool = true,
                            completion:@escaping (ImageUploadResult?, Error?) -> Void) {
         API.responseData(.post, Urls.compose(path:Paths.shareImageScrap),

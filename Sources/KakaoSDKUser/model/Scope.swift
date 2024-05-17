@@ -16,55 +16,65 @@ import Foundation
 
 // MARK: Enumerations
 
-///동의 항목 타입
+/// 동의항목 타입 \
+/// Scope type
 public enum ScopeType: String, Codable {
-    ///개인정보 보호 동의 항목
+    /// 개인정보 보호 동의항목 \
+    /// Scope for personal information
     case Privacy = "PRIVACY"
     
-    ///접근권한 관리 동의 항목
+    /// 접근권한 관리 동의항목 \
+    /// Scope for permission
     case Service = "SERVICE"
 }
 
-/// 동의 항목별 정보
+/// 동의항목 정보 \
+/// Scope information
 public struct Scope : Codable {
     // MARK: Fields
     
-    /// 동의 항목 ID
+    /// 동의항목 ID \
+    /// Scope ID
     public let id: String
     
-    /// 사용자 동의 화면에 출력되는 동의 항목 이름 또는 설명
+    /// 사용자 동의 화면에 출력되는 동의항목의 이름 또는 설명 \
+    /// Name or description of the scope displayed on the Consent screen
     public let displayName: String
 
-    /// 동의 항목 타입
+    /// 동의항목 타입 \
+    /// Type of the scope
     public let type: ScopeType
 
-    ///동의 항목의 현재 사용 여부
-    ///사용자가 동의했으나 현재 앱에 설정되어 있지 않은 동의 항목의 경우 false
+    /// 동의항목 사용 여부 \
+    /// Whether your app is using the scope
     public let using: Bool
     
-    ///카카오가 관리하지 않는 위임 동의 항목인지 여부
-    ///현재 사용 중인 동의 항목이고, 위임 동의 항목인 경우에만 응답에 포함
+    /// 카카오가 관리하지 않는 위임 동의항목인지 여부, 현재 사용 중인 동의항목만 응답에 포함 \
+    /// Whether the scope is not managed by Kakao, and only the currently used consent is included in the response
     public let delegated: Bool?
 
-    ///사용자 동의 여부
-    ///동의한 경우 true, 동의하지 않은 경우 false
+    /// 동의 여부 \
+    /// The consent status of the service terms
     public let agreed: Bool
 
-    ///동의 항목의 동의 철회 가능 여부
-    ///사용자가 동의한 동의 항목인 경우에만 응답에 포함
+    /// 동의 철회 가능 여부 \
+    /// Whether the scope can be revoked
     public let revocable : Bool?
 
 }
 
 
-/// 사용자 동의 내역
+/// 사용자 동의 내역 \
+/// User consent history
 public struct ScopeInfo : Codable {
     
     // MARK: Fields
     
-    ///회원번호
+    /// 회원번호 \
+    /// Service user ID
     public let id: Int64
     
-    ///해당 앱의 동의 항목(Scope) 목록 (empty 일 경우가 있음)
+    /// 앱의 동의항목 목록 \
+    /// List of scopes in the app
     public let scopes: [Scope]?
 }

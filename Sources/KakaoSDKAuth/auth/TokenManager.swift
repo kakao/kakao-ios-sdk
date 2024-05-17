@@ -15,9 +15,8 @@
 import Foundation
 import KakaoSDKCommon
 
-/// SDK에서 기본 제공하는 토큰 관리자입니다.
-///
-/// 카카오 SDK에서 제공하는 로그인 기반 API를 호출할 때 SDK 내부적으로 이 곳에 저장된 토큰을 사용합니다. 토큰은 UserDefaults에 저장되며 기기 고유값을 이용해 암호화하여 저장됩니다.
+/// 토큰 저장소, 기기 고유값으로 암호화된 토큰을 ``UserDefaults``에 저장 \
+/// A token manager that encrypts tokens with the device's unique value and saves in the ``UserDefaults``
 ///
 /// ## SeeAlso
 /// - ``TokenManagable``
@@ -25,7 +24,8 @@ final public class TokenManager : TokenManagable {
     
     // MARK: Fields
     
-    /// 간편한 사용을 위한 싱글톤 객체입니다.
+    /// 카카오 SDK 싱글톤 객체 \
+    /// A singleton object for Kakao SDK
     static public let manager = TokenManager()
     
     let OAuthTokenKey = "com.kakao.sdk.oauth_token"
@@ -52,7 +52,8 @@ final public class TokenManager : TokenManagable {
         self.token = token
     }
     
-    /// 현재 토큰을 가져옵니다.
+    /// 저장된 토큰 반환 \
+    /// Returns saved tokens
     public func getToken() -> OAuthToken? {
         return self.token
     }

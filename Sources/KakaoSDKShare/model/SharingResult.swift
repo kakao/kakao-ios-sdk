@@ -14,26 +14,22 @@
 
 import Foundation
 
-/// 카카오톡 공유 호출 결과
-///
-/// 카카오톡 메시지 공유에 성공했더라도 템플릿과 입력 값에 위험요소가 있을 경우 warningMsg, argumentMsg에 기록될 수 있습니다. 개발 단계에서 꼼꼼히 체크하시길 권장합니다.
+/// 카카오톡 공유 결과 \
+/// Kakao Talk Sharing result
 public struct SharingResult : Codable {
     
     // MARK: Fields
     
-    /// 카카오톡 공유 URL
-    ///
-    /// 이 URL을 열면 카카오톡이 실행되고 카카오톡 메시지를 공유할 수 있습니다.
+    /// 카카오톡 공유 실행 URL \
+    /// URL to execute the Kakao Talk Sharing
     public let url: URL
     
-    /// 템플릿 내부 구성요소 유효성 검증결과
-    /// - key: 메시지 템플릿 요소의 key path
-    /// - value: 경고 내용
+    /// 메시지 템플릿 검증 결과 \
+    /// Message template validation result
     public let warningMsg : [String:String]?
     
-    /// templateArgs 입력 값 유효성 검증결과
-    /// - key: templateArgs에 전달된 key 이름
-    /// - value: 경고 내용
+    /// 사용자 인자 검증 결과 \
+    /// User argument validation result
     public let argumentMsg : [String:String]?
     
     

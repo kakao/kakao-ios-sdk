@@ -85,30 +85,9 @@
             ]
           },
           {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CertCore",
-                "printedName": "KakaoSDKCertCore.CertCore",
-                "usr": "s:16KakaoSDKCertCore04CertC0C"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:16KakaoSDKCertCore04CertC0CACycfc",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0CACycfc",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "init_kind": "Designated"
-          },
-          {
             "kind": "Function",
             "name": "setSessionInfo",
-            "printedName": "setSessionInfo(sessionInfo:)",
+            "printedName": "setSessionInfo(_:certType:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -120,11 +99,17 @@
                 "name": "SessionInfo",
                 "printedName": "KakaoSDKCertCore.SessionInfo",
                 "usr": "s:16KakaoSDKCertCore11SessionInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C14setSessionInfo07sessionG0yAA0fG0V_tF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C14setSessionInfo07sessionG0yAA0fG0V_tF",
+            "usr": "s:16KakaoSDKCertCore04CertC0C14setSessionInfo_8certTypeyAA0fG0V_AA06CCCertI0OtF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C14setSessionInfo_8certTypeyAA0fG0V_AA06CCCertI0OtF",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "AccessControl",
@@ -135,7 +120,7 @@
           {
             "kind": "Function",
             "name": "__publicKey",
-            "printedName": "__publicKey()",
+            "printedName": "__publicKey(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -150,11 +135,17 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C11__publicKeySSSgyF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C11__publicKeySSSgyF",
+            "usr": "s:16KakaoSDKCertCore04CertC0C11__publicKeyySSSgAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C11__publicKeyySSSgAA10CCCertTypeOF",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "AccessControl"
@@ -164,8 +155,8 @@
           },
           {
             "kind": "Function",
-            "name": "__sign",
-            "printedName": "__sign(data:completion:)",
+            "name": "__reducedSign",
+            "printedName": "__reducedSign(data:certType:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -177,6 +168,12 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
               },
               {
                 "kind": "TypeFunc",
@@ -227,8 +224,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C6__sign4data10completionySS_ySSSg_s5Error_pSgtctF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C6__sign4data10completionySS_ySSSg_s5Error_pSgtctF",
+            "usr": "s:16KakaoSDKCertCore04CertC0C13__reducedSign4data8certType10completionySS_AA06CCCertI0OySSSg_s5Error_pSgtctF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__reducedSign4data8certType10completionySS_AA06CCCertI0OySSSg_s5Error_pSgtctF",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "AccessControl"
@@ -239,18 +236,24 @@
           {
             "kind": "Function",
             "name": "__isValidSession",
-            "printedName": "__isValidSession()",
+            "printedName": "__isValidSession(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C16__isValidSessionSbyF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C16__isValidSessionSbyF",
+            "usr": "s:16KakaoSDKCertCore04CertC0C16__isValidSessionySbAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C16__isValidSessionySbAA10CCCertTypeOF",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "AccessControl"
@@ -261,7 +264,7 @@
           {
             "kind": "Function",
             "name": "__sessionInfo",
-            "printedName": "__sessionInfo()",
+            "printedName": "__sessionInfo(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -276,11 +279,17 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C13__sessionInfoAA07SessionF0VSgyF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__sessionInfoAA07SessionF0VSgyF",
+            "usr": "s:16KakaoSDKCertCore04CertC0C13__sessionInfoyAA07SessionF0VSgAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__sessionInfoyAA07SessionF0VSgAA10CCCertTypeOF",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "AccessControl",
@@ -292,17 +301,23 @@
           {
             "kind": "Function",
             "name": "__deleteKeyPair",
-            "printedName": "__deleteKeyPair()",
+            "printedName": "__deleteKeyPair(_:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
               }
             ],
             "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyF",
+            "usr": "s:16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyAA10CCCertTypeOF",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "AccessControl",
@@ -319,6 +334,341 @@
         "declAttributes": [
           "AccessControl",
           "Documentation"
+        ],
+        "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CCCertType",
+        "printedName": "CCCertType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "K2100",
+            "printedName": "K2100",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KakaoSDKCertCore.CCCertType.Type) -> KakaoSDKCertCore.CCCertType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CCCertType",
+                    "printedName": "KakaoSDKCertCore.CCCertType",
+                    "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "KakaoSDKCertCore.CCCertType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CCCertType",
+                        "printedName": "KakaoSDKCertCore.CCCertType",
+                        "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:16KakaoSDKCertCore10CCCertTypeO5K2100yA2CmF",
+            "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO5K2100yA2CmF",
+            "moduleName": "KakaoSDKCertCore"
+          },
+          {
+            "kind": "Var",
+            "name": "K2220",
+            "printedName": "K2220",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KakaoSDKCertCore.CCCertType.Type) -> KakaoSDKCertCore.CCCertType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CCCertType",
+                    "printedName": "KakaoSDKCertCore.CCCertType",
+                    "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "KakaoSDKCertCore.CCCertType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CCCertType",
+                        "printedName": "KakaoSDKCertCore.CCCertType",
+                        "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:16KakaoSDKCertCore10CCCertTypeO5K2220yA2CmF",
+            "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO5K2220yA2CmF",
+            "moduleName": "KakaoSDKCertCore"
+          },
+          {
+            "kind": "Var",
+            "name": "K3220",
+            "printedName": "K3220",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KakaoSDKCertCore.CCCertType.Type) -> KakaoSDKCertCore.CCCertType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CCCertType",
+                    "printedName": "KakaoSDKCertCore.CCCertType",
+                    "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "KakaoSDKCertCore.CCCertType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CCCertType",
+                        "printedName": "KakaoSDKCertCore.CCCertType",
+                        "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:16KakaoSDKCertCore10CCCertTypeO5K3220yA2CmF",
+            "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO5K3220yA2CmF",
+            "moduleName": "KakaoSDKCertCore"
+          },
+          {
+            "kind": "Var",
+            "name": "allCases",
+            "printedName": "allCases",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[KakaoSDKCertCore.CCCertType]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CCCertType",
+                    "printedName": "KakaoSDKCertCore.CCCertType",
+                    "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore10CCCertTypeO8allCasesSayACGvpZ",
+            "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO8allCasesSayACGvpZ",
+            "moduleName": "KakaoSDKCertCore",
+            "static": true,
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[KakaoSDKCertCore.CCCertType]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CCCertType",
+                        "printedName": "KakaoSDKCertCore.CCCertType",
+                        "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO8allCasesSayACGvgZ",
+                "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO8allCasesSayACGvgZ",
+                "moduleName": "KakaoSDKCertCore",
+                "static": true,
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore10CCCertTypeO8rawValueSSvp",
+            "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO8rawValueSSvp",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO8rawValueSSvg",
+                "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO8rawValueSSvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKCertCore.CCCertType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CCCertType",
+                    "printedName": "KakaoSDKCertCore.CCCertType",
+                    "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16KakaoSDKCertCore10CCCertTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:16KakaoSDKCertCore10CCCertTypeO",
+        "mangledName": "$s16KakaoSDKCertCore10CCCertTypeO",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl",
+          "Documentation"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CaseIterable",
+            "printedName": "CaseIterable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "AllCases",
+                "printedName": "AllCases",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[KakaoSDKCertCore.CCCertType]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CCCertType",
+                        "printedName": "KakaoSDKCertCore.CCCertType",
+                        "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s12CaseIterableP",
+            "mangledName": "$ss12CaseIterableP"
+          }
         ]
       },
       {
@@ -343,14 +693,22 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Int64",
-                "printedName": "Swift.Int64",
-                "usr": "s:s5Int64V"
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64Vvp",
-            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64Vvp",
+            "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvp",
+            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvp",
             "moduleName": "KakaoSDKCertCore",
             "declAttributes": [
               "HasStorage",
@@ -367,14 +725,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Int64",
-                    "printedName": "Swift.Int64",
-                    "usr": "s:s5Int64V"
+                    "name": "Optional",
+                    "printedName": "Swift.Int64?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int64",
+                        "printedName": "Swift.Int64",
+                        "usr": "s:s5Int64V"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64Vvg",
-                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64Vvg",
+                "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvg",
+                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvg",
                 "moduleName": "KakaoSDKCertCore",
                 "implicit": true,
                 "accessorKind": "get"
@@ -526,6 +892,316 @@
         "declKind": "Struct",
         "usr": "s:16KakaoSDKCertCore11SessionInfoV",
         "mangledName": "$s16KakaoSDKCertCore11SessionInfoV",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SignStatusInfo",
+        "printedName": "SignStatusInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "txId",
+            "printedName": "txId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4txIdSSvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4txIdSSvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4txIdSSvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4txIdSSvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestedAt",
+            "printedName": "requestedAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestExpiredAt",
+            "printedName": "requestExpiredAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "signedAt",
+            "printedName": "signedAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SignStatusInfo",
+                "printedName": "KakaoSDKCertCore.SignStatusInfo",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV6encode2toys7Encoder_p_tKF",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:16KakaoSDKCertCore14SignStatusInfoV",
+        "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV",
         "moduleName": "KakaoSDKCertCore",
         "declAttributes": [
           "AccessControl",
@@ -1285,6 +1961,19 @@
         "printedName": "LocalAuthentication",
         "declKind": "Import",
         "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CertPropertyKey",
+        "printedName": "CertPropertyKey",
+        "declKind": "Class",
+        "usr": "s:16KakaoSDKCertCore15CertPropertyKeyC",
+        "mangledName": "$s16KakaoSDKCertCore15CertPropertyKeyC",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true
       },
       {
         "kind": "Import",
@@ -2786,316 +3475,519 @@
   "ConstValues": [
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
-      "kind": "StringLiteral",
-      "offset": 1218,
-      "length": 33,
-      "value": "\"[CertCore] private key loaded\n\""
+      "kind": "Dictionary",
+      "offset": 1003,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "Dictionary",
+      "offset": 1030,
+      "length": 3,
+      "value": "[]"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 1404,
-      "length": 34,
-      "value": "\"[CertCore] session info loaded\n\""
+      "offset": 1458,
+      "length": 77,
+      "value": "\"[CertCore][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 1724,
-      "length": 68,
-      "value": "\"[CertCore] session info -> \""
+      "offset": 1490,
+      "length": 1,
+      "value": "\"] private key[\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 1787,
+      "offset": 1524,
+      "length": 1,
+      "value": "\"] loaded\n\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 1749,
+      "length": 78,
+      "value": "\"[CertCore][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 1781,
+      "length": 1,
+      "value": "\"] session info[\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 1816,
+      "length": 1,
+      "value": "\"] loaded\n\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 2239,
+      "length": 132,
+      "value": "\"[CertCore][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 2271,
+      "length": 1,
+      "value": "\"] session info [\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 2307,
+      "length": 1,
+      "value": "\"] -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 2366,
       "length": 1,
       "value": "\"\n\n\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 1976,
-      "length": 47,
-      "value": "\"[CertCore] setSessionInfo() -> \""
+      "offset": 2597,
+      "length": 78,
+      "value": "\"[CertCore][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 2022,
+      "offset": 2629,
+      "length": 1,
+      "value": "\"] setSessionInfo(certType:) -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 2674,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 2169,
-      "length": 32,
-      "value": "\"[CertCore] deleteSessionInfo()\""
+      "offset": 2889,
+      "length": 54,
+      "value": "\"[CertCore][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 2330,
-      "length": 32,
-      "value": "\"[CertCore] createKeyPair()\n\n\""
+      "offset": 2921,
+      "length": 1,
+      "value": "\"] deleteSessionInfo()\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 2641,
-      "length": 37,
-      "value": "\"[CertCore] Failed to create keypair\""
+      "offset": 3152,
+      "length": 63,
+      "value": "\"[CertCore][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 2751,
-      "length": 32,
-      "value": "\"[CertCore] deleteKeyPair()\n\n\""
+      "offset": 3184,
+      "length": 1,
+      "value": "\"] createKeyPair(certType:)\n\n\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 2992,
-      "length": 19,
-      "value": "\"[CertCore] sign()\""
+      "offset": 3553,
+      "length": 59,
+      "value": "\"[CertCore][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 3197,
-      "length": 32,
-      "value": "\"[CertCore] Failed to sign data\""
+      "offset": 3585,
+      "length": 1,
+      "value": "\"] Failed to create keypair\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 3292,
-      "length": 36,
-      "value": "\"[CertCore] data:\""
+      "offset": 3706,
+      "length": 63,
+      "value": "\"[CertCore][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "StringLiteral",
-      "offset": 3318,
+      "offset": 3738,
+      "length": 1,
+      "value": "\"] deleteKeyPair(certType:)\n\n\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4145,
+      "length": 48,
+      "value": "\"[CertCore][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4177,
+      "length": 1,
+      "value": "\"] digest is nil\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4256,
+      "length": 50,
+      "value": "\"[CertCore][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4288,
+      "length": 1,
+      "value": "\"] sign(certType:)\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4427,
+      "length": 54,
+      "value": "\"[CertCore][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4459,
+      "length": 1,
+      "value": "\"] Failed to sign data\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4544,
+      "length": 58,
+      "value": "\"[CertCore][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4576,
+      "length": 1,
+      "value": "\"] data:\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
+      "kind": "StringLiteral",
+      "offset": 4592,
       "length": 6,
       "value": "\" signed\n\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore.swift",
       "kind": "Array",
-      "offset": 3733,
+      "offset": 5117,
       "length": 581,
       "value": "[0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2A, 0x86, 0x48, 0xCE, 0x3D, 0x02, 0x01, 0x06, 0x08, 0x2A, 0x86, 0x48, 0xCE, 0x3D, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00, 0x04]"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
-      "offset": 969,
-      "length": 36,
-      "value": "\"publicKey -> \""
+      "offset": 742,
+      "length": 7,
+      "value": "\"k2100\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "kind": "StringLiteral",
+      "offset": 767,
+      "length": 7,
+      "value": "\"k2220\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "kind": "StringLiteral",
+      "offset": 792,
+      "length": 7,
+      "value": "\"k3220\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "kind": "StringLiteral",
+      "offset": 742,
+      "length": 7,
+      "value": "\"k2100\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "kind": "StringLiteral",
+      "offset": 767,
+      "length": 7,
+      "value": "\"k2220\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "kind": "StringLiteral",
+      "offset": 792,
+      "length": 7,
+      "value": "\"k3220\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 1004,
+      "offset": 1069,
+      "length": 58,
+      "value": "\"publicKey[\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
+      "kind": "StringLiteral",
+      "offset": 1100,
+      "length": 1,
+      "value": "\"] -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
+      "kind": "StringLiteral",
+      "offset": 1126,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 1093,
+      "offset": 1215,
       "length": 26,
       "value": "\"Failed to get public key\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 1349,
+      "offset": 1507,
       "length": 26,
       "value": "\"keypair is not generated\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1449,
+      "offset": 1615,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 1526,
+      "offset": 1692,
       "length": 34,
       "value": "\"session is expired or not valid.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 1812,
-      "length": 74,
-      "value": "\"isValidSession() -> false : session is nil. request session info first. \""
+      "offset": 2030,
+      "length": 125,
+      "value": "\"isValidSession(certType:)[\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
+      "kind": "StringLiteral",
+      "offset": 2097,
+      "length": 1,
+      "value": "\"] -> false : session is nil. request session info first. \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "BooleanLiteral",
-      "offset": 1907,
+      "offset": 2176,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 2284,
-      "length": 45,
-      "value": "\"isValidSession() -> false : session expired\""
+      "offset": 2561,
+      "length": 96,
+      "value": "\"isValidSession(certType:)[\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
+      "kind": "StringLiteral",
+      "offset": 2628,
+      "length": 1,
+      "value": "\"] -> false : session expired\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "BooleanLiteral",
-      "offset": 2350,
+      "offset": 2678,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "StringLiteral",
-      "offset": 2538,
-      "length": 26,
-      "value": "\"isValidSession() -> true\""
+      "offset": 2866,
+      "length": 77,
+      "value": "\"isValidSession(certType:)[\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
+      "kind": "StringLiteral",
+      "offset": 2933,
+      "length": 1,
+      "value": "\"] -> true\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertCore+public.swift",
       "kind": "BooleanLiteral",
-      "offset": 2581,
+      "offset": 2960,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "IntegerLiteral",
-      "offset": 860,
+      "offset": 853,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1207,
+      "offset": 1200,
       "length": 7,
       "value": "\"%02x \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1377,
+      "offset": 1370,
       "length": 117,
       "value": "\"[Cert] \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1429,
+      "offset": 1422,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1437,
+      "offset": 1430,
       "length": 1,
       "value": "\":\n \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1469,
+      "offset": 1462,
       "length": 7,
       "value": "\"%02x \""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1493,
+      "offset": 1486,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1861,
-      "length": 44,
+      "offset": 1876,
+      "length": 63,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 1883,
+      "offset": 1917,
       "length": 1,
       "value": "\".forDetectAccessGroup\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 2089,
-      "length": 82,
-      "value": "\"[Cert] deleteAccessGroupInfo() result: \""
+      "offset": 2123,
+      "length": 118,
+      "value": "\"[CertCore][Keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 2170,
+      "offset": 2165,
+      "length": 1,
+      "value": "\"] deleteAccessGroupInfo() result: \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
+      "kind": "StringLiteral",
+      "offset": 2240,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 2379,
-      "length": 44,
+      "offset": 2471,
+      "length": 63,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 2401,
+      "offset": 2512,
       "length": 1,
       "value": "\".forDetectAccessGroup\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "BooleanLiteral",
-      "offset": 2569,
+      "offset": 2680,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 3187,
+      "offset": 3298,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "IntegerLiteral",
-      "offset": 3200,
+      "offset": 3311,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 3269,
+      "offset": 3380,
       "length": 3,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites+Util.swift",
       "kind": "StringLiteral",
-      "offset": 3440,
+      "offset": 3551,
       "length": 3,
       "value": "\".\""
     },
@@ -3165,329 +4057,434 @@
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 745,
+      "offset": 823,
+      "length": 21,
+      "value": "\"com.kakao.sdk.k3220\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 926,
       "length": 21,
       "value": "\"com.kakao.sdk.k2220\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 802,
+      "offset": 1098,
+      "length": 46,
+      "value": "\"lEZkSSglKtdXvKnCIk96yjrxt8iaEIDpECV9ZljTvpU=\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 1268,
       "length": 46,
       "value": "\"Pz4Tf0XBpvlf7l1Uwoy3AQkdWWv0QwplC9tiIEfkC14=\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 919,
+      "offset": 1508,
+      "length": 46,
+      "value": "\"Bc5NtzIg5okaU6A\/Czxhr2dq6z8RusipIgG2zjFKt5w=\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 1680,
       "length": 46,
       "value": "\"0uPlUjGzLvAC1wIDDv1fFy4+KjniYCn37Ow95mDucZ0=\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 2610,
-      "length": 67,
-      "value": "\"[CertCore][keychain] access group: \""
+      "offset": 3754,
+      "length": 89,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 2676,
+      "offset": 3796,
+      "length": 1,
+      "value": "\"] access group: \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 3842,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 2727,
-      "length": 42,
-      "value": "\"[CertCore][keychain] access group is nil\""
+      "offset": 3893,
+      "length": 64,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 3106,
-      "length": 49,
-      "value": "\"[CertCore][keychain] device only accessControl)\""
+      "offset": 3935,
+      "length": 1,
+      "value": "\"] access group is nil\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 3391,
-      "length": 83,
-      "value": "\"[CertCore][keychain] saveItem(data:) -> \""
+      "offset": 4344,
+      "length": 71,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 3473,
+      "offset": 4386,
+      "length": 1,
+      "value": "\"] device only accessControl)\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 4651,
+      "length": 105,
+      "value": "\"[CertCore][keychain][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 4693,
+      "length": 1,
+      "value": "\"] saveItem(data:) -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 4755,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 3697,
-      "length": 40,
-      "value": "\"[CertCore][keychain] pkHash: \""
+      "offset": 4863,
+      "length": 62,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 3736,
+      "offset": 4905,
+      "length": 1,
+      "value": "\"] pkHash: \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 4924,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "BooleanLiteral",
-      "offset": 4221,
+      "offset": 5432,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 4409,
-      "length": 80,
-      "value": "\"[CertCore][keychain] item() error -> \""
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
-      "kind": "StringLiteral",
-      "offset": 4488,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
-      "kind": "StringLiteral",
-      "offset": 4628,
-      "length": 81,
-      "value": "\"[CertCore][keychain] result is not Data -> result:\""
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
-      "kind": "StringLiteral",
-      "offset": 4708,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
-      "kind": "StringLiteral",
-      "offset": 4869,
-      "length": 68,
-      "value": "\"[CertCore][keychain] can not hash result data -> deleteItem() call\""
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
-      "kind": "StringLiteral",
-      "offset": 5378,
-      "length": 73,
-      "value": "\"[CertCore][keychain] private key hash is not exist -> deleteItem() call\""
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
-      "kind": "StringLiteral",
       "offset": 5620,
-      "length": 42,
-      "value": "\"[CertCore][keychain] pkHash -> \""
+      "length": 102,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 5661,
+      "offset": 5662,
+      "length": 1,
+      "value": "\"] item() error -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 5721,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 5683,
-      "length": 54,
-      "value": "\"[CertCore][keychain] storedPkHash -> \""
+      "offset": 5861,
+      "length": 103,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 5736,
+      "offset": 5903,
+      "length": 1,
+      "value": "\"] result is not Data -> result:\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 5963,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 5807,
-      "length": 73,
-      "value": "\"[CertCore][keychain] private key hash is not valid -> deleteItem() call\""
+      "offset": 6124,
+      "length": 90,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6229,
-      "length": 63,
-      "value": "\"[CertCore][keychain] item() -> \""
+      "offset": 6166,
+      "length": 1,
+      "value": "\"] can not hash result data -> deleteItem() call\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6288,
+      "offset": 6675,
+      "length": 127,
+      "value": "\"[CertCore][keychain][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 6717,
+      "length": 1,
+      "value": "\"] private key hash [\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 6757,
+      "length": 1,
+      "value": "\"] is not exist -> deleteItem(certType:) call\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 6988,
+      "length": 64,
+      "value": "\"[CertCore][keychain][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7030,
+      "length": 1,
+      "value": "\"] pkHash -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7051,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6291,
+      "offset": 7073,
+      "length": 76,
+      "value": "\"[CertCore][keychain][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7115,
+      "length": 1,
+      "value": "\"] storedPkHash -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7148,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6313,
-      "length": 74,
-      "value": "\"[CertCore][keychain] item() -> \""
+      "offset": 7219,
+      "length": 95,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6386,
+      "offset": 7261,
+      "length": 1,
+      "value": "\"] private key hash is not valid -> deleteItem() call\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7766,
+      "length": 96,
+      "value": "\"[CertCore][keychain][\""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7808,
+      "length": 1,
+      "value": "\"] item() -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 7861,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6629,
-      "length": 80,
-      "value": "\"[CertCore][keychain] deleteItem() -> \""
+      "offset": 8133,
+      "length": 102,
+      "value": "\"[CertCore][keychain][\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6708,
+      "offset": 8175,
+      "length": 1,
+      "value": "\"] deleteItem() -> \""
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
+      "kind": "StringLiteral",
+      "offset": 8234,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 6954,
+      "offset": 8598,
       "length": 11,
       "value": "\"No error.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7019,
+      "offset": 8663,
       "length": 40,
       "value": "\"Function or operation not implemented.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7102,
+      "offset": 8746,
       "length": 21,
       "value": "\"I\/O error (bummers)\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7168,
+      "offset": 8812,
       "length": 46,
       "value": "\"File already open with with write permission\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7260,
+      "offset": 8904,
       "length": 62,
       "value": "\"One or more parameters passed to a function where not valid.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7371,
+      "offset": 9015,
       "length": 28,
       "value": "\"Failed to allocate memory.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7452,
+      "offset": 9096,
       "length": 30,
       "value": "\"User canceled the operation.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7529,
+      "offset": 9173,
       "length": 47,
       "value": "\"Bad parameter or invalid state for operation.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7634,
+      "offset": 9278,
       "length": 20,
       "value": "\"Internal Component\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7707,
+      "offset": 9351,
       "length": 66,
       "value": "\"No keychain is available. You may need to restart your computer.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7827,
+      "offset": 9471,
       "length": 52,
       "value": "\"The specified item already exists in the keychain.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 7932,
+      "offset": 9576,
       "length": 56,
       "value": "\"The specified item could not be found in the keychain.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 8050,
+      "offset": 9694,
       "length": 34,
       "value": "\"User interaction is not allowed.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 8131,
+      "offset": 9775,
       "length": 37,
       "value": "\"Unable to decode the provided data.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 8219,
+      "offset": 9863,
       "length": 57,
       "value": "\"The user name or passphrase you entered is not correct.\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 8313,
+      "offset": 9957,
       "length": 26,
       "value": "\"Unknown. (\""
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CertProperites.swift",
       "kind": "StringLiteral",
-      "offset": 8337,
+      "offset": 9981,
       "length": 1,
       "value": "\")\""
     },

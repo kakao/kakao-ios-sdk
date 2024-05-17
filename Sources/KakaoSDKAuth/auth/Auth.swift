@@ -41,8 +41,8 @@ public class Auth {
 }
 
 extension Auth {
-    /// ## 커스텀 토큰 관리자
-    /// TokenManagable 프로토콜을 구현하여 직접 토큰 관리자를 구현할 수 있습니다.
+    /// 토큰 저장소 직접 지정, `TokenManageable`을 구현한 사용자 정의 토큰 매니저 설정 가능 \
+    /// Set the custom token manager that implements `TokenManageable`
     public func setTokenManager(_ tokenManager: TokenManagable = TokenManager.manager) {
         self.tokenManager = tokenManager
     }

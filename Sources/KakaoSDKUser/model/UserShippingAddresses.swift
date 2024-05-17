@@ -14,26 +14,26 @@
 
 import Foundation
 
-/// 앱에 가입한 사용자의 배송지 정보 API 응답 클래스 입니다.
+// 배송지 목록은 기본 배송지가 가장 상위에 배치되고, 그 이후에는 배송지가 수정된 시각을 기준으로 최신순 정렬
+/// 배송지 가져오기 응답 \
+/// Response for Retrieve shipping address
 /// ## SeeAlso
 /// - ``UserApi/shippingAddresses(fromUpdatedAt:pageSize:completion:)``
 /// - ``UserApi/shippingAddresses(addressId:completion:)``
-///
-/// 배송지 목록은 기본 배송지가 가장 상위에 배치되고, 그 이후에는 배송지가 수정된 시각을 기준으로 최신순으로 정렬됩니다.
-/// pageSize를 설정하여 배송지 목록을 여러 페이지를 나누어 조회하거나, addressId를 이용하여 특정 배송지 아이디에 대한 배송지 정보만 조회할 수도 있습니다.
 public struct UserShippingAddresses : Codable {
     
     // MARK: Fields
     
-    /// 사용자 아이디
+    /// 회원번호 \
+    /// Service user ID
     public let userId: Int64?
     
-    /// 배송지 제공에 대한 사용자의 동의 필요 여부
+    /// 사용자 동의 시 배송지 제공 가능 여부 \
+    /// Whether ``shippingAddresses`` can be provided under user consent
     public let needsAgreement: Bool?
     
-    /// 사용자가 소유한 배송지 목록
-    ///
-    /// 가장 최근 수정했던 순으로 정렬됩니다. (단, 기본 배송지는 수정시각과 상관없이 첫번째에 위치) shippingAddresses는 사용자의 동의를 받지 않은 경우 nil이 반환됩니다. shippingAddresses가 nil이면 needsAgreement 속성 값을 확인하여 사용자에게 정보 제공에 대한 동의를 요청하고 정보 획득을 시도해 볼 수 있습니다.
+    /// 배송지 목록 \
+    /// List of shipping addresses
     /// ## SeeAlso
     /// - ``ShippingAddress``
     public let shippingAddresses: [ShippingAddress]?
@@ -46,59 +46,75 @@ public struct UserShippingAddresses : Codable {
 }
 
 
-/// 배송지 정보 클래스 입니다.
+/// 배송지 정보 \
+/// Shipping address information
 /// ## SeeAlso
 /// - ``UserShippingAddresses``
 public struct ShippingAddress : Codable {
     
     // MARK: Enumerations
     
-    /// 배송지 타입 열거형
+    /// 배송지 타입 \
+    /// Shipping address type
     public enum `Type` : String, Codable {
-        /// 지번 주소
+        /// 구주소 \
+        /// Administrative address
         case Old = "OLD"
-        /// 도로명 주소
+        /// 신주소 \
+        /// Road name address
         case New = "NEW"
     }
     
     // MARK: Fields
     
-    /// 배송지 아이디
+    /// 배송지 ID \
+    /// Shipping address ID
     public let id: Int64
     
-    /// 배송지명
+    /// 배송지 이름 \
+    /// Name of shipping address
     public let name: String?
     
-    /// 기본 배송지 여부
+    /// 기본 배송지 여부 \
+    /// Whether shipping address is default
     public let isDefault: Bool
     
-    /// 마지막 배송지정보 수정시각
+    /// 수정 시각 \
+    /// Updated time
     public let updatedAt: Date?
     
-    /// 배송지 타입
+    /// 배송지 타입 \
+    /// Shipping address type
     /// ## SeeAlso
     /// - ``ShippingAddress/Type-swift.enum``
     public let type: Type?
     
-    /// 주소 검색을 통해 자동으로 입력되는 기본 주소
+    /// 우편번호 검색 시 채워지는 기본 주소 \
+    /// Base address that is automatically input when searching for a zipcode
     public let baseAddress: String?
     
-    /// 기본 주소에 추가하는 상세 주소
+    /// 기본 주소에 추가하는 상세 주소 \
+    /// Detailed address that a user adds to the base address
     public let detailAddress: String?
     
-    /// 수령인 이름
+    /// 수령인 이름 \
+    /// Recipient name
     public let receiverName: String?
     
-    /// 수령인 연락처
+    /// 수령인 연락처 \
+    /// Recipient phone number
     public let receiverPhoneNumber1: String?
     
-    /// 수령인 추가 연락처
+    /// 수령인 추가 연락처 \
+    /// Additional recipient phone number
     public let receiverPhoneNumber2: String?
     
-    /// 도로명 주소 우편번호. 배송지 타입이 NEW(도로명 주소)인 경우 반드시 존재함
+    /// 신주소 우편번호 \
+    /// 5-digit postal code for a road name address system
     public let zoneNumber: String?
     
-    /// 지번 주소 우편번호. 배송지 타입이 OLD(지번 주소)여도 값이 없을 수 있음
+    /// 구주소 우편번호 \
+    /// Old type of 6-digit postal code for an administrative address system
     public let zipCode: String?
     
     enum CodingKeys: String, CodingKey {

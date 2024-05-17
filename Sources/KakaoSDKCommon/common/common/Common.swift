@@ -109,12 +109,15 @@ public class SdkIdentifier {
     }
 }
 
-/// 톡 간편로그인 호출 방식
+/// 카카오 로그인 시 앱 전환 방식 \
+/// Method to switch apps for Kakao Login
 public enum LaunchMethod: String {
     
-    /// 커스텀 스킴
+    /// 커스텀 URL 스킴 \
+    /// Custom URL scheme
     case CustomScheme = "uri_scheme"
     
-    /// 유니버셜 링크
+    /// 유니버설 링크 \
+    /// Universal link
     case UniversalLink = "universal_link"
 }

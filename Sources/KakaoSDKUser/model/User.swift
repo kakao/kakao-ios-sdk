@@ -14,227 +14,263 @@
 
 import Foundation
 
-/// 사용자 정보 요청 API 응답으로 제공되는 사용자 정보 최상위 클래스입니다.
+/// 사용자 정보 가져오기 응답 \
+/// Response for Retrieve user information
 /// ## SeeAlso
 /// - ``UserApi/me(propertyKeys:secureResource:completion:)``
 public struct User : Codable {
     
     // MARK: Fields
     
-    /// 카카오 플랫폼 내에서 사용되는 사용자의 고유 아이디입니다.
-    ///
-    /// 서로 다른 앱키로 로그인한 경우 동일한 카카오계정이라 하더라도 다른 값이 부여됩니다. 연결 끊기(unlink) 후 다시 로그인할 때 **사용자 아이디 고정**이 비활성화 상태인 경우 새로운 값으로 재발급됩니다.
-    ///
-    /// - note:
-    /// 2018년 9월 19일부터 신규로 생성되는 앱에 대해 **사용자 아이디 고정**을 자동으로 활성화하고 있습니다. https://devtalk.kakao.com/t/api/58481?u=karl.lee&source_topic_id=60227
+    /// 회원번호 \
+    /// Service user ID
     public let id: Int64?
     
-    /// 앱 별로 제공되는 사용자 정보 데이터베이스입니다.
-    ///
-    /// 이 데이터베이스를 통해 서비스에서 사용되는 사용자의 각종 정보를 저장하는 DB로 활용할 수 있으며 카카오 서비스에 등록된 사용자의 프로필 정보를 제공 받을 수도 있습니다.
-    /// 로그인한 사용자의 카카오계정 프로필에 있는 닉네임과 프로필 이미지 정보를 앱 연결 시점에 복사하여 초기값으로 제공되며 이후 해당 카카오계정 프로필에 변경이 발생한 경우 변경된 정보와 동기화되지 않습니다.
-    ///
-    /// - note:
-    /// **실시간 프로필** 정보를 원하는 경우 `Profile`을 참고하시기 바랍니다.
-    ///
-    /// 기본 제공되는 사용자 프로필 정보의 키 이름은 아래와 같습니다.
-    ///
-    /// - nickname : 카카오계정에 설정된 닉네임
-    /// - profile_image : 프로필 이미지 URL 문자열
-    /// - thumbnail_image : 썸네일 사이즈의 프로필 이미지 URL 문자열
-    ///
-    /// 프로필 또는 다른 정보를 추가 저장하거나 기본 제공되는 정보를 수정하고 싶은 경우 `UserApi`의 updateProfile 메소드를 사용할 수 있습니다.
+    /// 사용자 프로퍼티 \
+    /// User properties
     public let properties: [String:String]?
     
-    /// 사용자의 카카오계정 정보
-    ///
-    /// 이메일, 프로필 정보 등이 제공됩니다. 이 필드를 통해 내려 받을 수 있는 정보가 하나도 없을 경우 nil이 될 수 있습니다.
+    /// 카카오계정 정보 \
+    /// Kakao Account information
     /// ## SeeAlso
     /// - ``Account``
     public let kakaoAccount: Account?
     
-    /// 앱이 그룹에 속해 있는 경우 그룹 내 사용자 식별 토큰입니다. 앱의 그룹정보가 변경될 경우 토큰 값도 변경됩니다. 제휴를 통해 권한이 부여된 특정 앱에만 제공됩니다.
+    /// 그룹에서 맵핑 정보로 사용할 수 있는 값 \
+    /// Token to map users in the group apps
     public let groupUserToken: String?
     
-    ///해당 서비스에 연결 완료된 시각
+    /// 서비스에 연결 완료된 시각, UTC \
+    /// Time connected to the service, UTC
     public let connectedAt : Date?
     
-    ///'카카오싱크 간편가입창'을 통해 카카오 로그인 한 시각
+    /// 카카오싱크 간편가입을 통해 로그인한 시각, UTC \
+    /// The time when the user is logged in through Kakao Sync Simple Signup, UTC
     public let synchedAt : Date?
     
-    /// 사용자가 앱에 연결되어 있는지 여부를 나타냅니다. **자동 연결** 설정이 활성화되어 있는 경우 값이 내려오지 않으므로 앱에 연결되어 있다고 가정해도 무방합니다.
+    /// 연결하기 호출의 완료 여부 \
+    /// Whether the user is completely linked with the app
     public let hasSignedUp: Bool?
 }
 
 // MARK: Enumerations
 
-/// 연령대(한국 나이) 정보 열거형
+/// 연령대 \
+/// Age range
 public enum AgeRange : String, Codable {
-    /// 0세 ~ 9세
+    /// 0세~9세 \
+    /// 0 to 9 years old
     case Age0_9  = "0~9"
-    /// 10세 ~ 14세
+    /// 10세~14세 \
+    /// 10 to 14 years old
     case Age10_14 = "10~14"
-    /// 15세 ~ 19세
+    /// 15세~19세 \
+    /// 15 to 19 years old
     case Age15_19 = "15~19"
-    /// 20세 ~ 29세
+    /// 20세~29세 \
+    /// 20 to 29 years old
     case Age20_29 = "20~29"
-    /// 30세 ~ 39세
+    /// 30세~39세 \
+    /// 30 to 39 years old
     case Age30_39 = "30~39"
-    /// 40세 ~ 49세
+    /// 40세~49세 \
+    /// 40 to 49 years old
     case Age40_49 = "40~49"
-    /// 50세 ~ 59세
+    /// 50세~59세 \
+    /// 50 to 59 years old
     case Age50_59 = "50~59"
-    /// 60세 ~ 69세
+    /// 60세~69세 \
+    /// 60 to 69 years old
     case Age60_69 = "60~69"
-    /// 70세 ~ 79세
+    /// 70세~79세 \
+    /// 70 to 79 years old
     case Age70_79 = "70~79"
-    /// 80세 ~ 89세
+    /// 80세~89세 \
+    /// 80 to 89 years old
     case Age80_89 = "80~89"
-    /// 90세 이상
+    /// 90세 이상 \
+    /// Over 90 years old
     case Age90_Above = "90~"
 }
 
-/// 성별 정보 열거형
+/// 성별 \
+/// Gender
 public enum Gender : String, Codable {
-    /// 남자
+    /// 남자 \
+    /// Male
     case Male = "male"
-    /// 여자
+    /// 여자 \
+    /// Female
     case Female = "female"
 }
 
-/// 생일의 양력/음력 열거형
+/// 생일 타입 \
+/// Birthday type
 public enum BirthdayType : String, Codable {
-    /// 양력
+    /// 양력 \
+    /// Solar
     case Solar = "SOLAR"
-    /// 음력
+    /// 음력 \
+    /// Lunar
     case Lunar = "LUNAR"
 }
 
-/// 카카오계정에 등록된 사용자 개인정보를 제공합니다.
+/// 카카오계정 정보 \
+/// Kakao Account information
 /// ## SeeAlso
 /// - ``User/kakaoAccount``
-///
-/// 내려오는 실제 정보는 https://accounts.kakao.com 으로 접속하여 해당 계정으로 로그인한 후 확인하실 수 있습니다.
-///
-/// 이 클래스에서 제공하는 카카오계정의 모든 개인정보는 사용자의 동의를 받지 않은 경우 nil이 반환됩니다. 개인정보 필드의 값이 없으면 해당 필드와 매칭되는 {property}NeedsAgreement 속성 값을 확인하여 사용자에게 정보 제공에 대한 동의를 요청하고 정보 획득을 시도해 볼 수 있습니다. {property}NeedsAgreement 값이 true인 경우 새로운 동의 요청이 가능한 상태이며 KOSession의 updateScopes 메소드를 이용하여 동의를 받을 수 있습니다. 동의를 받은 후 user/me를 다시 호출하면 해당 값이 반환될 것입니다. {property}NeedsAgreement 값이 false인 경우 사용자의 계정에 해당 정보가 없어서 값을 얻을 수 없음을 의미합니다.
-///
-/// - important:
-///  [내 애플리케이션] > [제품 설정] > [카카오 로그인] > [동의항목] 에서 **선택 동의**로 설정된 정보의 동의 요청은 매우 주의해야 합니다. 추가 항목 동의 받기로 값을 필수로 획득하는 행위는 반드시 서비스 가입과 관계 없는 특정 시나리오에서 시도해야 합니다. 사용자가 동의하지 않아도 서비스 이용에 지장이 없어야 합니다.
 
 public struct Account : Codable {
     
     // MARK: Fields
     
-    /// profile 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 프로필 제공 가능 여부 \
+    /// Whether ``profile`` can be provided under user consent
     public let profileNeedsAgreement: Bool?
-    /// profile 닉네임 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 닉네임 제공 가능 여부 \
+    /// Whether ``Profile/nickname`` can be provided under user consent
     public let profileNicknameNeedsAgreement: Bool?    
-    /// profile 이미지 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 프로필 사진 제공 가능 여부 \
+    /// Whether ``Profile/profileImageUrl`` can be provided under user consent
     public let profileImageNeedsAgreement: Bool?
     
-    /// 카카오계정에 등록한 프로필 정보
+    /// 프로필 정보 \
+    /// Profile information
     /// ## SeeAlso
     /// - ``Profile``
     public let profile: Profile?
     
-    /// 카카오계정 이름에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 이름 제공 가능 여부 \
+    /// Whether ``name`` can be provided under user consent
     public let nameNeedsAgreement: Bool?
-    /// 카카오계정 이름
+    /// 카카오계정 이름 \
+    /// Name of Kakao Account
     public let name: String?
     
-    /// email 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 카카오계정 대표 이메일 제공 가능 여부 \
+    /// Whether ``email`` can be provided under user consent
     public let emailNeedsAgreement: Bool?
-    /// 카카오계정에 등록된 이메일의 유효성
+    /// 이메일 유효 여부 \
+    /// Whether email address is valid
     public let isEmailValid: Bool?
-    /// 카카오계정에 이메일 등록 시 이메일 인증을 받았는지 여부
+    /// 이메일 인증 여부 \
+    /// Whether email address is verified
     public let isEmailVerified: Bool?
-    /// 카카오계정에 등록된 이메일
+    /// 카카오계정 대표 이메일 \
+    /// Representative email of Kakao Account
     public let email: String?
     
-    /// ageRange 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 연령대 제공 가능 여부 \
+    /// Whether ``ageRange`` can be provided under user consent
     public let ageRangeNeedsAgreement: Bool?
-    /// 연령대
+    /// 연령대 \
+    /// Age range
     /// ## SeeAlso
     /// - ``AgeRange``
     public let ageRange: AgeRange?
-    /// birthyear 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 출생 연도 제공 가능 여부 \
+    /// Whether ``birthyear`` can be provided under user consent
     public let birthyearNeedsAgreement: Bool?
-    /// 출생 연도 (YYYY)
+    /// 출생 연도, YYYY 형식 \
+    /// Birthyear in YYYY format
     public let birthyear: String?
-    /// birthday 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 생일 제공 가능 여부 \
+    /// Whether ``birthday`` can be provided under user consent
     public let birthdayNeedsAgreement: Bool?
-    /// 생일 (MMDD)
+    /// 생일, MMDD 형식 \
+    /// Birthday in MMDD format
     public let birthday: String?
-    /// 생일의 양력/음력
+    /// 생일 타입 \
+    /// Birthday type
     public let birthdayType: BirthdayType?
     
-    /// gender 제공에 대한 사용자의 동의 필요 여부
+    /// 사용자 동의 시 성별 제공 가능 여부 \
+    /// Whether ``gender`` can be provided under user consent
     public let genderNeedsAgreement: Bool?
-    /// 성별
+    /// 성별 \
+    /// Gender
     /// ## SeeAlso
     /// - ``Gender``
     public let gender: Gender?
     
-    /// phoneNumber 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 전화번호 제공 가능 여부 \
+    /// Whether ``phoneNumber`` can be provided under user consent
     public let phoneNumberNeedsAgreement: Bool?
-    /// 카카오톡에서 인증한 전화번호
+    /// 카카오계정의 전화번호 \
+    /// Phone number of Kakao Account
     public let phoneNumber: String?
     
-    /// ci 제공에 대한 사용자의 동의 필요 여부
+    /// 사용자 동의 시 연계정보 제공 가능 여부 \
+    /// Whether ``ci`` can be provided under user consent
     public let ciNeedsAgreement: Bool?
-    /// 암호화된 사용자 확인값
+    /// 연계정보 \
+    /// Connecting Information(CI)
     public let ci: String?    
-    /// ci 발급시간
+    /// CI 발급시간 \
+    /// CI issuance time
     public let ciAuthenticatedAt: Date?
     
 
     
-    /// legalName 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 실명 제공 가능 여부 \
+    /// Whether ``legalName`` can be provided under user consent
     public let legalNameNeedsAgreement : Bool?
     
-    /// 실명
+    /// 실명 \
+    /// Legal name
     public let legalName : String?
         
-    /// legalBirthDate 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 법정 생년월일 제공 가능 여부 \
+    /// Whether ``isKorean`` can be provided under user consent
     public let legalBirthDateNeedsAgreement : Bool?
     
-    /// 법정생년월일
+    /// 법정 생년월일, yyyyMMDD 형식 \
+    /// Legal birth date in yyyyMMDD format
     public let legalBirthDate : String?
     
-    /// legalGender 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 법정 성별 제공 가능 여부 \
+    /// Whether ``legalGender`` can be provided under user consent
     public let legalGenderNeedsAgreement : Bool?
     
-    /// 법정성별
+    /// 법정 성별 \
+    /// Legal gender
     public let legalGender : Gender?
     
-    ///한국인 여부 제공에 대한 사용자 동의 필요 여부
+    /// 사용자 동의 시 내외국인 제공 가능 여부 \
+    /// Whether ``isKorean`` can be provided under user consent
     public let isKoreanNeedsAgreement : Bool?
     
-    ///한국인 여부
+    /// 본인인증을 거친 내국인 여부 \
+    /// Whether the user is Korean
     public let isKorean : Bool?
 }
 
-/// 카카오계정에 등록된 사용자의 프로필 정보를 제공합니다.
+/// 프로필 정보 \
+/// Profile information
 /// ## SeeAlso
 /// - ``Account/profile``
 public struct Profile : Codable {
     
     // MARK: Fields
 
-    /// 사용자의 닉네임
+    /// 닉네임 \
+    /// Nickname
     public let nickname: String?
     
-    /// 카카오계정에 등록된 프로필 이미지 URL
-    ///
-    /// 사용자가 프로필 이미지를 등록하지 않은 경우 nil이 내려옵니다. 사용자가 등록한 프로필 이미지가 사진인 경우 640 * 640 규격의 이미지가, 동영상인 경우 480 * 480 규격의 스냅샷 이미지가 제공됩니다.
+    // 사용자가 프로필 이미지를 등록하지 않은 경우 nil
+    // 사용자가 등록한 프로필 이미지가 사진인 경우 640 * 640 규격의 이미지, 동영상인 경우 480 * 480 규격의 스냅샷 이미지 제공
+    /// 프로필 사진 URL \
+    /// Profile image URL
     public let profileImageUrl: URL?
     
-    /// 카카오계정에 등록된 프로필 이미지의 썸네일 규격 이미지 URL
-    ///
-    /// 사용자가 프로필 이미지를 등록하지 않은 경우 nil이 내려옵니다. 사용자가 등록한 프로필 이미지가 사진인 경우 110 * 110 규격의 이미지가, 동영상인 경우 100 * 100 규격의 스냅샷 이미지가 제공됩니다.
+    // 사용자가 프로필 이미지를 등록하지 않은 경우 nil
+    // 사용자가 등록한 프로필 이미지가 사진인 경우 110 * 110 규격의 이미지, 동영상인 경우 100 * 100 규격의 스냅샷 이미지 제공
+    /// 프로필 미리보기 이미지 URL \
+    /// Thumbnail image URL
     public let thumbnailImageUrl: URL?
     
-    /// 사용자 프로필 기본 이미지 여부
+    /// 프로필 사진 URL이 기본 프로필 사진 URL인지 여부 \
+    /// Whether the default image is used for profile image
     public let isDefaultImage: Bool?
     
     enum CodingKeys : String, CodingKey {
