@@ -93,7 +93,7 @@ extension ShareApi {
     /// ## SeeAlso
     /// - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKShare'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
     public func makeDefaultUrl(templatable:Templatable, serverCallbackArgs:[String:String]? = nil) -> URL? {
-        return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
+        return self._makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"default",
                                   parameters:["link_ver":"4.0",
                                               "template_object":templatable.toJsonObject()].filterNil(),
@@ -108,7 +108,7 @@ extension ShareApi {
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                          Keys and values for the Kakao Talk Sharing success callback
     public func makeDefaultUrl(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil) -> URL? {
-        return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
+        return self._makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"default",
                                   parameters:["link_ver":"4.0",
                                               "template_object":templateObject].filterNil(),
@@ -127,7 +127,7 @@ extension ShareApi {
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                          Keys and values for the Kakao Talk Sharing success callback
     public func makeScrapUrl(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
-        return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
+        return self._makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"scrap",
                                   parameters:["link_ver":"4.0",
                                               "request_url":requestUrl,
@@ -146,7 +146,7 @@ extension ShareApi {
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                          Keys and values for the Kakao Talk Sharing success callback
     public func makeCustomUrl(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
-        return self.makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
+        return self._makeSharerUrl(url: Urls.compose(.SharerLink, path:Paths.sharerLink),
                                   action:"custom",
                                   parameters:["link_ver":"4.0",
                                               "template_id":templateId,
@@ -155,12 +155,13 @@ extension ShareApi {
     }
     
     //공통
-    private func makeSharerUrl(url:String, action:String, parameters:[String:Any]? = nil, serverCallbackArgs:[String:String]? = nil) -> URL? {
+    public func _makeSharerUrl(url:String, action:String, parameters:[String:Any]? = nil, serverCallbackArgs:[String:String]? = nil, targetAppKey:String? = nil) -> URL? {
         return SdkUtils.makeUrlWithParameters(url, parameters: ["app_key":try! KakaoSDK.shared.appKey(),
                                                                 "validation_action":action,
                                                                 "validation_params":parameters?.toJsonString(),
                                                                 "ka":Constants.kaHeader,
-                                                                "lcba":serverCallbackArgs?.toJsonString()].filterNil())
+                                                                "lcba":serverCallbackArgs?.toJsonString(),
+                                                                "target_app_key":targetAppKey].filterNil())
     }
 }
 
