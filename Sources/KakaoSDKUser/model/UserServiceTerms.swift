@@ -60,6 +60,54 @@ public struct ServiceTerms : Codable {
     /// 철회 가능 여부 \
     /// Whether consent is revocable
     public let revocable: Bool
+    
+    /// 서비스 약관의 동의 경로 \
+    /// Path through which the service terms were agreed to.
+    ///  ## SeeAlso
+    ///  - ``Referer-swift.enum``
+    public let referer: Referer?
+    
+    /// 서비스 약관의 동의 경로 \
+    /// Path through which the service terms were agreed to.
+    public enum Referer: String, Codable {
+        /// 카카오싱크 간편가입 동의 화면 \
+        /// Consent screen of Kakao Sync Simple Signup.
+        case kauth = "KAUTH"
+        
+        /// 기타 \
+        /// Other paths.
+        case kapi = "KAPI"
+        
+        /// 알 수 없음 \
+        /// Unknown
+        case unknown
+        
+#if swift(>=5.8)
+    @_documentation(visibility: private)
+#endif
+        public init(from decoder: any Decoder) throws {
+            self = try Referer(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
+        }
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case tag, agreedAt, agreed, required, revocable
+        case referer = "agreedBy"
+    }
+        
+#if swift(>=5.8)
+    @_documentation(visibility: private)
+#endif
+    public init(from decoder: any Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        
+        tag = try values.decode(String.self, forKey: .tag)
+        agreedAt = try? values.decode(Date.self, forKey: .agreedAt)
+        agreed = try values.decode(Bool.self, forKey: .agreed)
+        required = try values.decode(Bool.self, forKey: .required)
+        revocable = try values.decode(Bool.self, forKey: .revocable)
+        referer = try? values.decode(Referer.self, forKey: .referer)
+    }
 }
 
 /// 서비스 약관 동의 철회하기 응답 \
