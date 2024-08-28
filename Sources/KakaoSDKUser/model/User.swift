@@ -51,6 +51,30 @@ public struct User : Codable {
     /// 연결하기 호출의 완료 여부 \
     /// Whether the user is completely linked with the app
     public let hasSignedUp: Bool?
+    
+    /// 다른 사용자의 친구 정보에서 보여지는 해당 사용자의 고유 ID \
+    /// Unique ID for the friend information
+    public let uuid: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, properties, kakaoAccount, groupUserToken, connectedAt, synchedAt, hasSignedUp
+        case uuid = "forPartner"
+    }
+    
+    public init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try? container.decode(Int64.self, forKey: .id)
+        self.properties = try? container.decode([String : String].self, forKey: .properties)
+        self.kakaoAccount = try? container.decode(Account.self, forKey: .kakaoAccount)
+        self.groupUserToken = try? container.decode(String.self, forKey: .groupUserToken)
+        self.connectedAt = try? container.decode(Date.self, forKey: .connectedAt)
+        self.synchedAt = try? container.decode(Date.self, forKey: .synchedAt)
+        self.hasSignedUp = try? container.decode(Bool.self, forKey: .hasSignedUp)
+        
+        let forPartner = try? container.decode([String:Any].self, forKey: .uuid)
+        self.uuid = forPartner?["uuid"] as? String
+    }
 }
 
 // MARK: Enumerations
@@ -200,16 +224,6 @@ public struct Account : Codable {
     /// Phone number of Kakao Account
     public let phoneNumber: String?
     
-    /// 사용자 동의 시 연계정보 제공 가능 여부 \
-    /// Whether ``ci`` can be provided under user consent
-    public let ciNeedsAgreement: Bool?
-    /// 연계정보 \
-    /// Connecting Information(CI)
-    public let ci: String?    
-    /// CI 발급시간 \
-    /// CI issuance time
-    public let ciAuthenticatedAt: Date?
-    
 
     
     /// 사용자 동의 시 실명 제공 가능 여부 \
@@ -286,3 +300,4 @@ public struct Profile : Codable {
         isDefaultImage = try? values.decode(Bool.self, forKey: .isDefaultImage)
     }
 }
+
