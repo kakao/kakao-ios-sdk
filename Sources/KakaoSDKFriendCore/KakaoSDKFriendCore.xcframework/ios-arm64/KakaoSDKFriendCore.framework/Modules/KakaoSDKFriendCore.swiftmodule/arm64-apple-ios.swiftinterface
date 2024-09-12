@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
-// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name KakaoSDKFriendCore
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name KakaoSDKFriendCore
 import AuthenticationServices
 import Foundation
 import SafariServices
@@ -280,6 +279,7 @@ public class OpenPickerFriendRequestParams {
   final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance?
   final public let orientation: KakaoSDKFriendCore.PickerOrientation?
   final public let enableSearch: Swift.Bool?
+  final public let enableIndex: Swift.Bool?
   final public let showMyProfile: Swift.Bool?
   final public let showFavorite: Swift.Bool?
   public var showPickedFriend: Swift.Bool?
@@ -296,6 +296,7 @@ public class PickerFriendRequestParams {
   final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance?
   final public let orientation: KakaoSDKFriendCore.PickerOrientation?
   final public let enableSearch: Swift.Bool?
+  final public let enableIndex: Swift.Bool?
   final public let showMyProfile: Swift.Bool?
   final public let showFavorite: Swift.Bool?
   final public let disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]?
@@ -358,6 +359,7 @@ public class PickerTabRequestParams {
     final public let friendFilter: KakaoSDKFriendCore.PickerFriendFilter?
     final public let countryCodeFilters: [Swift.String]?
     final public let usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter?
+    final public let enableIndex: Swift.Bool?
     final public let showMyProfile: Swift.Bool?
     final public let showFavorite: Swift.Bool?
     public var showPickedFriend: Swift.Bool?
