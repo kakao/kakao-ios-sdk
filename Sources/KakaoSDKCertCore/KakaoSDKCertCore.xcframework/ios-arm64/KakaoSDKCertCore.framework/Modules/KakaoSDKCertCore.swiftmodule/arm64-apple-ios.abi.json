@@ -3474,224 +3474,224 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 742,
       "length": 7,
       "value": "\"k2100\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 767,
       "length": 7,
       "value": "\"k2220\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 7,
       "value": "\"k3220\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 742,
       "length": 7,
       "value": "\"k2100\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 767,
       "length": 7,
       "value": "\"k2220\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 7,
       "value": "\"k3220\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 897,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 930,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 961,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 993,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 1028,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 897,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 930,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 961,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 993,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 1028,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1183,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1198,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1213,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1228,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1243,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1183,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1198,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1213,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1228,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1243,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1183,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1198,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1213,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1228,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1243,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-kakao-open-ios-sdk-build-public-upload\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1437,
       "length": 2,

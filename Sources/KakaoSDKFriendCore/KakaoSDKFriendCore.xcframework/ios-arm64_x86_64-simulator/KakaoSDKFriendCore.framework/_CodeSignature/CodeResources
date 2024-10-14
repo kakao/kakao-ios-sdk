@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WIZFCCP2CyHJuXeJqe1DTq6sHRs=
+		cUxvUhswu7Vtqb/LAeKk4P9xwTI=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+		UK0MhT3uccqwinB3Y7UqacM+r1s=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		WIooALrbuhhhep5D/+RGL9PSU/I=
+		/cDwlgesTM7d7iilL5SXm8cJyz4=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+		UK0MhT3uccqwinB3Y7UqacM+r1s=
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		z6DMzHGjRTfYvzB/NdQ6nlb1FGk=
+		tQhZgTs8Nbj6cozcEtxLUXypWaY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,11 +74,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+			UK0MhT3uccqwinB3Y7UqacM+r1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vF1E2GKkZmqhUYk4XRqum9Q4Y2DOAAzbEyoc1GEf/Q8=
+			VSnBH6mZe4XZsp5NlP6yxqv8JjsXX35LrLEOhJr9Lms=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -118,22 +118,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WIooALrbuhhhep5D/+RGL9PSU/I=
+			/cDwlgesTM7d7iilL5SXm8cJyz4=
 			</data>
 			<key>hash2</key>
 			<data>
-			3VrCUC+cXXdQKRqexgI8XzX6ZQvREq6pfVe+z/dpKxk=
+			tlSWgT7FgSrMM8xWXrzn6bzjL/+DkKAlX8vfIiOPlFk=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+			UK0MhT3uccqwinB3Y7UqacM+r1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vF1E2GKkZmqhUYk4XRqum9Q4Y2DOAAzbEyoc1GEf/Q8=
+			VSnBH6mZe4XZsp5NlP6yxqv8JjsXX35LrLEOhJr9Lms=
 			</data>
 		</dict>
 		<key>Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z6DMzHGjRTfYvzB/NdQ6nlb1FGk=
+			tQhZgTs8Nbj6cozcEtxLUXypWaY=
 			</data>
 			<key>hash2</key>
 			<data>
-			2/1guLIi9WUPTd7UkAui5Lzea2tiJE3rXGUVqjNx8xk=
+			FmOfcFrjXYCzAOOlLngpDD+NJwhVQqz4thh2jPLVpLM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

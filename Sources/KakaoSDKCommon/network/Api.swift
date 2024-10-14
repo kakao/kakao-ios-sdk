@@ -32,10 +32,19 @@ public enum SessionType {
     case PartnerAuthApi
 }
 
-//public enum ApiType {
-//    case KApi
-//    case KAuth
-//}
+//Alamofire wrapper for single module dependency
+public enum KHTTPMethod {
+    case connect
+    case delete
+    case get
+    case head
+    case options
+    case patch
+    case post
+    case put
+    case query
+    case trace
+}
 
 #if swift(>=5.8)
 @_documentation(visibility: private)
@@ -78,6 +87,25 @@ extension Api {
 }
 
 extension Api {
+    public static func httpMethod(_ kHttpMethod:KHTTPMethod) -> Alamofire.HTTPMethod {
+        switch(kHttpMethod) {
+            case .connect: return HTTPMethod(rawValue: "CONNECT")
+            case .delete: return HTTPMethod(rawValue: "DELETE")
+            case .get: return HTTPMethod(rawValue: "GET")
+            case .head: return HTTPMethod(rawValue: "HEAD")
+            case .options: return HTTPMethod(rawValue: "OPTIONS")
+            case .patch: return HTTPMethod(rawValue: "PATCH")
+            case .post: return HTTPMethod(rawValue: "POST")
+            case .put: return HTTPMethod(rawValue: "PUT")
+            case .query: return HTTPMethod(rawValue: "QUERY")
+            case .trace: return HTTPMethod(rawValue: "TRACE")
+        }
+    }
+    
+    public static func httpHeaders(_ kHttpHeaders:[String:String]? = nil) -> Alamofire.HTTPHeaders? {
+        return (kHttpHeaders != nil) ? Alamofire.HTTPHeaders(kHttpHeaders!) : nil
+    }
+    
     public func getSdkError(error: Error) -> SdkError? {
         if let aferror = error as? AFError {
             switch aferror {
@@ -109,7 +137,7 @@ extension Api {
         return nil
     }
     
-    public func responseData(_ HTTPMethod: Alamofire.HTTPMethod,
+    public func responseData(_ kHTTPMethod: KHTTPMethod,
                              _ url: String,
                              parameters: [String: Any]? = nil,
                              headers: [String: String]? = nil,
@@ -119,7 +147,7 @@ extension Api {
                              completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
         
         API.session(sessionType)
-            .request(url, method:HTTPMethod, parameters:parameters, encoding:API.encoding, headers:(headers != nil ? HTTPHeaders(headers!):nil) )
+            .request(url, method:Api.httpMethod(kHTTPMethod), parameters:parameters, encoding:API.encoding, headers:(headers != nil ? HTTPHeaders(headers!):nil) )
             .validate({ (request, response, data) -> Request.ValidationResult in
                 if let data = data {
                     
@@ -132,7 +160,7 @@ extension Api {
                     
                     SdkLog.d("===================================================================================================")
                     SdkLog.d("session: \n type: \(sessionType)\n\n")
-                    SdkLog.i("request: \n method: \(HTTPMethod)\n url:\(url)\n headers:\(String(describing: headers))\n parameters: \(String(describing: parameters)) \n\n")
+                    SdkLog.i("request: \n method: \(Api.httpMethod(kHTTPMethod))\n url:\(url)\n headers:\(String(describing: headers))\n parameters: \(String(describing: parameters)) \n\n")
                     (logging) ? SdkLog.i("response:\n \(String(describing: json))\n\n" ) : SdkLog.i("response: - \n\n")
                     
                     if let sdkError = SdkError(response: response, data: data, type: apiType) {
@@ -172,7 +200,7 @@ extension Api {
             }
     }
     
-    public func upload(_ HTTPMethod: Alamofire.HTTPMethod,
+    public func upload(_ kHTTPMethod: KHTTPMethod,
                        _ url: String,
                        images: [UIImage?] = [],
                        parameters: [String: Any]? = nil,
@@ -201,7 +229,7 @@ extension Api {
                     }
                     formData.append(data, withName: arg.key)
                 })                
-            }, to: url, method: HTTPMethod, headers: (headers != nil ? HTTPHeaders(headers!):nil))
+            }, to: url, method: Api.httpMethod(kHTTPMethod), headers: (headers != nil ? HTTPHeaders(headers!):nil))
             .uploadProgress(queue: .main, closure: { (progress) in
                 SdkLog.i("upload progress: \(String(format:"%.2f", 100.0 * progress.fractionCompleted))%")
             })
@@ -216,7 +244,7 @@ extension Api {
                     }
                     
                     SdkLog.d("===================================================================================================")
-                    SdkLog.i("request:\n method: \(HTTPMethod)\n url:\(url)\n headers:\(String(describing: headers))\n images:\(String(describing: images))\n parameters:\(String(describing: parameters))\n")
+                    SdkLog.i("request:\n method: \(Api.httpMethod(kHTTPMethod))\n url:\(url)\n headers:\(String(describing: headers))\n images:\(String(describing: images))\n parameters:\(String(describing: parameters))\n")
                     SdkLog.i("response:\n \(String(describing: json))\n\n" )
                     
                     if let sdkError = SdkError(response: response, data: data, type: apiType) {

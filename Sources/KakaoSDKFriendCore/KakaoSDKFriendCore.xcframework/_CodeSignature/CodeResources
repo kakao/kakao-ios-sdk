@@ -10,15 +10,15 @@
 		</data>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/Info.plist</key>
 		<data>
-		OV1qAWGoRtRO1GqqRDmpEMqtqYQ=
+		mYEX6qMbVZDW1xKkkEAYSfMQx2c=
 		</data>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/KakaoSDKFriendCore</key>
 		<data>
-		jBaDEvKaC1Migt53DQ1aspgFxkI=
+		3UuHM6Y7Yx27Ymyhw8SmP+1tT4M=
 		</data>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+		UK0MhT3uccqwinB3Y7UqacM+r1s=
 		</data>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -42,15 +42,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Info.plist</key>
 		<data>
-		WIZFCCP2CyHJuXeJqe1DTq6sHRs=
+		cUxvUhswu7Vtqb/LAeKk4P9xwTI=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/KakaoSDKFriendCore</key>
 		<data>
-		Wih05uXqpMAHo2ASSW52MxYQs/Y=
+		Re9bLiD1NyjfO4DC5GtmzKWTat8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+		UK0MhT3uccqwinB3Y7UqacM+r1s=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+		UK0MhT3uccqwinB3Y7UqacM+r1s=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeDirectory</key>
 		<data>
-		Z3k/J4Q9uG1iBxQ8r2NGqyma94o=
+		JhMzaBKWV+oxWW0nrCSYUbCtJ2E=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeRequirements</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeRequirements-1</key>
 		<data>
-		t5szWmbzSUgCMSESbybL+HAg2fY=
+		N/kbZcXG/RiAvmpZsDNmFcOhi6Q=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeResources</key>
 		<data>
-		SkzTeMJohvnOC80r/HDLiFjv5AM=
+		AkAA6A6gHHFxJkhqZ/VXQZXJXg8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeSignature</key>
 		<data>
@@ -122,33 +122,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OV1qAWGoRtRO1GqqRDmpEMqtqYQ=
+			mYEX6qMbVZDW1xKkkEAYSfMQx2c=
 			</data>
 			<key>hash2</key>
 			<data>
-			Cg/Cc+nXNBVob06GcaRE8Cz2rFbOo3dBnLuj6tByB6o=
+			xSKTXS87VJjh3UqmZqxql8uM6XaLuYNZOth21isCFBE=
 			</data>
 		</dict>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/KakaoSDKFriendCore</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			jBaDEvKaC1Migt53DQ1aspgFxkI=
+			3UuHM6Y7Yx27Ymyhw8SmP+1tT4M=
 			</data>
 			<key>hash2</key>
 			<data>
-			KscSqELBgpz2NJ2RG0KZx99Op4SL4lw7AH+xUkHfQo4=
+			0NOb2ixSUSevotfEbX5e+YAV9HNs7O7wDAAHzxkraNo=
 			</data>
 		</dict>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+			UK0MhT3uccqwinB3Y7UqacM+r1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vF1E2GKkZmqhUYk4XRqum9Q4Y2DOAAzbEyoc1GEf/Q8=
+			VSnBH6mZe4XZsp5NlP6yxqv8JjsXX35LrLEOhJr9Lms=
 			</data>
 		</dict>
 		<key>ios-arm64/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -210,33 +210,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WIZFCCP2CyHJuXeJqe1DTq6sHRs=
+			cUxvUhswu7Vtqb/LAeKk4P9xwTI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Atj8S4ErCbGPB46spu2xGVoMjEOnZ3bzigJVLkUmSwA=
+			TwKDPuPFu/xDs8JTdA8AIkoYGVitp7MjZ+oxc40Pm/k=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/KakaoSDKFriendCore</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Wih05uXqpMAHo2ASSW52MxYQs/Y=
+			Re9bLiD1NyjfO4DC5GtmzKWTat8=
 			</data>
 			<key>hash2</key>
 			<data>
-			lZGFxE6BzCHrDKP/1mgAylQqVWxuL2vXdPXSsB5x4Cw=
+			lOmWDrfbtgHb5LIo2kq/cA+OaaZDoFUSJXG/B1SD1zQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+			UK0MhT3uccqwinB3Y7UqacM+r1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vF1E2GKkZmqhUYk4XRqum9Q4Y2DOAAzbEyoc1GEf/Q8=
+			VSnBH6mZe4XZsp5NlP6yxqv8JjsXX35LrLEOhJr9Lms=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -276,11 +276,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2fFxxpoceiqbLVI7T6W1Rhyqn1E=
+			UK0MhT3uccqwinB3Y7UqacM+r1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			vF1E2GKkZmqhUYk4XRqum9Q4Y2DOAAzbEyoc1GEf/Q8=
+			VSnBH6mZe4XZsp5NlP6yxqv8JjsXX35LrLEOhJr9Lms=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/Modules/KakaoSDKFriendCore.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -331,11 +331,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Z3k/J4Q9uG1iBxQ8r2NGqyma94o=
+			JhMzaBKWV+oxWW0nrCSYUbCtJ2E=
 			</data>
 			<key>hash2</key>
 			<data>
-			+6HLAEmKU9OFcUeWhWrrxME0H8K2vcG3wT4SyGoMk6c=
+			A65g0da+/LRrrGVTRUVhB/KzYAyZ6n9/SynsLGgnlHE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeRequirements</key>
@@ -353,22 +353,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t5szWmbzSUgCMSESbybL+HAg2fY=
+			N/kbZcXG/RiAvmpZsDNmFcOhi6Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			U3YU0gvEs1XwxKrDQg57WzjVnmtRY5RSU/irGUM0hwI=
+			72rWRU+bqZOKpdFPk1qPX/xJpTfKj2tg/2n3y63kZV4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SkzTeMJohvnOC80r/HDLiFjv5AM=
+			AkAA6A6gHHFxJkhqZ/VXQZXJXg8=
 			</data>
 			<key>hash2</key>
 			<data>
-			kBX9+tRa964yJCk3FC6iNmX0Ozd14CHG6WVDsQl3OVE=
+			Yjlhja0HbhXJwjxCLw6MsXXvp5l1XMfK9xyN8gLgPDE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/KakaoSDKFriendCore.framework/_CodeSignature/CodeSignature</key>
