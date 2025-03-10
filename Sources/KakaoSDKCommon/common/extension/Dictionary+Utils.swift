@@ -18,23 +18,20 @@ import Foundation
 @_documentation(visibility: private)
 #endif
 extension Dictionary {
-    public var queryParameters: String {
+    public var queryParameters: String? {
+        if self.isEmpty { return nil }
         var parts: [String] = []
         for (key, value) in self {
+            let key = String(describing: key)
+            let value = String(describing: value)
+            
             let part = String(format: "%@=%@",
-                              String(describing: key).addingPercentEncoding(withAllowedCharacters: CharacterSet.fixedUrlQueryAllowed())!,
-                              String(describing: value).addingPercentEncoding(withAllowedCharacters: CharacterSet.fixedUrlQueryAllowed())!)
+                              key.addingPercentEncoding(withAllowedCharacters: CharacterSet.fixedUrlQueryAllowed()) ?? key,
+                              value.addingPercentEncoding(withAllowedCharacters: CharacterSet.fixedUrlQueryAllowed()) ?? value)
+            if part == "=" { continue }
             parts.append(part as String)
         }
         return parts.joined(separator: "&")
-    }
-    
-    public var urlQueryItems: [URLQueryItem]? {
-        let queryItems = self.map { (key, value) in
-            URLQueryItem(name: String(describing: key),
-                         value: String(describing: value))
-        }
-        return queryItems
     }
 }
 

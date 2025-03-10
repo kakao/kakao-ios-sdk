@@ -41,11 +41,13 @@ public class SdkUtils {
 
     static public func makeUrlStringWithParameters(_ url:String, parameters:[String:Any]?) -> String? {
         guard var components = URLComponents(string:url) else { return nil }
-        components.queryItems = parameters?.urlQueryItems
+        components.percentEncodedQuery = parameters?.queryParameters
         return components.url?.absoluteString
     }
     
     static public func makeUrlWithParameters(_ url:String, parameters:[String:Any]?) -> URL? {
+        if url.isEmpty { return nil }
+        
         guard let finalStringUrl = makeUrlStringWithParameters(url, parameters:parameters) else { return nil }
         return URL(string:finalStringUrl)
     }

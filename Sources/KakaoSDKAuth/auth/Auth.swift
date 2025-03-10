@@ -36,7 +36,7 @@ public class Auth {
         if tokenManager is KakaoSDKAuth.TokenManager {
             MigrateManager.checkSdkVersionForMigration()
         }        
-        TokenRefresher.shared.registTokenRefresher()
+        TokenRefresher.shared.registerTokenRefresher()
     }
 }
 

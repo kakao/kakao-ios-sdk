@@ -18,18 +18,20 @@ import KakaoSDKCommon
 
 ///:nodoc:
 @available(iOSApplicationExtension, unavailable)
-class TokenRefresher {
-    static let shared = TokenRefresher()
+@objc(KakaoSDKAuth_TokenRefresher)
+final class TokenRefresher: NSObject, SdkAuthRefresher {
+    static var shared: SdkAuthRefresher = TokenRefresher()
     
     private var updatedAt: Date?
     private let coolTime: TimeInterval = 60 * 60 * 6 // 6시간
     
-    init() {
+    override init() {
+        super.init()
         //SdkLog.v("[TokenRefresher] didBecomActiveNotification observer for CAT added.")
         NotificationCenter.default.addObserver(self, selector: #selector(self.didBecomeActiveForRefreshToken), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
-    func registTokenRefresher() {
+    func registerTokenRefresher() {
     }
 }
 

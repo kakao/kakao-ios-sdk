@@ -207,6 +207,9 @@ public struct Account : Codable {
     /// 생일 타입 \
     /// Birthday type
     public let birthdayType: BirthdayType?
+    /// 생일의 윤달 여부\
+    /// Whether the birthday falls on a leap month
+    public let isLeapMonth: Bool?
     
     /// 사용자 동의 시 성별 제공 가능 여부 \
     /// Whether ``gender`` can be provided under user consent

@@ -6,6 +6,16 @@
     "children": [
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -1419,6 +1429,67 @@
                 "declKind": "Accessor",
                 "usr": "s:18KakaoSDKFriendCore12SelectedUserV4uuidSSvg",
                 "mangledName": "$s18KakaoSDKFriendCore12SelectedUserV4uuidSSvg",
+                "moduleName": "KakaoSDKFriendCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maskingProfileNickname",
+            "printedName": "maskingProfileNickname",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18KakaoSDKFriendCore12SelectedUserV22maskingProfileNicknameSSSgvp",
+            "mangledName": "$s18KakaoSDKFriendCore12SelectedUserV22maskingProfileNicknameSSSgvp",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18KakaoSDKFriendCore12SelectedUserV22maskingProfileNicknameSSSgvg",
+                "mangledName": "$s18KakaoSDKFriendCore12SelectedUserV22maskingProfileNicknameSSSgvg",
                 "moduleName": "KakaoSDKFriendCore",
                 "implicit": true,
                 "accessorKind": "get"
@@ -4808,6 +4879,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -5292,6 +5373,178 @@
           "Documentation"
         ],
         "hasMissingDesignatedInitializers": true
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CustomSection",
+        "printedName": "CustomSection",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "title",
+            "printedName": "title",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18KakaoSDKFriendCore13CustomSectionV5titleSSvp",
+            "mangledName": "$s18KakaoSDKFriendCore13CustomSectionV5titleSSvp",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18KakaoSDKFriendCore13CustomSectionV5titleSSvg",
+                "mangledName": "$s18KakaoSDKFriendCore13CustomSectionV5titleSSvg",
+                "moduleName": "KakaoSDKFriendCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "uuids",
+            "printedName": "uuids",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18KakaoSDKFriendCore13CustomSectionV5uuidsSaySSGvp",
+            "mangledName": "$s18KakaoSDKFriendCore13CustomSectionV5uuidsSaySSGvp",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18KakaoSDKFriendCore13CustomSectionV5uuidsSaySSGvg",
+                "mangledName": "$s18KakaoSDKFriendCore13CustomSectionV5uuidsSaySSGvg",
+                "moduleName": "KakaoSDKFriendCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(title:uuids:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CustomSection",
+                "printedName": "KakaoSDKFriendCore.CustomSection",
+                "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.String]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18KakaoSDKFriendCore13CustomSectionV5title5uuidsACSS_SaySSGtcfc",
+            "mangledName": "$s18KakaoSDKFriendCore13CustomSectionV5title5uuidsACSS_SaySSGtcfc",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:18KakaoSDKFriendCore13CustomSectionV",
+        "mangledName": "$s18KakaoSDKFriendCore13CustomSectionV",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "AccessControl",
+          "Documentation"
+        ]
       },
       {
         "kind": "Import",
@@ -13431,7 +13684,7 @@
           {
             "kind": "Function",
             "name": "____sfs",
-            "printedName": "____sfs(params:completion:)",
+            "printedName": "____sfs(params:needScopeRequest:customSection:selectedUuids:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13443,6 +13696,51 @@
                 "name": "PickerFriendRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
                 "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKFriendCore.CustomSection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CustomSection",
+                    "printedName": "KakaoSDKFriendCore.CustomSection",
+                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -13507,8 +13805,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____sfs6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____sfs6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____sfs6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____sfs6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -13519,7 +13817,7 @@
           {
             "kind": "Function",
             "name": "____sfsp",
-            "printedName": "____sfsp(params:completion:)",
+            "printedName": "____sfsp(params:needScopeRequest:customSection:selectedUuids:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13531,6 +13829,51 @@
                 "name": "PickerFriendRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
                 "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKFriendCore.CustomSection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CustomSection",
+                    "printedName": "KakaoSDKFriendCore.CustomSection",
+                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -13595,8 +13938,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC8____sfsp6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC8____sfsp6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC8____sfsp6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC8____sfsp6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -13607,7 +13950,7 @@
           {
             "kind": "Function",
             "name": "____sf",
-            "printedName": "____sf(params:completion:)",
+            "printedName": "____sf(params:needScopeRequest:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13619,6 +13962,13 @@
                 "name": "PickerFriendRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
                 "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeFunc",
@@ -13683,8 +14033,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sf6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sf6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sf6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sf6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -13695,7 +14045,7 @@
           {
             "kind": "Function",
             "name": "____sfp",
-            "printedName": "____sfp(params:completion:)",
+            "printedName": "____sfp(params:needScopeRequest:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13707,6 +14057,13 @@
                 "name": "PickerFriendRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
                 "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeFunc",
@@ -13771,8 +14128,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____sfp6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____sfp6params10completionyAA0D19FriendRequestParamsC_yAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____sfp6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____sfp6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -13783,7 +14140,7 @@
           {
             "kind": "Function",
             "name": "____sc",
-            "printedName": "____sc(params:completion:)",
+            "printedName": "____sc(params:needScopeRequest:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13795,6 +14152,13 @@
                 "name": "PickerChatRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerChatRequestParams",
                 "usr": "s:18KakaoSDKFriendCore23PickerChatRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeFunc",
@@ -13873,8 +14237,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sc6params10completionyAA0D17ChatRequestParamsC_yAA13SelectedUsersVSg_AA0lI0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sc6params10completionyAA0D17ChatRequestParamsC_yAA13SelectedUsersVSg_AA0lI0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sc6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sc6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -13885,7 +14249,7 @@
           {
             "kind": "Function",
             "name": "____scp",
-            "printedName": "____scp(params:completion:)",
+            "printedName": "____scp(params:needScopeRequest:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13899,6 +14263,13 @@
                 "usr": "s:18KakaoSDKFriendCore23PickerChatRequestParamsC"
               },
               {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
                 "kind": "TypeFunc",
                 "name": "Function",
                 "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
@@ -13975,8 +14346,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____scp6params10completionyAA0D17ChatRequestParamsC_yAA13SelectedUsersVSg_AA0lI0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____scp6params10completionyAA0D17ChatRequestParamsC_yAA13SelectedUsersVSg_AA0lI0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____scp6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____scp6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -13987,7 +14358,7 @@
           {
             "kind": "Function",
             "name": "____s",
-            "printedName": "____s(params:completion:)",
+            "printedName": "____s(params:needScopeRequest:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -13999,6 +14370,13 @@
                 "name": "PickerTabRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerTabRequestParams",
                 "usr": "s:18KakaoSDKFriendCore22PickerTabRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeFunc",
@@ -14077,8 +14455,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC5____s6params10completionyAA0D16TabRequestParamsC_yAA13SelectedUsersVSg_AA0K4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC5____s6params10completionyAA0D16TabRequestParamsC_yAA13SelectedUsersVSg_AA0K4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC5____s6params16needScopeRequest10completionyAA0d3TabI6ParamsC_SbyAA13SelectedUsersVSg_AA0M4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC5____s6params16needScopeRequest10completionyAA0d3TabI6ParamsC_SbyAA13SelectedUsersVSg_AA0M4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -14089,7 +14467,7 @@
           {
             "kind": "Function",
             "name": "____sp",
-            "printedName": "____sp(params:completion:)",
+            "printedName": "____sp(params:needScopeRequest:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14101,6 +14479,13 @@
                 "name": "PickerTabRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerTabRequestParams",
                 "usr": "s:18KakaoSDKFriendCore22PickerTabRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
               },
               {
                 "kind": "TypeFunc",
@@ -14179,8 +14564,364 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sp6params10completionyAA0D16TabRequestParamsC_yAA13SelectedUsersVSg_AA0L4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sp6params10completionyAA0D16TabRequestParamsC_yAA13SelectedUsersVSg_AA0L4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sp6params16needScopeRequest10completionyAA0d3TabJ6ParamsC_SbyAA13SelectedUsersVSg_AA0N4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sp6params16needScopeRequest10completionyAA0d3TabJ6ParamsC_SbyAA13SelectedUsersVSg_AA0N4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "____spv",
+            "printedName": "____spv(params:customSection:selectedUuids:completions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PickerFriendRequestParams",
+                "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
+                "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKFriendCore.CustomSection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CustomSection",
+                    "printedName": "KakaoSDKFriendCore.CustomSection",
+                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any KakaoSDKFriendCore.PickerView)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PickerView",
+                            "printedName": "any KakaoSDKFriendCore.PickerView",
+                            "usr": "s:18KakaoSDKFriendCore10PickerViewP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseInfo",
+                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
+                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____spv6params13customSection13selectedUuids11completionsyAA0D19FriendRequestParamsC_AA06CustomI0VSgSaySSGSgyAA0D4View_pSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____spv6params13customSection13selectedUuids11completionsyAA0D19FriendRequestParamsC_AA06CustomI0VSgSaySSGSgyAA0D4View_pSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "____mpv",
+            "printedName": "____mpv(params:customSection:selectedUuids:completions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PickerFriendRequestParams",
+                "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
+                "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKFriendCore.CustomSection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CustomSection",
+                    "printedName": "KakaoSDKFriendCore.CustomSection",
+                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any KakaoSDKFriendCore.PickerView)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PickerView",
+                            "printedName": "any KakaoSDKFriendCore.PickerView",
+                            "usr": "s:18KakaoSDKFriendCore10PickerViewP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseInfo",
+                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
+                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____mpv6params13customSection13selectedUuids11completionsyAA0D19FriendRequestParamsC_AA06CustomI0VSgSaySSGSgyAA0D4View_pSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____mpv6params13customSection13selectedUuids11completionsyAA0D19FriendRequestParamsC_AA06CustomI0VSgSaySSGSgyAA0D4View_pSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "____smv",
+            "printedName": "____smv(params:chatId:friendsOnly:completions:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PickerFriendRequestParams",
+                "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
+                "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int64",
+                "printedName": "Swift.Int64",
+                "usr": "s:s5Int64V"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Bool?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any KakaoSDKFriendCore.PickerView)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PickerView",
+                            "printedName": "any KakaoSDKFriendCore.PickerView",
+                            "usr": "s:18KakaoSDKFriendCore10PickerViewP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ResponseInfo",
+                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
+                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____smv6params6chatId11friendsOnly11completionsyAA0D19FriendRequestParamsC_s5Int64VSbSgyAA0D4View_pSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____smv6params6chatId11friendsOnly11completionsyAA0D19FriendRequestParamsC_s5Int64VSbSgyAA0D4View_pSg_AA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -14975,6 +15716,313 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "PickerView",
+        "printedName": "PickerView",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "setLayout",
+            "printedName": "setLayout()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore10PickerViewP9setLayoutyyF",
+            "mangledName": "$s18KakaoSDKFriendCore10PickerViewP9setLayoutyyF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.PickerView>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.PickerView>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateSubviewsConstraint",
+            "printedName": "updateSubviewsConstraint()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore10PickerViewP24updateSubviewsConstraintyyF",
+            "mangledName": "$s18KakaoSDKFriendCore10PickerViewP24updateSubviewsConstraintyyF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.PickerView>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.PickerView>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "result",
+            "printedName": "result(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KakaoSDKFriendCore.SelectedUsers) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SelectedUsers",
+                    "printedName": "KakaoSDKFriendCore.SelectedUsers",
+                    "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore10PickerViewP6result10completionyyAA13SelectedUsersVc_tF",
+            "mangledName": "$s18KakaoSDKFriendCore10PickerViewP6result10completionyyAA13SelectedUsersVc_tF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.PickerView>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.PickerView>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setCustomFavoriteCallback",
+            "printedName": "setCustomFavoriteCallback(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CustomFavoriteCallback",
+                "printedName": "any KakaoSDKFriendCore.CustomFavoriteCallback",
+                "usr": "s:18KakaoSDKFriendCore22CustomFavoriteCallbackP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore10PickerViewP25setCustomFavoriteCallbackyyAA0ghI0_pF",
+            "mangledName": "$s18KakaoSDKFriendCore10PickerViewP25setCustomFavoriteCallbackyyAA0ghI0_pF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.PickerView>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.PickerView>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setSelectedUserCallback",
+            "printedName": "setSelectedUserCallback(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectedUserCallback",
+                "printedName": "any KakaoSDKFriendCore.SelectedUserCallback",
+                "usr": "s:18KakaoSDKFriendCore20SelectedUserCallbackP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore10PickerViewP23setSelectedUserCallbackyyAA0ghI0_pF",
+            "mangledName": "$s18KakaoSDKFriendCore10PickerViewP23setSelectedUserCallbackyyAA0ghI0_pF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.PickerView>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.PickerView>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18KakaoSDKFriendCore10PickerViewP",
+        "mangledName": "$s18KakaoSDKFriendCore10PickerViewP",
+        "moduleName": "KakaoSDKFriendCore",
+        "genericSig": "<τ_0_0 : UIKit.UIView>",
+        "sugared_genericSig": "<Self : UIKit.UIView>",
+        "declAttributes": [
+          "AccessControl",
+          "Documentation"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CustomFavoriteCallback",
+        "printedName": "CustomFavoriteCallback",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "selectUser",
+            "printedName": "selectUser(uuid:appId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore22CustomFavoriteCallbackP10selectUser4uuid5appIdySS_s5Int64VSgtF",
+            "mangledName": "$s18KakaoSDKFriendCore22CustomFavoriteCallbackP10selectUser4uuid5appIdySS_s5Int64VSgtF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.CustomFavoriteCallback>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.CustomFavoriteCallback>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deselectUser",
+            "printedName": "deselectUser(uuid:appId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore22CustomFavoriteCallbackP12deselectUser4uuid5appIdySS_s5Int64VSgtF",
+            "mangledName": "$s18KakaoSDKFriendCore22CustomFavoriteCallbackP12deselectUser4uuid5appIdySS_s5Int64VSgtF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.CustomFavoriteCallback>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.CustomFavoriteCallback>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18KakaoSDKFriendCore22CustomFavoriteCallbackP",
+        "mangledName": "$s18KakaoSDKFriendCore22CustomFavoriteCallbackP",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "AccessControl",
+          "Documentation"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SelectedUserCallback",
+        "printedName": "SelectedUserCallback",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "select",
+            "printedName": "select(user:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SelectedUsers",
+                "printedName": "KakaoSDKFriendCore.SelectedUsers",
+                "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:18KakaoSDKFriendCore20SelectedUserCallbackP6select4useryAA0D5UsersV_tF",
+            "mangledName": "$s18KakaoSDKFriendCore20SelectedUserCallbackP6select4useryAA0D5UsersV_tF",
+            "moduleName": "KakaoSDKFriendCore",
+            "genericSig": "<τ_0_0 where τ_0_0 : KakaoSDKFriendCore.SelectedUserCallback>",
+            "sugared_genericSig": "<Self where Self : KakaoSDKFriendCore.SelectedUserCallback>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:18KakaoSDKFriendCore20SelectedUserCallbackP",
+        "mangledName": "$s18KakaoSDKFriendCore20SelectedUserCallbackP",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "AccessControl",
+          "Documentation"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -14990,6 +16038,16 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "KakaoSDKFriendCore"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -16151,6 +17209,566 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "String",
+        "printedName": "String",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "toMasking",
+            "printedName": "toMasking()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS18KakaoSDKFriendCoreE9toMaskingSSyF",
+            "mangledName": "$sSS18KakaoSDKFriendCoreE9toMaskingSSyF",
+            "moduleName": "KakaoSDKFriendCore",
+            "declAttributes": [
+              "AccessControl",
+              "Documentation"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:SS",
+        "mangledName": "$sSS",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "EagerMove",
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CodingKeyRepresentable",
+            "printedName": "CodingKeyRepresentable",
+            "usr": "s:s22CodingKeyRepresentableP",
+            "mangledName": "$ss22CodingKeyRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasContiguousBytes",
+            "printedName": "_HasContiguousBytes",
+            "usr": "s:s19_HasContiguousBytesP",
+            "mangledName": "$ss19_HasContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStream",
+            "printedName": "TextOutputStream",
+            "usr": "s:s16TextOutputStreamP",
+            "mangledName": "$ss16TextOutputStreamP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStreamable",
+            "printedName": "TextOutputStreamable",
+            "usr": "s:s20TextOutputStreamableP",
+            "mangledName": "$ss20TextOutputStreamableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "printedName": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "usr": "s:s41_ExpressibleByBuiltinUnicodeScalarLiteralP",
+            "mangledName": "$ss41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinStringLiteral",
+            "printedName": "_ExpressibleByBuiltinStringLiteral",
+            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringLiteral",
+            "printedName": "ExpressibleByStringLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringLiteralType",
+                "printedName": "StringLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s26ExpressibleByStringLiteralP",
+            "mangledName": "$ss26ExpressibleByStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ExtendedGraphemeClusterLiteralType",
+                "printedName": "ExtendedGraphemeClusterLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByUnicodeScalarLiteral",
+            "printedName": "ExpressibleByUnicodeScalarLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarLiteralType",
+                "printedName": "UnicodeScalarLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+            "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "StringProtocol",
+            "printedName": "StringProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UTF8View",
+                "printedName": "UTF8View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF8View",
+                    "printedName": "Swift.String.UTF8View",
+                    "usr": "s:SS8UTF8ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UTF16View",
+                "printedName": "UTF16View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF16View",
+                    "printedName": "Swift.String.UTF16View",
+                    "usr": "s:SS9UTF16ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarView",
+                "printedName": "UnicodeScalarView",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnicodeScalarView",
+                    "printedName": "Swift.String.UnicodeScalarView",
+                    "usr": "s:SS17UnicodeScalarViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sy",
+            "mangledName": "$sSy"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringInterpolation",
+            "printedName": "ExpressibleByStringInterpolation",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringInterpolation",
+                "printedName": "StringInterpolation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultStringInterpolation",
+                    "printedName": "Swift.DefaultStringInterpolation",
+                    "usr": "s:s26DefaultStringInterpolationV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s32ExpressibleByStringInterpolationP",
+            "mangledName": "$ss32ExpressibleByStringInterpolationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MirrorPath",
+            "printedName": "MirrorPath",
+            "usr": "s:s10MirrorPathP",
+            "mangledName": "$ss10MirrorPathP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "Dictionary",
         "printedName": "Dictionary",
         "children": [
@@ -16975,8 +18593,15 @@
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
+      "kind": "Dictionary",
+      "offset": 6712,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
       "kind": "BooleanLiteral",
-      "offset": 6686,
+      "offset": 6762,
       "length": 5,
       "value": "false"
     },
@@ -17151,7 +18776,14 @@
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 6954,
+      "offset": 7646,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15272,
       "length": 4,
       "value": "true"
     },
@@ -17165,28 +18797,21 @@
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 724,
+      "offset": 813,
       "length": 3,
       "value": "360"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 765,
+      "offset": 854,
       "length": 3,
       "value": "480"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
-      "kind": "BooleanLiteral",
-      "offset": 916,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "StringLiteral",
-      "offset": 636,
+      "offset": 725,
       "length": 26,
       "value": "\"KakaoSDKFriendCore.FriendPickerViewController\""
     },
@@ -17408,6 +19033,34 @@
       "value": "\"KakaoSDKFriendCore.ChatPickerViewController\""
     },
     {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 287,
+      "length": 3,
+      "value": "360"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 328,
+      "length": 3,
+      "value": "480"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 513,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "StringLiteral",
+      "offset": 224,
+      "length": 16,
+      "value": "\"KakaoSDKFriendCore.FriendPickerView\""
+    },
+    {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
       "offset": 1039,
@@ -17487,51 +19140,16 @@
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
-      "offset": 1192,
-      "length": 1,
-      "value": "0"
+      "offset": 1374,
+      "length": 10,
+      "value": "7"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
-      "offset": 1207,
-      "length": 13,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1235,
-      "length": 14,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1263,
-      "length": 13,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1291,
-      "length": 9,
-      "value": "4"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1314,
-      "length": 15,
-      "value": "5"
-    },
-    {
-      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1344,
-      "length": 7,
-      "value": "6"
+      "offset": 1398,
+      "length": 11,
+      "value": "8"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
@@ -17584,29 +19202,106 @@
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1374,
+      "length": 10,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1398,
+      "length": 11,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1192,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1207,
+      "length": 13,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1235,
+      "length": 14,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1263,
+      "length": 13,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1291,
+      "length": 9,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1314,
+      "length": 15,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1344,
+      "length": 7,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1374,
+      "length": 10,
+      "value": "7"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1398,
+      "length": 11,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "BooleanLiteral",
-      "offset": 8249,
+      "offset": 8974,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "BooleanLiteral",
-      "offset": 8303,
+      "offset": 9028,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
-      "offset": 8374,
+      "offset": 9099,
       "length": 2,
       "value": "22"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
-      "offset": 8386,
+      "offset": 9111,
       "length": 2,
       "value": "22"
     },
@@ -17777,6 +19472,83 @@
       "offset": 24297,
       "length": 4,
       "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 24749,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 26131,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 27609,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 28982,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 30442,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 31695,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 33031,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 34280,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1315,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1350,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13671,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/deploy\/.jenkins\/workspace\/1-spm-kakao-open-ios-sdk-build-public-deploy\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",

@@ -24,7 +24,7 @@ final public class KakaoSDK {
     // MARK: Fields
     
     //static 라이브러리용 버전.
-    private let _version = "2.23.0"
+    private let _version = "2.24.0"
     
     /// 카카오 SDK 싱글톤 객체 \
     /// A singleton object for Kakao SDK
@@ -90,7 +90,15 @@ final public class KakaoSDK {
         _sdkIdentifier = sdkIdentifier
         _sdkType = sdkType
         
-        SdkLog.shared.clearLog()        
+        SdkLog.shared.clearLog()
+        
+        loadAuthRefresher()
+    }
+    
+    private func loadAuthRefresher() {        
+        if let refreshCls = NSClassFromString("KakaoSDKAuth_TokenRefresher") as? SdkAuthRefresher.Type {
+            refreshCls.shared.registerTokenRefresher()
+        }
     }
     
     /// Kakao SDK 버전 조회 \
