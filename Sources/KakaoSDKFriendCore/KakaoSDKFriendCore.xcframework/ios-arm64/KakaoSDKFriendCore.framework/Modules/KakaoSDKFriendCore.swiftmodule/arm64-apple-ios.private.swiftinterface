@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name KakaoSDKFriendCore
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import AuthenticationServices
 import Foundation
 import SafariServices
@@ -434,22 +435,26 @@ public struct SelectedChat : Swift.Codable {
   func result(completion: @escaping (KakaoSDKFriendCore.SelectedUsers) -> Swift.Void)
   func setCustomFavoriteCallback(_ callback: any KakaoSDKFriendCore.CustomFavoriteCallback)
   func setSelectedUserCallback(_ callback: any KakaoSDKFriendCore.SelectedUserCallback)
+  func setSelectedUuidsCallback(_ callback: any KakaoSDKFriendCore.SelectedUuidsCallback)
 }
 @_documentation(visibility: private) public protocol CustomFavoriteCallback {
-  func selectUser(uuid: Swift.String, appId: Swift.Int64?)
-  func deselectUser(uuid: Swift.String, appId: Swift.Int64?)
+  func selectUser(uuid: Swift.String)
+  func deselectUser(uuid: Swift.String)
 }
 @_documentation(visibility: private) public protocol SelectedUserCallback {
   func select(user: KakaoSDKFriendCore.SelectedUsers)
+}
+@_documentation(visibility: private) public protocol SelectedUuidsCallback {
+  func update(uuids: [Swift.String])
 }
 @_documentation(visibility: private) extension Swift.Dictionary where Key == Swift.String, Value == Any? {
   public func KFfilterNil() -> [Swift.String : Any]?
 }
 @_documentation(visibility: private) extension UIKit.UIApplication {
   @available(iOSApplicationExtension, unavailable)
-  @_Concurrency.MainActor(unsafe) public class func getMostTopViewControllerForKF(base: UIKit.UIViewController? = nil) -> UIKit.UIViewController?
+  @_Concurrency.MainActor @preconcurrency public class func getMostTopViewControllerForKF(base: UIKit.UIViewController? = nil) -> UIKit.UIViewController?
   @available(iOSApplicationExtension, unavailable)
-  @_Concurrency.MainActor(unsafe) public class func sdkKeyWindowForKF() -> UIKit.UIWindow?
+  @_Concurrency.MainActor @preconcurrency public class func sdkKeyWindowForKF() -> UIKit.UIWindow?
 }
 extension KakaoSDKFriendCore.KFLogEvent : Swift.Equatable {}
 extension KakaoSDKFriendCore.KFLogEvent : Swift.Hashable {}

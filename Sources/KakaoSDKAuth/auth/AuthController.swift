@@ -201,9 +201,11 @@ public class AuthController {
     /// ## SeeAlso
     /// - [카카오톡으로 로그인을 위한 설정](https://developers.kakao.com/docs/latest/ko/kakaologin/ios#before-you-begin-setting-for-kakaotalk) \
     ///   [Configuration for Login with Kakao Talk](https://developers.kakao.com/docs/latest/en/kakaologin/ios#setting-for-kakaotalk)
+    @MainActor
     public static func handleOpenUrl(url:URL,  options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (AuthController.isValidRedirectUri(url)) {
             if let authorizeWithTalkCompletionHandler = AUTH_CONTROLLER.authorizeWithTalkCompletionHandler {
+                AUTH_CONTROLLER.authorizeWithTalkCompletionHandler = nil
                 DispatchQueue.main.asyncAfter(deadline: .now() + AuthController.delayForHandleOpenUrl) {
                     authorizeWithTalkCompletionHandler(url)
                 }
