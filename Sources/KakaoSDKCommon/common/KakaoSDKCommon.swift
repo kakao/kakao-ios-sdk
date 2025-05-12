@@ -24,7 +24,7 @@ final public class KakaoSDK {
     // MARK: Fields
     
     //static 라이브러리용 버전.
-    private let _version = "2.24.1"
+    private let _version = "2.24.2"
     
     /// 카카오 SDK 싱글톤 객체 \
     /// A singleton object for Kakao SDK
