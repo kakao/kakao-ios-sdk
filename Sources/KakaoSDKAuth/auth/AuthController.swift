@@ -39,11 +39,6 @@ public enum Prompt : String {
     /// Login after signing up for a Kakao Account
     case Create = "create"
     
-#if swift(>=5.8)
-    @_documentation(visibility: private)
-#endif
-    case UnifyDaum = "unify_daum"
-    
     /// 카카오계정 간편로그인 \
     /// Kakao Account easy login
     case SelectAccount = "select_account"
@@ -262,8 +257,6 @@ public class AuthController {
                                                     loginHint: String? = nil,
                                                     accountParameters: [String:String]? = nil,
                                                     nonce: String? = nil,
-                                                    accountsSkipIntro: Bool? = nil,
-                                                    accountsTalkLoginVisible: Bool? = nil,
                                                     completion: @escaping (OAuthToken?, Error?) -> Void) {
         
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {
@@ -324,9 +317,7 @@ public class AuthController {
                                              channelPublicIds: channelPublicIds,
                                              serviceTerms: serviceTerms,
                                              loginHint: loginHint,
-                                             nonce: nonce,
-                                             accountsSkipIntro: accountsSkipIntro,
-                                             accountsTalkLoginVisible: accountsTalkLoginVisible)
+                                             nonce: nonce)
         
         var url: URL? = SdkUtils.makeUrlWithParameters(Urls.compose(.Kauth, path:Paths.authAuthorize), parameters:parameters)
         
@@ -403,9 +394,6 @@ extension AuthController {
         if let kauthTxId = kauthTxId {
             extraParameters["kauth_tx_id"] = kauthTxId
         }
-        if let approvalType = KakaoSDK.shared.approvalType().type {
-            extraParameters["approval_type"] = approvalType
-        }
         
         self.codeVerifier = SdkCrypto.shared.generateCodeVerifier()
         
@@ -433,8 +421,6 @@ extension AuthController {
                                serviceTerms: [String]? = nil,
                                loginHint: String? = nil,
                                nonce: String? = nil,
-                               accountsSkipIntro: Bool? = nil,
-                               accountsTalkLoginVisible: Bool? = nil,
                                settleId: String? = nil,
                                kauthTxId: String? = nil) -> [String:Any] {
         self.resetCodeVerifier()
@@ -443,11 +429,7 @@ extension AuthController {
         parameters["client_id"] = try! KakaoSDK.shared.appKey()
         parameters["redirect_uri"] = KakaoSDK.shared.redirectUri()
         parameters["response_type"] = Constants.responseType
-        parameters["ka"] = Constants.kaHeader
-        
-        if let approvalType = KakaoSDK.shared.approvalType().type {
-            parameters["approval_type"] = approvalType
-        }
+        parameters["ka"] = Constants.kaHeader                
         
         if let agt = agtToken {
             parameters["agt"] = agt
@@ -478,14 +460,6 @@ extension AuthController {
         
         if let nonce = nonce {
             parameters["nonce"] = nonce
-        }
-        
-        if let accountsSkipIntro = accountsSkipIntro {
-            parameters["accounts_skip_intro"] = accountsSkipIntro
-        }
-        
-        if let accountsTalkLoginVisible = accountsTalkLoginVisible {
-            parameters["accounts_talk_login_visible"] = accountsTalkLoginVisible
         }
         
         if let settleId = settleId {

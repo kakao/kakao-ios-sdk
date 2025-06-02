@@ -24,7 +24,7 @@ final public class KakaoSDK {
     // MARK: Fields
     
     //static 라이브러리용 버전.
-    private let _version = "2.24.2"
+    private let _version = "2.24.3"
     
     /// 카카오 SDK 싱글톤 객체 \
     /// A singleton object for Kakao SDK
@@ -35,8 +35,6 @@ final public class KakaoSDK {
     private var _loggingEnable : Bool = false
     
     private var _hosts : Hosts? = nil
-    
-    private var _approvalType : ApprovalType? = nil
     
     private var _sdkType : SdkType!
     
@@ -61,13 +59,11 @@ final public class KakaoSDK {
                                customScheme: String? = nil,
                                loggingEnable: Bool = false,
                                hosts: Hosts? = nil,
-                               approvalType: ApprovalType? = nil,
                                sdkIdentifier: SdkIdentifier? = nil) {
         KakaoSDK.shared.initialize(appKey: appKey,
                                    customScheme:customScheme,
                                    loggingEnable: loggingEnable,
                                    hosts: hosts,
-                                   approvalType: approvalType,
                                    sdkIdentifier: sdkIdentifier,
                                    sdkType: .Swift)
     }
@@ -79,14 +75,12 @@ final public class KakaoSDK {
                            customScheme: String? = nil,
                            loggingEnable: Bool = false,
                            hosts: Hosts? = nil,
-                           approvalType: ApprovalType? = nil,
                            sdkIdentifier: SdkIdentifier? = nil,
                            sdkType: SdkType) {
         _appKey = appKey
         _customScheme = customScheme
         _loggingEnable = loggingEnable
         _hosts = hosts
-        _approvalType = approvalType
         _sdkIdentifier = sdkIdentifier
         _sdkType = sdkType
         
@@ -120,13 +114,6 @@ final public class KakaoSDK {
 #endif
     public func hosts() -> Hosts {
         return _hosts != nil ? _hosts! : Hosts.shared
-    }
-    
-#if swift(>=5.8)
-    @_documentation(visibility: private)
-#endif
-    public func approvalType() -> ApprovalType {
-        return _approvalType != nil ? _approvalType! : ApprovalType.shared
     }
     
 #if swift(>=5.8)

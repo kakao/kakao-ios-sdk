@@ -86,8 +86,7 @@ final public class AuthApi {
                                              "redirect_uri":redirectUri,
                                              "code":code,
                                              "code_verifier":codeVerifier,
-                                             "ios_bundle_id":Bundle.main.bundleIdentifier,
-                                             "approval_type":KakaoSDK.shared.approvalType().type].filterNil(),
+                                             "ios_bundle_id":Bundle.main.bundleIdentifier].filterNil(),
                                 sessionType:.Auth,
                                 apiType: .KAuth) { (response, data, error) in
                                     if let error = error {
@@ -115,8 +114,7 @@ final public class AuthApi {
                                 parameters: ["grant_type":"refresh_token",
                                              "client_id":try! KakaoSDK.shared.appKey(),
                                              "refresh_token":oldToken?.refreshToken ?? AUTH.tokenManager.getToken()?.refreshToken,
-                                             "ios_bundle_id":Bundle.main.bundleIdentifier,
-                                             "approval_type":KakaoSDK.shared.approvalType().type].filterNil(),
+                                             "ios_bundle_id":Bundle.main.bundleIdentifier].filterNil(),
                                 sessionType:.Auth,
                                 apiType: .KAuth) { (response, data, error) in
                                     if let error = error {
@@ -195,8 +193,7 @@ extension AuthApi {
                                              "redirect_uri":redirectUri,
                                              "code":code,
                                              "code_verifier":codeVerifier,
-                                             "ios_bundle_id":Bundle.main.bundleIdentifier,
-                                             "approval_type":KakaoSDK.shared.approvalType().type].filterNil(),
+                                             "ios_bundle_id":Bundle.main.bundleIdentifier].filterNil(),
                                 sessionType:.Auth,
                                 apiType: .KAuth) { (response, data, error) in
                                     if let error = error {

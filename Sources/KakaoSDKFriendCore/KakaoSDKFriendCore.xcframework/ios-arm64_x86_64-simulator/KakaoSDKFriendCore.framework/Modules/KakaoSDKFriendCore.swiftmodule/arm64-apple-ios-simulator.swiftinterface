@@ -404,9 +404,14 @@ public class PickerTabRequestParams {
   public func ____scp(params: KakaoSDKFriendCore.PickerChatRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____s(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____sp(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = false, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+}
+extension KakaoSDKFriendCore.PickerApi {
   public func ____spv(params: KakaoSDKFriendCore.PickerFriendRequestParams, customSection: KakaoSDKFriendCore.CustomSection?, selectedUuids: [Swift.String]?, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____mpv(params: KakaoSDKFriendCore.PickerFriendRequestParams, customSection: KakaoSDKFriendCore.CustomSection?, selectedUuids: [Swift.String]?, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____fspv(params: KakaoSDKFriendCore.PickerFriendRequestParams, uuids: [Swift.String], completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____fmpv(params: KakaoSDKFriendCore.PickerFriendRequestParams, uuids: [Swift.String], selectedUuids: [Swift.String]? = nil, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   public func ____smv(params: KakaoSDKFriendCore.PickerFriendRequestParams, chatId: Swift.Int64, friendsOnly: Swift.Bool?, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____mmv(params: KakaoSDKFriendCore.PickerFriendRequestParams, chatId: Swift.Int64, friendsOnly: Swift.Bool?, selectedUuids: [Swift.String]? = nil, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
 }
 public enum PickerChatRoomType : Swift.String, Swift.Codable {
   case MemoChat
@@ -436,15 +441,16 @@ public struct SelectedChat : Swift.Codable {
   func setCustomFavoriteCallback(_ callback: any KakaoSDKFriendCore.CustomFavoriteCallback)
   func setSelectedUserCallback(_ callback: any KakaoSDKFriendCore.SelectedUserCallback)
   func setSelectedUuidsCallback(_ callback: any KakaoSDKFriendCore.SelectedUuidsCallback)
+  func updateCustomFavoriteUser(uuid: Swift.String, isFavorite: Swift.Bool)
 }
-@_documentation(visibility: private) public protocol CustomFavoriteCallback {
+@_documentation(visibility: private) public protocol CustomFavoriteCallback : AnyObject {
   func selectUser(uuid: Swift.String)
   func deselectUser(uuid: Swift.String)
 }
-@_documentation(visibility: private) public protocol SelectedUserCallback {
+@_documentation(visibility: private) public protocol SelectedUserCallback : AnyObject {
   func select(user: KakaoSDKFriendCore.SelectedUsers)
 }
-@_documentation(visibility: private) public protocol SelectedUuidsCallback {
+@_documentation(visibility: private) public protocol SelectedUuidsCallback : AnyObject {
   func update(uuids: [Swift.String])
 }
 @_documentation(visibility: private) extension Swift.Dictionary where Key == Swift.String, Value == Any? {

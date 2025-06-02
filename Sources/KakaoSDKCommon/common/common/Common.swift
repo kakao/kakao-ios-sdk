@@ -80,18 +80,6 @@ public enum SdkType : String {
 #if swift(>=5.8)
 @_documentation(visibility: private)
 #endif
-public class ApprovalType {
-    public static let shared = ApprovalType()
-    public var type : String?
-    
-    public init() {
-        self.type = nil
-    }
-}
-
-#if swift(>=5.8)
-@_documentation(visibility: private)
-#endif
 public enum ApiType {
     case KApi
     case KAuth
