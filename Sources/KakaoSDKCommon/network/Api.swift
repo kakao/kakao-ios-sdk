@@ -30,6 +30,9 @@ public enum SessionType {
     case AuthApi    //Token (withRetrier)
     case RxAuthApi  //Token
     case PartnerAuthApi
+    
+    case AuthNoLog // KA (no logging)
+    case AuthApiNoLog // Toekn (with Retrier, no logging)
 }
 
 //Alamofire wrapper for single module dependency
@@ -71,6 +74,7 @@ extension Api {
         let authSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
         authSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
         addSession(type: .Auth, session:Session(configuration: authSessionConfiguration, interceptor: ApiRequestAdapter()))
+        addSession(type: .AuthNoLog, session: Session(configuration: authSessionConfiguration, interceptor: ApiRequestAdapter()))
     }
     
     public func addSession(type:SessionType, session:Session) {
@@ -145,7 +149,7 @@ extension Api {
                              apiType: ApiType,
                              logging: Bool = true,
                              completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-        
+        let isShowLog = (sessionType != .AuthApiNoLog && sessionType != .AuthNoLog)
         API.session(sessionType)
             .request(url, method:Api.httpMethod(kHTTPMethod), parameters:parameters, encoding:API.encoding, headers:(headers != nil ? HTTPHeaders(headers!):nil) )
             .validate({ (request, response, data) -> Request.ValidationResult in
@@ -158,10 +162,12 @@ extension Api {
                         SdkLog.e(error)
                     }
                     
-                    SdkLog.d("===================================================================================================")
-                    SdkLog.d("session: \n type: \(sessionType)\n\n")
-                    SdkLog.i("request: \n method: \(Api.httpMethod(kHTTPMethod))\n url:\(url)\n headers:\(String(describing: headers))\n parameters: \(String(describing: parameters)) \n\n")
-                    (logging) ? SdkLog.i("response:\n \(String(describing: json))\n\n" ) : SdkLog.i("response: - \n\n")
+                    if isShowLog {
+                        SdkLog.d("===================================================================================================")
+                        SdkLog.d("session: \n type: \(sessionType)\n\n")
+                        SdkLog.i("request: \n method: \(Api.httpMethod(kHTTPMethod))\n url:\(url)\n headers:\(String(describing: headers))\n parameters: \(String(describing: parameters)) \n\n")
+                        (logging) ? SdkLog.i("response:\n \(String(describing: json))\n\n" ) : SdkLog.i("response: - \n\n")
+                    }
                     
                     if let sdkError = SdkError(response: response, data: data, type: apiType) {
                         return .failure(sdkError)
@@ -176,13 +182,13 @@ extension Api {
             })
             .responseData { [unowned self] response in
                 if let afError = response.error, let retryError = self.getRequestRetryFailedError(error:afError) {
-                    SdkLog.e("response:\n api error: \(retryError)")
+                    if isShowLog { SdkLog.e("response:\n api error: \(retryError)") }
                     completion(nil, nil, retryError)
                 }
                 else if let afError = response.error, self.getSdkError(error:afError) == nil {
                     //일반에러
-                    SdkLog.e("response:\n not api error: \(afError)")
-                    completion(nil, nil, afError)                    
+                    if isShowLog { SdkLog.e("response:\n not api error: \(afError)") }
+                    completion(nil, nil, afError)
                 }
                 else if let data = response.data, let response = response.response {
                     if let sdkError = SdkError(response: response, data: data, type: apiType) {
@@ -194,7 +200,7 @@ extension Api {
                 }
                 else {
                     //data or response 가 문제
-                    SdkLog.e("response:\n error: response or data is nil.")
+                    if isShowLog { SdkLog.e("response:\n error: response or data is nil.") }
                     completion(nil, nil, SdkError(reason: .Unknown, message: "response or data is nil."))
                 }
             }

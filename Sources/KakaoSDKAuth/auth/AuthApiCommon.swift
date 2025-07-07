@@ -46,6 +46,9 @@ public class AuthApiCommon {
         rxAuthApiSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
         API.addSession(type: .RxAuthApi, session: Session(configuration: rxAuthApiSessionConfiguration, interceptor: AuthRequestAdapter()))
         
+        let noLogInterceptor = Interceptor(adapter: AuthRequestAdapter(), retrier: AuthRequestRetrier(isShowLog: false))
+        API.addSession(type: .AuthApiNoLog, session: Session(configuration: authApiSessionConfiguration, interceptor: noLogInterceptor))
+        
         SdkLog.d(">>>> \(API.sessions)")
     }
 
@@ -58,6 +61,15 @@ public class AuthApiCommon {
                              completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
         
         API.responseData(kHTTPMethod, url, parameters: parameters, headers: headers, sessionType: .AuthApi, apiType: apiType, logging: logging, completion: completion)
+    }
+    
+    public func responseDataWithNoLog(_ kHTTPMethod: KHTTPMethod,
+                                      _ url: String,
+                                      parameters: [String: Any]? = nil,
+                                      headers: [String: String]? = nil,
+                                      apiType: ApiType,
+                                      completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+        API.responseData(kHTTPMethod, url, parameters: parameters, headers: headers, sessionType: .AuthApiNoLog, apiType: apiType, completion: completion)
     }
     
     public func upload(_ kHTTPMethod: KHTTPMethod,

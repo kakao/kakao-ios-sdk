@@ -3637,98 +3637,98 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 742,
       "length": 7,
       "value": "\"k2100\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 767,
       "length": 7,
       "value": "\"k2220\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 7,
       "value": "\"k3220\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 897,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 930,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 961,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 993,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 1028,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1183,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1198,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1213,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1228,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1243,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/823489c3-8683-4633-b70f-b2a4cfa36032\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/e8e5adc5-0fd7-4c24-9e63-a5c74ff0a72f\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1437,
       "length": 2,

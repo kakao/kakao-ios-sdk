@@ -52,9 +52,9 @@ public class Constants {
         let device = UIDevice.current.model.replacingOccurrences(of: " ", with: "_")
         let appBundleId = Bundle.main.bundleIdentifier
         let appVersion = self.appVersion()
-        let customIdentifier = KakaoSDK.shared.sdkIdentifier()?.customIdentifier
-        
-        let ka = "sdk/\(sdkVersion) sdk_type/\(sdkType) os/ios-\(osVersion) lang/\(lang) res/\(res) device/\(device) origin/\(appBundleId ?? "") app_ver/\(appVersion ?? "")"
+        let customIdentifier = KakaoSDK.shared.sdkIdentifier()?.customIdentifier        
+        let moduleType = KakaoSDK.shared.moduleType()
+        let ka = "sdk/\(sdkVersion) sdk_type/\(sdkType) os/ios-\(osVersion) lang/\(lang) res/\(res) device/\(device) origin/\(appBundleId ?? "") app_ver/\(appVersion ?? "") module_type/\(moduleType)"
         
         return customIdentifier != nil ? "\(ka) \(customIdentifier!)":ka
     }

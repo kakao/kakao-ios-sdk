@@ -66,7 +66,7 @@ extension TokenRefresher {
     
     ///:nodoc:
     func cat(completion:@escaping (Error?) -> Void) {
-        AUTH_API.responseData(.get,
+        AUTH_API.responseDataWithNoLog(.get,
               Urls.compose(path:Paths.checkAccessToken),
               apiType: .KApi) { (response, data, error) in
                 if let error = error {

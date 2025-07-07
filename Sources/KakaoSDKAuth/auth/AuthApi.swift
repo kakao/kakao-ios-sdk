@@ -108,15 +108,17 @@ final public class AuthApi {
     /// 토큰 갱신 \
     /// Refreshes the tokens
     public func refreshToken(token oldToken: OAuthToken? = nil,
+                             loggingEnabled: Bool = true,
                              completion:@escaping (OAuthToken?, Error?) -> Void) {
+        let sessionType: SessionType = loggingEnabled ? .Auth : .AuthNoLog
         API.responseData(.post,
-                                Urls.compose(.Kauth, path:Paths.authToken),
-                                parameters: ["grant_type":"refresh_token",
-                                             "client_id":try! KakaoSDK.shared.appKey(),
-                                             "refresh_token":oldToken?.refreshToken ?? AUTH.tokenManager.getToken()?.refreshToken,
-                                             "ios_bundle_id":Bundle.main.bundleIdentifier].filterNil(),
-                                sessionType:.Auth,
-                                apiType: .KAuth) { (response, data, error) in
+                         Urls.compose(.Kauth, path:Paths.authToken),
+                         parameters: ["grant_type":"refresh_token",
+                                      "client_id":try! KakaoSDK.shared.appKey(),
+                                      "refresh_token":oldToken?.refreshToken ?? AUTH.tokenManager.getToken()?.refreshToken,
+                                      "ios_bundle_id":Bundle.main.bundleIdentifier].filterNil(),
+                         sessionType: sessionType,
+                         apiType: .KAuth) { (response, data, error) in
                                     if let error = error {
                                         completion(nil, error)
                                         return
