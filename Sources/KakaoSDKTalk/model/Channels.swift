@@ -83,7 +83,7 @@ public struct Channel : Codable {
     }
 }
 
-/// 카카오톡 채널 간편 추가하기 결과 \
+/// 카카오톡 채널 간편 추가 결과 \
 /// Result of Follow Kakao Talk Channel
 public struct FollowChannelResult: Codable {
     /// 성공 여부 \

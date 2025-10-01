@@ -57,7 +57,9 @@ public class Api {
     
     public let encoding : URLEncoding
     
-    public var sessions : [SessionType:Session] = [SessionType:Session]()
+    private var _sessions: [SessionType: Session] = [:]
+    
+    private let apiQueue = DispatchQueue(label: "com.kakao.sdk.apiqueue")
     
     public init() {
         self.encoding = URLEncoding(boolEncoding: .literal)
@@ -67,9 +69,7 @@ public class Api {
 
 extension Api {    
     private func initSession() {
-        let apiSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
-        apiSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
-        addSession(type: .Api, session:Session(configuration: apiSessionConfiguration, interceptor: ApiRequestAdapter()))
+        addSession(type: .Api, session: defaultApiSession())
         
         let authSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
         authSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
@@ -77,16 +77,41 @@ extension Api {
         addSession(type: .AuthNoLog, session: Session(configuration: authSessionConfiguration, interceptor: ApiRequestAdapter()))
     }
     
-    public func addSession(type:SessionType, session:Session) {
-        if self.sessions[type] == nil {
-            self.sessions[type] = session
+    private func defaultApiSession() -> Session {
+        let apiSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
+        apiSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
+        
+        return Session(configuration: apiSessionConfiguration, interceptor: ApiRequestAdapter())
+    }
+    
+    public func addSession(type:SessionType, session:Session?) {
+        apiQueue.async(flags: .barrier) {
+            if self._sessions[type] == nil {
+                self._sessions[type] = session
+            }
         }
         
         //        SdkLog.d("<<<<<<< sessions: \(self.sessions)   count: \(self.sessions.count)")
     }
     
     public func session(_ sessionType: SessionType) -> Session {
-        return sessions[sessionType] ?? sessions[.Api]!
+        apiQueue.sync {
+            if let resultSession = _sessions[sessionType] {
+                return resultSession
+            }
+            
+            if let apiSession = _sessions[.Api] {
+                return apiSession
+            }
+            
+            return defaultApiSession()
+        }
+    }
+    
+    public func sessions() -> [SessionType: Session] {
+        apiQueue.sync {
+            return _sessions
+        }
     }
 }
 

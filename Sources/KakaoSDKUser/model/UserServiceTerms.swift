@@ -14,7 +14,7 @@
 
 import Foundation
 
-/// 서비스 약관 동의 내역 확인하기 응답 \
+/// 서비스 약관 동의 내역 조회 응답 \
 /// Response for Retrieve consent details for service terms
 /// ## SeeAlso
 /// - ``UserApi/serviceTerms(result:tags:completion:)``
@@ -110,7 +110,7 @@ public struct ServiceTerms : Codable {
     }
 }
 
-/// 서비스 약관 동의 철회하기 응답 \
+/// 서비스 약관 동의 철회 응답 \
 /// Response for Revoke consent for service terms
 /// ## SeeAlso
 /// - ``RevokedServiceTerms``

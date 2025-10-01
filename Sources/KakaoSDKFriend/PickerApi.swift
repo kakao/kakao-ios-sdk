@@ -27,73 +27,19 @@ import KakaoSDKUser
 //open picker APIs
 /// [피커](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/common) API 클래스 \
 /// Class for the [picker](https://developers.kakao.com/docs/latest/en/kakaotalk-social/common) APIs
-extension PickerApi {    
-    /// 풀 스크린 형태의 멀티 피커 요청 \
-    /// Requests a multi-picker in full-screen view
+extension PickerApi {
+    /// 친구 피커 \
+    /// Friends picker
     /// ## SeeAlso
     /// - [`OpenPickerFriendRequestParams`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKFriendCore/documentation/kakaosdkfriendcore/openpickerfriendrequestparams)
-    public func selectFriends(params:OpenPickerFriendRequestParams, completion:@escaping (SelectedUsers?, Error?) -> Void) {
+    public func selectFriend(params:OpenPickerFriendRequestParams, viewType: ViewType, enableMulti: Bool = true, completion:@escaping (SelectedUsers?, Error?) -> Void) {
         let fullParams = PickerFriendRequestParams(params)
         prepareCallPickerApi { [weak self] error in
             if let error = error {
                 completion(nil, error)
             }
             else {
-                self?.____sfs(params: fullParams) { [weak self] selectedUsers, responseInfo, error in
-                    completion(selectedUsers, self?.castSdkError(responseInfo:responseInfo, error: error))
-                }
-            }
-        }
-    }
-    
-    /// 팝업 형태의 멀티 피커 요청 \
-    /// Requests a multi-picker in pop-up view
-    /// ## SeeAlso
-    /// - [`OpenPickerFriendRequestParams`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKFriendCore/documentation/kakaosdkfriendcore/openpickerfriendrequestparams)
-    public func selectFriendsPopup(params:OpenPickerFriendRequestParams, completion:@escaping (SelectedUsers?, Error?) -> Void) {
-        let fullParams = PickerFriendRequestParams(params)
-        prepareCallPickerApi { [weak self] error in
-            if let error = error {
-                completion(nil, error)
-            }
-            else {
-                self?.____sfsp(params: fullParams) { [weak self] selectedUsers, responseInfo, error in
-                    completion(selectedUsers, self?.castSdkError(responseInfo:responseInfo, error: error))
-                }
-            }
-        }
-    }
-    
-    /// 풀 스크린 형태의 싱글 피커 요청 \
-    /// Requests a single picker in full-screen view
-    /// ## SeeAlso
-    /// - [`OpenPickerFriendRequestParams`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKFriendCore/documentation/kakaosdkfriendcore/openpickerfriendrequestparams)
-    public func selectFriend(params:OpenPickerFriendRequestParams, completion:@escaping (SelectedUsers?, Error?) -> Void) {
-        let fullParams = PickerFriendRequestParams(params)
-        prepareCallPickerApi { [weak self] error in
-            if let error = error {
-                completion(nil, error)
-            }
-            else {
-                self?.____sf(params: fullParams) { [weak self] selectedUsers, responseInfo, error in
-                    completion(selectedUsers, self?.castSdkError(responseInfo:responseInfo, error: error))
-                }
-            }
-        }
-    }
-    
-    /// 팝업 형태의 싱글 피커 요청 \
-    /// Requests a single picker in pop-up view
-    /// ## SeeAlso
-    /// - [`OpenPickerFriendRequestParams`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKFriendCore/documentation/kakaosdkfriendcore/openpickerfriendrequestparams)
-    public func selectFriendPopup(params:OpenPickerFriendRequestParams, completion:@escaping (SelectedUsers?, Error?) -> Void) {
-        let fullParams = PickerFriendRequestParams(params)
-        prepareCallPickerApi { [weak self] error in
-            if let error = error {
-                completion(nil, error)
-            }
-            else {
-                self?.____sfp(params: fullParams) { [weak self] selectedUsers, responseInfo, error in
+                self?.____sf(params: fullParams, enableMulti: enableMulti, viewType: viewType) { [weak self] selectedUsers, responseInfo, error in
                     completion(selectedUsers, self?.castSdkError(responseInfo:responseInfo, error: error))
                 }
             }

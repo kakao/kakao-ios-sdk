@@ -29,6 +29,7 @@ final public class TokenManager : TokenManagable {
     static public let manager = TokenManager()
     
     let OAuthTokenKey = "com.kakao.sdk.oauth_token"
+    private let tokenLock = NSLock()
     
     var token : OAuthToken?
     
@@ -41,13 +42,16 @@ final public class TokenManager : TokenManagable {
     }
     
     
-    // MARK: TokenManagable Methods
+    // MARK: - TokenManagable Methods
     
 #if swift(>=5.8)
     @_documentation(visibility: private)
 #endif
     /// UserDefaults에 토큰을 저장합니다.
     public func setToken(_ token: OAuthToken?) {
+        tokenLock.lock()
+        defer { tokenLock.unlock() }
+        
         Properties.saveCodable(key:OAuthTokenKey, data:token)
         self.token = token
     }
@@ -55,6 +59,9 @@ final public class TokenManager : TokenManagable {
     /// 저장된 토큰 반환 \
     /// Returns saved tokens
     public func getToken() -> OAuthToken? {
+        tokenLock.lock()
+        defer { tokenLock.unlock() }
+        
         return self.token
     }
     
@@ -63,6 +70,9 @@ final public class TokenManager : TokenManagable {
 #endif
     /// UserDefaults에 저장된 토큰을 삭제합니다.
     public func deleteToken() {
+        tokenLock.lock()
+        defer { tokenLock.unlock() }
+        
         Properties.delete(OAuthTokenKey)
         self.token = nil
     }

@@ -1350,6 +1350,230 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ViewType",
+        "printedName": "ViewType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "full",
+            "printedName": "full",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KakaoSDKFriendCore.ViewType.Type) -> KakaoSDKFriendCore.ViewType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ViewType",
+                    "printedName": "KakaoSDKFriendCore.ViewType",
+                    "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "KakaoSDKFriendCore.ViewType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ViewType",
+                        "printedName": "KakaoSDKFriendCore.ViewType",
+                        "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18KakaoSDKFriendCore8ViewTypeO4fullyA2CmF",
+            "mangledName": "$s18KakaoSDKFriendCore8ViewTypeO4fullyA2CmF",
+            "moduleName": "KakaoSDKFriendCore"
+          },
+          {
+            "kind": "Var",
+            "name": "popup",
+            "printedName": "popup",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(KakaoSDKFriendCore.ViewType.Type) -> KakaoSDKFriendCore.ViewType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ViewType",
+                    "printedName": "KakaoSDKFriendCore.ViewType",
+                    "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "KakaoSDKFriendCore.ViewType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ViewType",
+                        "printedName": "KakaoSDKFriendCore.ViewType",
+                        "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:18KakaoSDKFriendCore8ViewTypeO5popupyA2CmF",
+            "mangledName": "$s18KakaoSDKFriendCore8ViewTypeO5popupyA2CmF",
+            "moduleName": "KakaoSDKFriendCore"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKFriendCore.ViewType?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ViewType",
+                    "printedName": "KakaoSDKFriendCore.ViewType",
+                    "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:18KakaoSDKFriendCore8ViewTypeO8rawValueACSgSS_tcfc",
+            "mangledName": "$s18KakaoSDKFriendCore8ViewTypeO8rawValueACSgSS_tcfc",
+            "moduleName": "KakaoSDKFriendCore",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:18KakaoSDKFriendCore8ViewTypeO8rawValueSSvp",
+            "mangledName": "$s18KakaoSDKFriendCore8ViewTypeO8rawValueSSvp",
+            "moduleName": "KakaoSDKFriendCore",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:18KakaoSDKFriendCore8ViewTypeO8rawValueSSvg",
+                "mangledName": "$s18KakaoSDKFriendCore8ViewTypeO8rawValueSSvg",
+                "moduleName": "KakaoSDKFriendCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:18KakaoSDKFriendCore8ViewTypeO",
+        "mangledName": "$s18KakaoSDKFriendCore8ViewTypeO",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -14245,274 +14469,8 @@
           },
           {
             "kind": "Function",
-            "name": "____sfs",
-            "printedName": "____sfs(params:needScopeRequest:customSection:selectedUuids:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PickerFriendRequestParams",
-                "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
-                "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "KakaoSDKFriendCore.CustomSection?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CustomSection",
-                    "printedName": "KakaoSDKFriendCore.CustomSection",
-                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedUsers?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedUsers",
-                            "printedName": "KakaoSDKFriendCore.SelectedUsers",
-                            "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ResponseInfo",
-                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
-                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____sfs6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____sfs6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "moduleName": "KakaoSDKFriendCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "____sfsp",
-            "printedName": "____sfsp(params:needScopeRequest:customSection:selectedUuids:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PickerFriendRequestParams",
-                "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
-                "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "KakaoSDKFriendCore.CustomSection?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CustomSection",
-                    "printedName": "KakaoSDKFriendCore.CustomSection",
-                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.String]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedUsers?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedUsers",
-                            "printedName": "KakaoSDKFriendCore.SelectedUsers",
-                            "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ResponseInfo",
-                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
-                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC8____sfsp6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC8____sfsp6params16needScopeRequest13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_SbAA06CustomL0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "moduleName": "KakaoSDKFriendCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "____sf",
-            "printedName": "____sf(params:needScopeRequest:completion:)",
+            "printedName": "____sf(params:needScopeRequest:enableMulti:viewType:customSection:selectedUuids:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14531,6 +14489,56 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ViewType",
+                "printedName": "KakaoSDKFriendCore.ViewType",
+                "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKFriendCore.CustomSection?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CustomSection",
+                    "printedName": "KakaoSDKFriendCore.CustomSection",
+                    "usr": "s:18KakaoSDKFriendCore13CustomSectionV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.String]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeFunc",
@@ -14595,103 +14603,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sf6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sf6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "moduleName": "KakaoSDKFriendCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "____sfp",
-            "printedName": "____sfp(params:needScopeRequest:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PickerFriendRequestParams",
-                "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
-                "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedUsers?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedUsers",
-                            "printedName": "KakaoSDKFriendCore.SelectedUsers",
-                            "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ResponseInfo",
-                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
-                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____sfp6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____sfp6params16needScopeRequest10completionyAA0d6FriendJ6ParamsC_SbyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sf6params16needScopeRequest11enableMulti8viewType13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_S2bAA04ViewN0OAA06CustomP0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sf6params16needScopeRequest11enableMulti8viewType13customSection13selectedUuids10completionyAA0d6FriendJ6ParamsC_S2bAA04ViewN0OAA06CustomP0VSgSaySSGSgyAA13SelectedUsersVSg_AA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -14702,7 +14615,7 @@
           {
             "kind": "Function",
             "name": "____sc",
-            "printedName": "____sc(params:needScopeRequest:completion:)",
+            "printedName": "____sc(params:needScopeRequest:enableMulti:viewType:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14721,6 +14634,18 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ViewType",
+                "printedName": "KakaoSDKFriendCore.ViewType",
+                "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
               },
               {
                 "kind": "TypeFunc",
@@ -14799,117 +14724,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sc6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sc6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "moduleName": "KakaoSDKFriendCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "____scp",
-            "printedName": "____scp(params:needScopeRequest:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PickerChatRequestParams",
-                "printedName": "KakaoSDKFriendCore.PickerChatRequestParams",
-                "usr": "s:18KakaoSDKFriendCore23PickerChatRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedUsers?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedUsers",
-                            "printedName": "KakaoSDKFriendCore.SelectedUsers",
-                            "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedChat?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedChat",
-                            "printedName": "KakaoSDKFriendCore.SelectedChat",
-                            "usr": "s:18KakaoSDKFriendCore12SelectedChatV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ResponseInfo",
-                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
-                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC7____scp6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC7____scp6params16needScopeRequest10completionyAA0d4ChatJ6ParamsC_SbyAA13SelectedUsersVSg_AA0nL0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sc6params16needScopeRequest11enableMulti8viewType10completionyAA0d4ChatJ6ParamsC_S2bAA04ViewN0OyAA13SelectedUsersVSg_AA0sP0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sc6params16needScopeRequest11enableMulti8viewType10completionyAA0d4ChatJ6ParamsC_S2bAA04ViewN0OyAA13SelectedUsersVSg_AA0sP0VSgAA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -14920,7 +14736,7 @@
           {
             "kind": "Function",
             "name": "____s",
-            "printedName": "____s(params:needScopeRequest:completion:)",
+            "printedName": "____s(params:needScopeRequest:enableMulti:viewType:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -14939,6 +14755,18 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ViewType",
+                "printedName": "KakaoSDKFriendCore.ViewType",
+                "usr": "s:18KakaoSDKFriendCore8ViewTypeO"
               },
               {
                 "kind": "TypeFunc",
@@ -15017,117 +14845,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC5____s6params16needScopeRequest10completionyAA0d3TabI6ParamsC_SbyAA13SelectedUsersVSg_AA0M4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC5____s6params16needScopeRequest10completionyAA0d3TabI6ParamsC_SbyAA13SelectedUsersVSg_AA0M4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "moduleName": "KakaoSDKFriendCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "____sp",
-            "printedName": "____sp(params:needScopeRequest:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "PickerTabRequestParams",
-                "printedName": "KakaoSDKFriendCore.PickerTabRequestParams",
-                "usr": "s:18KakaoSDKFriendCore22PickerTabRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedUsers?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedUsers",
-                            "printedName": "KakaoSDKFriendCore.SelectedUsers",
-                            "usr": "s:18KakaoSDKFriendCore13SelectedUsersV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.SelectedChat?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "SelectedChat",
-                            "printedName": "KakaoSDKFriendCore.SelectedChat",
-                            "usr": "s:18KakaoSDKFriendCore12SelectedChatV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "KakaoSDKFriendCore.ResponseInfo?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "ResponseInfo",
-                            "printedName": "KakaoSDKFriendCore.ResponseInfo",
-                            "usr": "s:18KakaoSDKFriendCore12ResponseInfoV"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:18KakaoSDKFriendCore9PickerApiC6____sp6params16needScopeRequest10completionyAA0d3TabJ6ParamsC_SbyAA13SelectedUsersVSg_AA0N4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
-            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC6____sp6params16needScopeRequest10completionyAA0d3TabJ6ParamsC_SbyAA13SelectedUsersVSg_AA0N4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "usr": "s:18KakaoSDKFriendCore9PickerApiC5____s6params16needScopeRequest11enableMulti8viewType10completionyAA0d3TabI6ParamsC_S2bAA04ViewM0OyAA13SelectedUsersVSg_AA0R4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
+            "mangledName": "$s18KakaoSDKFriendCore9PickerApiC5____s6params16needScopeRequest11enableMulti8viewType10completionyAA0d3TabI6ParamsC_S2bAA04ViewM0OyAA13SelectedUsersVSg_AA0R4ChatVSgAA12ResponseInfoVSgs5Error_pSgtctF",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -19546,1099 +19265,1092 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 870,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 903,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 934,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 966,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 1001,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1156,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1171,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1186,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1201,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1216,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1410,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
+      "kind": "StringLiteral",
+      "offset": 263,
+      "length": 6,
+      "value": "\"full\""
+    },
+    {
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
+      "kind": "StringLiteral",
+      "offset": 287,
+      "length": 7,
+      "value": "\"popup\""
+    },
+    {
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 1357,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 3924,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "IntegerLiteral",
       "offset": 727,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "IntegerLiteral",
       "offset": 1433,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "BooleanLiteral",
       "offset": 1455,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "FloatLiteral",
       "offset": 1514,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "BooleanLiteral",
       "offset": 1535,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "IntegerLiteral",
       "offset": 4145,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
       "kind": "Dictionary",
       "offset": 6712,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
       "kind": "BooleanLiteral",
       "offset": 6762,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 2151,
       "length": 8,
       "value": "\"friend\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 2185,
       "length": 11,
       "value": "\"no_friend\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 2216,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 3151,
       "length": 8,
       "value": "\"friend\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 3187,
       "length": 13,
       "value": "\"chat_member\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "FloatLiteral",
       "offset": 1293,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 1718,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 1744,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 1773,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "BooleanLiteral",
       "offset": 2079,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 10676,
       "length": 7,
       "value": "\":#[]@\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 10781,
       "length": 13,
       "value": "\"!$&'()*+,;=\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 10856,
       "length": 54,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 10885,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
       "offset": 10909,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
       "offset": 929,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 8919,
+      "offset": 8995,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 11654,
+      "offset": 11806,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 19107,
+      "offset": 19474,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/cache\/ImageCacheManager.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/cache\/ImageCacheManager.swift",
       "kind": "IntegerLiteral",
       "offset": 774,
       "length": 4,
       "value": "4096"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 813,
       "length": 3,
       "value": "360"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 854,
       "length": 3,
       "value": "480"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "BooleanLiteral",
       "offset": 5179,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
       "kind": "StringLiteral",
       "offset": 1182,
       "length": 14,
       "value": "\"chatRoomType\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
       "kind": "StringLiteral",
       "offset": 2639,
       "length": 16,
       "value": "\"thumbnailImage\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SectionHeaderView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SectionHeaderView.swift",
       "kind": "BooleanLiteral",
       "offset": 962,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 763,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 778,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 798,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 818,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "FloatLiteral",
       "offset": 2174,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "StringLiteral",
       "offset": 2244,
       "length": 15,
       "value": "\"talk_gray150a\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 2678,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "BooleanLiteral",
       "offset": 8725,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
       "offset": 1072,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 1324,
       "length": 16,
       "value": "\"talk_white000s\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
       "offset": 1376,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 1441,
       "length": 15,
       "value": "\"talk_gray001s\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 1734,
       "length": 22,
       "value": "\"friendspickerBtnBack\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 1834,
       "length": 23,
       "value": "\"friendspickerBtnClose\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 1941,
       "length": 15,
       "value": "\"talk_gray900s\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2058,
       "length": 70,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2095,
       "length": 20,
       "value": "\"accessibility_back\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2120,
       "length": 6,
       "value": "\"back\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2127,
       "length": 3,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2143,
       "length": 72,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2180,
       "length": 21,
       "value": "\"accessibility_close\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2206,
       "length": 7,
       "value": "\"close\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2214,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
       "offset": 2366,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 2374,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 2379,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2592,
       "length": 4,
       "value": "\"ok\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2674,
       "length": 15,
       "value": "\"talk_gray900s\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 2767,
       "length": 15,
       "value": "\"talk_gray900s\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "FloatLiteral",
       "offset": 2804,
       "length": 4,
       "value": "0.15"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
       "offset": 2859,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
       "offset": 3004,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3012,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3017,
       "length": 2,
       "value": "18"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3184,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "StringLiteral",
       "offset": 3244,
       "length": 15,
       "value": "\"talk_gray900s\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
       "offset": 3457,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3465,
       "length": 2,
       "value": "16"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3470,
       "length": 2,
       "value": "17"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3604,
       "length": 3,
       "value": "250"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "FloatLiteral",
       "offset": 3608,
       "length": 5,
       "value": "255.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3622,
       "length": 3,
       "value": "198"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "FloatLiteral",
       "offset": 3626,
       "length": 5,
       "value": "255.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3639,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "FloatLiteral",
       "offset": 3641,
       "length": 5,
       "value": "255.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "FloatLiteral",
       "offset": 3655,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "IntegerLiteral",
       "offset": 3737,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 722,
       "length": 3,
       "value": "360"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 763,
       "length": 3,
       "value": "480"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 884,
+      "offset": 889,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9468,
+      "offset": 9459,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
       "kind": "IntegerLiteral",
       "offset": 227,
       "length": 3,
       "value": "360"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
       "kind": "IntegerLiteral",
       "offset": 268,
       "length": 3,
       "value": "480"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
       "kind": "BooleanLiteral",
       "offset": 482,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
       "offset": 1039,
       "length": 17,
       "value": "\"\/v1\/friends\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
       "offset": 1092,
       "length": 21,
       "value": "\"\/v2\/user\/scopes\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
       "offset": 1155,
       "length": 28,
       "value": "\"\/v1\/api\/talk\/chat\/list\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
       "offset": 1226,
       "length": 26,
       "value": "\"\/v1\/api\/talk\/members\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1192,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1207,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1235,
       "length": 14,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1263,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1291,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1314,
       "length": 15,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1344,
       "length": 7,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1374,
       "length": 10,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1398,
       "length": 11,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "BooleanLiteral",
       "offset": 8974,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "BooleanLiteral",
       "offset": 9028,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 9099,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 9111,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 906,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "StringLiteral",
       "offset": 5154,
       "length": 5,
       "value": "\"★\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "StringLiteral",
       "offset": 5181,
       "length": 5,
       "value": "\"●\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5218,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5277,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5318,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5353,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5401,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5438,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 11240,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi+Request.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi+Request.swift",
       "kind": "BooleanLiteral",
       "offset": 1216,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8358,
+      "offset": 8566,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15051,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "kind": "BooleanLiteral",
+      "offset": 18019,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22072,
+      "offset": 22719,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22109,
+      "offset": 22756,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22160,
+      "offset": 22807,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22204,
+      "offset": 22851,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22507,
+      "offset": 23154,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22512,
+      "offset": 23159,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 22517,
+      "offset": 23164,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 24439,
+      "offset": 25086,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 24891,
+      "offset": 25541,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 26273,
+      "offset": 27365,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 27751,
+      "offset": 29029,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
-      "kind": "BooleanLiteral",
-      "offset": 29077,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
-      "kind": "BooleanLiteral",
-      "offset": 30490,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
-      "kind": "BooleanLiteral",
-      "offset": 31743,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
-      "kind": "BooleanLiteral",
-      "offset": 33079,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
-      "kind": "BooleanLiteral",
-      "offset": 34328,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
       "kind": "BooleanLiteral",
       "offset": 1351,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
       "kind": "BooleanLiteral",
       "offset": 1386,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
       "kind": "BooleanLiteral",
       "offset": 15256,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",
       "kind": "BooleanLiteral",
       "offset": 1357,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 677,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 776,
       "length": 3,
       "value": "360"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 817,
       "length": 3,
       "value": "480"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 927,
+      "offset": 963,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 12721,
+      "offset": 12665,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/LineView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/LineView.swift",
       "kind": "BooleanLiteral",
       "offset": 747,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/93081f5e-18e9-4104-932d-59a2a9db106c\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SelectAllButtonView.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/7e5a5388-31c6-4c99-bc7f-2e68c186155e\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SelectAllButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 1402,
       "length": 5,

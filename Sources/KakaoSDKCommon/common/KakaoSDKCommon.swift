@@ -24,7 +24,7 @@ final public class KakaoSDK {
     // MARK: Fields
     
     //static 라이브러리용 버전.
-    private let _version = "2.24.6"
+    private let _version = "2.25.0"
     
     /// 카카오 SDK 싱글톤 객체 \
     /// A singleton object for Kakao SDK
@@ -164,7 +164,7 @@ final public class KakaoSDK {
 extension KakaoSDK {
     /// 초기화 시 설정된 앱 키 조회 \
     /// Returns the app key used to initialize
-    /// - throws: ``ClientFailureReason/MustInitAppKey``: SDK가 초기화되지 않았습니다. 앱키를 가져오기 전에 initSDK를 이용하여 먼저 싱글톤 인스턴스를 초기화해야 합니다.
+    /// - throws: ``ClientFailureReason/MustInitAppKey``: SDK가 초기화되지 않았습니다. 앱키를 조회 전에 initSDK를 이용하여 먼저 싱글톤 인스턴스를 초기화해야 합니다.
     public func appKey() throws -> String {
         guard _appKey != nil else {
             throw SdkError(reason: .MustInitAppKey)
@@ -173,7 +173,7 @@ extension KakaoSDK {
     }
     
     /// KA 헤더 조회 \
-    /// Returns KA header
+    /// Returns KA header API
     public func kaHeader() -> String {
         return Constants.kaHeader
     }

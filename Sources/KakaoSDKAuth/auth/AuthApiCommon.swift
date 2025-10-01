@@ -49,7 +49,7 @@ public class AuthApiCommon {
         let noLogInterceptor = Interceptor(adapter: AuthRequestAdapter(), retrier: AuthRequestRetrier(isShowLog: false))
         API.addSession(type: .AuthApiNoLog, session: Session(configuration: authApiSessionConfiguration, interceptor: noLogInterceptor))
         
-        SdkLog.d(">>>> \(API.sessions)")
+        SdkLog.d(">>>> \(API.sessions())")
     }
 
     public func responseData(_ kHTTPMethod: KHTTPMethod,

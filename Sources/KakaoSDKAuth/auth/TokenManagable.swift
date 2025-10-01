@@ -36,7 +36,7 @@ public protocol TokenManagable {
     /// Returns saved tokens
     func getToken() -> OAuthToken?
     
-    /// 저장된 토큰 삭제 \
-    /// Deletes saved tokens
+    /// 저장된 토큰 폐기 \
+    /// Revokes saved tokens
     func deleteToken()
 }

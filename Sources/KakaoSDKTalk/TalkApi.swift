@@ -20,8 +20,8 @@ import UIKit
 
 import AuthenticationServices
 
-/// [카카오톡 채널](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/common), [카카오톡 소셜](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/common), [카카오톡 메시지](https://developers.kakao.com/docs/latest/ko/message/common) API 클래스 \
-/// Class for the [Kakao Talk Channel](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common), [Kakao Talk Social](https://developers.kakao.com/docs/latest/en/kakaotalk-social/common), [Kakao Talk Message](https://developers.kakao.com/docs/latest/en/message/common) APIs
+/// [카카오톡 채널](https://developers.kakao.com/docs/latest/ko/kakaotalk-channel/common), [카카오톡 소셜](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/common), [카카오톡 메시지](https://developers.kakao.com/docs/latest/ko/kakaotalk-message/common) API 클래스 \
+/// Class for the [Kakao Talk Channel](https://developers.kakao.com/docs/latest/en/kakaotalk-channel/common), [Kakao Talk Social](https://developers.kakao.com/docs/latest/en/kakaotalk-social/common), [Kakao Talk Message](https://developers.kakao.com/docs/latest/en/kakaotalk-message/common) APIs
 public class TalkApi {
     
     // MARK: Fields
@@ -84,11 +84,11 @@ public class TalkApi {
 extension TalkApi {
     // MARK: Profile
     
-    /// 카카오톡 프로필 가져오기 \
+    /// 카카오톡 프로필 조회 \
     /// Retrieve Kakao Talk profile
     /// ## SeeAlso
     /// - ``TalkProfile``
-    /// - [프로필 가져오기](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/ios#get-profile) \
+    /// - [프로필 조회](https://developers.kakao.com/docs/latest/ko/kakaotalk-social/ios#get-profile) \
     ///   [Retrieve Kakao Talk profile](https://developers.kakao.com/docs/latest/en/kakaotalk-social/ios#get-profile)
     public func profile(completion:@escaping (TalkProfile?, Error?) -> Void) {
         
@@ -110,7 +110,7 @@ extension TalkApi {
     
     // MARK: Memo
     
-    /// 나에게 사용자 정의 템플릿으로 메시지 보내기 \
+    /// 나에게 사용자 정의 템플릿으로 메시지 발송 \
     /// Send message with custom template to me
     /// - parameters:
     ///    - templateId: 메시지 템플릿 ID \
@@ -125,7 +125,7 @@ extension TalkApi {
         }
     }
     
-    /// 나에게 기본 템플릿으로 메시지 보내기 \
+    /// 나에게 기본 템플릿으로 메시지 발송 \
     /// Send message with default template to me
     /// - parameters:
     ///    - templatable: 메시지 템플릿 객체 \
@@ -140,7 +140,7 @@ extension TalkApi {
         }
     }
     
-    /// 나에게 스크랩 메시지 보내기 \
+    /// 나에게 스크랩 메시지 발송 \
     /// Send scrape message to me
     ///  - parameters:
     ///     - requestUrl: 스크랩할 URL \
@@ -159,7 +159,7 @@ extension TalkApi {
     
     // MARK: Friends
     
-    /// 친구 목록 가져오기 \
+    /// 친구 목록 조회 \
     /// Retrieve list of friends
     /// - parameters:
     ///   - offset: 친구 목록 시작 지점 \
@@ -197,7 +197,7 @@ extension TalkApi {
         }
     }
     
-    /// 친구 목록 가져오기 \
+    /// 친구 목록 조회 \
     /// Retrieve list of friends
     /// ## SeeAlso
     /// - ``FriendsContext``
@@ -215,7 +215,7 @@ extension TalkApi {
     
     // MARK: Message
     
-    /// 친구에게 기본 템플릿으로 메시지 보내기 \
+    /// 친구에게 기본 템플릿으로 메시지 발송 \
     /// Send message with default template to friends
     ///  - parameters:
     ///     - templatable: 메시지 템플릿 객체 \
@@ -246,7 +246,7 @@ extension TalkApi {
         }
     }
     
-    /// 친구에게 사용자 정의 템플릿으로 메시지 보내기 \
+    /// 친구에게 사용자 정의 템플릿으로 메시지 발송 \
     /// Send message with custom template
     /// - parameters:
     ///    - templateId: 메시지 템플릿 ID \
@@ -275,7 +275,7 @@ extension TalkApi {
         }
     }
     
-    /// 친구에게 스크랩 메시지 보내기 \
+    /// 친구에게 스크랩 메시지 발송 \
     /// Send scrape message to friends
     /// - parameters:
     ///    - requestUrl: 스크랩할 URL \
@@ -312,7 +312,7 @@ extension TalkApi {
         
     // MARK: Kakaotalk Channel
     
-    /// 카카오톡 채널 관계 확인하기 \
+    /// 카카오톡 채널 관계 조회 \
     /// Check Kakao Talk Channel relationship
     /// - parameters:
     ///    - publicIds: 카카오톡 채널 프로필 ID 목록 \
@@ -364,7 +364,7 @@ extension TalkApi {
         return UIApplication.shared.canOpenURL(url)
     }
     
-    /// 카카오톡 채널 친구 추가하기 \
+    /// 카카오톡 채널 친구 추가 \
     /// Add Kakao Talk Channel
     /// - parameters:
     ///    - channelPublicId: 카카오톡 채널 프로필 ID \
@@ -386,7 +386,7 @@ extension TalkApi {
         }
     }
     
-    /// 카카오톡 채널 채팅하기 \
+    /// 카카오톡 채널 채팅 \
     /// Start Kakao Talk Channel chat
     /// - parameters:
     ///    - channelPublicId: 카카오톡 채널 프로필 ID \
@@ -408,7 +408,7 @@ extension TalkApi {
         }
     }
     
-    /// 카카오톡 채널 간편 추가하기 \
+    /// 카카오톡 채널 간편 추가 \
     /// Follow Kakao Talk Channel
     /// - parameters:
     ///    - channelPublicId: 카카오톡 채널 프로필 ID \

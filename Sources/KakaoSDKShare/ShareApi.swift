@@ -18,8 +18,8 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKTemplate
 
-/// [카카오톡 공유](https://developers.kakao.com/docs/latest/ko/message/common) API 클래스 \
-/// Class for the [Kakao Talk Sharing](https://developers.kakao.com/docs/latest/en/message/common) APIs
+/// [카카오톡 공유](https://developers.kakao.com/docs/latest/ko/kakaotalk-share/common) API 클래스 \
+/// Class for the [Kakao Talk Sharing](https://developers.kakao.com/docs/latest/en/kakaotalk-share/common) APIs
 public class ShareApi {
     
     // MARK: Fields
@@ -83,7 +83,7 @@ extension ShareApi {
 
     // MARK: Using Web Sharer
     
-    /// 기본 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// 기본 템플릿으로 카카오톡 공유 메시지 발송 URL 생성 \
     /// Creates a URL to share a default template via Kakao Talk
     /// - parameters:
     ///    - templatable: 기본 템플릿으로 변환 가능한 객체 \
@@ -100,7 +100,7 @@ extension ShareApi {
                                   serverCallbackArgs:serverCallbackArgs)
     }
     
-    /// 기본 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// 기본 템플릿으로 카카오톡 공유 메시지 발송 URL 생성 \
     /// Creates a URL to share a default template via Kakao Talk
     /// - parameters:
     ///   - templateObject: 기본 템플릿 객체 \
@@ -115,7 +115,7 @@ extension ShareApi {
                                   serverCallbackArgs:serverCallbackArgs)
     }
     
-    /// 스크랩 정보로 구성된 메시지 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// 스크랩 카카오톡 공유 메시지 발송 URL 생성 \
     /// Creates a URL to share a scrape message via Kakao Talk
     /// - parameters:
     ///   - requestUrl: 스크랩할 URL \
@@ -136,7 +136,7 @@ extension ShareApi {
                                   serverCallbackArgs:serverCallbackArgs)
     }
     
-    /// 사용자 정의 템플릿을 카카오톡으로 공유하기 위한 URL 생성 \
+    /// 사용자 정의 템플릿으로 카카오톡 공유 메시지 발송 URL 생성 \
     /// Creates a URL to share a custom template via Kakao Talk
     /// - parameters:
     ///   - templateId: 사용자 정의 템플릿 ID \
@@ -209,7 +209,7 @@ extension ShareApi {
     
     // MARK: Using KakaoTalk
     
-    /// 기본 템플릿으로 메시지 보내기 \
+    /// 기본 템플릿으로 메시지 발송 \
     /// Send message with default template
     /// - parameters:
     ///   - templateObjectJsonString: 기본 템플릿 객체를 JSON 형식으로 변환한 문자열 \
@@ -248,7 +248,7 @@ extension ShareApi {
         }
     }
         
-    /// 기본 템플릿으로 메시지 보내기 \
+    /// 기본 템플릿으로 메시지 발송 \
     /// Send message with default template
     /// - parameters:
     ///   - templatable: 기본 템플릿으로 변환 가능한 객체 \
@@ -263,7 +263,7 @@ extension ShareApi {
         self.shareDefault(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
-    /// 기본 템플릿으로 메시지 보내기 \
+    /// 기본 템플릿으로 메시지 발송 \
     /// Send message with default template
     /// - parameters:
     ///   - templateObject: 기본 템플릿 객체 \
@@ -277,7 +277,7 @@ extension ShareApi {
         self.shareDefault(templateObjectJsonString: templateObject.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
-    /// 스크랩 메시지 보내기 \
+    /// 스크랩 메시지 발송 \
     /// Send scrape message
     ///  - parameters:
     ///    - requestUrl: 스크랩할 URL \
@@ -323,7 +323,7 @@ extension ShareApi {
         }
     }
     
-    /// 사용자 정의 템플릿으로 메시지 보내기 \
+    /// 사용자 정의 템플릿으로 메시지 발송 \
     /// Send message with custom template
     /// - parameters:
     ///   - templateId: 사용자 정의 템플릿 ID \
@@ -368,7 +368,7 @@ extension ShareApi {
         
     // MARK: Image Upload
     
-    /// 이미지 업로드하기 \
+    /// 이미지 업로드 \
     /// Upload image
     /// - parameters:
     ///   - image: 이미지 파일 \
@@ -397,7 +397,7 @@ extension ShareApi {
         }
     }
     
-    /// 이미지 스크랩하기 \
+    /// 이미지 스크랩 \
     /// Scrape image
     /// - parameters:
     ///   - imageUrl: 이미지 URL \

@@ -56,6 +56,15 @@ import _SwiftConcurrencyShims
   public func toString() -> Swift.String
   public func toSimpleString() -> Swift.String
 }
+public enum ViewType : Swift.String {
+  case full
+  case popup
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public struct SelectedUser : Swift.Codable {
   public let id: Swift.Int64?
   public let uuid: Swift.String
@@ -396,14 +405,9 @@ public class PickerTabRequestParams {
   @objc deinit
 }
 @_documentation(visibility: private) extension KakaoSDKFriendCore.PickerApi {
-  public func ____sfs(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, customSection: KakaoSDKFriendCore.CustomSection? = nil, selectedUuids: [Swift.String]? = nil, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____sfsp(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, customSection: KakaoSDKFriendCore.CustomSection? = nil, selectedUuids: [Swift.String]? = nil, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____sf(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____sfp(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____sc(params: KakaoSDKFriendCore.PickerChatRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____scp(params: KakaoSDKFriendCore.PickerChatRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____s(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = true, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
-  public func ____sp(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = false, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____sf(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, enableMulti: Swift.Bool, viewType: KakaoSDKFriendCore.ViewType, customSection: KakaoSDKFriendCore.CustomSection? = nil, selectedUuids: [Swift.String]? = nil, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____sc(params: KakaoSDKFriendCore.PickerChatRequestParams, needScopeRequest: Swift.Bool = true, enableMulti: Swift.Bool, viewType: KakaoSDKFriendCore.ViewType, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____s(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = true, enableMulti: Swift.Bool, viewType: KakaoSDKFriendCore.ViewType, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
 }
 extension KakaoSDKFriendCore.PickerApi {
   public func ____spv(params: KakaoSDKFriendCore.PickerFriendRequestParams, customSection: KakaoSDKFriendCore.CustomSection?, selectedUuids: [Swift.String]?, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
@@ -468,6 +472,9 @@ extension KakaoSDKFriendCore.KFLogEvent : Swift.RawRepresentable {}
 extension KakaoSDKFriendCore.KFLogLevel : Swift.Equatable {}
 extension KakaoSDKFriendCore.KFLogLevel : Swift.Hashable {}
 extension KakaoSDKFriendCore.KFLogLevel : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.ViewType : Swift.Equatable {}
+extension KakaoSDKFriendCore.ViewType : Swift.Hashable {}
+extension KakaoSDKFriendCore.ViewType : Swift.RawRepresentable {}
 extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.Equatable {}
 extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.Hashable {}
 extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.RawRepresentable {}

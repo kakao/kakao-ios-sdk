@@ -15,8 +15,8 @@
 import Foundation
 import KakaoSDKCommon
 
-/// [메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message/message-template) 기본 템플릿 프로토콜 \
-/// Protocols of the default template for the [message template](https://developers.kakao.com/docs/latest/en/message/message-template)
+/// [메시지 템플릿](https://developers.kakao.com/docs/latest/ko/message-template/common) 기본 템플릿 프로토콜 \
+/// Protocols of the default template for the [message template](https://developers.kakao.com/docs/latest/en/message-template/common)
 /// ## SeeAlso
 /// - ``FeedTemplate``
 /// - ``ListTemplate``

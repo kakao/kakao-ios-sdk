@@ -15,7 +15,7 @@
 import Foundation
 
 // 배송지 목록은 기본 배송지가 가장 상위에 배치되고, 그 이후에는 배송지가 수정된 시각을 기준으로 최신순 정렬
-/// 배송지 가져오기 응답 \
+/// 배송지 조회 응답 \
 /// Response for Retrieve shipping address
 /// ## SeeAlso
 /// - ``UserApi/shippingAddresses(fromUpdatedAt:pageSize:completion:)``

@@ -14,7 +14,7 @@
 
 import Foundation
 
-/// 사용자 정보 가져오기 응답 \
+/// 사용자 정보 조회 응답 \
 /// Response for Retrieve user information
 /// ## SeeAlso
 /// - ``UserApi/me(propertyKeys:secureResource:completion:)``
@@ -48,7 +48,7 @@ public struct User : Codable {
     /// The time when the user is logged in through Kakao Sync Simple Signup, UTC
     public let synchedAt : Date?
     
-    /// 연결하기 호출의 완료 여부 \
+    /// 수동 연결 API 호출의 완료 여부 \
     /// Whether the user is completely linked with the app
     public let hasSignedUp: Bool?
     

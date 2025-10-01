@@ -135,7 +135,7 @@ extension CertApi {
 
 //MARK: k2220 && 공통
 extension CertApi {
-    /// 공개 키 가져오기 \
+    /// 공개 키 조회 \
     /// Retrieve public key
     public func publicKey(certType:CertType) -> String? {
         if (certType == .K2100) { return nil }
@@ -143,7 +143,7 @@ extension CertApi {
         return CertCore.shared.__publicKey(CCCertType(rawValue:certType.rawValue)!)
     }
     
-    /// 세션 정보 가져오기 \
+    /// 세션 정보 조회 \
     /// Retrieve session infomation
     /// - parameters:
     ///   - txId: 전자서명 접수번호 \
@@ -177,7 +177,7 @@ extension CertApi {
         }
     }
     
-    /// 축약서명하기 \
+    /// 축약서명 \
     /// Sign for abbreviated signature
     public func reducedSign(certType:CertType, data:String, completion: @escaping (String?, Error?) -> Void) {
         if (certType == .K2100) {
@@ -188,7 +188,7 @@ extension CertApi {
         CertCore.shared.__reducedSign(data: data, certType:CCCertType(rawValue:certType.rawValue)!, completion: completion)
     }
     
-    /// 세션 유효성 확인하기 \
+    /// 세션 유효성 조회 \
     /// Validate session
     public func isValidSession(certType:CertType) -> Bool {
         if (certType == .K2100) { return false }
@@ -196,13 +196,13 @@ extension CertApi {
         return CertCore.shared.__isValidSession(CCCertType(rawValue:certType.rawValue)!)
     }
     
-    /// 세션 정보 가져오기 \
+    /// 세션 정보 조회 \
     /// Retrieve session infomation
     public func sessionInfo(certType:CertType) -> SessionInfo? {
         return CertCore.shared.__sessionInfo(CCCertType(rawValue:certType.rawValue)!)
     }
     
-    /// 임시 키 쌍 삭제하기 \
+    /// 임시 키 쌍 삭제 \
     /// Delete key pair
     /// ## SeeAlso
     /// - ``sessionInfo``
@@ -213,7 +213,7 @@ extension CertApi {
 
 //k3220 전용
 extension CertApi {
-    /// 카카오톡으로 사용자 서명 가능 여부 확인 \
+    /// 카카오톡으로 사용자 서명 가능 여부 조회 \
     /// Checks whether the Request user signature is available
     public static func isKakaoTalkSignAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkCert, path:""))!)
@@ -225,7 +225,7 @@ extension CertApi {
         return "\(try! KakaoSDK.shared.scheme())://cert"
     }
     
-    /// `returnUrl` 유효성 확인 \
+    /// `returnUrl` 유효성 조회 \
     /// Checks whether `returnUrl` is valid
     public static func isKakaoTalkSignReturnUrl(_ redirectUri:URL) -> Bool {
         return redirectUri.absoluteString.hasPrefix(CertApi.certReturnUrl())
@@ -245,7 +245,7 @@ extension CertApi {
         return false
     }
     
-    /// 세션 정보 가져오기 \
+    /// 세션 정보 조회 \
     /// Retrieve session infomation
     /// ## SeeAlso
     /// - ``sessionInfo(certType:txId:completion:)``
@@ -288,7 +288,7 @@ extension CertApi {
         }
     }
     
-    /// 사용자 서명 요청하기 \
+    /// 사용자 서명 요청 \
     /// Request user signature
     public func signWithKakaoTalk(certType:CertType,
                                   txId:String,

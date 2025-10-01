@@ -23,7 +23,7 @@ final public class AuthApi {
     /// A singleton object for Kakao SDK
     public static let shared = AuthApi()
     
-    /// 카카오톡으로부터 리다이렉트된 URL인지 확인 \
+    /// 카카오톡으로부터 리다이렉트된 URL 여부 조회 \
     /// Checks whether the URL is redirected from Kakao Talk
     public static func isKakaoTalkLoginUrl(_ url:URL) -> Bool {
         if url.absoluteString.hasPrefix(KakaoSDK.shared.redirectUri()) {
@@ -32,7 +32,7 @@ final public class AuthApi {
         return false
     }
         
-    /// 토큰 존재 여부 확인하기 \
+    /// 토큰 존재 여부 조회 \
     /// Check token presence
     public static func hasToken() -> Bool {
         return Auth.shared.tokenManager.getToken() != nil
@@ -50,7 +50,7 @@ final public class AuthApi {
 #if swift(>=5.8)
     @_documentation(visibility: private)
 #endif
-    /// 추가 항목 동의 받기 요청시 인증값으로 사용되는 임시토큰 발급 요청입니다. SDK 내부 전용입니다.
+    /// 서비스 약관 선택해 동의 요청 시 인증값으로 사용되는 임시토큰 발급 요청입니다. SDK 내부 전용입니다.
     public func agt(completion:@escaping (String?, Error?) -> Void) {
         API.responseData(.post,
                                 Urls.compose(.Kauth, path:Paths.authAgt),

@@ -300,7 +300,7 @@ public enum ApiFailureReason : Int, Codable {
     
     /// 카카오계정이 제재되었거나, 카카오계정에 제한된 동작을 요청한 경우 \
     /// Requested by a blocked Kakao Account, or requested restricted actions to the Kakao Account
-    case Blocked = -4
+    case BlockedAccount = -4
     
     /// 앱에 사용 권한이 없는 API를 호출한 경우 \
     /// Requested an API using an app that does not have permission
@@ -314,11 +314,15 @@ public enum ApiFailureReason : Int, Codable {
     /// Exceeded the quota
     case ApiLimitExceed = -10
     
+    /// 카카오디벨로퍼스 앱 또는 개발자 계정이 제재된 경우 \
+    /// Kakao Developers app or developer account has been suspended
+    case BlockedApp = -12
+    
     /// 앱과 연결되지 않은 사용자가 요청한 경우 \
     /// Requested by a user who is not linked to the app
     case NotSignedUpUser = -101
     
-    /// 이미 앱과 연결되어 있는 사용자에 대해 연결하기 요청한 경우 \
+    /// 이미 앱과 연결되어 있는 사용자에 대해 요청한 경우 \
     /// Requested manual sign-up to a linked user
     case AlreadySignedUpUsercase = -102
     
@@ -468,6 +472,22 @@ public enum AuthFailureReason : String, Codable {
     /// 사용자가 동의 화면에서 카카오 로그인을 취소한 경우 \
     /// The user canceled Kakao Login at the consent screen
     case AccessDenied = "access_denied"
+    
+    /// 카카오디벨로퍼스 앱 또는 개발자 계정이 제재된 경우 \
+    /// Kakao Developers app or developer account has been suspended
+    case UnauthorizedClient = "unauthorized_client"
+    
+    /// SSO(Single Sign-On) 로그인을 요청했으나, 카카오톡에 연결된 카카오계정이 없는 경우 \
+    /// SSO (Single Sign-On) login is requested but there is no Kakao Account linked to Kakao Talk
+    case LoginRequired = "login_required"
+    
+    /// SSO(Single Sign-On) 로그인을 요청했으나, 사용자가 카카오톡에 로그인한 적이 없거나 동의해야할 동의항목이 존재하는 경우 \
+    /// SSO (Single Sign-On) login is requested but the user has never logged in to Kakao Talk or there are consent items that require consent
+    case ConsentRequired = "consent_required"
+    
+    /// SSO(Single Sign-On) 로그인을 요청했으나, 사용자 정보 추가 제공 등 기타 사용자 동작이 필요한 경우 \
+    /// SSO (Single Sign-On) login is requested but additional user actions such as providing more user information are required
+    case InteractionRequired = "interaction_required"
     
     /// 서버 에러 \
     /// Server error
