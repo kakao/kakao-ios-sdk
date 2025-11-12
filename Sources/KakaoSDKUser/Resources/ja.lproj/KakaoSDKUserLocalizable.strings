@@ -1,0 +1,11 @@
+/* 
+  ko.strings
+  KakaoOpenSDK
+
+  Created by kakao on 10/24/25.
+  Copyright © 2025 apiteam. All rights reserved.
+*/
+
+"bridge_title" = "ログイン方法を選択してください。";
+"talk_login" = "カカオトークでログイン";
+"account_login" = "カカオアカウントを直接入力";

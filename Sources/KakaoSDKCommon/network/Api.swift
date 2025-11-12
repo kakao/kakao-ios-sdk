@@ -177,33 +177,9 @@ extension Api {
         let isShowLog = (sessionType != .AuthApiNoLog && sessionType != .AuthNoLog)
         API.session(sessionType)
             .request(url, method:Api.httpMethod(kHTTPMethod), parameters:parameters, encoding:API.encoding, headers:(headers != nil ? HTTPHeaders(headers!):nil) )
-            .validate({ (request, response, data) -> Request.ValidationResult in
-                if let data = data {
-                    
-                    var json : Any? = nil
-                    do {
-                        json = try JSONSerialization.jsonObject(with:data, options:[])
-                    } catch {
-                        SdkLog.e(error)
-                    }
-                    
-                    if isShowLog {
-                        SdkLog.d("===================================================================================================")
-                        SdkLog.d("session: \n type: \(sessionType)\n\n")
-                        SdkLog.i("request: \n method: \(Api.httpMethod(kHTTPMethod))\n url:\(url)\n headers:\(String(describing: headers))\n parameters: \(String(describing: parameters)) \n\n")
-                        (logging) ? SdkLog.i("response:\n \(String(describing: json))\n\n" ) : SdkLog.i("response: - \n\n")
-                    }
-                    
-                    if let sdkError = SdkError(response: response, data: data, type: apiType) {
-                        return .failure(sdkError)
-                    }
-                    else {
-                        return .success(Void())
-                    }
-                }
-                else {
-                    return .failure(SdkError(reason: .Unknown, message: "data is nil."))
-                }
+            .validate({ [unowned self] (request, response, data) -> Request.ValidationResult in
+                logRequest(url, sessionType: sessionType, method: kHTTPMethod, headers: headers, parameters: parameters, isShowLog: isShowLog)
+                return handleValidation(response: response, data: data, isShowLog: isShowLog, isShowResponse: logging, apiType: apiType, completion: completion)
             })
             .responseData { [unowned self] response in
                 if let afError = response.error, let retryError = self.getRequestRetryFailedError(error:afError) {
@@ -314,5 +290,99 @@ extension Api {
                     return
                 }
             }
+    }
+    
+    public func responseLocation(_ kHTTPMethod: KHTTPMethod,
+                                 _ url: String,
+                                 parameters: [String: Any]? = nil,
+                                 headers: [String: String]? = nil,
+                                 sessionType: SessionType = .Auth,
+                                 apiType: ApiType,
+                                 logging: Bool = true,
+                                 completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+        let redirector = Redirector(behavior: .doNotFollow)
+        API.session(sessionType)
+            .request(url, method:Api.httpMethod(kHTTPMethod), parameters:parameters, encoding:API.encoding, headers:(headers != nil ? HTTPHeaders(headers!):nil) )
+            .redirect(using: redirector)
+            .validate({ [unowned self] (request, response, data) -> Request.ValidationResult in
+                logRequest(url, sessionType: sessionType, method: kHTTPMethod, headers: headers, parameters: parameters)
+                return handleValidation(response: response, data: data, isShowLog: true, isShowResponse: logging, apiType: apiType, completion: completion)
+            })
+            .responseData { [unowned self] response in
+                if let response = response.response, (300..<400).contains(response.statusCode),
+                   let location = response.headers["Location"] {
+                    let locationResult = location.split(separator: "?")
+                    if locationResult.count < 2 {
+                        completion(nil, nil, SdkError(reason: .Unknown, message: "location is not valid"))
+                        return
+                    }
+                    
+                    let result = makeResultDictionary(from: String(locationResult[1]))
+                    if let error = result["error"], let errorDescription = result["error_description"] {
+                        completion(nil, nil, SdkError(parameters: result))
+                        return
+                    }
+                    
+                    if let jsonStr = result.toJsonString(), let data = jsonStr.data(using: .utf8) {
+                        completion(nil, data, nil)
+                        return
+                    }
+                }
+                
+                completion(nil, nil, SdkError(reason: .Unknown, message: "response is not valid"))
+            }
+    }
+    
+    func handleValidation(response: HTTPURLResponse,
+                          data: Data?,
+                          isShowLog: Bool,
+                          isShowResponse: Bool,
+                          apiType: ApiType,
+                          completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) -> DataRequest.ValidationResult {
+        if let data {
+            var json : Any? = nil
+            do {
+                json = try JSONSerialization.jsonObject(with:data, options:[])
+            } catch {
+                SdkLog.e(error)
+            }
+            
+            isShowLog ? SdkLog.i("response:\n \(String(describing: json))\n\n" ) : SdkLog.i("response:\n -")
+            
+            if let sdkError = SdkError(response: response, data: data, type: apiType) {
+                return .failure(sdkError)
+            }
+            else {
+                return .success(Void())
+            }
+        }
+        else {
+            return .failure(SdkError(reason: .Unknown, message: "data is nil."))
+        }
+    }
+    
+    func logRequest(_ url: String,
+                    sessionType: SessionType,
+                    method: KHTTPMethod,
+                    headers: [String:String]?,
+                    parameters: [String:Any]?,
+                    isShowLog: Bool = true) {
+        if !isShowLog { return }
+        SdkLog.d("===================================================================================================")
+        SdkLog.d("session: \n type: \(sessionType)\n\n")
+        SdkLog.i("request: \n method: \(Api.httpMethod(method))\n url:\(url)\n headers:\(String(describing: headers))\n parameters: \(String(describing: parameters)) \n\n")
+    }
+    
+    func makeResultDictionary(from query: String) -> Dictionary<String, String> {
+        var result: [String: String] = [:]
+        let queryParameters = query.split(separator: "&")
+        for parameter in queryParameters {
+            let keyValue = parameter.split(separator: "=")
+            if keyValue.count == 2 {
+                result[String(keyValue[0])] = String(keyValue[1])
+            }
+        }
+        
+        return result
     }
 }

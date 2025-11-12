@@ -37,6 +37,8 @@ final public class UserApi {
 #endif
     public var authenticateSession: ASWebAuthenticationSession?
     
+    public var _storeHelper: Any?
+    
     init() {
         self.presentationContextProvider = DefaultASWebAuthenticationPresentationContextProvider()
     }
@@ -134,6 +136,23 @@ extension UserApi {
                                                                   serviceTerms: serviceTerms,
                                                                   nonce: nonce,
                                                                   completion: completion)
+    }
+    
+    /// 카카오 로그인 방법 선택 \
+    /// Select Kakao Login method
+    public func loginWithKakao(_ properties: BridgeConfiguration = BridgeConfiguration(),
+                                loginProperties: LoginConfiguration = LoginConfiguration(),
+                                completion: @escaping (OAuthToken?, Error?) -> Void) {
+        
+        DispatchQueue.main.async {
+            let bridgeController = BridgeViewController(properties)
+            bridgeController.modalTransitionStyle = .crossDissolve
+            bridgeController.modalPresentationStyle = .overFullScreen
+            bridgeController.setLoginCompletion(completion)
+            bridgeController.setLoginConfiguration(loginProperties)
+            
+            UIApplication.getMostTopViewController()?.present(bridgeController, animated: true)
+        }
     }
 }
  

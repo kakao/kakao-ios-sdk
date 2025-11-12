@@ -1,0 +1,12 @@
+/* 
+  ko.strings
+  KakaoOpenSDK
+
+  Created by kakao on 10/24/25.
+  Copyright © 2025 apiteam. All rights reserved.
+*/
+
+"bridge_title" = "Select a method to log in";
+"talk_login" = "Log in with Kakao Talk";
+"account_login" = "Enter your Kakao Account";
+

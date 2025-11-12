@@ -1,7 +1,7 @@
 // swift-tools-version:5.3
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.25.0
+// sdk-version:2.26.0
 import PackageDescription
 
 let package = Package(
@@ -77,7 +77,13 @@ let package = Package(
             dependencies: [
                 .target(name: "KakaoSDKAuth")
             ],
-            exclude: ["Info.plist", "README.md"]
+            exclude: ["Info.plist", "README.md"],
+            resources: [
+                .process("Resources")
+            ],
+            linkerSettings: [
+                .linkedFramework("UIKit", .when(platforms: [.iOS])),
+            ]
         ),
         .target(
             name: "KakaoSDKCert",
