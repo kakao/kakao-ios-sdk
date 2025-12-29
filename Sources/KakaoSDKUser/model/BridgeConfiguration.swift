@@ -92,7 +92,7 @@ public struct LoginConfiguration {
     public struct Talk {
         let launchMethod: LaunchMethod?
         
-        init(launchMethod: LaunchMethod? = .UniversalLink) {
+        public init(launchMethod: LaunchMethod? = .UniversalLink) {
             self.launchMethod = launchMethod
         }
     }
@@ -103,7 +103,7 @@ public struct LoginConfiguration {
         let prompts : [Prompt]?
         let loginHint: String?
         
-        init(prompts: [Prompt]? = nil, loginHint: String? = nil) {
+        public init(prompts: [Prompt]? = nil, loginHint: String? = nil) {
             self.prompts = prompts
             self.loginHint = loginHint
         }

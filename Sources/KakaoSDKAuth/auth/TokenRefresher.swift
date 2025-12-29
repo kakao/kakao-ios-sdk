@@ -66,9 +66,12 @@ extension TokenRefresher {
     
     ///:nodoc:
     func cat(completion:@escaping (Error?) -> Void) {
-        AUTH_API.responseDataWithNoLog(.get,
-              Urls.compose(path:Paths.checkAccessToken),
-              apiType: .KApi) { (response, data, error) in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if TokenManager.manager.getToken() == nil { return }
+            
+            AUTH_API.responseDataWithNoLog(.get,
+                                           Urls.compose(path:Paths.checkAccessToken),
+                                           apiType: .KApi) { (response, data, error) in
                 if let error = error {
                     //SdkLog.v(error)
                     completion(error)
@@ -80,6 +83,7 @@ extension TokenRefresher {
                     completion(nil)
                     return
                 }
+            }
         }
     }
 }

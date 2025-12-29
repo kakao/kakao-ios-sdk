@@ -371,7 +371,7 @@ public class PickerTabRequestParams {
   final public let displayAllProfile: Swift.Bool?
   public var maxPickableCount: Swift.Int?
   public var minPickableCount: Swift.Int?
-  final public let friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams
+  public var friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams
   final public let chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams
   public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance? = nil, orientation: KakaoSDKFriendCore.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil, friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams, chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams)
   public class FriendRequestParams {
