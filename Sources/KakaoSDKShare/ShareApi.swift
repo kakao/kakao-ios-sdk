@@ -186,7 +186,9 @@ extension ShareApi {
                                   "template_json" : validationResult.templateMsg.toJsonString(),
                                   "template_id" : validationResult.templateId,
                                   "template_args" : validationResult.templateArgs?.toJsonString(),
-                                  "extras" : extraParameters?.toJsonString()
+                                  "extras" : extraParameters?.toJsonString(),
+                                  "limit" : validationResult.schemeParams?["limit"],
+                                  "list" : validationResult.schemeParams?["list"]
                 ].filterNil()
             
             if let url = SdkUtils.makeUrlWithParameters(Urls.compose(.TalkLink, path:Paths.talkLink), parameters: linkParameters) {
@@ -216,13 +218,21 @@ extension ShareApi {
     ///                               String converted in JSON format from a default template
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                          Keys and values for the Kakao Talk Sharing success callback
+    ///   - shareType: 카카오톡 공유 대상 선택 화면 유형 \
+    ///                Type of share target selection screen in Kakao Talk.
+    ///   - limit: 공유할 대상의 최대 선택 개수 \
+    ///            Maximum number of share targets that can be selected.
+
     public func shareDefault(templateObjectJsonString:String?,
-                     serverCallbackArgs:[String:String]? = nil,
-                     completion:@escaping (SharingResult?, Error?) -> Void ) {
+                             shareType: ShareType? = nil,
+                             limit: Int? = nil,
+                             serverCallbackArgs:[String:String]? = nil,
+                             completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
                                 Urls.compose(path:Paths.shareDefalutValidate),
                                 parameters: ["link_ver":"4.0",
-                                             "template_object":templateObjectJsonString].filterNil(),
+                                             "template_object":templateObjectJsonString,
+                                             "scheme_params": ShareApi._createSchemeParams(list: shareType, limit: limit) ].filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi) { [unowned self] (response, data, error) in
@@ -255,12 +265,19 @@ extension ShareApi {
     ///                  Object to convert to a default template
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                         Keys and values for the Kakao Talk Sharing success callback
+    ///   - shareType: 카카오톡 공유 대상 선택 화면 유형 \
+    ///                Type of share target selection screen in Kakao Talk.
+    ///   - limit: 공유할 대상의 최대 선택 개수 \
+    ///            Maximum number of share targets that can be selected.
     /// ## SeeAlso
     /// - [Template](javascript:window.location.href=window.location.pathname.split\('KakaoSDKShare'\)[0].concat\('KakaoSDKTemplate/documentation/kakaosdktemplate/templatable'\))
     /// - ``SharingResult``
-    public func shareDefault(templatable: Templatable, serverCallbackArgs:[String:String]? = nil,
-                            completion:@escaping (SharingResult?, Error?) -> Void) {
-        self.shareDefault(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
+    public func shareDefault(templatable: Templatable,
+                             shareType: ShareType? = nil,
+                             limit: Int? = nil,
+                             serverCallbackArgs:[String:String]? = nil,
+                             completion:@escaping (SharingResult?, Error?) -> Void) {
+        self.shareDefault(templateObjectJsonString: templatable.toJsonObject()?.toJsonString(), shareType: shareType, limit: limit, serverCallbackArgs:serverCallbackArgs, completion: completion)
     }
     
     /// 기본 템플릿으로 메시지 발송 \
@@ -270,11 +287,18 @@ extension ShareApi {
     ///                     Default template object
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                         Keys and values for the Kakao Talk Sharing success callback
+    ///   - shareType: 카카오톡 공유 대상 선택 화면 유형 \
+    ///                Type of share target selection screen in Kakao Talk.
+    ///   - limit: 공유할 대상의 최대 선택 개수 \
+    ///            Maximum number of share targets that can be selected.
     /// ## SeeAlso
     /// - ``SharingResult``
-    public func shareDefault(templateObject:[String:Any], serverCallbackArgs:[String:String]? = nil,
-                            completion:@escaping (SharingResult?, Error?) -> Void ) {
-        self.shareDefault(templateObjectJsonString: templateObject.toJsonString(), serverCallbackArgs:serverCallbackArgs, completion: completion)
+    public func shareDefault(templateObject:[String:Any],
+                             shareType: ShareType? = nil,
+                             limit: Int? = nil,
+                             serverCallbackArgs:[String:String]? = nil,
+                             completion:@escaping (SharingResult?, Error?) -> Void ) {
+        self.shareDefault(templateObjectJsonString: templateObject.toJsonString(), shareType: shareType, limit: limit, serverCallbackArgs:serverCallbackArgs,completion: completion)
     }
     
     /// 스크랩 메시지 발송 \
@@ -288,17 +312,27 @@ extension ShareApi {
     ///                    Keys and values of the user argument
     ///    - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                          Keys and values for the Kakao Talk Sharing success callback
+    ///    - shareType: 카카오톡 공유 대상 선택 화면 유형 \
+    ///                 Type of share target selection screen in Kakao Talk.
+    ///    - limit: 공유할 대상의 최대 선택 개수 \
+    ///             Maximum number of share targets that can be selected.
     /// ## SeeAlso
     /// - ``SharingResult``
-    public func shareScrap(requestUrl:String, templateId:Int64? = nil, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
+    public func shareScrap(requestUrl:String,
+                           templateId:Int64? = nil,
+                           templateArgs:[String:String]? = nil,
+                           shareType: ShareType? = nil,
+                           limit: Int? = nil,
+                           serverCallbackArgs:[String:String]? = nil,
                           completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
                                 Urls.compose(path:Paths.shareScrapValidate),
                                 parameters: ["link_ver":"4.0",
                                              "request_url":requestUrl,
                                              "template_id":templateId,
-                                             "template_args":templateArgs?.toJsonString()]
-                                    .filterNil(),
+                                             "template_args":templateArgs?.toJsonString(),
+                                             "scheme_params": ShareApi._createSchemeParams(list: shareType, limit: limit)
+                                            ].filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi) { [unowned self] (response, data, error) in
@@ -332,16 +366,24 @@ extension ShareApi {
     ///                   Keys and values of the user argument
     ///   - serverCallbackArgs: 카카오톡 공유 전송 성공 알림에 포함할 키와 값 \
     ///                         Keys and values for the Kakao Talk Sharing success callback
+    ///   - shareType: 카카오톡 공유 대상 선택 화면 유형 \
+    ///                Type of share target selection screen in Kakao Talk.
+    ///   - limit: 공유할 대상의 최대 선택 개수 \
+    ///            Maximum number of share targets that can be selected.
     /// ## SeeAlso
     /// - ``SharingResult``
-    public func shareCustom(templateId:Int64, templateArgs:[String:String]? = nil, serverCallbackArgs:[String:String]? = nil,
-                           completion:@escaping (SharingResult?, Error?) -> Void ) {
+    public func shareCustom(templateId:Int64,
+                            shareType: ShareType? = nil,
+                            limit: Int? = nil,
+                            templateArgs:[String:String]? = nil,
+                            serverCallbackArgs:[String:String]? = nil,
+                            completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,
                                 Urls.compose(path:Paths.shareCustomValidate),
                                 parameters: ["link_ver":"4.0",
                                              "template_id":templateId,
-                                             "template_args":templateArgs?.toJsonString()]
-                                    .filterNil(),
+                                             "template_args":templateArgs?.toJsonString(),
+                                             "scheme_params": ShareApi._createSchemeParams(list: shareType, limit: limit) ].filterNil(),
                                 headers: ["Authorization":"KakaoAK \(try! KakaoSDK.shared.appKey())"],
                                 sessionType: .Api,
                                 apiType: .KApi ) { [unowned self] (response, data, error) in
@@ -423,5 +465,18 @@ extension ShareApi {
                                         }
                                     }
         }
+    }
+    
+    public static func _createSchemeParams(list: ShareType?, limit: Int?) -> String? {
+        var schemeParams = [String: Any]()
+        if let list {
+            schemeParams["list"] = list.rawValue
+        }
+        
+        if let limit {
+            schemeParams["limit"] = limit
+        }
+        
+        return schemeParams.toJsonString()
     }
 }
