@@ -20,12 +20,15 @@ import CommonCrypto
 #if swift(>=5.8)
 @_documentation(visibility: private)
 #endif
-public class SdkCrypto {
+public final class SdkCrypto {
     public static let shared = SdkCrypto()
     
     let iteration : Int
     var seed : Data = Data()
     var iv : Data?
+    
+    private let lock = NSLock()
+    private var _cachedKey: Data?
     
     init() {
         self.iteration = 10000
@@ -44,6 +47,8 @@ public class SdkCrypto {
     }
     
     func key() -> Data? {
+        if _cachedKey != nil { return _cachedKey }
+        
         if let seed = createSeed() {
             self.seed = seed
             //SdkLog.d("seed: \(self.seed)")
@@ -67,20 +72,12 @@ public class SdkCrypto {
         let salt =  seed.subdata(in: 16..<seed.count)
         //SdkLog.d("salt: \(salt.hexEncodedString())")
         
-        return pbkdf2(algorithm: CCPBKDFAlgorithm(kCCPRFHmacAlgSHA256), password: password, salt: salt, keyByteCount: size_t(kCCKeySizeAES256), rounds: self.iteration)
+        _cachedKey = pbkdf2(algorithm: CCPBKDFAlgorithm(kCCPRFHmacAlgSHA256), password: password, salt: salt, keyByteCount: size_t(kCCKeySizeAES256), rounds: self.iteration)
+        return _cachedKey
     }
     
-//for test
-//    public func encrypt(string: String) -> Data? {
-//        return self.encrypt(data: string.data(using: .utf8))
-//    }
-    
-//    public func decrypt(data: Data?) -> String? {
-//        guard let decryptedData = self.decrypt(data: data) else { return nil }
-//        return String(bytes: decryptedData, encoding: .utf8)
-//    }
-    
     public func encrypt(data: Data?) -> Data? {
+        lock.lock(); defer { lock.unlock() }
         return crypt(data: data,
                      key:self.key(),
                      keyLength: size_t(kCCKeySizeAES256),
@@ -90,6 +87,7 @@ public class SdkCrypto {
     }
     
     public func decrypt(data: Data?) -> Data? {
+        lock.lock(); defer { lock.unlock() }
         return crypt(data: data,
                      key:self.key(),
                      keyLength: size_t(kCCKeySizeAES256),
@@ -143,33 +141,25 @@ public class SdkCrypto {
     
     func crypt(data:Data?, key: Data?, keyLength: Int, iv: Data?, operation: CCOperation, option: CCOptions) -> Data? {
 
-        guard let data = data else { return nil }
+        guard var data = data else { return nil }
         //SdkLog.d("data: \(data.hexEncodedString())")
         
         guard let key = key else { return nil }
         //SdkLog.d("key: \(key.hexEncodedString())")
             
         var resultLength :size_t = 0
-
-        let keyBytes = self.dataToBytes(data: key)
-        let dataBytes = self.dataToBytes(data: data)
-        let ivBytes = ( iv != nil ) ? self.dataToBytes(data:iv!) : nil
-            
         let cryptLength = size_t(data.count + kCCBlockSizeAES128)
         var cryptData = Data(count:cryptLength)
         
-        let cryptBytes = cryptData.withUnsafeMutableBytes { (tempBytes) -> UnsafeMutableRawPointer? in
-            return UnsafeMutableRawPointer(tempBytes.bindMemory(to: UInt8.self).baseAddress)
-        }
-        
-        let cryptStatus = CCCrypt(operation,
-                            CCAlgorithm(kCCAlgorithmAES),
-                            option,
-                            keyBytes, keyLength,
-                            ivBytes,
-                            dataBytes, data.count, //data in
-                            cryptBytes, cryptLength, //data out
-                            &resultLength) //data move
+        let cryptStatus = performCCCrypt(key: key,
+                                             keyLength: keyLength,
+                                             data: data,
+                                             iv: iv,
+                                             operation: operation,
+                                             option: option,
+                                             cryptLength: cryptLength,
+                                             cryptData: &cryptData,
+                                             resultLength: &resultLength)
         
         if (Int32(cryptStatus) != Int32(kCCSuccess)) {
             SdkLog.e("== operation : \(operation) -- crypt failed : \(cryptStatus)")
@@ -244,9 +234,48 @@ extension SdkCrypto {
 extension SdkCrypto {
     // MARK: - Helper ---------------------------------------------------------------------------------
     
-    func dataToBytes(data:Data) -> UnsafeRawPointer? {
-        data.withUnsafeBytes { (dataBytes) -> UnsafeRawPointer? in
-            return UnsafeRawPointer(dataBytes.bindMemory(to: UInt8.self).baseAddress)
+    func performCCCrypt(key: Data,
+                        keyLength: Int,
+                        data: Data,
+                        iv: Data?,
+                        operation: CCOperation,
+                        option: CCOptions,
+                        cryptLength: Int,
+                        cryptData: inout Data,
+                        resultLength: inout size_t) -> CCCryptorStatus {
+        return key.withUnsafeBytes { keyTempBytes in
+            let keyBytes = UnsafeRawPointer(keyTempBytes.bindMemory(to: UInt8.self).baseAddress)
+            return data.withUnsafeBytes { dataTempBytes in
+                let dataBytes = UnsafeRawPointer(dataTempBytes.bindMemory(to: UInt8.self).baseAddress)
+                
+                return cryptData.withUnsafeMutableBytes { (tempBytes) in
+                    let cryptBytes = UnsafeMutableRawPointer(tempBytes.bindMemory(to: UInt8.self).baseAddress)
+                    
+                    if let iv = iv {
+                        return iv.withUnsafeBytes { ivTempBytes in
+                            let ivBytes = UnsafeRawPointer(ivTempBytes.bindMemory(to: UInt8.self).baseAddress)
+                            
+                            return CCCrypt(operation,
+                                           CCAlgorithm(kCCAlgorithmAES),
+                                           option,
+                                           keyBytes, keyLength,
+                                           ivBytes,
+                                           dataBytes, data.count, //data in
+                                           cryptBytes, cryptLength, //data out
+                                           &resultLength) //data move
+                        }
+                    }
+                    
+                    return CCCrypt(operation,
+                                   CCAlgorithm(kCCAlgorithmAES),
+                                   option,
+                                   keyBytes, keyLength,
+                                   nil,
+                                   dataBytes, data.count, //data in
+                                   cryptBytes, cryptLength, //data out
+                                   &resultLength) //data move
+                }
+            }
         }
     }
     

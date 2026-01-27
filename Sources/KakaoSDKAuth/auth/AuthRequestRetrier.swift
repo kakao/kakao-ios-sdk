@@ -59,6 +59,7 @@ public class AuthRequestRetrier : RequestInterceptor {
                     if !isRefreshing {
                         isRefreshing = true
                         let refreshCompletions: (OAuthToken?, Error?) -> Void = { [unowned self] (token, error) in
+                            errorLock.lock(); defer { errorLock.unlock() }
                             if let error = error {
                                 //token refresh failure.
                                 if isShowLog { SdkLog.e(" refreshToken error: \(error). retry aborted.\n request: \(request) \n\n") }

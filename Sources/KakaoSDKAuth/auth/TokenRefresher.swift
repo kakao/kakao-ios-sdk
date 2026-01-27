@@ -66,23 +66,21 @@ extension TokenRefresher {
     
     ///:nodoc:
     func cat(completion:@escaping (Error?) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if TokenManager.manager.getToken() == nil { return }
-            
-            AUTH_API.responseDataWithNoLog(.get,
-                                           Urls.compose(path:Paths.checkAccessToken),
-                                           apiType: .KApi) { (response, data, error) in
-                if let error = error {
-                    //SdkLog.v(error)
-                    completion(error)
-                    return
-                }
-                
-                if let _ = data {
-                    //SdkLog.v("[TokenRefresher] success to call CAT")
-                    completion(nil)
-                    return
-                }
+        if TokenManager.manager.getToken() == nil { return }
+
+        AUTH_API.responseDataWithNoLog(.get,
+                                       Urls.compose(path:Paths.checkAccessToken),
+                                       apiType: .KApi) { (response, data, error) in
+            if let error = error {
+                //SdkLog.v(error)
+                completion(error)
+                return
+            }
+
+            if let _ = data {
+                //SdkLog.v("[TokenRefresher] success to call CAT")
+                completion(nil)
+                return
             }
         }
     }
