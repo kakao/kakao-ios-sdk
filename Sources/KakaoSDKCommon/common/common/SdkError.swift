@@ -80,9 +80,15 @@ extension SdkError {
             }
         case .KAuth:
             if let authErrorInfo = try? SdkJSONDecoder.custom.decode(AuthErrorInfo.self, from: data) {
-                self =  .AuthFailed(reason: authErrorInfo.error, errorInfo:authErrorInfo)
+                self = .AuthFailed(reason: authErrorInfo.error, errorInfo:authErrorInfo)
             }
             else {
+                return nil
+            }
+        case .Apps:
+            if let appsErrorInfo = try? SdkJSONDecoder.custom.decode(AppsErrorInfo.self, from: data) {
+                self = .AppsFailed(reason: appsErrorInfo.errorCode, errorInfo: appsErrorInfo)
+            } else {
                 return nil
             }
         @unknown default:

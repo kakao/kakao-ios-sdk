@@ -46,7 +46,7 @@ public final class SdkCrypto {
         return seed
     }
     
-    func key() -> Data? {
+    private func key() -> Data? {
         if _cachedKey != nil { return _cachedKey }
         
         if let seed = createSeed() {
@@ -78,22 +78,27 @@ public final class SdkCrypto {
     
     public func encrypt(data: Data?) -> Data? {
         lock.lock(); defer { lock.unlock() }
-        return crypt(data: data,
-                     key:self.key(),
-                     keyLength: size_t(kCCKeySizeAES256),
-                     iv:self.iv,
-                     operation: CCOperation(kCCEncrypt),
-                     option: CCOptions(kCCOptionPKCS7Padding))
+
+        return encryptTagged(data: data, algorithm: .aesGcm, key: self.key())
     }
     
     public func decrypt(data: Data?) -> Data? {
         lock.lock(); defer { lock.unlock() }
-        return crypt(data: data,
-                     key:self.key(),
-                     keyLength: size_t(kCCKeySizeAES256),
-                     iv:self.iv,
-                     operation: CCOperation(kCCDecrypt),
-                     option: CCOptions(kCCOptionPKCS7Padding))
+        let storageFormat = parseStorageFormat(data)
+
+        switch storageFormat {
+        case .legacy(let payload):
+            return crypt(data: data,
+                         key:self.key(),
+                         keyLength: size_t(kCCKeySizeAES256),
+                         iv:self.iv,
+                         operation: CCOperation(kCCDecrypt),
+                         option: CCOptions(kCCOptionPKCS7Padding))
+        case .tag(let algorithm, let payload):
+            return decryptTagged(algorithm: algorithm, key: key(), payload: payload)
+        case .invalid:
+            return nil
+        }
     }
     
     public func encryptForMigration(data: Data?) -> Data? {

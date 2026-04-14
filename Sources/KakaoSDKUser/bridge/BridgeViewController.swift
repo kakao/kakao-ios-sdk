@@ -102,7 +102,7 @@ final class BridgeViewController: UIViewController {
             guard let self = self  else { return }
             AuthController.shared._authorizeWithTalk(launchMethod: loginProperties?.talk.launchMethod,
                                                      channelPublicIds: loginProperties?.channelPublicIds,
-                                                     serviceTerms: loginProperties?.channelPublicIds,
+                                                     serviceTerms: loginProperties?.serviceTerms,
                                                      nonce: loginProperties?.nonce,
                                                      completion: loginCompletion)
             self.dismiss(animated: true)

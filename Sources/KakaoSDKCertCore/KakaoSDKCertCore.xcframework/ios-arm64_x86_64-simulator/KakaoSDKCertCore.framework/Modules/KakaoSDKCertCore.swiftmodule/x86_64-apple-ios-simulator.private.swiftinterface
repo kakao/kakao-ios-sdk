@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name KakaoSDKCertCore
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KakaoSDKCertCore
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import CommonCrypto
 import CryptoKit
 import Foundation
@@ -22,7 +22,9 @@ import _SwiftConcurrencyShims
   case K2100
   case K2220
   case K3220
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias AllCases = [KakaoSDKCertCore.CCCertType]
   public typealias RawValue = Swift.String
   nonisolated public static var allCases: [KakaoSDKCertCore.CCCertType] {
@@ -48,18 +50,28 @@ public struct SignStatusInfo : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 @_documentation(visibility: private) extension KakaoSDKCertCore.CertCore {
+  #if compiler(>=5.3) && $NonescapableTypes
   public func __publicKey(_ certType: KakaoSDKCertCore.CCCertType) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func __reducedSign(data: Swift.String, certType: KakaoSDKCertCore.CCCertType, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  #endif
   public func __isValidSession(_ certType: KakaoSDKCertCore.CCCertType) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public func __sessionInfo(_ certType: KakaoSDKCertCore.CCCertType) -> KakaoSDKCertCore.SessionInfo?
+  #endif
   public func __deleteKeyPair(_ certType: KakaoSDKCertCore.CCCertType)
 }
 @_documentation(visibility: private) public enum CCSdkError : Swift.Error {
   case ClientFailed(reason: KakaoSDKCertCore.CCClientFailureReason, errorMessage: Swift.String?)
 }
 @_documentation(visibility: private) extension KakaoSDKCertCore.CCSdkError {
+  #if compiler(>=5.3) && $NonescapableTypes
   public init(reason: KakaoSDKCertCore.CCClientFailureReason = .Unknown, message: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getClientError() -> (reason: KakaoSDKCertCore.CCClientFailureReason, message: Swift.String?)
+  #endif
 }
 @_documentation(visibility: private) public enum CCClientFailureReason {
   case Unknown
@@ -86,7 +98,9 @@ public struct SignStatusInfo : Swift.Codable {
   case i
   case w
   case e
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -98,7 +112,9 @@ public struct SignStatusInfo : Swift.Codable {
   case i
   case w
   case e
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get

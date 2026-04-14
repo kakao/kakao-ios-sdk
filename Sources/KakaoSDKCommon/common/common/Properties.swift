@@ -31,7 +31,13 @@ public class Properties {
     public static func loadCodable<T: Codable>(key: String) -> T? {
         if let data = UserDefaults.standard.data(forKey: key) {
             guard let plain = SdkCrypto.shared.decrypt(data: data) else { return nil }
-            return try? JSONDecoder().decode(T.self, from:plain)
+            let decodeResult = try? JSONDecoder().decode(T.self, from:plain)
+
+            if decodeResult != nil, case SdkCrypto.StorageFormat.legacy(payload: _) = SdkCrypto.shared.parseStorageFormat(data) {
+                saveCodable(key: key, data: decodeResult)
+            }
+            
+            return decodeResult
         }
         return nil
     }

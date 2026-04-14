@@ -20,12 +20,12 @@ import KakaoSDKCommon
 @_documentation(visibility: private)
 #endif
 @available(iOSApplicationExtension, unavailable)
-public class AuthRequestRetrier : RequestInterceptor {
+public final class AuthRequestRetrier : RequestInterceptor {
     private var requestsToRetry: [(RetryResult) -> Void] = []
     
     private var isRefreshing = false
     
-    private var errorLock = NSLock()
+    private let errorLock = NSLock()
     
     private var isShowLog: Bool
 

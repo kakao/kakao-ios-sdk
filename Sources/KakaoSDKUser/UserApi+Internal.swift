@@ -54,6 +54,7 @@ extension UserApi {
                                  continueUrl: String,
                                  addressId: Int64? = nil,
                                  completion: @escaping (Int64?, Error?) -> Void) {
+        lock.lock(); defer { lock.unlock() }
         let authenticationSessionCompletionHandler: (URL?, Error?) -> Void = { (callbackUrl, error) in
             guard let callbackUrl = callbackUrl else {
                 if let error = error as? ASWebAuthenticationSessionError {

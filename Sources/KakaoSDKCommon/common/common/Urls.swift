@@ -31,7 +31,6 @@ public class Hosts {
     public let talkLinkVersion : String
     public let sharerLink : String
     public let universalLink : String
-    public let cert : String
     public let plusFriend: String
     public let apps : String
     
@@ -46,7 +45,6 @@ public class Hosts {
                 talkLinkVersion: String = "kakaotalk-5.9.7",
                 sharerLink: String = "sharer.kakao.com",
                 universalLink: String = "talk-apps.kakao.com",
-                cert: String = "cert-sign-papi.kakao.com",
                 plusFriend: String = "kakaoplus",
                 apps: String = "apps.kakao.com")
     {
@@ -60,7 +58,6 @@ public class Hosts {
         self.talkLinkVersion = talkLinkVersion
         self.sharerLink = sharerLink
         self.universalLink = universalLink
-        self.cert = cert
         self.plusFriend = plusFriend
         self.apps = apps
         self.talkCert = talkCert
@@ -84,7 +81,6 @@ public enum HostType {
     case TalkLinkVersion
     case SharerLink
     case UniversalLink
-    case Cert
     case PlusFriend
     case Apps
     
@@ -116,8 +112,6 @@ public enum HostType {
             return "https://\(KakaoSDK.shared.hosts().sharerLink)"
         case .UniversalLink:
             return "https://\(KakaoSDK.shared.hosts().universalLink)"
-        case .Cert:
-            return "http://\(KakaoSDK.shared.hosts().cert)"
         case .PlusFriend:
             return "\(KakaoSDK.shared.hosts().plusFriend)://"
         case .Apps:
@@ -146,7 +140,7 @@ public class Paths {
     
     //user
     public static let signup = "/v1/user/signup"
-    public static var userMe = "/v2/user/me"
+    public static let userMe = "/v2/user/me"
     public static let userUpdateProfile = "/v1/user/update_profile"
     public static let userAccessTokenInfo = "/v1/user/access_token_info"
     public static let userLogout = "/v1/user/logout"

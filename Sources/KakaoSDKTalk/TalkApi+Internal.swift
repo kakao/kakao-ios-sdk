@@ -25,7 +25,7 @@ extension TalkApi {
     public func _followChannelWithAuthenticationSession(channelPublicId:String,
                                                              agtToken: String? = nil,
                                                              completion: @escaping (FollowChannelResult?, Error?) -> Void) {
-        
+        lock.lock(); defer { lock.unlock() }
         let authenticationSessionCompletionHandler : (URL?, Error?) -> Void = {(callbackUrl:URL?, error:Error?) in
             
             guard let callbackUrl = callbackUrl else {

@@ -33,12 +33,14 @@ public class TalkApi {
 #if swift(>=5.8)
     @_documentation(visibility: private)
 #endif
-    public var presentationContextProvider: Any?
+    public let presentationContextProvider: Any?
     
 #if swift(>=5.8)
     @_documentation(visibility: private)
 #endif
     public var authenticationSession : ASWebAuthenticationSession?
+    
+    let lock = NSLock()
     
     public init() {
         self.presentationContextProvider = DefaultASWebAuthenticationPresentationContextProvider()

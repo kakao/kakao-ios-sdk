@@ -17,7 +17,7 @@ import Foundation
 #if swift(>=5.8)
 @_documentation(visibility: private)
 #endif
-public class SdkJSONEncoder : JSONEncoder {
+public final class SdkJSONEncoder : JSONEncoder {
     public static var `default`: SdkJSONEncoder { return SdkJSONEncoder() }
     public static var `custom`: SdkJSONEncoder { return SdkJSONEncoder(useCustomStrategy:true) }
     public static var `customDate`: SdkJSONEncoder { return SdkJSONEncoder(useCustomStrategy:true, useDateFormatterStrategy:true) }
@@ -42,7 +42,7 @@ public class SdkJSONEncoder : JSONEncoder {
 #if swift(>=5.8)
 @_documentation(visibility: private)
 #endif
-public class SdkJSONDecoder : JSONDecoder {
+public final class SdkJSONDecoder : JSONDecoder {
     public static var `default`: SdkJSONDecoder { return SdkJSONDecoder() }
     public static var `custom`: SdkJSONDecoder { return SdkJSONDecoder(useCustomStrategy:true) }
     public static var `customIso8601Date`: SdkJSONDecoder { return SdkJSONDecoder(useCustomStrategy:true, dateStrategy: .iso8601) }

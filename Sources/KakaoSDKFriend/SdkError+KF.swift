@@ -57,6 +57,8 @@ extension ClientFailureReason {
             self = .ExceedKakaoLinkSizeLimit
         case .CastingFailed:
             self = .CastingFailed
+        case .IllegalState:
+            self = .IllegalState
         @unknown default:
             self = .Unknown
         }

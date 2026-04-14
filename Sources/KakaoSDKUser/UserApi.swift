@@ -31,13 +31,15 @@ final public class UserApi {
 #if swift(>=5.8)
     @_documentation(visibility: private)
 #endif
-    public var presentationContextProvider: Any?
+    public let presentationContextProvider: Any?
 #if swift(>=5.8)
     @_documentation(visibility: private)
 #endif
     public var authenticateSession: ASWebAuthenticationSession?
     
-    public var _storeHelper: Any?
+    public private(set) var _storeHelper: Any?
+    
+    let lock = NSLock()
     
     init() {
         self.presentationContextProvider = DefaultASWebAuthenticationPresentationContextProvider()
@@ -458,5 +460,10 @@ extension UserApi {
     public func selectShippingAddress(completion: @escaping (Int64?, Error?) -> Void) {
         self._requestShippingAddress(continuePath: Paths.shippingAddressList,
                                      completion: completion)
+    }
+    
+    public func _updateStoreHelper(_ storeHelper: Any?) {
+        lock.lock(); defer { lock.unlock() }
+        _storeHelper = storeHelper
     }
 }
