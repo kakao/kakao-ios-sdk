@@ -323,7 +323,11 @@ public enum ApiFailureReason : Int, Codable {
     /// 카카오디벨로퍼스 앱 또는 개발자 계정이 제재된 경우 \
     /// Kakao Developers app or developer account has been suspended
     case BlockedApp = -12
-    
+
+    /// 카카오디벨로퍼스 앱이 장기 미이용 상태인 경우 \
+    /// If a Kakao Developers app is suspended(in long-term inactive) status
+    case SuspendedApp = -13
+
     /// 앱과 연결되지 않은 사용자가 요청한 경우 \
     /// Requested by a user who is not linked to the app
     case NotSignedUpUser = -101

@@ -22,7 +22,11 @@ import Foundation
 public struct TalkProfile : Codable {
     
     // MARK: Fields
-    
+
+    /// 회원번호 \
+    /// Service user ID
+    public let id: Int64
+
     /// 프로필 닉네임 \
     /// Profile nickname
     public let nickname: String?
@@ -40,6 +44,7 @@ public struct TalkProfile : Codable {
     public let countryISO: String?  // nullability: http://papi.talk.kakao.com:8354/doc/protocol/common_type.md#User    
     
     enum CodingKeys : String, CodingKey {
+        case id = "id"
         case nickname = "nickName"
         case profileImageUrl = "profileImageURL"
         case thumbnailUrl = "thumbnailURL"
@@ -48,7 +53,8 @@ public struct TalkProfile : Codable {
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        
+
+        id = try values.decode(Int64.self, forKey: .id)
         nickname = try? values.decode(String.self, forKey: .nickname)
         profileImageUrl = URL(string:(try? values.decode(String.self, forKey: .profileImageUrl)) ?? "")
         thumbnailUrl = URL(string:(try? values.decode(String.self, forKey: .thumbnailUrl)) ?? "")

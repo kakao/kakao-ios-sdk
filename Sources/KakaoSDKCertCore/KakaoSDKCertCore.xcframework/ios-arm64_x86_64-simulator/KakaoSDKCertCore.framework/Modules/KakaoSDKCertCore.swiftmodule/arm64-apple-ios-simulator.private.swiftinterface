@@ -5,7 +5,6 @@
 import CommonCrypto
 import CryptoKit
 import Foundation
-@_exported import KakaoSDKCertCore
 import LocalAuthentication
 import Security
 import Swift
@@ -13,11 +12,6 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class CertCore {
-  public static let shared: KakaoSDKCertCore.CertCore
-  public func setSessionInfo(_ sessionInfo: KakaoSDKCertCore.SessionInfo, certType: KakaoSDKCertCore.CCCertType)
-  @objc deinit
-}
 @_documentation(visibility: private) public enum CCCertType : Swift.String, Swift.CaseIterable {
   case K2100
   case K2220
@@ -33,34 +27,6 @@ import _SwiftConcurrencyShims
   public var rawValue: Swift.String {
     get
   }
-}
-public struct SessionInfo : Swift.Codable {
-  public let userId: Swift.Int64?
-  public let sessionStartAt: Foundation.Date
-  public let sessionEndAt: Foundation.Date
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct SignStatusInfo : Swift.Codable {
-  public let txId: Swift.String
-  public let requestedAt: Foundation.Date?
-  public let requestExpiredAt: Foundation.Date?
-  public let signedAt: Foundation.Date?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_documentation(visibility: private) extension KakaoSDKCertCore.CertCore {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func __publicKey(_ certType: KakaoSDKCertCore.CCCertType) -> Swift.String?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func __reducedSign(data: Swift.String, certType: KakaoSDKCertCore.CCCertType, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
-  #endif
-  public func __isValidSession(_ certType: KakaoSDKCertCore.CCCertType) -> Swift.Bool
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func __sessionInfo(_ certType: KakaoSDKCertCore.CCCertType) -> KakaoSDKCertCore.SessionInfo?
-  #endif
-  public func __deleteKeyPair(_ certType: KakaoSDKCertCore.CCCertType)
 }
 @_documentation(visibility: private) public enum CCSdkError : Swift.Error {
   case ClientFailed(reason: KakaoSDKCertCore.CCClientFailureReason, errorMessage: Swift.String?)
@@ -88,9 +54,6 @@ public struct SignStatusInfo : Swift.Codable {
   public var hashValue: Swift.Int {
     get
   }
-}
-@_hasMissingDesignatedInitializers public class CertPropertyKey {
-  @objc deinit
 }
 @_documentation(visibility: private) public enum CCLogEvent : Swift.String {
   case v
@@ -141,6 +104,42 @@ public struct SignStatusInfo : Swift.Codable {
 @_documentation(visibility: private) extension Foundation.Date {
   public func toString() -> Swift.String
   public func toSimpleString() -> Swift.String
+}
+@_documentation(visibility: private) extension KakaoSDKCertCore.CertCore {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func __publicKey(_ certType: KakaoSDKCertCore.CCCertType) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func __reducedSign(data: Swift.String, certType: KakaoSDKCertCore.CCCertType, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  public func __isValidSession(_ certType: KakaoSDKCertCore.CCCertType) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func __sessionInfo(_ certType: KakaoSDKCertCore.CCCertType) -> KakaoSDKCertCore.SessionInfo?
+  #endif
+  public func __deleteKeyPair(_ certType: KakaoSDKCertCore.CCCertType)
+}
+@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class CertCore {
+  public static let shared: KakaoSDKCertCore.CertCore
+  public func setSessionInfo(_ sessionInfo: KakaoSDKCertCore.SessionInfo, certType: KakaoSDKCertCore.CCCertType)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class CertPropertyKey {
+  @objc deinit
+}
+public struct SessionInfo : Swift.Codable {
+  public let userId: Swift.Int64?
+  public let sessionStartAt: Foundation.Date
+  public let sessionEndAt: Foundation.Date
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SignStatusInfo : Swift.Codable {
+  public let txId: Swift.String
+  public let requestedAt: Foundation.Date?
+  public let requestExpiredAt: Foundation.Date?
+  public let signedAt: Foundation.Date?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension KakaoSDKCertCore.CCCertType : Swift.Equatable {}
 extension KakaoSDKCertCore.CCCertType : Swift.Hashable {}

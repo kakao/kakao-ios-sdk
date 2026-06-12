@@ -32,14 +32,14 @@ extension PickerApi {
     /// Friends picker
     /// ## SeeAlso
     /// - [`OpenPickerFriendRequestParams`](https://developers.kakao.com/sdk/reference/ios/release/KakaoSDKFriendCore/documentation/kakaosdkfriendcore/openpickerfriendrequestparams)
-    public func selectFriend(params:OpenPickerFriendRequestParams, viewType: ViewType, enableMulti: Bool = true, completion:@escaping (SelectedUsers?, Error?) -> Void) {
+    public func selectFriend(params: OpenPickerFriendRequestParams, viewType: ViewType, completion:@escaping (SelectedUsers?, Error?) -> Void) {
         let fullParams = PickerFriendRequestParams(params)
         prepareCallPickerApi { [weak self] error in
             if let error = error {
                 completion(nil, error)
             }
             else {
-                self?.____sf(params: fullParams, enableMulti: enableMulti, viewType: viewType) { [weak self] selectedUsers, responseInfo, error in
+                self?.____sf(params: fullParams, viewType: viewType) { [weak self] selectedUsers, responseInfo, error in
                     completion(selectedUsers, self?.castSdkError(responseInfo:responseInfo, error: error))
                 }
             }

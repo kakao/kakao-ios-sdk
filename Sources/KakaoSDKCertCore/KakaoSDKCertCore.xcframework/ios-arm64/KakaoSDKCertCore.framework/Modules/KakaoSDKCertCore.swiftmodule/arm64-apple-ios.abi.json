@@ -6,355 +6,6 @@
     "children": [
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "Import",
-        "name": "CryptoKit",
-        "printedName": "CryptoKit",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "CertCore",
-        "printedName": "CertCore",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "shared",
-            "printedName": "shared",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CertCore",
-                "printedName": "KakaoSDKCertCore.CertCore",
-                "usr": "s:16KakaoSDKCertCore04CertC0C"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore04CertC0C6sharedACvpZ",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C6sharedACvpZ",
-            "moduleName": "KakaoSDKCertCore",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "Final",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CertCore",
-                    "printedName": "KakaoSDKCertCore.CertCore",
-                    "usr": "s:16KakaoSDKCertCore04CertC0C"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore04CertC0C6sharedACvgZ",
-                "mangledName": "$s16KakaoSDKCertCore04CertC0C6sharedACvgZ",
-                "moduleName": "KakaoSDKCertCore",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "setSessionInfo",
-            "printedName": "setSessionInfo(_:certType:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "SessionInfo",
-                "printedName": "KakaoSDKCertCore.SessionInfo",
-                "usr": "s:16KakaoSDKCertCore11SessionInfoV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CCCertType",
-                "printedName": "KakaoSDKCertCore.CCCertType",
-                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C14setSessionInfo_8certTypeyAA0fG0V_AA06CCCertI0OtF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C14setSessionInfo_8certTypeyAA0fG0V_AA06CCCertI0OtF",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "__publicKey",
-            "printedName": "__publicKey(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CCCertType",
-                "printedName": "KakaoSDKCertCore.CCCertType",
-                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C11__publicKeyySSSgAA10CCCertTypeOF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C11__publicKeyySSSgAA10CCCertTypeOF",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "__reducedSign",
-            "printedName": "__reducedSign(data:certType:completion:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CCCertType",
-                "printedName": "KakaoSDKCertCore.CCCertType",
-                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
-              },
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Swift.String?, (any Swift.Error)?) -> ()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Tuple",
-                    "printedName": "(Swift.String?, (any Swift.Error)?)",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "Swift.String?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Optional",
-                        "printedName": "(any Swift.Error)?",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Error",
-                            "printedName": "any Swift.Error",
-                            "usr": "s:s5ErrorP"
-                          }
-                        ],
-                        "usr": "s:Sq"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C13__reducedSign4data8certType10completionySS_AA06CCCertI0OySSSg_s5Error_pSgtctF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__reducedSign4data8certType10completionySS_AA06CCCertI0OySSSg_s5Error_pSgtctF",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "__isValidSession",
-            "printedName": "__isValidSession(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CCCertType",
-                "printedName": "KakaoSDKCertCore.CCCertType",
-                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C16__isValidSessionySbAA10CCCertTypeOF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C16__isValidSessionySbAA10CCCertTypeOF",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "__sessionInfo",
-            "printedName": "__sessionInfo(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "KakaoSDKCertCore.SessionInfo?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SessionInfo",
-                    "printedName": "KakaoSDKCertCore.SessionInfo",
-                    "usr": "s:16KakaoSDKCertCore11SessionInfoV"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CCCertType",
-                "printedName": "KakaoSDKCertCore.CCCertType",
-                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C13__sessionInfoyAA07SessionF0VSgAA10CCCertTypeOF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__sessionInfoyAA07SessionF0VSgAA10CCCertTypeOF",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "__deleteKeyPair",
-            "printedName": "__deleteKeyPair(_:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "CCCertType",
-                "printedName": "KakaoSDKCertCore.CCCertType",
-                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyAA10CCCertTypeOF",
-            "mangledName": "$s16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyAA10CCCertTypeOF",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:16KakaoSDKCertCore04CertC0C",
-        "mangledName": "$s16KakaoSDKCertCore04CertC0C",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "AccessControl",
-          "Documentation"
-        ],
-        "hasMissingDesignatedInitializers": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -703,642 +354,6 @@
             "mangledName": "$ss12CaseIterableP"
           }
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "SessionInfo",
-        "printedName": "SessionInfo",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "userId",
-            "printedName": "userId",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.Int64?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int64",
-                    "printedName": "Swift.Int64",
-                    "usr": "s:s5Int64V"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvp",
-            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Swift.Int64?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int64",
-                        "printedName": "Swift.Int64",
-                        "usr": "s:s5Int64V"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvg",
-                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "sessionStartAt",
-            "printedName": "sessionStartAt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Date",
-                "printedName": "Foundation.Date",
-                "usr": "s:10Foundation4DateV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvp",
-            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvg",
-                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "sessionEndAt",
-            "printedName": "sessionEndAt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Date",
-                "printedName": "Foundation.Date",
-                "usr": "s:10Foundation4DateV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvp",
-            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvg",
-                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "SessionInfo",
-                "printedName": "KakaoSDKCertCore.SessionInfo",
-                "usr": "s:16KakaoSDKCertCore11SessionInfoV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:16KakaoSDKCertCore11SessionInfoV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV4fromACs7Decoder_p_tKcfc",
-            "moduleName": "KakaoSDKCertCore",
-            "implicit": true,
-            "throwing": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "encode",
-            "printedName": "encode(to:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoder",
-                "printedName": "any Swift.Encoder",
-                "usr": "s:s7EncoderP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore11SessionInfoV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6encode2toys7Encoder_p_tKF",
-            "moduleName": "KakaoSDKCertCore",
-            "implicit": true,
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:16KakaoSDKCertCore11SessionInfoV",
-        "mangledName": "$s16KakaoSDKCertCore11SessionInfoV",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "SignStatusInfo",
-        "printedName": "SignStatusInfo",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "txId",
-            "printedName": "txId",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4txIdSSvp",
-            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4txIdSSvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4txIdSSvg",
-                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4txIdSSvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "requestedAt",
-            "printedName": "requestedAt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Date?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvp",
-            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvg",
-                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "requestExpiredAt",
-            "printedName": "requestExpiredAt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Date?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvp",
-            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvg",
-                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "signedAt",
-            "printedName": "signedAt",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Date?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Date",
-                    "printedName": "Foundation.Date",
-                    "usr": "s:10Foundation4DateV"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvp",
-            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvp",
-            "moduleName": "KakaoSDKCertCore",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "Foundation.Date?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Date",
-                        "printedName": "Foundation.Date",
-                        "usr": "s:10Foundation4DateV"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvg",
-                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvg",
-                "moduleName": "KakaoSDKCertCore",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "SignStatusInfo",
-                "printedName": "KakaoSDKCertCore.SignStatusInfo",
-                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Decoder",
-                "printedName": "any Swift.Decoder",
-                "usr": "s:s7DecoderP"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4fromACs7Decoder_p_tKcfc",
-            "moduleName": "KakaoSDKCertCore",
-            "implicit": true,
-            "throwing": true,
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "encode",
-            "printedName": "encode(to:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Encoder",
-                "printedName": "any Swift.Encoder",
-                "usr": "s:s7EncoderP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV6encode2toys7Encoder_p_tKF",
-            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV6encode2toys7Encoder_p_tKF",
-            "moduleName": "KakaoSDKCertCore",
-            "implicit": true,
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Struct",
-        "usr": "s:16KakaoSDKCertCore14SignStatusInfoV",
-        "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "AccessControl",
-          "RawDocComment"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Decodable",
-            "printedName": "Decodable",
-            "usr": "s:Se",
-            "mangledName": "$sSe"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Encodable",
-            "printedName": "Encodable",
-            "usr": "s:SE",
-            "mangledName": "$sSE"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "Import",
-        "name": "CryptoKit",
-        "printedName": "CryptoKit",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Security",
-        "printedName": "Security",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "Import",
-        "name": "LocalAuthentication",
-        "printedName": "LocalAuthentication",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "Import",
-        "name": "CommonCrypto",
-        "printedName": "CommonCrypto",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
       },
       {
         "kind": "Import",
@@ -2031,59 +1046,6 @@
             "printedName": "Hashable",
             "usr": "s:SH",
             "mangledName": "$sSH"
-          }
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "Security",
-        "printedName": "Security",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "Import",
-        "name": "LocalAuthentication",
-        "printedName": "LocalAuthentication",
-        "declKind": "Import",
-        "moduleName": "KakaoSDKCertCore"
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "CertPropertyKey",
-        "printedName": "CertPropertyKey",
-        "declKind": "Class",
-        "usr": "s:16KakaoSDKCertCore15CertPropertyKeyC",
-        "mangledName": "$s16KakaoSDKCertCore15CertPropertyKeyC",
-        "moduleName": "KakaoSDKCertCore",
-        "declAttributes": [
-          "AccessControl"
-        ],
-        "hasMissingDesignatedInitializers": true,
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Copyable",
-            "printedName": "Copyable",
-            "usr": "s:s8CopyableP",
-            "mangledName": "$ss8CopyableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Escapable",
-            "printedName": "Escapable",
-            "usr": "s:s9EscapableP",
-            "mangledName": "$ss9EscapableP"
           }
         ]
       },
@@ -3422,6 +2384,1044 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CertCore",
+        "printedName": "CertCore",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CertCore",
+                "printedName": "KakaoSDKCertCore.CertCore",
+                "usr": "s:16KakaoSDKCertCore04CertC0C"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore04CertC0C6sharedACvpZ",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C6sharedACvpZ",
+            "moduleName": "KakaoSDKCertCore",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CertCore",
+                    "printedName": "KakaoSDKCertCore.CertCore",
+                    "usr": "s:16KakaoSDKCertCore04CertC0C"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore04CertC0C6sharedACvgZ",
+                "mangledName": "$s16KakaoSDKCertCore04CertC0C6sharedACvgZ",
+                "moduleName": "KakaoSDKCertCore",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "setSessionInfo",
+            "printedName": "setSessionInfo(_:certType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SessionInfo",
+                "printedName": "KakaoSDKCertCore.SessionInfo",
+                "usr": "s:16KakaoSDKCertCore11SessionInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore04CertC0C14setSessionInfo_8certTypeyAA0fG0V_AA06CCCertI0OtF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C14setSessionInfo_8certTypeyAA0fG0V_AA06CCCertI0OtF",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "__publicKey",
+            "printedName": "__publicKey(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore04CertC0C11__publicKeyySSSgAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C11__publicKeyySSSgAA10CCCertTypeOF",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "__reducedSign",
+            "printedName": "__reducedSign(data:certType:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.String?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Swift.String?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore04CertC0C13__reducedSign4data8certType10completionySS_AA06CCCertI0OySSSg_s5Error_pSgtctF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__reducedSign4data8certType10completionySS_AA06CCCertI0OySSSg_s5Error_pSgtctF",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "__isValidSession",
+            "printedName": "__isValidSession(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore04CertC0C16__isValidSessionySbAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C16__isValidSessionySbAA10CCCertTypeOF",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "__sessionInfo",
+            "printedName": "__sessionInfo(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "KakaoSDKCertCore.SessionInfo?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SessionInfo",
+                    "printedName": "KakaoSDKCertCore.SessionInfo",
+                    "usr": "s:16KakaoSDKCertCore11SessionInfoV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore04CertC0C13__sessionInfoyAA07SessionF0VSgAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C13__sessionInfoyAA07SessionF0VSgAA10CCCertTypeOF",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "__deleteKeyPair",
+            "printedName": "__deleteKeyPair(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CCCertType",
+                "printedName": "KakaoSDKCertCore.CCCertType",
+                "usr": "s:16KakaoSDKCertCore10CCCertTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyAA10CCCertTypeOF",
+            "mangledName": "$s16KakaoSDKCertCore04CertC0C15__deleteKeyPairyyAA10CCCertTypeOF",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:16KakaoSDKCertCore04CertC0C",
+        "mangledName": "$s16KakaoSDKCertCore04CertC0C",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl",
+          "Documentation"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "LocalAuthentication",
+        "printedName": "LocalAuthentication",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "Import",
+        "name": "LocalAuthentication",
+        "printedName": "LocalAuthentication",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CertPropertyKey",
+        "printedName": "CertPropertyKey",
+        "declKind": "Class",
+        "usr": "s:16KakaoSDKCertCore15CertPropertyKeyC",
+        "mangledName": "$s16KakaoSDKCertCore15CertPropertyKeyC",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SessionInfo",
+        "printedName": "SessionInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "userId",
+            "printedName": "userId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int64?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int64",
+                    "printedName": "Swift.Int64",
+                    "usr": "s:s5Int64V"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvp",
+            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int64?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int64",
+                        "printedName": "Swift.Int64",
+                        "usr": "s:s5Int64V"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvg",
+                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6userIds5Int64VSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sessionStartAt",
+            "printedName": "sessionStartAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvp",
+            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvg",
+                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV14sessionStartAt10Foundation4DateVvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sessionEndAt",
+            "printedName": "sessionEndAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Date",
+                "printedName": "Foundation.Date",
+                "usr": "s:10Foundation4DateV"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvp",
+            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvg",
+                "mangledName": "$s16KakaoSDKCertCore11SessionInfoV12sessionEndAt10Foundation4DateVvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SessionInfo",
+                "printedName": "KakaoSDKCertCore.SessionInfo",
+                "usr": "s:16KakaoSDKCertCore11SessionInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16KakaoSDKCertCore11SessionInfoV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore11SessionInfoV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s16KakaoSDKCertCore11SessionInfoV6encode2toys7Encoder_p_tKF",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:16KakaoSDKCertCore11SessionInfoV",
+        "mangledName": "$s16KakaoSDKCertCore11SessionInfoV",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SignStatusInfo",
+        "printedName": "SignStatusInfo",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "txId",
+            "printedName": "txId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4txIdSSvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4txIdSSvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4txIdSSvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4txIdSSvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestedAt",
+            "printedName": "requestedAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV11requestedAt10Foundation4DateVSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "requestExpiredAt",
+            "printedName": "requestExpiredAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV16requestExpiredAt10Foundation4DateVSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "signedAt",
+            "printedName": "signedAt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Date?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Date",
+                    "printedName": "Foundation.Date",
+                    "usr": "s:10Foundation4DateV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvp",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvp",
+            "moduleName": "KakaoSDKCertCore",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Date?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Date",
+                        "printedName": "Foundation.Date",
+                        "usr": "s:10Foundation4DateV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvg",
+                "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV8signedAt10Foundation4DateVSgvg",
+                "moduleName": "KakaoSDKCertCore",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SignStatusInfo",
+                "printedName": "KakaoSDKCertCore.SignStatusInfo",
+                "usr": "s:16KakaoSDKCertCore14SignStatusInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:16KakaoSDKCertCore14SignStatusInfoV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV6encode2toys7Encoder_p_tKF",
+            "moduleName": "KakaoSDKCertCore",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:16KakaoSDKCertCore14SignStatusInfoV",
+        "mangledName": "$s16KakaoSDKCertCore14SignStatusInfoV",
+        "moduleName": "KakaoSDKCertCore",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "Date",
         "printedName": "Date",
@@ -3651,98 +3651,98 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 742,
       "length": 7,
       "value": "\"k2100\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 767,
       "length": 7,
       "value": "\"k2220\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 792,
       "length": 7,
       "value": "\"k3220\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 897,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 930,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 961,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 993,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 1028,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1183,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1198,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1213,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1228,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1243,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/f21fa22c-df2e-4f75-9fa5-e0b1c6c129ea\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1437,
       "length": 2,

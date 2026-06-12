@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KakaoSDKFriendCore
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AuthenticationServices
+import CoreGraphics
 import Foundation
 import SafariServices
 import Swift
@@ -10,237 +11,10 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_documentation(visibility: private) public enum KFLogEvent : Swift.String {
-  case v
-  case d
-  case i
-  case w
-  case e
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(rawValue: Swift.String)
-  #endif
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-@_documentation(visibility: private) public enum KFLogLevel : Swift.Int {
-  case v
-  case d
-  case i
-  case w
-  case e
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(rawValue: Swift.Int)
-  #endif
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@_documentation(visibility: private) public class KFSdkLog {
-  public static let shared: KakaoSDKFriendCore.KFSdkLog
-  final public let maxLogs: Swift.Int
-  public var debugLogs: [(Foundation.Date, Swift.String)] {
-    get
-  }
-  final public let developLoglevel: KakaoSDKFriendCore.KFLogLevel
-  final public let releaseLogLevel: KakaoSDKFriendCore.KFLogLevel
-  public init(developLogLevel: KakaoSDKFriendCore.KFLogLevel = KFLogLevel.v, releaseLogLevel: KakaoSDKFriendCore.KFLogLevel = KFLogLevel.i)
-  public func clearLog()
-  public class func sourceFileName(filePath: Swift.String) -> Swift.String
-  public class func v(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
-  public class func d(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
-  public class func i(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
-  public class func w(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
-  public class func e(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
-  @objc deinit
-}
-@_documentation(visibility: private) extension Foundation.Date {
-  public func toString() -> Swift.String
-  public func toSimpleString() -> Swift.String
-}
-public enum ViewType : Swift.String {
-  case full
-  case popup
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(rawValue: Swift.String)
-  #endif
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-public struct SelectedUser : Swift.Codable {
-  public let id: Swift.Int64?
-  public let uuid: Swift.String
-  public let maskingProfileNickname: Swift.String?
-  public let profileNickname: Swift.String?
-  public let profileThumbnailImage: Foundation.URL?
-  public let favorite: Swift.Bool?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-public struct SelectedUsers : Swift.Codable {
-  public var totalCount: Swift.Int
-  public var users: [KakaoSDKFriendCore.SelectedUser]?
-  public init()
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_documentation(visibility: private) public struct PickerUsers : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_documentation(visibility: private) public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
-  case Friend
-  case ChatMember
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(rawValue: Swift.String)
-  #endif
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
-}
-@_documentation(visibility: private) public struct PickerUserScope : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_documentation(visibility: private) public let CF: KakaoSDKFriendCore.Caprifire
-@_documentation(visibility: private) public struct ResponseInfo {
-  public let response: Foundation.HTTPURLResponse?
-  public let data: Foundation.Data?
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init?(_ response: Foundation.HTTPURLResponse?, _ data: Foundation.Data?)
-  #endif
-}
-@_documentation(visibility: private) public class Caprifire {
-  public static let shared: KakaoSDKFriendCore.Caprifire
-  public init()
-  public enum HTTPMethod : Swift.String {
-    case get
-    case post
-    case delete
-    #if compiler(>=5.3) && $NonescapableTypes
-    public init?(rawValue: Swift.String)
-    #endif
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func responseData(_ HTTPMethod: KakaoSDKFriendCore.Caprifire.HTTPMethod, _ urlString: Swift.String, parameters: [Swift.String : Any]? = nil, headers: [Swift.String : Swift.String]? = nil, useAuth: Swift.Bool = true, completion: @escaping (Foundation.HTTPURLResponse?, Foundation.Data?, (any Swift.Error)?) -> Swift.Void)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func request(_ url: Foundation.URL, method: KakaoSDKFriendCore.Caprifire.HTTPMethod = .get, parameters: [Swift.String : Any]? = nil, headers: [Swift.String : Swift.String]? = nil) -> Foundation.URLRequest
-  #endif
-  @objc deinit
-}
-extension KakaoSDKFriendCore.Caprifire {
-  public func queryComponents(fromKey key: Swift.String, value: Any) -> [(Swift.String, Swift.String)]
-  public func escape(_ string: Swift.String) -> Swift.String
-  public enum ArrayEncoding {
-    case brackets
-    case noBrackets
-    case indexInBrackets
-    public static func == (a: KakaoSDKFriendCore.Caprifire.ArrayEncoding, b: KakaoSDKFriendCore.Caprifire.ArrayEncoding) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  public enum BoolEncoding {
-    case numeric
-    case literal
-    public static func == (a: KakaoSDKFriendCore.Caprifire.BoolEncoding, b: KakaoSDKFriendCore.Caprifire.BoolEncoding) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-}
-@_documentation(visibility: private) extension Foundation.CharacterSet {
-  public static let cfURLQueryAllowed: Foundation.CharacterSet
-}
 @_documentation(visibility: private) public protocol ScopeRequestable : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   func requestPickerScope(requiredScope: [Swift.String], completion: @escaping ((any Swift.Error)?) -> Swift.Void)
   #endif
-}
-@_documentation(visibility: private) extension Swift.Array where Element == Swift.Int64 {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func KFtoJsonString() -> Swift.String?
-  #endif
-}
-@_documentation(visibility: private) public struct PickerChats : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_documentation(visibility: private) public struct PickerChatMemberInfo : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
-@_documentation(visibility: private) public enum KFSdkError : Swift.Error {
-  case ClientFailed(reason: KakaoSDKFriendCore.KFClientFailureReason, errorMessage: Swift.String?)
-}
-@_documentation(visibility: private) extension KakaoSDKFriendCore.KFSdkError {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(reason: KakaoSDKFriendCore.KFClientFailureReason = .Unknown, message: Swift.String? = nil)
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func getClientError() -> (reason: KakaoSDKFriendCore.KFClientFailureReason, message: Swift.String?)
-  #endif
-}
-@_documentation(visibility: private) public enum KFClientFailureReason {
-  case Unknown
-  case Cancelled
-  case TokenNotFound
-  case NotSupported
-  case BadParameter
-  case MustInitAppKey
-  case ExceedKakaoLinkSizeLimit
-  case CastingFailed
-  case IllegalState
-  public static func == (a: KakaoSDKFriendCore.KFClientFailureReason, b: KakaoSDKFriendCore.KFClientFailureReason) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@_documentation(visibility: private) public enum KFHostType {
-  case Kapi
-  public var host: Swift.String {
-    get
-  }
-  public static func == (a: KakaoSDKFriendCore.KFHostType, b: KakaoSDKFriendCore.KFHostType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFPaths {
-  public static let selectFriends: Swift.String
-  public static let userScpoes: Swift.String
-  public static let selectChats: Swift.String
-  public static let selectChatMembers: Swift.String
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFUrls {
-  public static func compose(_ hostType: KakaoSDKFriendCore.KFHostType = .Kapi, path: Swift.String) -> Swift.String
-  @objc deinit
-}
-@_documentation(visibility: private) public struct CustomSection {
-  public let title: Swift.String
-  public let uuids: [Swift.String]
-  public init(title: Swift.String, uuids: [Swift.String])
-}
-extension Swift.String {
-  @_documentation(visibility: private) public func toMasking() -> Swift.String
-}
-@_documentation(visibility: private) extension Swift.Dictionary {
-  public mutating func merge(_ dictionary: [Key : Value])
 }
 @_hasMissingDesignatedInitializers @_documentation(visibility: private) final public class KFJSONDecoder : Foundation.JSONDecoder {
   public static var `default`: KakaoSDKFriendCore.KFJSONDecoder {
@@ -326,39 +100,37 @@ public class DisableSelectOption {
   @objc deinit
 }
 public class OpenPickerFriendRequestParams {
-  final public let title: Swift.String?
-  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance?
-  final public let orientation: KakaoSDKFriendCore.PickerOrientation?
-  final public let enableSearch: Swift.Bool?
-  final public let enableIndex: Swift.Bool?
-  final public let showMyProfile: Swift.Bool?
-  final public let showFavorite: Swift.Bool?
-  public var showPickedFriend: Swift.Bool?
-  public var maxPickableCount: Swift.Int?
-  public var minPickableCount: Swift.Int?
+  final public let title: Swift.String
+  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance
+  final public let orientation: KakaoSDKFriendCore.PickerOrientation
+  final public let enableSearch: Swift.Bool
+  final public let enableIndex: Swift.Bool
+  final public let showMyProfile: Swift.Bool
+  final public let showFavorite: Swift.Bool
+  public var showPickedFriend: Swift.Bool
+  final public let selectParams: KakaoSDKFriendCore.SelectParams
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance? = nil, orientation: KakaoSDKFriendCore.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, enableIndex: Swift.Bool? = nil, showMyProfile: Swift.Bool? = nil, showFavorite: Swift.Bool? = nil, showPickedFriend: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil)
+  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
   #endif
   @objc deinit
 }
 public class PickerFriendRequestParams {
-  final public let title: Swift.String?
-  final public let friendFilter: KakaoSDKFriendCore.PickerFriendFilter?
+  final public let title: Swift.String
+  final public let friendFilter: KakaoSDKFriendCore.PickerFriendFilter
   final public let countryCodeFilters: [Swift.String]?
-  final public let usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter?
-  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance?
-  final public let orientation: KakaoSDKFriendCore.PickerOrientation?
-  final public let enableSearch: Swift.Bool?
-  final public let enableIndex: Swift.Bool?
-  final public let showMyProfile: Swift.Bool?
-  final public let showFavorite: Swift.Bool?
+  final public let usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter
+  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance
+  final public let orientation: KakaoSDKFriendCore.PickerOrientation
+  final public let enableSearch: Swift.Bool
+  final public let enableIndex: Swift.Bool
+  final public let showMyProfile: Swift.Bool
+  final public let showFavorite: Swift.Bool
   final public let disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]?
-  final public let displayAllProfile: Swift.Bool?
-  public var showPickedFriend: Swift.Bool?
-  public var maxPickableCount: Swift.Int?
-  public var minPickableCount: Swift.Int?
+  final public let displayAllProfile: Swift.Bool
+  public var showPickedFriend: Swift.Bool
+  final public let selectParams: KakaoSDKFriendCore.SelectParams
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, friendFilter: KakaoSDKFriendCore.PickerFriendFilter? = nil, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance? = nil, orientation: KakaoSDKFriendCore.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, enableIndex: Swift.Bool? = nil, showMyProfile: Swift.Bool? = nil, showFavorite: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, showPickedFriend: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil)
+  public init(title: Swift.String? = nil, friendFilter: KakaoSDKFriendCore.PickerFriendFilter = .none, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter = .all, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
   #endif
   convenience public init(_ pickerFriendRequestParams: KakaoSDKFriendCore.PickerFriendRequestParams)
   convenience public init(_ openPickerFriendRequestParams: KakaoSDKFriendCore.OpenPickerFriendRequestParams)
@@ -388,52 +160,53 @@ public enum PickerChatSelectionType {
 }
 public class PickerChatRequestParams {
   final public let selectionType: KakaoSDKFriendCore.PickerChatSelectionType
-  final public let title: Swift.String?
-  final public let chatFilters: [KakaoSDKFriendCore.PickerChatFilter]?
-  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance?
-  final public let orientation: KakaoSDKFriendCore.PickerOrientation?
-  final public let enableSearch: Swift.Bool?
+  final public let title: Swift.String
+  final public let chatFilters: [KakaoSDKFriendCore.PickerChatFilter]
+  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance
+  final public let orientation: KakaoSDKFriendCore.PickerOrientation
+  final public let enableSearch: Swift.Bool
   final public let disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]?
-  final public let displayAllProfile: Swift.Bool?
-  public var maxPickableCount: Swift.Int?
-  public var minPickableCount: Swift.Int?
+  final public let displayAllProfile: Swift.Bool
+  final public let chatSelectParams: KakaoSDKFriendCore.SelectParams
+  final public let chatMemberSelectParams: KakaoSDKFriendCore.SelectParams?
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(selectionType: KakaoSDKFriendCore.PickerChatSelectionType, title: Swift.String? = nil, chatFilters: [KakaoSDKFriendCore.PickerChatFilter]? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance? = nil, orientation: KakaoSDKFriendCore.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil)
+  public init(selectionType: KakaoSDKFriendCore.PickerChatSelectionType, title: Swift.String? = nil, chatFilters: [KakaoSDKFriendCore.PickerChatFilter] = [ .regular ], viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, chatSelectParams: KakaoSDKFriendCore.SelectParams = .chat(selectionMode: .single), chatMemberSelectParams: KakaoSDKFriendCore.SelectParams? = nil)
   #endif
   @objc deinit
 }
 public class PickerTabRequestParams {
-  final public let title: Swift.String?
-  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance?
-  final public let orientation: KakaoSDKFriendCore.PickerOrientation?
-  final public let enableSearch: Swift.Bool?
+  final public let title: Swift.String
+  final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance
+  final public let orientation: KakaoSDKFriendCore.PickerOrientation
+  final public let enableSearch: Swift.Bool
   final public let disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]?
-  final public let displayAllProfile: Swift.Bool?
-  public var maxPickableCount: Swift.Int?
-  public var minPickableCount: Swift.Int?
+  final public let displayAllProfile: Swift.Bool
   public var friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams
-  final public let chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams
+  public var chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance? = nil, orientation: KakaoSDKFriendCore.PickerOrientation? = nil, enableSearch: Swift.Bool? = nil, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool? = nil, maxPickableCount: Swift.Int? = nil, minPickableCount: Swift.Int? = nil, friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams, chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams)
+  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams, chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams)
   #endif
   public class FriendRequestParams {
-    final public let friendFilter: KakaoSDKFriendCore.PickerFriendFilter?
+    final public let friendFilter: KakaoSDKFriendCore.PickerFriendFilter
     final public let countryCodeFilters: [Swift.String]?
-    final public let usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter?
-    final public let enableIndex: Swift.Bool?
-    final public let showMyProfile: Swift.Bool?
-    final public let showFavorite: Swift.Bool?
-    public var showPickedFriend: Swift.Bool?
+    final public let usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter
+    final public let enableIndex: Swift.Bool
+    final public let showMyProfile: Swift.Bool
+    final public let showFavorite: Swift.Bool
+    public var showPickedFriend: Swift.Bool
+    final public let selectParams: KakaoSDKFriendCore.SelectParams
     #if compiler(>=5.3) && $NonescapableTypes
-    public init(friendFilter: KakaoSDKFriendCore.PickerFriendFilter? = nil, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter? = nil, enableIndex: Swift.Bool? = nil, showMyProfile: Swift.Bool? = nil, showFavorite: Swift.Bool? = nil, showPickedFriend: Swift.Bool? = nil)
+    public init(friendFilter: KakaoSDKFriendCore.PickerFriendFilter = .none, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter = .all, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
     #endif
     @objc deinit
   }
   public class ChatRequestParams {
     final public let selectionType: KakaoSDKFriendCore.PickerChatSelectionType
-    final public let chatFilters: [KakaoSDKFriendCore.PickerChatFilter]?
+    final public let chatFilters: [KakaoSDKFriendCore.PickerChatFilter]
+    final public let chatSelectParams: KakaoSDKFriendCore.SelectParams
+    final public let chatMemberSelectParams: KakaoSDKFriendCore.SelectParams?
     #if compiler(>=5.3) && $NonescapableTypes
-    public init(selectionType: KakaoSDKFriendCore.PickerChatSelectionType, chatFilters: [KakaoSDKFriendCore.PickerChatFilter]? = nil)
+    public init(selectionType: KakaoSDKFriendCore.PickerChatSelectionType, chatFilters: [KakaoSDKFriendCore.PickerChatFilter] = [.regular], chatSelectParams: KakaoSDKFriendCore.SelectParams? = nil, chatMemberSelectParams: KakaoSDKFriendCore.SelectParams? = nil)
     #endif
     @objc deinit
   }
@@ -458,13 +231,13 @@ public class PickerTabRequestParams {
 }
 @_documentation(visibility: private) extension KakaoSDKFriendCore.PickerApi {
   #if compiler(>=5.3) && $NonescapableTypes
-  public func ____sf(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, enableMulti: Swift.Bool, viewType: KakaoSDKFriendCore.ViewType, customSection: KakaoSDKFriendCore.CustomSection? = nil, selectedUuids: [Swift.String]? = nil, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____sf(params: KakaoSDKFriendCore.PickerFriendRequestParams, needScopeRequest: Swift.Bool = true, viewType: KakaoSDKFriendCore.ViewType, customSection: KakaoSDKFriendCore.CustomSection? = nil, selectedUuids: [Swift.String]? = nil, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  public func ____sc(params: KakaoSDKFriendCore.PickerChatRequestParams, needScopeRequest: Swift.Bool = true, enableMulti: Swift.Bool, viewType: KakaoSDKFriendCore.ViewType, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____sc(params: KakaoSDKFriendCore.PickerChatRequestParams, needScopeRequest: Swift.Bool = true, viewType: KakaoSDKFriendCore.ViewType, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChats?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  public func ____s(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = true, enableMulti: Swift.Bool, viewType: KakaoSDKFriendCore.ViewType, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChat?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
+  public func ____s(params: KakaoSDKFriendCore.PickerTabRequestParams, needScopeRequest: Swift.Bool = true, viewType: KakaoSDKFriendCore.ViewType, initialTab: KakaoSDKFriendCore.PickerTabType, completion: @escaping (KakaoSDKFriendCore.SelectedUsers?, KakaoSDKFriendCore.SelectedChats?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   #endif
 }
 extension KakaoSDKFriendCore.PickerApi {
@@ -486,6 +259,180 @@ extension KakaoSDKFriendCore.PickerApi {
   #if compiler(>=5.3) && $NonescapableTypes
   public func ____mmv(params: KakaoSDKFriendCore.PickerFriendRequestParams, chatId: Swift.Int64, friendsOnly: Swift.Bool?, selectedUuids: [Swift.String]? = nil, completions: @escaping ((any KakaoSDKFriendCore.PickerView)?, KakaoSDKFriendCore.ResponseInfo?, (any Swift.Error)?) -> Swift.Void)
   #endif
+}
+@_documentation(visibility: private) extension Swift.Array where Element == Swift.Int64 {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func KFtoJsonString() -> Swift.String?
+  #endif
+}
+@_documentation(visibility: private) extension Swift.Dictionary where Key == Swift.String, Value == Any? {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func KFfilterNil() -> [Swift.String : Any]?
+  #endif
+}
+extension Swift.String {
+  @_documentation(visibility: private) public func toMasking() -> Swift.String
+}
+@_documentation(visibility: private) extension UIKit.UIApplication {
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(iOSApplicationExtension, unavailable)
+  @_Concurrency.MainActor @preconcurrency public class func getMostTopViewControllerForKF(base: UIKit.UIViewController? = nil) -> UIKit.UIViewController?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  @available(iOSApplicationExtension, unavailable)
+  @_Concurrency.MainActor @preconcurrency public class func sdkKeyWindowForKF() -> UIKit.UIWindow?
+  #endif
+}
+@_documentation(visibility: private) public struct CustomSection {
+  public let title: Swift.String
+  public let uuids: [Swift.String]
+  public init(title: Swift.String, uuids: [Swift.String])
+}
+@_documentation(visibility: private) public enum KFSdkError : Swift.Error {
+  case ClientFailed(reason: KakaoSDKFriendCore.KFClientFailureReason, errorMessage: Swift.String?)
+}
+@_documentation(visibility: private) extension KakaoSDKFriendCore.KFSdkError {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(reason: KakaoSDKFriendCore.KFClientFailureReason = .Unknown, message: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getClientError() -> (reason: KakaoSDKFriendCore.KFClientFailureReason, message: Swift.String?)
+  #endif
+}
+@_documentation(visibility: private) public enum KFClientFailureReason {
+  case Unknown
+  case Cancelled
+  case TokenNotFound
+  case NotSupported
+  case BadParameter
+  case MustInitAppKey
+  case ExceedKakaoLinkSizeLimit
+  case CastingFailed
+  case IllegalState
+  public static func == (a: KakaoSDKFriendCore.KFClientFailureReason, b: KakaoSDKFriendCore.KFClientFailureReason) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_documentation(visibility: private) public enum KFLogEvent : Swift.String {
+  case v
+  case d
+  case i
+  case w
+  case e
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_documentation(visibility: private) public enum KFLogLevel : Swift.Int {
+  case v
+  case d
+  case i
+  case w
+  case e
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_documentation(visibility: private) public class KFSdkLog {
+  public static let shared: KakaoSDKFriendCore.KFSdkLog
+  final public let maxLogs: Swift.Int
+  public var debugLogs: [(Foundation.Date, Swift.String)] {
+    get
+  }
+  final public let developLoglevel: KakaoSDKFriendCore.KFLogLevel
+  final public let releaseLogLevel: KakaoSDKFriendCore.KFLogLevel
+  public init(developLogLevel: KakaoSDKFriendCore.KFLogLevel = KFLogLevel.v, releaseLogLevel: KakaoSDKFriendCore.KFLogLevel = KFLogLevel.i)
+  public func clearLog()
+  public class func sourceFileName(filePath: Swift.String) -> Swift.String
+  public class func v(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func d(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func i(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func w(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  public class func e(_ object: Any, filename: Swift.String = #file, line: Swift.Int = #line, column: Swift.Int = #column, funcName: Swift.String = #function)
+  @objc deinit
+}
+@_documentation(visibility: private) extension Foundation.Date {
+  public func toString() -> Swift.String
+  public func toSimpleString() -> Swift.String
+}
+@_documentation(visibility: private) public struct PickerChats : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: private) public struct PickerChatMemberInfo : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: private) public struct PickerUsers : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: private) public enum PickerUserScopeGroup : Swift.String, Swift.Codable {
+  case Friend
+  case ChatMember
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_documentation(visibility: private) public struct PickerUserScope : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SelectionMode {
+  case single
+  case multiple
+  public static func == (a: KakaoSDKFriendCore.SelectionMode, b: KakaoSDKFriendCore.SelectionMode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct SelectParams {
+  public let mode: KakaoSDKFriendCore.SelectionMode
+  public let minPickableCount: Swift.Int
+  public let maxPickableCount: Swift.Int
+  public init(selectionMode: KakaoSDKFriendCore.SelectionMode, minPickableCount: Swift.Int = 1, maxPickableCount: Swift.Int = 30)
+}
+extension KakaoSDKFriendCore.SelectParams {
+  public static func chat(selectionMode: KakaoSDKFriendCore.SelectionMode, minPickableCount: Swift.Int = 1, maxPickableCount: Swift.Int = 10) -> KakaoSDKFriendCore.SelectParams
+  public static func friend(selectionMode: KakaoSDKFriendCore.SelectionMode, minPickableCount: Swift.Int = 1, maxPickableCount: Swift.Int = 30) -> KakaoSDKFriendCore.SelectParams
+  public static func chatMember(selectionMode: KakaoSDKFriendCore.SelectionMode, minPickableCount: Swift.Int = 1, maxPickableCount: Swift.Int = 30) -> KakaoSDKFriendCore.SelectParams
+}
+public enum ViewType : Swift.String {
+  case full
+  case popup
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum PickerTabType : Swift.Int {
+  case friend
+  case chat
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public enum PickerChatRoomType : Swift.String, Swift.Codable {
   case MemoChat
@@ -510,6 +457,109 @@ public struct SelectedChat : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct SelectedChats {
+  public let totalCount: Swift.Int
+  public let chats: [KakaoSDKFriendCore.SelectedChat]?
+}
+public struct SelectedUser : Swift.Codable {
+  public let id: Swift.Int64?
+  public let uuid: Swift.String
+  public let maskingProfileNickname: Swift.String?
+  public let profileNickname: Swift.String?
+  public let profileThumbnailImage: Foundation.URL?
+  public let favorite: Swift.Bool?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SelectedUsers : Swift.Codable {
+  public var totalCount: Swift.Int
+  public var users: [KakaoSDKFriendCore.SelectedUser]?
+  public init()
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_documentation(visibility: private) public let CF: KakaoSDKFriendCore.Caprifire
+@_documentation(visibility: private) public struct ResponseInfo {
+  public let response: Foundation.HTTPURLResponse?
+  public let data: Foundation.Data?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(_ response: Foundation.HTTPURLResponse?, _ data: Foundation.Data?)
+  #endif
+}
+@_documentation(visibility: private) public class Caprifire {
+  public static let shared: KakaoSDKFriendCore.Caprifire
+  public init()
+  public enum HTTPMethod : Swift.String {
+    case get
+    case post
+    case delete
+    #if compiler(>=5.3) && $NonescapableTypes
+    public init?(rawValue: Swift.String)
+    #endif
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func responseData(_ HTTPMethod: KakaoSDKFriendCore.Caprifire.HTTPMethod, _ urlString: Swift.String, parameters: [Swift.String : Any]? = nil, headers: [Swift.String : Swift.String]? = nil, useAuth: Swift.Bool = true, completion: @escaping (Foundation.HTTPURLResponse?, Foundation.Data?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func request(_ url: Foundation.URL, method: KakaoSDKFriendCore.Caprifire.HTTPMethod = .get, parameters: [Swift.String : Any]? = nil, headers: [Swift.String : Swift.String]? = nil) -> Foundation.URLRequest
+  #endif
+  @objc deinit
+}
+extension KakaoSDKFriendCore.Caprifire {
+  public func queryComponents(fromKey key: Swift.String, value: Any) -> [(Swift.String, Swift.String)]
+  public func escape(_ string: Swift.String) -> Swift.String
+  public enum ArrayEncoding {
+    case brackets
+    case noBrackets
+    case indexInBrackets
+    public static func == (a: KakaoSDKFriendCore.Caprifire.ArrayEncoding, b: KakaoSDKFriendCore.Caprifire.ArrayEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum BoolEncoding {
+    case numeric
+    case literal
+    public static func == (a: KakaoSDKFriendCore.Caprifire.BoolEncoding, b: KakaoSDKFriendCore.Caprifire.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+@_documentation(visibility: private) extension Foundation.CharacterSet {
+  public static let cfURLQueryAllowed: Foundation.CharacterSet
+}
+@_documentation(visibility: private) public enum KFHostType {
+  case Kapi
+  public var host: Swift.String {
+    get
+  }
+  public static func == (a: KakaoSDKFriendCore.KFHostType, b: KakaoSDKFriendCore.KFHostType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFPaths {
+  public static let selectFriends: Swift.String
+  public static let userScpoes: Swift.String
+  public static let selectChats: Swift.String
+  public static let selectChatMembers: Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @_documentation(visibility: private) public class KFUrls {
+  public static func compose(_ hostType: KakaoSDKFriendCore.KFHostType = .Kapi, path: Swift.String) -> Swift.String
+  @objc deinit
+}
+@_documentation(visibility: private) extension Swift.Dictionary {
+  public mutating func merge(_ dictionary: [Key : Value])
+}
 @_documentation(visibility: private) public protocol PickerView : UIKit.UIView {
   func setLayout()
   func updateSubviewsConstraint()
@@ -529,44 +579,6 @@ public struct SelectedChat : Swift.Codable {
 @_documentation(visibility: private) public protocol SelectedUuidsCallback : AnyObject {
   func update(uuids: [Swift.String])
 }
-@_documentation(visibility: private) extension Swift.Dictionary where Key == Swift.String, Value == Any? {
-  #if compiler(>=5.3) && $NonescapableTypes
-  public func KFfilterNil() -> [Swift.String : Any]?
-  #endif
-}
-@_documentation(visibility: private) extension UIKit.UIApplication {
-  #if compiler(>=5.3) && $NonescapableTypes
-  @available(iOSApplicationExtension, unavailable)
-  @_Concurrency.MainActor @preconcurrency public class func getMostTopViewControllerForKF(base: UIKit.UIViewController? = nil) -> UIKit.UIViewController?
-  #endif
-  #if compiler(>=5.3) && $NonescapableTypes
-  @available(iOSApplicationExtension, unavailable)
-  @_Concurrency.MainActor @preconcurrency public class func sdkKeyWindowForKF() -> UIKit.UIWindow?
-  #endif
-}
-extension KakaoSDKFriendCore.KFLogEvent : Swift.Equatable {}
-extension KakaoSDKFriendCore.KFLogEvent : Swift.Hashable {}
-extension KakaoSDKFriendCore.KFLogEvent : Swift.RawRepresentable {}
-extension KakaoSDKFriendCore.KFLogLevel : Swift.Equatable {}
-extension KakaoSDKFriendCore.KFLogLevel : Swift.Hashable {}
-extension KakaoSDKFriendCore.KFLogLevel : Swift.RawRepresentable {}
-extension KakaoSDKFriendCore.ViewType : Swift.Equatable {}
-extension KakaoSDKFriendCore.ViewType : Swift.Hashable {}
-extension KakaoSDKFriendCore.ViewType : Swift.RawRepresentable {}
-extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.Equatable {}
-extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.Hashable {}
-extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.RawRepresentable {}
-extension KakaoSDKFriendCore.Caprifire.HTTPMethod : Swift.Equatable {}
-extension KakaoSDKFriendCore.Caprifire.HTTPMethod : Swift.Hashable {}
-extension KakaoSDKFriendCore.Caprifire.HTTPMethod : Swift.RawRepresentable {}
-extension KakaoSDKFriendCore.Caprifire.ArrayEncoding : Swift.Equatable {}
-extension KakaoSDKFriendCore.Caprifire.ArrayEncoding : Swift.Hashable {}
-extension KakaoSDKFriendCore.Caprifire.BoolEncoding : Swift.Equatable {}
-extension KakaoSDKFriendCore.Caprifire.BoolEncoding : Swift.Hashable {}
-extension KakaoSDKFriendCore.KFClientFailureReason : Swift.Equatable {}
-extension KakaoSDKFriendCore.KFClientFailureReason : Swift.Hashable {}
-extension KakaoSDKFriendCore.KFHostType : Swift.Equatable {}
-extension KakaoSDKFriendCore.KFHostType : Swift.Hashable {}
 extension KakaoSDKFriendCore.PickerOrientation : Swift.Equatable {}
 extension KakaoSDKFriendCore.PickerOrientation : Swift.Hashable {}
 extension KakaoSDKFriendCore.PickerFriendFilter : Swift.Equatable {}
@@ -585,6 +597,34 @@ extension KakaoSDKFriendCore.PickerChatFilter : Swift.Hashable {}
 extension KakaoSDKFriendCore.PickerChatFilter : Swift.RawRepresentable {}
 extension KakaoSDKFriendCore.PickerChatSelectionType : Swift.Equatable {}
 extension KakaoSDKFriendCore.PickerChatSelectionType : Swift.Hashable {}
+extension KakaoSDKFriendCore.KFClientFailureReason : Swift.Equatable {}
+extension KakaoSDKFriendCore.KFClientFailureReason : Swift.Hashable {}
+extension KakaoSDKFriendCore.KFLogEvent : Swift.Equatable {}
+extension KakaoSDKFriendCore.KFLogEvent : Swift.Hashable {}
+extension KakaoSDKFriendCore.KFLogEvent : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.KFLogLevel : Swift.Equatable {}
+extension KakaoSDKFriendCore.KFLogLevel : Swift.Hashable {}
+extension KakaoSDKFriendCore.KFLogLevel : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.Equatable {}
+extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.Hashable {}
+extension KakaoSDKFriendCore.PickerUserScopeGroup : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.SelectionMode : Swift.Equatable {}
+extension KakaoSDKFriendCore.SelectionMode : Swift.Hashable {}
+extension KakaoSDKFriendCore.ViewType : Swift.Equatable {}
+extension KakaoSDKFriendCore.ViewType : Swift.Hashable {}
+extension KakaoSDKFriendCore.ViewType : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.PickerTabType : Swift.Equatable {}
+extension KakaoSDKFriendCore.PickerTabType : Swift.Hashable {}
+extension KakaoSDKFriendCore.PickerTabType : Swift.RawRepresentable {}
 extension KakaoSDKFriendCore.PickerChatRoomType : Swift.Equatable {}
 extension KakaoSDKFriendCore.PickerChatRoomType : Swift.Hashable {}
 extension KakaoSDKFriendCore.PickerChatRoomType : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.Caprifire.HTTPMethod : Swift.Equatable {}
+extension KakaoSDKFriendCore.Caprifire.HTTPMethod : Swift.Hashable {}
+extension KakaoSDKFriendCore.Caprifire.HTTPMethod : Swift.RawRepresentable {}
+extension KakaoSDKFriendCore.Caprifire.ArrayEncoding : Swift.Equatable {}
+extension KakaoSDKFriendCore.Caprifire.ArrayEncoding : Swift.Hashable {}
+extension KakaoSDKFriendCore.Caprifire.BoolEncoding : Swift.Equatable {}
+extension KakaoSDKFriendCore.Caprifire.BoolEncoding : Swift.Hashable {}
+extension KakaoSDKFriendCore.KFHostType : Swift.Equatable {}
+extension KakaoSDKFriendCore.KFHostType : Swift.Hashable {}
