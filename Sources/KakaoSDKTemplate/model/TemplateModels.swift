@@ -26,9 +26,7 @@ import KakaoSDKCommon
 /// - ``CalendarTemplate``
 public protocol Templatable {
     
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
     /// API 요청 파라미터로 사용하기 위해 현재 객체를 JSON으로 변환합니다. SDK 내부적으로 사용합니다.
     func toJsonObject() -> [String:Any]?
 }
@@ -59,9 +57,7 @@ public struct Social : Codable {
     /// Number of subscribers
     public let subscriberCount : Int?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init?(likeCount: Int? = nil,
                  commentCount: Int? = nil,
@@ -92,9 +88,7 @@ public struct Button : Codable {
     /// ## SeeAlso `Link`
     public var link : Link
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (title: String,
                  link: Link) {
@@ -125,9 +119,7 @@ public struct Link : Codable {
     /// Parameters to pass to the iOS app
     public let iosExecutionParams : String?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init(webUrl: URL? = nil,
                 mobileWebUrl: URL? = nil,
@@ -171,9 +163,7 @@ public struct Content : Codable {
     /// ## SeeAlso `Link`
     public let link : Link
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init(title: String? = nil,
                 imageUrl: URL? = nil,
@@ -229,9 +219,7 @@ public struct ItemContent : Codable {
     /// Total price
     public let sumOp : String?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init(profileText: String? = nil,
                 profileImageUrl: URL? = nil,
@@ -266,9 +254,7 @@ public struct ItemInfo : Codable {
     /// Price of the item
     public let itemOp : String
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (item : String,
                  itemOp : String) {
@@ -311,9 +297,7 @@ public struct CommerceDetail : Codable {
     /// Position of currency unit (0: before the price | 1: behind the price, Default: 0)
     public let currencyUnitPosition : Int?
 
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (regularPrice : Int,
                  discountPrice : Int? = nil,
@@ -370,9 +354,7 @@ public struct FeedTemplate : Codable, Templatable {
     public let buttons : [Button]?
     
 
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (content: Content,
                  itemContent: ItemContent? = nil,
@@ -388,9 +370,7 @@ public struct FeedTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
@@ -439,9 +419,7 @@ public struct ListTemplate : Codable, Templatable {
     /// - ``Button``
     public let buttons : [Button]?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (headerTitle: String,
                  headerLink: Link,
@@ -460,9 +438,7 @@ public struct ListTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
@@ -508,9 +484,7 @@ public struct LocationTemplate : Codable, Templatable {
     /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (address: String,
                  addressTitle: String? = nil,
@@ -528,9 +502,7 @@ public struct LocationTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
@@ -568,9 +540,7 @@ public struct CommerceTemplate : Codable, Templatable {
     /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (content: Content,
                  commerce: CommerceDetail,
@@ -583,9 +553,7 @@ public struct CommerceTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
@@ -622,9 +590,7 @@ public struct TextTemplate : Codable, Templatable {
     /// ## SeeAlso `Button`
     public let buttons : [Button]?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (text: String,
                  link: Link,
@@ -637,9 +603,7 @@ public struct TextTemplate : Codable, Templatable {
         self.buttons = buttons
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)
@@ -690,9 +654,7 @@ public struct CalendarTemplate : Codable, Templatable {
     /// - ``Button``
     public let buttons : [Button]?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init (id: String,
                  idType: IdType,
@@ -706,9 +668,7 @@ public struct CalendarTemplate : Codable, Templatable {
         self.buttons = buttons
     }    
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public func toJsonObject() -> [String:Any]? {
         if let templateJsonData = (try? SdkJSONEncoder.custom.encode(self)) {
             return SdkUtils.toJsonObject(templateJsonData)

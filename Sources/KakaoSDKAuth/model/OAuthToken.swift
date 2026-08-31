@@ -20,9 +20,7 @@ public struct OAuthToken: Codable {
     
     // MARK: Fields
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// 토큰 타입. 현재는 "Bearer" 타입만 사용됩니다.
     public let tokenType: String
 
@@ -30,9 +28,7 @@ public struct OAuthToken: Codable {
     /// Access token
     public let accessToken: String
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// 액세스 토큰의 남은 만료시간 (단위: 초)
     public let expiresIn: TimeInterval
     
@@ -44,9 +40,7 @@ public struct OAuthToken: Codable {
     /// Refresh token
     public let refreshToken: String
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// 리프레시 토큰의 남은 만료시간 (단위: 초)
     public let refreshTokenExpiresIn: TimeInterval
     
@@ -54,9 +48,7 @@ public struct OAuthToken: Codable {
     /// The expiration time of the refresh token
     public let refreshTokenExpiredAt: Date
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public let scope: String? //space delimited string
     
     // 인가 코드를 사용한 토큰 신규 발급 시점에만 저장되고 이후 같은 값으로 유지, 토큰 갱신으로는 최신정보로 업데이트되지 않음
@@ -74,9 +66,7 @@ public struct OAuthToken: Codable {
     
     
     // MARK: Initializers
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -92,9 +82,7 @@ public struct OAuthToken: Codable {
         self.idToken = try? values.decode(String.self, forKey: .idToken)
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public init(accessToken: String,
                 expiresIn: TimeInterval? = nil,
                 expiredAt: Date? = nil,
@@ -177,9 +165,7 @@ public struct OAuthToken: Codable {
 //    }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public struct Token: Codable {
     public let accessToken: String
     public let expiresIn: TimeInterval
@@ -209,9 +195,7 @@ public struct Token: Codable {
 }
 
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// internal use only
 public struct CertOAuthToken: Codable {
     public let tokenType: String
@@ -262,9 +246,7 @@ public struct CertTokenInfo: Codable {
     /// Transaction ID
     public let txId: String
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public init(token:OAuthToken,
                 txId:String) {
         self.token = token

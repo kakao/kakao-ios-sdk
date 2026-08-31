@@ -16,14 +16,10 @@ import Foundation
 import UIKit
 import Alamofire
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public let API = Api.shared
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public enum SessionType {
     case Auth       //KA
     case Api        //KA
@@ -49,9 +45,7 @@ public enum KHTTPMethod {
     case trace
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Api {
     public static let shared = Api()
     

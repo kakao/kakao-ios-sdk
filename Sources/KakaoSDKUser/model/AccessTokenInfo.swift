@@ -29,9 +29,7 @@ public struct AccessTokenInfo: Codable {
     /// Service user ID
     public let id: Int64?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// 더 이상 사용하지 않는 프로퍼티 입니다. 대신 expriresIn을 사용해주세요.
     /// 해당 액세스 토큰의 남은 만료시간 (단위: milli-second)
     @available(*, deprecated, message: "대신 expiresIn 을 사용해주세요.")

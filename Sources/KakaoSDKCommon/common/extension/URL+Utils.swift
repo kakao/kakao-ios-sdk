@@ -14,9 +14,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension URL {
   public func params() -> [String:Any]? {
     var dict = [String:Any]()
@@ -34,9 +32,7 @@ extension URL {
   }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension URL {
     public func oauthResult() -> (code: String?, error: Error?, state: String?) {
         var parameters = [String: String]()

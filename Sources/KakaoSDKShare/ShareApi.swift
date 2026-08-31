@@ -39,7 +39,6 @@ public class ShareApi {
     
     /// 카카오톡 공유 가능 여부 확인 \
     /// Checks whether the Kakao Talk Sharing is available
-    @available(iOS 13.0, *)
     @available(iOSApplicationExtension, unavailable)
     public static func isKakaoTalkSharingAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
@@ -49,9 +48,7 @@ public class ShareApi {
 extension ShareApi {
     // MARK: Fields
     
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
     public static func isExceededLimit(linkParameters: [String: Any]?, validationResult: ValidationResult, extras: [String: Any]?) -> Bool {
         var attachment = [String: Any]()
         
@@ -169,9 +166,7 @@ extension ShareApi {
 extension ShareApi {
     // MARK: Fields
     
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
     public func transformResponseToSharingResult(response: HTTPURLResponse?, data:Data?, targetAppKey: String? = nil, serverCallbackArgs:[String:String]? = nil, completion:@escaping (SharingResult?, Error?) -> Void) {
         
         if let data = data, let validationResult = try? SdkJSONDecoder.default.decode(ValidationResult.self, from: data) {

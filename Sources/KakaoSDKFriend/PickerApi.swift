@@ -18,9 +18,7 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @_exported import KakaoSDKFriendCore
 
 

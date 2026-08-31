@@ -14,9 +14,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension Array where Element == String {
     public func toJsonString() -> String? {
         if let data = try? JSONSerialization.data(withJSONObject: self, options:[]) {
@@ -28,9 +26,7 @@ extension Array where Element == String {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension Array where Element == Int64 {
     public func toJsonString() -> String? {
         if let data = try? JSONSerialization.data(withJSONObject: self, options:[]) {

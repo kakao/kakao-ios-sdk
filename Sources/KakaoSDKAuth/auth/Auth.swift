@@ -16,14 +16,10 @@ import Foundation
 import UIKit
 import KakaoSDKCommon
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public let AUTH = Auth.shared
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Auth {
     static public let retryTokenRefreshCount = 3
     static public let shared = Auth()

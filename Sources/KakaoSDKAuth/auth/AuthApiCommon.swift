@@ -17,15 +17,11 @@ import Alamofire
 import KakaoSDKCommon
 import UIKit
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @available(iOSApplicationExtension, unavailable)
 public let AUTH_API = AuthApiCommon.shared
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @available(iOSApplicationExtension, unavailable)
 public class AuthApiCommon {
     

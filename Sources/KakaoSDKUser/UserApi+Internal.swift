@@ -19,9 +19,7 @@ import AuthenticationServices
 import KakaoSDKCommon
 import KakaoSDKAuth
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension UserApi {
     public func _requestShippingAddress(continuePath: String,
                                 addressId: Int64? = nil,

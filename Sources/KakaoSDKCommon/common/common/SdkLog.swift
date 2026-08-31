@@ -14,9 +14,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// - verbose: Log type verbose
 /// - info: Log type info
 /// - debug: Log type debug
@@ -30,9 +28,7 @@ public enum LogEvent: String {
     case e = "[‼️]" // error
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// 로그레벨입니다.
 public enum LogLevel : Int {
     case v = 0
@@ -42,9 +38,7 @@ public enum LogLevel : Int {
     case e = 4
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// Kakao SDK 내부 로그 \
 /// Internal logs of Kakao SDK
 open class SdkLog {
@@ -142,9 +136,7 @@ open class SdkLog {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension Date {
     public func toString() -> String {
         return SdkLog.dateFormatter.string(from: self as Date)

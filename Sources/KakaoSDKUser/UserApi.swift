@@ -28,13 +28,9 @@ final public class UserApi {
     /// A singleton object for Kakao SDK
     public static let shared = UserApi()
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public let presentationContextProvider: Any?
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public var authenticateSession: ASWebAuthenticationSession?
     
     public private(set) var _storeHelper: Any?
@@ -124,9 +120,7 @@ extension UserApi {
         AuthController.shared._authorizeByAgtWithAuthenticationSession(scopes:scopes, nonce:nonce, completion:completion)
     }
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// 카카오싱크 전용입니다. 자세한 내용은 카카오싱크 전용 개발가이드를 참고하시기 바랍니다.
     public func loginWithKakaoAccount(prompts : [Prompt]? = nil,
                                       channelPublicIds: [String]? = nil,

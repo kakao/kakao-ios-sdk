@@ -23,9 +23,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension KeyedEncodingContainer {
     public mutating func encode(_ value: [String: Any], forKey key: KeyedEncodingContainer<K>.Key) throws {
         var container = nestedContainer(keyedBy: AnyCodingKey.self, forKey: key)

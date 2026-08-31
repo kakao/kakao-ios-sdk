@@ -32,9 +32,7 @@ public struct ErrorInfo : Codable {
     /// Scopes that the user must agree to
     public let requiredScopes: [String]?
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// API 종류 \
     /// API type
     public let apiType: String?
@@ -42,12 +40,38 @@ public struct ErrorInfo : Codable {
     /// 사용자가 동의한 동의항목 \
     /// Scopes that the user agreed to
     public let allowedScopes: [String]?
-    
+
+    @_documentation(visibility: private)
+    public let reason: RecoveryReason
+
     public init(code: ApiFailureReason, msg:String, requiredScopes:[String]?) {
         self.code = code
         self.msg = msg
         self.requiredScopes = requiredScopes
         self.apiType = nil
         self.allowedScopes = nil
+        self.reason = .unknown
+    }
+
+    public init(from decoder: any Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.code = try container.decode(ApiFailureReason.self, forKey: .code)
+        self.msg = try container.decode(String.self, forKey: .msg)
+        self.requiredScopes = try container.decodeIfPresent([String].self, forKey: .requiredScopes)
+        self.apiType = try container.decodeIfPresent(String.self, forKey: .apiType)
+        self.allowedScopes = try container.decodeIfPresent([String].self, forKey: .allowedScopes)
+        self.reason = try container.decodeIfPresent(ErrorInfo.RecoveryReason.self, forKey: .reason) ?? .unknown
+    }
+}
+
+extension ErrorInfo {
+    public enum RecoveryReason: String, Codable {
+        case refresh = "ACCESS_TOKEN_EXPIRED"
+        case unknown = "UNKNOWN"
+
+        public init(from decoder: any Decoder) throws {
+            let raw = try decoder.singleValueContainer().decode(String.self)
+            self = RecoveryReason(rawValue: raw) ?? .unknown
+        }
     }
 }

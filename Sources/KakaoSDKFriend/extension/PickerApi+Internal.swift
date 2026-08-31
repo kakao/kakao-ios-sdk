@@ -18,14 +18,10 @@ import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
 import KakaoSDKUser
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @_exported import KakaoSDKFriendCore
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension PickerApi {
     func updateSharingData() {
         self.updateSharingData(SharingData(kapiHost: KakaoSDK.shared.hosts().kapi,
@@ -65,9 +61,7 @@ extension PickerApi {
     }    
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension PickerApi {
     /// 반복 실행 Helper
     public func prepareCallPickerApi(completion:@escaping (Error?) -> Void) {
@@ -84,9 +78,7 @@ extension PickerApi {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension PickerApi : ScopeRequestable {
     public func requestPickerScope(requiredScope:[String], completion:@escaping (Error?) -> Void) {
         UserApi.shared.scopes(scopes: requiredScope) { scopeInfo, error in
@@ -123,9 +115,7 @@ extension PickerApi : ScopeRequestable {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// error type casting helper
 extension PickerApi {
     public func castSdkError(responseInfo:ResponseInfo?, error:Error?) -> Error? {

@@ -8,7 +8,6 @@
 
 import Foundation
 
-@available(iOS 13.0, *)
 extension Bundle {
     static func getBridgeBundle() -> Bundle? {
 #if SWIFT_PACKAGE

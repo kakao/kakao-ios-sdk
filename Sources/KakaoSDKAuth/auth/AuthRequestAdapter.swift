@@ -16,9 +16,7 @@ import Foundation
 import Alamofire
 import KakaoSDKCommon
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public final class AuthRequestAdapter : RequestInterceptor {
     public init() {}
     

@@ -126,9 +126,7 @@ public struct NaviLocation : Codable {
     public let rpflag: String?
     
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init(name : String,
                 x : String,
@@ -199,9 +197,7 @@ public struct NaviOption : Codable {
     }
     
 
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     // MARK: Initializers
     public init(coordType : CoordType? = nil,
                 vehicleType : VehicleType? = nil,

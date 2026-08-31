@@ -35,9 +35,7 @@ public enum SdkError : Error {
     case AppsFailed(reason:AppsFailureReason, errorInfo:AppsErrorInfo?)
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension SdkError {
     public init(reason:ClientFailureReason = .Unknown, message:String? = nil) {
         switch reason {
@@ -63,9 +61,7 @@ extension SdkError {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension SdkError {
     public init?(response:HTTPURLResponse, data:Data, type:ApiType) {
         if 200 ..< 300 ~= response.statusCode { return nil }
@@ -438,9 +434,7 @@ public enum ApiFailureReason : Int, Codable {
     case UnderMaintenance = -9798
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension ApiFailureReason {
     public init(from decoder: Decoder) throws {
         self = try ApiFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown
@@ -503,16 +497,12 @@ public enum AuthFailureReason : String, Codable {
     /// Server error
     case ServerError = "server_error"
     
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     /// 카카오싱크 전용
     case AutoLogin = "auto_login"
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension AuthFailureReason {
     public init(from decoder: Decoder) throws {
         self = try AuthFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown
@@ -595,9 +585,7 @@ public enum AppsFailureReason : String, Codable {
     case Unknown
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension AppsFailureReason {
     public init(from decoder: Decoder) throws {
         self = try AppsFailureReason(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .Unknown

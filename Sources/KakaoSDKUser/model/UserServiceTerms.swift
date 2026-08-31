@@ -82,9 +82,7 @@ public struct ServiceTerms : Codable {
         /// Unknown
         case unknown
         
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
         public init(from decoder: any Decoder) throws {
             self = try Referer(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .unknown
         }
@@ -95,9 +93,7 @@ public struct ServiceTerms : Codable {
         case referer = "agreedBy"
     }
         
-#if swift(>=5.8)
     @_documentation(visibility: private)
-#endif
     public init(from decoder: any Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         

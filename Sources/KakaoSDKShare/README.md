@@ -3,19 +3,18 @@
 카카오톡 공유 모듈입니다.
 
 ## Requirements
-- Xcode 11.0
-- iOS 13.0
-- Swift 5.0
-- CocoaPods 1.8.0
+- iOS 15.0
+- Swift 5.8
 
 ## Dependencies
 - KakaoSDKCommon
 - KakaoSDKTemplate
 
 ## Installation
+```swift
+.package(url: "https://github.com/kakao/kakao-ios-sdk.git", from: "2.0.0")
 ```
-pod 'KakaoSDKShare'
-```
+2.x.x 버전을 사용합니다. 타겟의 Dependencies에 `KakaoSDKShare`을 추가합니다.
 
 ## Import
 ```

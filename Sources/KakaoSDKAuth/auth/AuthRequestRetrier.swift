@@ -16,21 +16,23 @@ import Foundation
 import Alamofire
 import KakaoSDKCommon
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @available(iOSApplicationExtension, unavailable)
 public final class AuthRequestRetrier : RequestInterceptor {
-    private var requestsToRetry: [(RetryResult) -> Void] = []
-    
+    private var requestsToRetry: [(apiRequest: Request, completion: (RetryResult) -> Void)] = []
+
     private var isRefreshing = false
     
     private let errorLock = NSLock()
     
     private var isShowLog: Bool
 
-    public init(isShowLog: Bool = true) {
+    private let retryLimit: Int
+    private let maxRetryDelay: Int = 4
+
+    public init(isShowLog: Bool = true, retryLimit: Int = Auth.retryTokenRefreshCount) {
         self.isShowLog = isShowLog
+        self.retryLimit = retryLimit
     }
     
     public func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
@@ -45,15 +47,22 @@ public final class AuthRequestRetrier : RequestInterceptor {
                 return
             }
 
-            switch(sdkError.getApiError().reason) {
+            let apiError = sdkError.getApiError()
+            switch(apiError.reason) {
             case .InvalidAccessToken:
                 logString = "\(logString)\n reason:\(error)\n token: \(String(describing: AUTH.tokenManager.getToken()))"
                 if isShowLog { SdkLog.e("\(logString)\n\n") }
 
+                if apiError.info?.reason != ErrorInfo.RecoveryReason.refresh
+                    || request.retryCount >= retryLimit {
+                    completion(.doNotRetryWithError(sdkError))
+                    return
+                }
+
                 if shouldRefreshToken(request) {
 //                    SdkLog.d("---------------------------- enqueue completion\n request: \(request) \n\n")
                     if let urlString = request.request?.url?.absoluteString, urlString.hasSuffix(Paths.checkAccessToken) == false {
-                        requestsToRetry.append(completion)
+                        requestsToRetry.append((apiRequest: request, completion: completion))
                     }
 
                     if !isRefreshing {
@@ -65,16 +74,16 @@ public final class AuthRequestRetrier : RequestInterceptor {
                                 if isShowLog { SdkLog.e(" refreshToken error: \(error). retry aborted.\n request: \(request) \n\n") }
                                 
                                 //pending requests all cancel
-                                self.requestsToRetry.forEach {
-                                    $0(.doNotRetryWithError(error))
+                                self.requestsToRetry.forEach { (_, completion) in
+                                    completion(.doNotRetryWithError(error))
                                 }                              }
                             else {
                                 //token refresh success.
                                 //SdkLog.d(">>>>>>>>>>>>>> refreshToken success\n request: \(request) \n\n")
                                 
                                 //proceed all pending requests.
-                                self.requestsToRetry.forEach {
-                                    $0(.retry)
+                                self.requestsToRetry.forEach { (apiRequest, completion) in
+                                    completion(.retryWithDelay(AuthRequestRetrier.calculateDelay(for: apiRequest.retryCount, maxCount: maxRetryDelay)))
                                 }
                             }
                             
@@ -136,5 +145,10 @@ public final class AuthRequestRetrier : RequestInterceptor {
         }
 
         return true
+    }
+
+    public static func calculateDelay(for retryCount: Int, maxCount: Int) -> Double {
+        let count = min(retryCount, maxCount)
+        return pow(2, Double(count))
     }
 }

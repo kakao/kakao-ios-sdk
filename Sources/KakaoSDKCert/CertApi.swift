@@ -17,9 +17,7 @@ import Foundation
 import KakaoSDKCommon
 import KakaoSDKAuth
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @_exported import KakaoSDKCertCore
 
 /// 카카오 인증서비스 API 클래스 \
@@ -335,9 +333,7 @@ extension CertApi {
 }
 
 extension CertApi {
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
     //signWithKakaoTalk 내부 리퀘스트 메소드
     private func _checkStatus(txId: String,
                               targetAppKey:String? = nil,

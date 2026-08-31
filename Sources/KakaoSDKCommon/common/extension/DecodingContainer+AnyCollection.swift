@@ -23,9 +23,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 struct AnyCodingKey: CodingKey {
     var stringValue: String
     var intValue: Int?
@@ -40,9 +38,7 @@ struct AnyCodingKey: CodingKey {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension KeyedDecodingContainer {
     public func decode(_ type: [Any].Type, forKey key: KeyedDecodingContainer<K>.Key) throws -> [Any] {
         var values = try nestedUnkeyedContainer(forKey: key)

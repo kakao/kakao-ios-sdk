@@ -14,9 +14,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Properties {
     static let sdkVersionKey = "com.kakao.sdk.version"
     

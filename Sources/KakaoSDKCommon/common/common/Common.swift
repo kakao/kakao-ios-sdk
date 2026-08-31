@@ -15,9 +15,7 @@
 import Foundation
 import UIKit
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Constants {
     static public let responseType = "code"
     
@@ -69,26 +67,20 @@ public class Constants {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public enum SdkType : String {
     case Swift = "swift"
     case RxSwift = "rx_swift"
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public enum ApiType {
     case KApi
     case KAuth
     case Apps
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class SdkIdentifier {
     public let customIdentifier : String?
     

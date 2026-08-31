@@ -14,9 +14,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @objc public protocol SdkAuthRefresher: AnyObject {
     static var shared: SdkAuthRefresher { get set }
     

@@ -1,14 +1,14 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.8
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-// sdk-version:2.28.0
+// sdk-version:2.29.0
 import PackageDescription
 
 let package = Package(
     name: "KakaoOpenSDK",
     defaultLocalization: "ko",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v15)
     ],
     products: [
         .library(
@@ -49,9 +49,8 @@ let package = Package(
             targets: ["KakaoSDKTemplate"])
     ],
     dependencies: [
-        .package(name: "Alamofire",
-                  url: "https://github.com/Alamofire/Alamofire.git",
-                  Version(5,9,0)..<Version(6,0,0))
+        .package(url: "https://github.com/Alamofire/Alamofire.git",
+                 Version(5,9,0)..<Version(6,0,0))
     ],
     targets: [
         .target(

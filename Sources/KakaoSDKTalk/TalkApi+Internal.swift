@@ -18,9 +18,7 @@ import UIKit
 
 import AuthenticationServices
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 extension TalkApi {
     public func _followChannelWithAuthenticationSession(channelPublicId:String,
                                                              agtToken: String? = nil,

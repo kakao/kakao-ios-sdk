@@ -2340,55 +2340,6 @@
         "children": [
           {
             "kind": "Var",
-            "name": "title",
-            "printedName": "title",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC5titleSSvp",
-            "mangledName": "$s18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC5titleSSvp",
-            "moduleName": "KakaoSDKFriendCore",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC5titleSSvg",
-                "mangledName": "$s18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC5titleSSvg",
-                "moduleName": "KakaoSDKFriendCore",
-                "implicit": true,
-                "declAttributes": [
-                  "Final"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "viewAppearance",
             "printedName": "viewAppearance",
             "children": [
@@ -2819,28 +2770,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(title:viewAppearance:orientation:enableSearch:enableIndex:showMyProfile:showFavorite:showPickedFriend:selectParams:)",
+            "printedName": "init(viewAppearance:orientation:enableSearch:enableIndex:showMyProfile:showFavorite:showPickedFriend:selectParams:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "OpenPickerFriendRequestParams",
                 "printedName": "KakaoSDKFriendCore.OpenPickerFriendRequestParams",
                 "usr": "s:18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -2900,8 +2836,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC5title14viewAppearance11orientation12enableSearch0M5Index13showMyProfile0P8Favorite0p6PickedF006selectH0ACSSSg_AA04ViewK0OAA0E11OrientationOS5bAA06SelectH0Vtcfc",
-            "mangledName": "$s18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC5title14viewAppearance11orientation12enableSearch0M5Index13showMyProfile0P8Favorite0p6PickedF006selectH0ACSSSg_AA04ViewK0OAA0E11OrientationOS5bAA06SelectH0Vtcfc",
+            "usr": "s:18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC14viewAppearance11orientation12enableSearch0L5Index13showMyProfile0O8Favorite0o6PickedF006selectH0AcA04ViewJ0O_AA0E11OrientationOS5bAA06SelectH0Vtcfc",
+            "mangledName": "$s18KakaoSDKFriendCore29OpenPickerFriendRequestParamsC14viewAppearance11orientation12enableSearch0L5Index13showMyProfile0O8Favorite0o6PickedF006selectH0AcA04ViewJ0O_AA0E11OrientationOS5bAA06SelectH0Vtcfc",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -3729,28 +3665,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(title:friendFilter:countryCodeFilters:usingOsFilter:viewAppearance:orientation:enableSearch:enableIndex:showMyProfile:showFavorite:disableSelectOptions:displayAllProfile:showPickedFriend:selectParams:)",
+            "printedName": "init(friendFilter:countryCodeFilters:usingOsFilter:viewAppearance:orientation:enableSearch:enableIndex:showMyProfile:showFavorite:disableSelectOptions:displayAllProfile:showPickedFriend:selectParams:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "PickerFriendRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerFriendRequestParams",
                 "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -3877,8 +3798,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC5title12friendFilter18countryCodeFilters07usingOsJ014viewAppearance11orientation12enableSearch0S5Index13showMyProfile0V8Favorite20disableSelectOptions010displayAllX00v6PickedE006selectG0ACSSSg_AA0deJ0OSaySSGSgAA0d5UsingoJ0OAA04ViewQ0OAA0D11OrientationOS4bSayAA19DisableSelectOptionCGSgS2bAA06SelectG0Vtcfc",
-            "mangledName": "$s18KakaoSDKFriendCore25PickerFriendRequestParamsC5title12friendFilter18countryCodeFilters07usingOsJ014viewAppearance11orientation12enableSearch0S5Index13showMyProfile0V8Favorite20disableSelectOptions010displayAllX00v6PickedE006selectG0ACSSSg_AA0deJ0OSaySSGSgAA0d5UsingoJ0OAA04ViewQ0OAA0D11OrientationOS4bSayAA19DisableSelectOptionCGSgS2bAA06SelectG0Vtcfc",
+            "usr": "s:18KakaoSDKFriendCore25PickerFriendRequestParamsC12friendFilter18countryCodeFilters07usingOsI014viewAppearance11orientation12enableSearch0R5Index13showMyProfile0U8Favorite20disableSelectOptions010displayAllW00u6PickedE006selectG0AcA0deI0O_SaySSGSgAA0d5UsingnI0OAA04ViewP0OAA0D11OrientationOS4bSayAA07DisableZ6OptionCGSgS2bAA0zG0Vtcfc",
+            "mangledName": "$s18KakaoSDKFriendCore25PickerFriendRequestParamsC12friendFilter18countryCodeFilters07usingOsI014viewAppearance11orientation12enableSearch0R5Index13showMyProfile0U8Favorite20disableSelectOptions010displayAllW00u6PickedE006selectG0AcA0deI0O_SaySSGSgAA0d5UsingnI0OAA04ViewP0OAA0D11OrientationOS4bSayAA07DisableZ6OptionCGSgS2bAA0zG0Vtcfc",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -5050,7 +4971,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(selectionType:title:chatFilters:viewAppearance:orientation:enableSearch:disableSelectOptions:displayAllProfile:chatSelectParams:chatMemberSelectParams:)",
+            "printedName": "init(selectionType:chatFilters:viewAppearance:orientation:enableSearch:disableSelectOptions:displayAllProfile:chatSelectParams:chatMemberSelectParams:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -5063,21 +4984,6 @@
                 "name": "PickerChatSelectionType",
                 "printedName": "KakaoSDKFriendCore.PickerChatSelectionType",
                 "usr": "s:18KakaoSDKFriendCore23PickerChatSelectionTypeO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -5169,8 +5075,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:18KakaoSDKFriendCore23PickerChatRequestParamsC13selectionType5title11chatFilters14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile0ksG00k6MembersG0AcA0de9SelectionI0O_SSSgSayAA0dE6FilterOGAA04ViewN0OAA0D11OrientationOSbSayAA07DisableS6OptionCGSgSbAA0sG0VA1_Sgtcfc",
-            "mangledName": "$s18KakaoSDKFriendCore23PickerChatRequestParamsC13selectionType5title11chatFilters14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile0ksG00k6MembersG0AcA0de9SelectionI0O_SSSgSayAA0dE6FilterOGAA04ViewN0OAA0D11OrientationOSbSayAA07DisableS6OptionCGSgSbAA0sG0VA1_Sgtcfc",
+            "usr": "s:18KakaoSDKFriendCore23PickerChatRequestParamsC13selectionType11chatFilters14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile0jrG00j6MemberrG0AcA0de9SelectionI0O_SayAA0dE6FilterOGAA04ViewM0OAA0D11OrientationOSbSayAA07DisableR6OptionCGSgSbAA0rG0VA_Sgtcfc",
+            "mangledName": "$s18KakaoSDKFriendCore23PickerChatRequestParamsC13selectionType11chatFilters14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile0jrG00j6MemberrG0AcA0de9SelectionI0O_SayAA0dE6FilterOGAA04ViewM0OAA0D11OrientationOSbSayAA07DisableR6OptionCGSgSbAA0rG0VA_Sgtcfc",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -5709,28 +5615,13 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(title:viewAppearance:orientation:enableSearch:disableSelectOptions:displayAllProfile:friendParams:chatParams:)",
+            "printedName": "init(viewAppearance:orientation:enableSearch:disableSelectOptions:displayAllProfile:friendParams:chatParams:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "PickerTabRequestParams",
                 "printedName": "KakaoSDKFriendCore.PickerTabRequestParams",
                 "usr": "s:18KakaoSDKFriendCore22PickerTabRequestParamsC"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
@@ -5797,8 +5688,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:18KakaoSDKFriendCore22PickerTabRequestParamsC5title14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile06friendG004chatG0ACSSSg_AA04ViewJ0OAA0D11OrientationOSbSayAA07DisableO6OptionCGSgSbAC06FriendfG0CAC04ChatfG0Ctcfc",
-            "mangledName": "$s18KakaoSDKFriendCore22PickerTabRequestParamsC5title14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile06friendG004chatG0ACSSSg_AA04ViewJ0OAA0D11OrientationOSbSayAA07DisableO6OptionCGSgSbAC06FriendfG0CAC04ChatfG0Ctcfc",
+            "usr": "s:18KakaoSDKFriendCore22PickerTabRequestParamsC14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile06friendG004chatG0AcA04ViewI0O_AA0D11OrientationOSbSayAA07DisableN6OptionCGSgSbAC06FriendfG0CAC04ChatfG0Ctcfc",
+            "mangledName": "$s18KakaoSDKFriendCore22PickerTabRequestParamsC14viewAppearance11orientation12enableSearch20disableSelectOptions17displayAllProfile06friendG004chatG0AcA04ViewI0O_AA0D11OrientationOSbSayAA07DisableN6OptionCGSgSbAC06FriendfG0CAC04ChatfG0Ctcfc",
             "moduleName": "KakaoSDKFriendCore",
             "declAttributes": [
               "AccessControl"
@@ -8409,6 +8300,16 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "KakaoSDKFriendCore"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
       },
       {
         "kind": "Import",
@@ -16021,6 +15922,16 @@
       },
       {
         "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "KakaoSDKFriendCore",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -19102,1250 +19013,1124 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/ChatPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4565,
+      "offset": 4442,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 929,
+      "offset": 901,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 1846,
+      "offset": 1818,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 2774,
+      "offset": 2746,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 4907,
+      "offset": 4879,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
       "kind": "Dictionary",
       "offset": 6706,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/DataProvider.swift",
       "kind": "BooleanLiteral",
       "offset": 6756,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/FriendPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4837,
+      "offset": 4811,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi+Request.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi+Request.swift",
       "kind": "BooleanLiteral",
-      "offset": 1222,
+      "offset": 1198,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5253,
+      "offset": 5106,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5295,
+      "offset": 5148,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5339,
+      "offset": 5192,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5382,
+      "offset": 5235,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 5429,
+      "offset": 5282,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8214,
+      "offset": 7925,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8256,
+      "offset": 7967,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8300,
+      "offset": 8011,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8343,
+      "offset": 8054,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8459,
+      "offset": 8170,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 8507,
+      "offset": 8218,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 13687,
+      "offset": 13229,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 13803,
+      "offset": 13345,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 16111,
+      "offset": 15294,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 16227,
+      "offset": 15410,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 18295,
+      "offset": 17466,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 18343,
+      "offset": 17514,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 18390,
+      "offset": 17561,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 18441,
+      "offset": 17612,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21017,
+      "offset": 20160,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21054,
+      "offset": 20197,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21098,
+      "offset": 20241,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21139,
+      "offset": 20282,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21185,
+      "offset": 20328,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21229,
+      "offset": 20372,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 21282,
+      "offset": 20425,
       "length": 54,
       "value": "\"Use single selection mode with single picker method.\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "StringLiteral",
-      "offset": 21388,
+      "offset": 20531,
       "length": 55,
       "value": "\"Use multiple selection mode with multi picker method.\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21744,
+      "offset": 20863,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21749,
+      "offset": 20868,
       "length": 2,
       "value": "60"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "IntegerLiteral",
-      "offset": 21754,
+      "offset": 20873,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 23676,
+      "offset": 22723,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 24131,
+      "offset": 23150,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 25865,
+      "offset": 24884,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/PickerApi.swift",
       "kind": "BooleanLiteral",
-      "offset": 27419,
+      "offset": 26438,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "IntegerLiteral",
       "offset": 677,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/TabPickerViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4358,
+      "offset": 4233,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/cache\/ImageCacheManager.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/cache\/ImageCacheManager.swift",
       "kind": "IntegerLiteral",
       "offset": 774,
       "length": 4,
       "value": "4096"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/data\/ChatSelectionAction.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/data\/ChatSelectionAction.swift",
       "kind": "Array",
       "offset": 870,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/data\/ChatSelectionAction.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/data\/ChatSelectionAction.swift",
       "kind": "Array",
       "offset": 913,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "IntegerLiteral",
       "offset": 727,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "IntegerLiteral",
       "offset": 1433,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "BooleanLiteral",
       "offset": 1455,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "FloatLiteral",
       "offset": 1514,
       "length": 3,
       "value": "1.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "BooleanLiteral",
       "offset": 1535,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/extension\/UIView+Squircle.swift",
       "kind": "IntegerLiteral",
       "offset": 4145,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
-      "offset": 870,
+      "offset": 846,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
-      "offset": 903,
+      "offset": 879,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
-      "offset": 934,
+      "offset": 910,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
-      "offset": 966,
+      "offset": 942,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "StringLiteral",
-      "offset": 1001,
+      "offset": 977,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 1156,
+      "offset": 1108,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 1171,
+      "offset": 1123,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 1186,
+      "offset": 1138,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 1201,
+      "offset": 1153,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 1216,
+      "offset": 1168,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/KFSdkLog.swift",
       "kind": "IntegerLiteral",
-      "offset": 1410,
+      "offset": 1338,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
       "kind": "StringLiteral",
-      "offset": 1182,
+      "offset": 1158,
       "length": 14,
       "value": "\"chatRoomType\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerChats.swift",
       "kind": "StringLiteral",
-      "offset": 2639,
+      "offset": 2615,
       "length": 16,
       "value": "\"thumbnailImage\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 2151,
       "length": 8,
       "value": "\"friend\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 2185,
       "length": 11,
       "value": "\"no_friend\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
       "offset": 2216,
       "length": 5,
       "value": "\"N\/A\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
-      "offset": 3151,
+      "offset": 3103,
       "length": 8,
       "value": "\"friend\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerFriends.swift",
       "kind": "StringLiteral",
-      "offset": 3187,
+      "offset": 3139,
       "length": 13,
       "value": "\"chat_member\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "BooleanLiteral",
+      "offset": 203,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 500,
+      "length": 2,
+      "value": "44"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 665,
+      "length": 2,
+      "value": "43"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 713,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1376,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1542,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerLayoutMetrics.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1662,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 1379,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 1406,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 2067,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 2094,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 2557,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 2584,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 3079,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerSelect.swift",
       "kind": "IntegerLiteral",
       "offset": 3106,
       "length": 2,
       "value": "30"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
       "kind": "StringLiteral",
       "offset": 263,
       "length": 6,
       "value": "\"full\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
       "kind": "StringLiteral",
       "offset": 287,
       "length": 7,
       "value": "\"popup\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/model\/PickerViewType.swift",
       "kind": "IntegerLiteral",
       "offset": 679,
       "length": 4,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "FloatLiteral",
-      "offset": 1293,
+      "offset": 1221,
       "length": 4,
       "value": "30.0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 1718,
+      "offset": 1646,
       "length": 5,
       "value": "\"GET\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 1744,
+      "offset": 1672,
       "length": 6,
       "value": "\"POST\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 1773,
+      "offset": 1701,
       "length": 8,
       "value": "\"DELETE\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "BooleanLiteral",
-      "offset": 2079,
+      "offset": 2007,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 10676,
+      "offset": 10580,
       "length": 7,
       "value": "\":#[]@\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 10781,
+      "offset": 10685,
       "length": 13,
       "value": "\"!$&'()*+,;=\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 10856,
+      "offset": 10760,
       "length": 54,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 10885,
+      "offset": 10789,
       "length": 1,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Caprifire.swift",
       "kind": "StringLiteral",
-      "offset": 10909,
+      "offset": 10813,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
-      "offset": 1039,
+      "offset": 991,
       "length": 17,
       "value": "\"\/v1\/friends\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
-      "offset": 1092,
+      "offset": 1044,
       "length": 21,
       "value": "\"\/v2\/user\/scopes\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
-      "offset": 1155,
+      "offset": 1107,
       "length": 28,
       "value": "\"\/v1\/api\/talk\/chat\/list\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/network\/Urls.swift",
       "kind": "StringLiteral",
-      "offset": 1226,
+      "offset": 1178,
       "length": 26,
       "value": "\"\/v1\/api\/talk\/members\/sdk\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1357,
+      "offset": 881,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1098,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/EmptyView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1351,
+      "offset": 1694,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 1386,
+      "offset": 1910,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
       "kind": "BooleanLiteral",
-      "offset": 15256,
+      "offset": 1945,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/FriendPickerTableViewCell.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15834,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1198,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1213,
       "length": 13,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1241,
       "length": 14,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1269,
       "length": 13,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1297,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1320,
       "length": 15,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1350,
       "length": 7,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1380,
       "length": 10,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
       "offset": 1404,
       "length": 11,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "BooleanLiteral",
-      "offset": 8980,
+      "offset": 8965,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "BooleanLiteral",
-      "offset": 9034,
+      "offset": 9019,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
-      "offset": 9105,
+      "offset": 9090,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ImageFactory.swift",
       "kind": "IntegerLiteral",
-      "offset": 9117,
+      "offset": 9102,
       "length": 2,
       "value": "22"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/LineView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/LineView.swift",
       "kind": "BooleanLiteral",
       "offset": 747,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviTitleLabel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 779,
+      "length": 1,
+      "value": "4"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviTitleLabel.swift",
+      "kind": "IntegerLiteral",
+      "offset": 816,
+      "length": 2,
+      "value": "16"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1072,
+      "offset": 1079,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 1324,
-      "length": 16,
-      "value": "\"talk_white000s\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1376,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 1441,
-      "length": 15,
-      "value": "\"talk_gray001s\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 1734,
-      "length": 22,
-      "value": "\"friendspickerBtnBack\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 1834,
-      "length": 23,
-      "value": "\"friendspickerBtnClose\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 1941,
-      "length": 15,
-      "value": "\"talk_gray900s\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2058,
-      "length": 70,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2095,
-      "length": 20,
-      "value": "\"accessibility_back\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2120,
-      "length": 6,
-      "value": "\"back\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2127,
-      "length": 3,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2143,
-      "length": 72,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2180,
-      "length": 21,
-      "value": "\"accessibility_close\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2206,
-      "length": 7,
-      "value": "\"close\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2214,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2366,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2374,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2379,
-      "length": 2,
-      "value": "17"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2592,
-      "length": 4,
-      "value": "\"ok\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2674,
-      "length": 15,
-      "value": "\"talk_gray900s\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 2767,
-      "length": 15,
-      "value": "\"talk_gray900s\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "FloatLiteral",
-      "offset": 2804,
-      "length": 4,
-      "value": "0.15"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2859,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3004,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3012,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3017,
-      "length": 2,
-      "value": "18"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3184,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "StringLiteral",
-      "offset": 3244,
-      "length": 15,
-      "value": "\"talk_gray900s\""
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3457,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3465,
-      "length": 2,
-      "value": "16"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3470,
-      "length": 2,
-      "value": "17"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3604,
-      "length": 3,
-      "value": "250"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3608,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3622,
-      "length": 3,
-      "value": "198"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3626,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3639,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3641,
-      "length": 5,
-      "value": "255.0"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "FloatLiteral",
-      "offset": 3655,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/NaviView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3737,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 763,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 778,
       "length": 6,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 798,
       "length": 6,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 818,
       "length": 9,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "FloatLiteral",
       "offset": 2174,
       "length": 3,
       "value": "0.5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "StringLiteral",
       "offset": 2244,
       "length": 15,
       "value": "\"talk_gray150a\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "IntegerLiteral",
       "offset": 2678,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/ProfileImageView.swift",
       "kind": "BooleanLiteral",
       "offset": 8725,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SectionHeaderView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SearchTextField.swift",
+      "kind": "IntegerLiteral",
+      "offset": 749,
+      "length": 2,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SectionHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 711,
+      "length": 2,
+      "value": "13"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SectionHeaderView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 843,
+      "length": 2,
+      "value": "14"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SectionHeaderView.swift",
       "kind": "BooleanLiteral",
-      "offset": 962,
+      "offset": 2438,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SelectAllButtonView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/SelectAllButtonView.swift",
       "kind": "BooleanLiteral",
-      "offset": 1402,
+      "offset": 1366,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
       "kind": "BooleanLiteral",
       "offset": 1357,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TabButtonView.swift",
       "kind": "BooleanLiteral",
-      "offset": 3924,
+      "offset": 3644,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 906,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "StringLiteral",
       "offset": 5154,
       "length": 5,
       "value": "\"★\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "StringLiteral",
       "offset": 5181,
       "length": 5,
       "value": "\"●\""
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5218,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5277,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5318,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5353,
       "length": 2,
       "value": "-1"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5401,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
       "offset": 5438,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/TableIndexView.swift",
       "kind": "IntegerLiteral",
-      "offset": 11240,
+      "offset": 11216,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/chat\/ChatPickerView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/chat\/ChatPickerView.swift",
       "kind": "BooleanLiteral",
       "offset": 141,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/purple\/.tt\/workspace\/bc3ccd40-40a4-4be1-9568-c95b8f178833\/working\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/chat\/ChatPickerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 779,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/chat\/ChatPickerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 882,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/chat\/ChatPickerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1069,
+      "length": 3,
+      "value": "150"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
       "kind": "BooleanLiteral",
       "offset": 326,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 996,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1099,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKFriendCore\/views\/picker\/FriendPickerView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1286,
+      "length": 3,
+      "value": "150"
     }
   ]
 }

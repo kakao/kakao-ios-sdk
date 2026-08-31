@@ -17,9 +17,7 @@ import SafariServices
 import AuthenticationServices
 import KakaoSDKCommon
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @available(iOSApplicationExtension, unavailable)
 let AUTH_CONTROLLER = AuthController.shared
 
@@ -44,10 +42,7 @@ public enum Prompt : String {
     case SelectAccount = "select_account"
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
-@available(iOS 13.0, *)
 @available(iOSApplicationExtension, unavailable)
 public class DefaultASWebAuthenticationPresentationContextProvider: NSObject, ASWebAuthenticationPresentationContextProviding {
     public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
@@ -55,9 +50,7 @@ public class DefaultASWebAuthenticationPresentationContextProvider: NSObject, AS
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @available(iOSApplicationExtension, unavailable)
 public class AuthController {
     

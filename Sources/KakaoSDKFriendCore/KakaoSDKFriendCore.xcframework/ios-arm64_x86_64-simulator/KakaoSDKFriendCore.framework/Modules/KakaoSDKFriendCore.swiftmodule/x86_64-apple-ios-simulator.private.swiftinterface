@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KakaoSDKFriendCore
+// swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name KakaoSDKFriendCore
 // swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import AuthenticationServices
 import CoreGraphics
@@ -100,7 +100,6 @@ public class DisableSelectOption {
   @objc deinit
 }
 public class OpenPickerFriendRequestParams {
-  final public let title: Swift.String
   final public let viewAppearance: KakaoSDKFriendCore.ViewAppearance
   final public let orientation: KakaoSDKFriendCore.PickerOrientation
   final public let enableSearch: Swift.Bool
@@ -109,9 +108,7 @@ public class OpenPickerFriendRequestParams {
   final public let showFavorite: Swift.Bool
   public var showPickedFriend: Swift.Bool
   final public let selectParams: KakaoSDKFriendCore.SelectParams
-  #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
-  #endif
+  public init(viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
   @objc deinit
 }
 public class PickerFriendRequestParams {
@@ -130,7 +127,7 @@ public class PickerFriendRequestParams {
   public var showPickedFriend: Swift.Bool
   final public let selectParams: KakaoSDKFriendCore.SelectParams
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, friendFilter: KakaoSDKFriendCore.PickerFriendFilter = .none, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter = .all, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
+  public init(friendFilter: KakaoSDKFriendCore.PickerFriendFilter = .none, countryCodeFilters: [Swift.String]? = nil, usingOsFilter: KakaoSDKFriendCore.PickerUsingOsFilter = .all, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, enableIndex: Swift.Bool = true, showMyProfile: Swift.Bool = true, showFavorite: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, showPickedFriend: Swift.Bool = true, selectParams: KakaoSDKFriendCore.SelectParams = .friend(selectionMode: .multiple))
   #endif
   convenience public init(_ pickerFriendRequestParams: KakaoSDKFriendCore.PickerFriendRequestParams)
   convenience public init(_ openPickerFriendRequestParams: KakaoSDKFriendCore.OpenPickerFriendRequestParams)
@@ -170,7 +167,7 @@ public class PickerChatRequestParams {
   final public let chatSelectParams: KakaoSDKFriendCore.SelectParams
   final public let chatMemberSelectParams: KakaoSDKFriendCore.SelectParams?
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(selectionType: KakaoSDKFriendCore.PickerChatSelectionType, title: Swift.String? = nil, chatFilters: [KakaoSDKFriendCore.PickerChatFilter] = [ .regular ], viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, chatSelectParams: KakaoSDKFriendCore.SelectParams = .chat(selectionMode: .single), chatMemberSelectParams: KakaoSDKFriendCore.SelectParams? = nil)
+  public init(selectionType: KakaoSDKFriendCore.PickerChatSelectionType, chatFilters: [KakaoSDKFriendCore.PickerChatFilter] = [ .regular ], viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, chatSelectParams: KakaoSDKFriendCore.SelectParams = .chat(selectionMode: .single), chatMemberSelectParams: KakaoSDKFriendCore.SelectParams? = nil)
   #endif
   @objc deinit
 }
@@ -184,7 +181,7 @@ public class PickerTabRequestParams {
   public var friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams
   public var chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(title: Swift.String? = nil, viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams, chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams)
+  public init(viewAppearance: KakaoSDKFriendCore.ViewAppearance = .auto, orientation: KakaoSDKFriendCore.PickerOrientation = .auto, enableSearch: Swift.Bool = true, disableSelectOptions: [KakaoSDKFriendCore.DisableSelectOption]? = nil, displayAllProfile: Swift.Bool = false, friendParams: KakaoSDKFriendCore.PickerTabRequestParams.FriendRequestParams, chatParams: KakaoSDKFriendCore.PickerTabRequestParams.ChatRequestParams)
   #endif
   public class FriendRequestParams {
     final public let friendFilter: KakaoSDKFriendCore.PickerFriendFilter

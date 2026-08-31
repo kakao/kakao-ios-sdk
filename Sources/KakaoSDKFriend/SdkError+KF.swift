@@ -14,14 +14,10 @@
 
 import Foundation
 import KakaoSDKCommon
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 @_exported import KakaoSDKFriendCore
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// SdkError casting helper
 extension SdkError {
     public init(fromKfSdkError kfSdkError:KFSdkError) {
@@ -34,9 +30,7 @@ extension SdkError {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 /// SdkError casting helper
 extension ClientFailureReason {
     public init(fromKfClientFailureReason kfClientFailureReason:KFClientFailureReason) {

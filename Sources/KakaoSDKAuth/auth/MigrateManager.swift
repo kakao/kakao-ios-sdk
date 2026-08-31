@@ -15,9 +15,7 @@
 import Foundation
 import KakaoSDKCommon
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class MigrateManager {
     public static func checkSdkVersionForMigration() {
         SdkLog.d("============================================================================================================")

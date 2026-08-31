@@ -14,9 +14,7 @@
 
 import Foundation
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Hosts {
     public static let shared = Hosts()
     
@@ -64,9 +62,7 @@ public class Hosts {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public enum HostType {
     case Kapi
     case Dapi
@@ -120,9 +116,7 @@ public enum HostType {
     }
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Paths {
     //kauth
     public static let authAuthorize = "/oauth/authorize"
@@ -216,9 +210,7 @@ public class Paths {
     public static let kpidt = "/auth/kpidt"
 }
 
-#if swift(>=5.8)
 @_documentation(visibility: private)
-#endif
 public class Urls {
     public static func compose(_ hostType:HostType = .Kapi, path:String) -> String {
         return "\(hostType.host)\(path)"
