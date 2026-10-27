@@ -10,11 +10,15 @@ import Foundation
 
 extension Bundle {
     static func getBridgeBundle() -> Bundle? {
-#if SWIFT_PACKAGE
-        if let mainPath = Bundle.main.path(forResource: "KakaoOpenSDK_KakaoSDKUser", ofType: "bundle") {
+        let bridgeBundleName = "KakaoOpenSDK_KakaoSDKUser"
+        
+        if let mainPath = Bundle.main.path(forResource: bridgeBundleName, ofType: "bundle") {
             return Bundle(path: mainPath)
         }
-#endif
+        
+        if let clsPath = Bundle(for: BridgeBundleFinder.self).path(forResource: bridgeBundleName, ofType: "bundle") {
+            return Bundle(path: clsPath)
+        }
         
         return Bundle(for: BridgeBundleFinder.self)
     }

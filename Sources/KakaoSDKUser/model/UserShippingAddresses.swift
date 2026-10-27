@@ -14,13 +14,11 @@
 
 import Foundation
 
-// 배송지 목록은 기본 배송지가 가장 상위에 배치되고, 그 이후에는 배송지가 수정된 시각을 기준으로 최신순 정렬
 /// 배송지 조회 응답 \
 /// Response for Retrieve shipping address
 /// ## SeeAlso
-/// - ``UserApi/shippingAddresses(fromUpdatedAt:pageSize:completion:)``
-/// - ``UserApi/shippingAddresses(addressId:completion:)``
-public struct UserShippingAddresses : Codable {
+/// - ``UserApi/shippingAddress(addressId:completion:)``
+public struct UserShippingAddress : Codable {
     
     // MARK: Fields
     
@@ -28,20 +26,20 @@ public struct UserShippingAddresses : Codable {
     /// Service user ID
     public let userId: Int64?
     
-    /// 사용자 동의 시 배송지 제공 가능 여부 \
-    /// Whether ``shippingAddresses`` can be provided under user consent
+    /// 배송지를 얻기 위한 추가 동의 필요 여부 \
+    /// Whether consent to shipping addresses is required
     public let needsAgreement: Bool?
     
-    /// 배송지 목록 \
-    /// List of shipping addresses
+    /// 기본 배송지 또는 `address_id`로 지정한 배송지 정보, 사용자가 [배송지 정보] 동의항목에 동의했고 조회할 배송지가 있는 경우 제공 \
+    /// Default shipping address, or the shipping address specified by `address_id`, provided if the user has consented to the [Shipping information] consent item and the shipping address to retrieve exists
     /// ## SeeAlso
     /// - ``ShippingAddress``
-    public let shippingAddresses: [ShippingAddress]?
+    public let shippingAddress: ShippingAddress?
     
     
     enum CodingKeys: String, CodingKey {
-        case userId, shippingAddresses
-        case needsAgreement = "shippingAddressesNeedsAgreement"
+        case userId, shippingAddress
+        case needsAgreement = "shippingAddressNeedsAgreement"
     }
 }
 
@@ -49,7 +47,7 @@ public struct UserShippingAddresses : Codable {
 /// 배송지 정보 \
 /// Shipping address information
 /// ## SeeAlso
-/// - ``UserShippingAddresses``
+/// - ``UserShippingAddress``
 public struct ShippingAddress : Codable {
     
     // MARK: Enumerations

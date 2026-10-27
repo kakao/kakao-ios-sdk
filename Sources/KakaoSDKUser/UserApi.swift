@@ -52,6 +52,7 @@ extension UserApi {
     /// ## SeeAlso
     /// - [앱 실행 허용 목록](https://developers.kakao.com/docs/latest/ko/ios/getting-started#project-plist) \
     ///   [Allowlist](https://developers.kakao.com/docs/latest/en/ios/getting-started#project-plist)
+    @available(*, deprecated, message: "call loginWithKakaoTalk(...) and handle the error in its completion instead.")
     public static func isKakaoTalkLoginAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkAuth, path:Paths.authTalk))!)
     }
@@ -300,39 +301,11 @@ extension UserApi {
     /// 배송지 조회 \
     /// Retrieve shipping address
     /// - parameters:
-    ///   - fromUpdatedAt: 이전 페이지의 마지막 배송지 수정 시각, `0` 전달 시 처음부터 조회 \
-    ///                    Last shipping address modification on the previous page, retrieve from beginning if passing `0`
-    ///   - pageSize: 한 페이지에 포함할 배송지 수(기본값: 10) \
-    ///               Number of shipping addresses displayed on a page (Default: 10)
+    ///   - addressId : 조회할 배송지 ID, 생략 시 기본 배송지 조회 \
+    ///                Shipping address ID to retrieve, if omitted, the default shipping address is retrieved
     /// ## SeeAlso
-    /// - ``UserShippingAddresses``
-    public func shippingAddresses(fromUpdatedAt: Date? = nil, pageSize: Int? = nil, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
-        AUTH_API.responseData(.get,
-                         Urls.compose(path:Paths.userShippingAddress),
-                         parameters: ["from_updated_at": fromUpdatedAt?.toSeconds(), "page_size": pageSize].filterNil(),
-                         apiType: .KApi) { (response, data, error) in
-                            if let error = error {
-                                completion(nil, error)
-                                return
-                            }
-                            
-                            if let data = data {
-                                completion(try? SdkJSONDecoder.customSecondsSince1970.decode(UserShippingAddresses.self, from: data), nil)
-                                return
-                            }
-                            
-                            completion(nil, SdkError())
-        }
-    }
-    
-    /// 배송지 조회 \
-    /// Retrieve shipping address
-    /// - parameters:
-    ///   - addressId : 배송지 ID \
-    ///                Shipping address ID
-    /// ## SeeAlso
-    /// - ``UserShippingAddresses``
-    public func shippingAddresses(addressId: Int64, completion:@escaping (UserShippingAddresses?, Error?) -> Void) {
+    /// - ``UserShippingAddress``
+    public func shippingAddress(addressId: Int64? = nil, completion:@escaping (UserShippingAddress?, Error?) -> Void) {
         AUTH_API.responseData(.get,
                           Urls.compose(path:Paths.userShippingAddress),
                           parameters: ["address_id": addressId].filterNil(),
@@ -343,7 +316,7 @@ extension UserApi {
                             }
                             
                             if let data = data {
-                                completion(try? SdkJSONDecoder.customSecondsSince1970.decode(UserShippingAddresses.self, from: data), nil)
+                                completion(try? SdkJSONDecoder.customSecondsSince1970.decode(UserShippingAddress.self, from: data), nil)
                                 return
                             }
                             

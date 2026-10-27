@@ -286,4 +286,13 @@ public enum IdentifyItem: String {
     /// 생일 \
     /// Birthday
     case Birthday = "birthday"
+    /// 성별 \
+    /// Gender
+    case Gender = "gender"
+    /// 내/외국인 여부 \
+    /// Nationality
+    case Nationality = "nationality"
+    /// 통신사업자
+    /// Mobile carrier
+    case MobileCarrier = "mobile_carrier"
 }

@@ -213,6 +213,7 @@ extension CertApi {
 extension CertApi {
     /// 카카오톡으로 사용자 서명 가능 여부 조회 \
     /// Checks whether the Request user signature is available
+    @available(*, deprecated, message: "call signWithKakaoTalk(...) and handle the error in its completion instead.")
     public static func isKakaoTalkSignAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkCert, path:""))!)
     }

@@ -139,7 +139,7 @@ public class Paths {
     public static let userAccessTokenInfo = "/v1/user/access_token_info"
     public static let userLogout = "/v1/user/logout"
     public static let userUnlink = "/v1/user/unlink"
-    public static let userShippingAddress = "/v1/user/shipping_address"
+    public static let userShippingAddress = "/v2/user/shipping_address"
     public static let userServiceTerms = "/v2/user/service_terms"
     public static let userScopes = "/v2/user/scopes"
     public static let userRevokeScopes = "/v2/user/revoke/scopes"

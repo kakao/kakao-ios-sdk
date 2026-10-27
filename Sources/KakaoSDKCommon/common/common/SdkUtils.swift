@@ -13,6 +13,7 @@
 //  limitations under the License.
 
 import Foundation
+import UIKit
 
 @_documentation(visibility: private)
 public class SdkUtils {
@@ -55,19 +56,27 @@ public class SdkUtils {
 extension SdkUtils {
     ///launchMethod 추가 익스텐션
     static public func makeUrlWithParameters(url:String, parameters:[String:Any]?, launchMethod:LaunchMethod? = nil) -> URL? {
-        if let launchMethod = launchMethod, launchMethod == .UniversalLink {
+        switch launchMethod {
+        case .UniversalLink, .UniversalLinkOnly:
             if let customSchemeUrl = makeUrlWithParameters(url, parameters: parameters) {
                 let customSchemeStringUrl = "\(customSchemeUrl.absoluteString)"
                 let escapedStringUrl = customSchemeStringUrl.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-                
+
                 let universalLinkStringUrl = "\(Urls.compose(.UniversalLink, path:Paths.universalLink))/\(escapedStringUrl ?? "")"
                 return URL(string: universalLinkStringUrl)
             }
             else { return nil }
-        }
-        else {
+        case .CustomScheme, .none:
             return makeUrlWithParameters(url, parameters: parameters)
         }
+    }
+
+    static public func openOptions(for launchMethod: LaunchMethod?) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+        guard launchMethod == .UniversalLinkOnly else {
+            return [:]
+        }
+
+        return [.universalLinksOnly: true]
     }
 }
 

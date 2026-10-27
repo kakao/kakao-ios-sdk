@@ -133,8 +133,8 @@ public class AuthController {
             completion(nil, SdkError(reason: .BadParameter))
             return
         }
-        
-        UIApplication.shared.open(url, options: [:]) { (result) in
+
+        UIApplication.shared.open(url, options: SdkUtils.openOptions(for: launchMethod)) { (result) in
             if (result) {
                 SdkLog.i("카카오톡 실행: \(url.absoluteString)")
             }
@@ -529,14 +529,14 @@ extension AuthController {
             completion(nil, SdkError(reason: .BadParameter))
             return
         }
-        
-        UIApplication.shared.open(url, options: [:]) { (result) in
+
+        UIApplication.shared.open(url, options: SdkUtils.openOptions(for: launchMethod)) { (result) in
             if (result) {
                 SdkLog.d("카카오톡 실행: \(url.absoluteString)")
             }
             else {
-                SdkLog.e("카카오톡 실행 취소")
-                completion(nil, SdkError(reason: .Cancelled, message: "The KakaoTalk authentication has been canceled by user."))
+                SdkLog.e("카카오톡 실행 실패")
+                completion(nil, SdkError(reason: .NotSupported, message: "KakaoTalk launch failed."))
                 return
             }
         }

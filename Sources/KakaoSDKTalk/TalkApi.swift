@@ -354,34 +354,44 @@ extension TalkApi {
     }    
     
     @_documentation(visibility: private)
-    public static func isKakaoTalkChannelAvailable(path: String) -> Bool {
-        guard let url = URL(string: Urls.compose(.PlusFriend, path: path)) else { return false }
-        
-        return UIApplication.shared.canOpenURL(url)
+    public static func openTalkChannel(path: String, completion: @escaping (Error?) -> Void) {
+        guard let url = URL(string: Urls.compose(.PlusFriend, path: path)) else {
+            completion(SdkError.ClientFailed(reason: .BadParameter, errorMessage: "Bad Parameter - make URL error"))
+            return
+        }
+
+        UIApplication.shared.open(url, options: [:]) { (result) in
+            if result {
+                completion(nil)
+                return
+            }
+
+            completion(SdkError.ClientFailed(reason: .IllegalState, errorMessage: "KakaoTalk is not available"))
+        }
     }
-    
+
+    public static func _makeAddChannelPath(channelPublicId: String) -> String {
+        "plusfriend/home/\(channelPublicId)/add?logReferer=PLUG"
+    }
+
     /// 카카오톡 채널 친구 추가 \
     /// Add Kakao Talk Channel
     /// - parameters:
     ///    - channelPublicId: 카카오톡 채널 프로필 ID \
     ///                       Kakao Talk Channel profile ID
     public func addChannel(channelPublicId: String, completion: @escaping (Error?) -> Void) {
-        let path = "plusfriend/home/\(channelPublicId)/add"
-        if !TalkApi.isKakaoTalkChannelAvailable(path: path) {
-            completion(SdkError.ClientFailed(reason: .IllegalState, errorMessage: "KakaoTalk is not available"))
-            return
-        }
-         
+        let path = TalkApi._makeAddChannelPath(channelPublicId: channelPublicId)
+
         validateChannel(validatePathUri: "/sdk/channel/add", channelPublicId: channelPublicId) { (error) in
             if let error = error {
                 completion(error)
                 return
             }
-            
-            UIApplication.shared.open(URL(string: Urls.compose(.PlusFriend, path: path))!)
+
+            TalkApi.openTalkChannel(path: path, completion: completion)
         }
     }
-    
+
     /// 카카오톡 채널 채팅 \
     /// Start Kakao Talk Channel chat
     /// - parameters:
@@ -389,18 +399,14 @@ extension TalkApi {
     ///                       Kakao Talk Channel profile ID
     public func chatChannel(channelPublicId: String, completion: @escaping (Error?) -> Void) {
         let path = "plusfriend/talk/chat/\(channelPublicId)"
-        if !TalkApi.isKakaoTalkChannelAvailable(path: path) {
-            completion(SdkError.ClientFailed(reason: .IllegalState, errorMessage: "KakaoTalk is not available"))
-            return
-        }
-                
+
         validateChannel(validatePathUri: "/sdk/channel/chat", channelPublicId: channelPublicId) { (error) in
             if let error = error {
                 completion(error)
                 return
             }
-            
-            UIApplication.shared.open(URL(string: Urls.compose(.PlusFriend, path: path))!)
+
+            TalkApi.openTalkChannel(path: path, completion: completion)
         }
     }
     

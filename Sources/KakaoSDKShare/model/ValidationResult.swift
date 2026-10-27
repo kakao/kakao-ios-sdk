@@ -24,6 +24,7 @@ public struct ValidationResult : Codable {
     public let templateMsg : [String:Any]
     public let warningMsg : [String:String]?
     public let argumentMsg : [String:String]?
+    public let pickerExtras: [String:Any]?
     public let schemeParams: [String:Any]?
     
     //comment: 깊이가 있는 값의 키에 _가 있는 경우가 있어 이모델만 custom encoding, decoding rule를 적용하지 않는다.
@@ -34,6 +35,7 @@ public struct ValidationResult : Codable {
         case templateMsg = "template_msg"
         case warningMsg = "warning_msg"
         case argumentMsg = "argument_msg"
+        case pickerExtras = "picker_extras"
         case schemeParams = "scheme_params"
     }
 
@@ -46,6 +48,7 @@ public struct ValidationResult : Codable {
         
         warningMsg = try? values.decode([String:String].self, forKey: .warningMsg)
         argumentMsg = try? values.decode([String:String].self, forKey: .argumentMsg)
+        pickerExtras = try values.decodeIfPresent([String:Any].self, forKey: .pickerExtras)
         schemeParams = try? values.decode([String:Any].self, forKey: .schemeParams)
     }
     
@@ -57,6 +60,9 @@ public struct ValidationResult : Codable {
         try container.encodeIfPresent(templateMsg, forKey: .templateMsg)
         try container.encode(warningMsg, forKey: .warningMsg)
         try container.encode(argumentMsg, forKey: .argumentMsg)
+        if let pickerExtras = pickerExtras {
+            try container.encode(pickerExtras, forKey: .pickerExtras)
+        }
         try container.encodeIfPresent(schemeParams, forKey: .schemeParams)
     }
 }

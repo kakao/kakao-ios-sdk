@@ -100,4 +100,8 @@ public enum LaunchMethod: String {
     /// 유니버설 링크 \
     /// Universal link
     case UniversalLink = "universal_link"
+
+    /// 유니버설 링크로만 카카오톡 실행 시도 \
+    /// Attempts to open Kakao Talk with a Universal Link only
+    case UniversalLinkOnly = "universal_link_only"
 }

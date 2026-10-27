@@ -3651,98 +3651,98 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 718,
       "length": 7,
       "value": "\"k2100\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 743,
       "length": 7,
       "value": "\"k2220\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCCertType.swift",
       "kind": "StringLiteral",
       "offset": 768,
       "length": 7,
       "value": "\"k3220\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 873,
       "length": 8,
       "value": "\"[🔬]\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 906,
       "length": 8,
       "value": "\"[💬]\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 937,
       "length": 10,
       "value": "\"[ℹ️]\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 969,
       "length": 10,
       "value": "\"[⚠️]\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "StringLiteral",
       "offset": 1004,
       "length": 10,
       "value": "\"[‼️]\""
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1135,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1150,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1165,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1180,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1195,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/green\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
+      "filePath": "\/Users\/purple\/actions-runner\/_work\/kakao-open-ios-sdk\/kakao-open-ios-sdk\/KakaoOpenSDK\/KakaoSDKCertCore\/CCSdkLog.swift",
       "kind": "IntegerLiteral",
       "offset": 1365,
       "length": 2,
